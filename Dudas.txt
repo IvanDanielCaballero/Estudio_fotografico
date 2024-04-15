@@ -1,0 +1,8 @@
+
+
+--- No se si hacer tabla reserva
+--- preguntar lo del carrito   y la compras de productos
+--- preguntar lo de trello
+--- mirar lo de codepen 
+--- implementar al presupuesto( fecha de caducidad, fecha de aceptacion)
+--- 
