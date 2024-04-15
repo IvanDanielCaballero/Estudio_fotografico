@@ -5,4 +5,9 @@
 --- preguntar lo de trello
 --- mirar lo de codepen 
 --- implementar al presupuesto( fecha de caducidad, fecha de aceptacion)
---- 
+--- Preguntar de que si  un empleado va a ser jefe de otro empleado para asi pintarlo en el diagrama
+--- crear un nombre para la empresa
+
+
+-- IMPORTANTE!!!!
+*hablar en el proyecto sobre las medidas que tuvimos para prevenir el SQL injection
