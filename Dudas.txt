@@ -12,6 +12,8 @@
 --- preguntar si hacemos una tabla categorias
 --- preguntar si dejaremos la tabla estado pedido
 
+--- HACER POWER POINT PARA HACER LA PR
+
 
 
 -- IMPORTANTE!!!!
