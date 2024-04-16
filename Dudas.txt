@@ -10,6 +10,8 @@
 --- como le quieran llamar a la tabla evento o trabajo
 -- preguntar en la tabla evento si quieren que fecha y hora vayan separados o unidos
 --- preguntar si hacemos una tabla categorias
+--- preguntar si dejaremos la tabla estado pedido
+
 
 
 -- IMPORTANTE!!!!
