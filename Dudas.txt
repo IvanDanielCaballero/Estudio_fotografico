@@ -13,3 +13,5 @@
 
 -- IMPORTANTE!!!!
 *hablar en el proyecto sobre las medidas que tuvimos para prevenir el SQL injection
+*decir en el proyecto que la parte donde hablamos de como pagar decir que hicimos un procedure en la bbdd con start_sesion para que 
+todo el codigo se cumpla sino no lo hace
