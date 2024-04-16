@@ -7,10 +7,16 @@
 --- implementar al presupuesto( fecha de caducidad, fecha de aceptacion)
 --- Preguntar de que si  un empleado va a ser jefe de otro empleado para asi pintarlo en el diagrama
 --- crear un nombre para la empresa
-
+--- como le quieran llamar a la tabla evento o trabajo
+-- preguntar en la tabla evento si quieren que fecha y hora vayan separados o unidos
+--- preguntar si hacemos una tabla categorias
 
 
 -- IMPORTANTE!!!!
 *hablar en el proyecto sobre las medidas que tuvimos para prevenir el SQL injection
 *decir en el proyecto que la parte donde hablamos de como pagar decir que hicimos un procedure en la bbdd con start_sesion para que 
 todo el codigo se cumpla sino no lo hace
+
+
+
+si al final se crea la bbd reserva quitar las funciones de reserva de la tabla de cliente 
