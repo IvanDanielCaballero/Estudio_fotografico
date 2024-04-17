@@ -1,18 +1,33 @@
 
 
---- No se si hacer tabla reserva
+
+
+
+-- RESUELTO -------------------------------------------------------------------------------------
 --- preguntar lo del carrito   y la compras de productos
 --- preguntar lo de trello
 --- mirar lo de codepen 
+--- preguntar si hacemos una tabla categorias
+
+
+
+-- PENDIENTE -----------------------------------------------------------------------------------
 --- implementar al presupuesto( fecha de caducidad, fecha de aceptacion)
+--- No se si hacer tabla reserva
 --- Preguntar de que si  un empleado va a ser jefe de otro empleado para asi pintarlo en el diagrama
 --- crear un nombre para la empresa
 --- como le quieran llamar a la tabla evento o trabajo
 -- preguntar en la tabla evento si quieren que fecha y hora vayan separados o unidos
---- preguntar si hacemos una tabla categorias
 --- preguntar si dejaremos la tabla estado pedido
+--- HACER POWER POINT PARA HACER LA PRESENTACION
+-- decirme si va galeria
+-- limpiar lo diagramas tanto el ER quitar el antiguo como en el de clases quitar las entidades que no utilicemos
+--- pero de esa forma no  sabemos que emepleado ha hecho el presupuesto, es importante?
 
---- HACER POWER POINT PARA HACER LA PR
+
+
+--- ME FALTA MEJORAR EN EL DIAGRAMA DE CLASES LOS ATRIBUTOS Y COLOCARLE SU TIPO
+
 
 
 
@@ -20,7 +35,4 @@
 *hablar en el proyecto sobre las medidas que tuvimos para prevenir el SQL injection
 *decir en el proyecto que la parte donde hablamos de como pagar decir que hicimos un procedure en la bbdd con start_sesion para que 
 todo el codigo se cumpla sino no lo hace
-
-
-
-si al final se crea la bbd reserva quitar las funciones de reserva de la tabla de cliente 
+*si al final se crea la bbd reserva quitar las funciones de reserva de la tabla de cliente 
