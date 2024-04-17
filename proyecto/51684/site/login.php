@@ -16,7 +16,7 @@
 <body>
     <div class="container contenedor">
         <section>
-            <form action="resolver.php" method="POST">
+            <form action="php/procesar_login.php" method="POST">
                 <h1>Iniciar Sesion</h1>
                 <div class="inputbox">
                     <ion-icon name="mail-outline"></ion-icon>
@@ -40,7 +40,7 @@
 
                 <div class="Register">
                     <br>
-                    <p>No tengo una cuenta <a href="#">Registrate</a></p>
+                    <p>No tengo una cuenta <a href="registrarse.html">Registrate</a></p>
                 </div>
             </form>
         </section>

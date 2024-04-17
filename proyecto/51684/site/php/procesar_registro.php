@@ -33,9 +33,9 @@ try {
     if ($query->rowCount() > 0) {
         $_SESSION['usuario'] = $_POST['usuario'];
        
-        header("location: index.php");
+        header("location: ../index.php");
     } else {
-        header("location: login.php");
+        header("location: ../registrarse.html");
     }
 } catch (PDOException $e) {
     echo "Error de conexión: " . $e->getMessage();
