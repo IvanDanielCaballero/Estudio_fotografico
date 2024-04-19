@@ -8,7 +8,7 @@
   <!-- Stylesheets-->
   <link rel="stylesheet" type="text/css"
     href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
-  <link rel="stylesheet" href="css/fonts.css">
+  <!--  <link rel="stylesheet" href="css/fonts.css"> -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.css">
 
@@ -44,7 +44,7 @@
       --ccft-cs-background: #000;
       --ccft-cs-on-surface: #fff;
       --ccft-cs-surface: #fff;
-      --ccft-cs-primary: hsl(14, 97%, 65%);
+      --ccft-cs-primary: gold;
       --ccft-cs-primary-alt: hsla(14, 97%, 65%, .3);
       --ccft-ts-primary: Montserrat, sans-serif;
       --ccft-ts-secondary: 'Abril Fatface', serif;
@@ -58,7 +58,8 @@
     }
 
     .layout_servicios {
-      background-image: url(https://source.unsplash.com/rf5R1qXwlDU/1600x900);
+      /* puedo utilizar esa imagen o esta... https://source.unsplash.com/rf5R1qXwlDU/1600x900*/
+      background-image: url(https://images.pexels.com/photos/1540343/pexels-photo-1540343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
       background-position: 0 0;
       background-size: cover;
       height: 100vh;
@@ -119,7 +120,7 @@
     }
 
     .hero-title {
-      color: #fff;
+      color: gold;
       font-family: var(--ccft-ts-secondary);
       font-weight: 400;
       font-size: 4.75rem;
@@ -319,6 +320,28 @@
 
 
     }
+
+    .nav--header-2>p {
+      color: white;
+      width: 70%;
+
+    }
+    .nav--header-2{
+      margin-left: 200px;
+    }
+
+    .nav--header-2>ul {
+      color: white;
+      width: 90%;
+
+    }
+
+    .nav--header-2>h2 {
+      color: ghostwhite;
+      text-align: center;
+      margin-left: 10%;
+      padding: 2%;
+    }
   </style>
 
 </head>
@@ -347,31 +370,43 @@
               </li>
               <li class="nav__item nav__item--clients">
                 <a class="nav__link" href="#0">Fotografía de eventos</a>
-                <ul class="nav nav--header nav--header-2">
-                  <li class="nav__item">
-                    <a class="nav__link" href="#0">Burger King</a>
-                  </li>
-                  <li class="nav__item">
-                    <a class="nav__link" href="#0">Southwest Airlines</a>
-                  </li>
-                  <li class="nav__item">
-                    <a class="nav__link" href="#0">Levi Strauss</a>
-                  </li>
-                </ul>
+                <div class="nav nav--header nav--header-2">
+                  <h2>
+                    Las mejores fotografias para tus eventos
+                  </h2>
+                  <p>En nuestro estudio fotográfico nos especializamos en capturar los momentos más especiales de tus
+                    eventos. Nos dedicamos a plasmar cada detalle con la mejor calidad y creatividad, para que puedas
+                    revivir esas experiencias únicas una y otra vez. Nuestro equipo de fotógrafos profesionales se
+                    encarga de inmortalizar cada instante, desde los momentos más emotivos hasta los detalles más
+                    pequeños que hacen de tu evento algo único. Confía en nosotros para capturar la esencia de tu evento
+                    y transformarla en recuerdos inolvidables. ¡Déjanos ser parte de tu historia fotográfica!</p>
+
+                  <ul>
+                    <li>Bodas</li>
+                    <li>Cumpleaños</li>
+                    <li>Fiestas</li>
+                    <li>XV años</li>
+                    <li>Comuniones</li>
+                    <li>Grados</li>
+                  </ul>
+        
+                </div>
               </li>
               <li class="nav__item nav__item--services">
                 <a class="nav__link" href="#0">Asesoramiento de estudio</a>
-                <ul class="nav nav--header nav--header-2">
-                  <li class="nav__item">
-                    <a class="nav__link" href="#0">Print Design</a>
-                  </li>
-                  <li class="nav__item">
-                    <a class="nav__link" href="#0">Web Design</a>
-                  </li>
-                  <li class="nav__item">
-                    <a class="nav__link" href="#0">Mobile App Development</a>
-                  </li>
-                </ul>
+                <div class="nav nav--header nav--header-2">
+                  <ul>
+                    <li class="nav__item">
+                      <a class="nav__link" href="#">Print Design</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__link" href="#">Web Design</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__link" href="#">Mobile App Development</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li class="nav__item nav__item--contact">
                 <a class="nav__link" href="#0">Impresión y álbumes fotográficos</a>
@@ -383,22 +418,20 @@
           <section class='hero'>
             <div class="hero-block hero-block--header">
               <h1 class="hero-title">
-                Fork It <em>Navigation with Sub-navigation, a Codepen Challenge, Aug 2019.</em>
-
+                Servicios <em>¡Bienvenido a nuestro estudio fotográfico! </em>
               </h1>
-              <p class="hero-text">The idea was to fork <a href="https://codepen.io/pen?template=PMbwKb"
-                  target="_blank">a
-                  pretty basic navigation</a> and make something nice with it. The content inspired me some kind of
-                advertising adgency with a bold navigation and a little content. Made me work on my hover and active
-                state
-                more than what I'm used to in those weekly challenges.</p>
+              <p class="hero-text">En nuestro estudio fotográfico, <a href="" target="_blank">
+                  capturamos momentos especiales y creamos recuerdos</a> que perdurarán para siempre.
+                Nuestro equipo de profesionales se esfuerza por brindarle la mejor experiencia y los resultados más
+                sorprendentes.
+                Explore nuestras galerías y descubra la magia de la fotografía en cada imagen. ¡Estamos aquí para
+                capturar sus momentos más preciosos!</p>
             </div>
           </section>
         </main>
       </div>
     </div>
   </section>
-
 
 
 
@@ -458,9 +491,9 @@
               href="https://www.templatemonster.com/">Templatemonster</a></p>
         </div>
       </div>
-  
+
     </div>
-   
+
   </footer>
 
 
@@ -471,7 +504,7 @@
     const rootElement = document.querySelector('.layout_servicios');
 
     const colors = [
-      'hsla(14, 97%, 65%, 0.4)',
+      'hsla(220, 7%, 44%, 0.9)',
     ];
 
     // Local state.
@@ -541,7 +574,7 @@
         easing: 'easeOutExpo',
         opacity: 1,
         translateX: [
-          { delay: 300, value: '270px', },
+          { delay: 300, value: '500px', },
         ],
         scaleX: [
           { value: 0 },
