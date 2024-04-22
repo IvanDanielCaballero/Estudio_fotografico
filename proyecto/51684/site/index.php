@@ -68,7 +68,7 @@
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="about-me.html">Sobre Nosotros</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Servicios</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contactanos</a>
                     </li>

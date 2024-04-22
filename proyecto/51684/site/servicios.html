@@ -58,8 +58,8 @@
     }
 
     .layout_servicios {
-      /* puedo utilizar esa imagen o esta... https://source.unsplash.com/rf5R1qXwlDU/1600x900*/
-      background-image: url(https://images.pexels.com/photos/1540343/pexels-photo-1540343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+      /* puedo utilizar esa imagen o esta... */
+      background-image: url(https://source.unsplash.com/rf5R1qXwlDU/1600x900);
       background-position: 0 0;
       background-size: cover;
       height: 100vh;
@@ -113,6 +113,9 @@
     .layout__main {
       transition: opacity .3s;
       z-index: 1;
+    }
+    .layout__main {
+      height: 100%; /* Ajusta la altura según sea necesario */
     }
 
     .hero {
@@ -190,8 +193,9 @@
     }
 
     .nav--header-1 {
+      margin-top: 0;
       counter-reset: n;
-      height: 100%;
+      height: 70%;
       padding: 0 2rem;
       position: relative;
     }
@@ -259,13 +263,16 @@
 
     .nav--header-2 {
       height: 100%;
+      margin-top: 0px;
       left: 270px;
       opacity: 0;
       padding: 2.5rem 5rem;
       position: fixed;
+      padding-right: 10%;
       top: 0;
       visibility: hidden;
       width: 100%;
+
     }
 
     .nav--header-2::before {
@@ -310,7 +317,7 @@
     }
 
     .layout__backdrop {
-      height: 1000px;
+      height: 100%;
       z-index: 1;
       position: absolute;
     }
@@ -326,7 +333,8 @@
       width: 70%;
 
     }
-    .nav--header-2{
+
+    .nav--header-2 {
       margin-left: 200px;
     }
 
@@ -336,12 +344,29 @@
 
     }
 
-    .nav--header-2>h2 {
+    .nav--header-2>h3 {
       color: ghostwhite;
       text-align: center;
-      margin-left: 10%;
+      margin-left: 5%;
+      margin-right: 30vh;
+      padding:0px;
+      margin-top: 0px;
       padding: 2%;
     }
+
+    .nav--header-2 ul li {
+      height: 50px;
+    }
+
+    .nav--header-2>p {
+      height: 150px;
+    }     
+    /*
+    .nav__item{
+ 
+      text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
+ 
+    }  */
   </style>
 
 </head>
@@ -363,17 +388,49 @@
                   srcset="images/logo-default-352x56.png 2x" />
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#0">Edición fotográfica </a>
+                <a class="nav__link" href="#0">Edición fotográfica</a>
+                <div class="nav nav--header nav--header-2">
+                  <h3>Transforma Fotos en Obras Maestras</h3>
+                  <p>
+                    En nuestro estudio, entendemos que la captura de una imagen es solo el primer paso hacia la creación de una obra de arte. La edición fotográfica es el proceso que lleva tus imágenes al siguiente nivel. Nuestro equipo está dedicado a resaltar la belleza intrínseca de cada imagen. Utilizamos las últimas herramientas y técnicas para mejorar la iluminación, el color, el contraste y la composición, creando fotografías que cuentan historias y despiertan emociones.
+                  </p>
+                  <div class="row" style="margin:10%; margin-top: 0px">
+                    <div class="col-md-4">
+                      <img src="images/edicion_1.jpg" height="400px" width="200px" alt="Imagen 1" class="img-fluid">
+                    </div>
+                    <div class="col-md-4">
+                      <img src="images/edicion_4.jpg" height="400px" width="200px" alt="Imagen 2" class="img-fluid">
+                    </div>
+                    <div class="col-md-4">
+                      <img src="images/edicion_3.jpg" height="400px" width="200px" alt="Imagen 3" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+              </li>              
+              <li class="nav__item nav__item--personalizadas">
+                <a class="nav__link" href="#0">Sesiones personalizadas</a>
+                <div class="nav nav--header nav--header-2">
+                  <h3>
+                  Capturando Tus Momentos Más Especiales
+                  </h3>
+                  <p>En nuestro estudio fotográfico, creemos que cada persona es única y que cada momento merece ser capturado de una manera especial y auténtica. Es por eso que ofrecemos sesiones personalizadas, diseñadas específicamente para ti y para reflejar tu personalidad, estilo y emociones.
+
+                    Nuestras sesiones personalizadas son mucho más que simplemente tomar fotografías; son una experiencia memorable y significativa. Desde la planificación inicial hasta la sesión en sí, nos enfocamos en entender tus gustos, preferencias y deseos, para crear un ambiente cómodo y relajado donde puedas ser tú mismo.
+                  
+                  </p>
+                  <div class="row"style="margin:17%; margin-top: 0px">
+                    <div class="col-md-12">
+                      <img src="images/personalizacion_1.jpg" height="200px" width="400px" alt="Imagen 1" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li class="nav__item nav__item--about">
-                <a class="nav__link" href="#0">Sesiones fotográficas personalizadas</a>
-              </li>
-              <li class="nav__item nav__item--clients">
+              <li class="nav__item nav__item--eventos">
                 <a class="nav__link" href="#0">Fotografía de eventos</a>
                 <div class="nav nav--header nav--header-2">
-                  <h2>
+                  <h3>
                     Las mejores fotografias para tus eventos
-                  </h2>
+                  </h3>
                   <p>En nuestro estudio fotográfico nos especializamos en capturar los momentos más especiales de tus
                     eventos. Nos dedicamos a plasmar cada detalle con la mejor calidad y creatividad, para que puedas
                     revivir esas experiencias únicas una y otra vez. Nuestro equipo de fotógrafos profesionales se
@@ -389,27 +446,56 @@
                     <li>Comuniones</li>
                     <li>Grados</li>
                   </ul>
-        
+
                 </div>
               </li>
               <li class="nav__item nav__item--services">
                 <a class="nav__link" href="#0">Asesoramiento de estudio</a>
                 <div class="nav nav--header nav--header-2">
+                  <h3>
+                    Las mejores fotografias para tus eventos
+                  </h3>
+                  <p>En nuestro estudio fotográfico nos especializamos en capturar los momentos más especiales de tus
+                    eventos. Nos dedicamos a plasmar cada detalle con la mejor calidad y creatividad, para que puedas
+                    revivir esas experiencias únicas una y otra vez. Nuestro equipo de fotógrafos profesionales se
+                    encarga de inmortalizar cada instante, desde los momentos más emotivos hasta los detalles más
+                    pequeños que hacen de tu evento algo único. Confía en nosotros para capturar la esencia de tu evento
+                    y transformarla en recuerdos inolvidables. ¡Déjanos ser parte de tu historia fotográfica!</p>
+
                   <ul>
-                    <li class="nav__item">
-                      <a class="nav__link" href="#">Print Design</a>
-                    </li>
-                    <li class="nav__item">
-                      <a class="nav__link" href="#">Web Design</a>
-                    </li>
-                    <li class="nav__item">
-                      <a class="nav__link" href="#">Mobile App Development</a>
-                    </li>
+                    <li>Bodas</li>
+                    <li>Cumpleaños</li>
+                    <li>Fiestas</li>
+                    <li>XV años</li>
+                    <li>Comuniones</li>
+                    <li>Grados</li>
                   </ul>
+
                 </div>
               </li>
               <li class="nav__item nav__item--contact">
                 <a class="nav__link" href="#0">Impresión y álbumes fotográficos</a>
+                <div class="nav nav--header nav--header-2">
+                  <h3>
+                    Las mejores fotografias para tus eventos
+                  </h3>
+                  <p>En nuestro estudio fotográfico nos especializamos en capturar los momentos más especiales de tus
+                    eventos. Nos dedicamos a plasmar cada detalle con la mejor calidad y creatividad, para que puedas
+                    revivir esas experiencias únicas una y otra vez. Nuestro equipo de fotógrafos profesionales se
+                    encarga de inmortalizar cada instante, desde los momentos más emotivos hasta los detalles más
+                    pequeños que hacen de tu evento algo único. Confía en nosotros para capturar la esencia de tu evento
+                    y transformarla en recuerdos inolvidables. ¡Déjanos ser parte de tu historia fotográfica!</p>
+
+                  <ul>
+                    <li>Bodas</li>
+                    <li>Cumpleaños</li>
+                    <li>Fiestas</li>
+                    <li>XV años</li>
+                    <li>Comuniones</li>
+                    <li>Grados</li>
+                  </ul>
+
+                </div>
               </li>
             </ul>
           </nav>
@@ -420,12 +506,17 @@
               <h1 class="hero-title">
                 Servicios <em>¡Bienvenido a nuestro estudio fotográfico! </em>
               </h1>
-              <p class="hero-text">En nuestro estudio fotográfico, <a href="" target="_blank">
+              <p class="hero-text">En nuestro estudio fotográfico, <a>
                   capturamos momentos especiales y creamos recuerdos</a> que perdurarán para siempre.
                 Nuestro equipo de profesionales se esfuerza por brindarle la mejor experiencia y los resultados más
                 sorprendentes.
                 Explore nuestras galerías y descubra la magia de la fotografía en cada imagen. ¡Estamos aquí para
-                capturar sus momentos más preciosos!</p>
+                capturar sus momentos más preciosos!
+                <br>
+                <button class="btn btn-primary" onclick="window.location.href = 'index.php'">Volver</button>
+              </p>
+               
+
             </div>
           </section>
         </main>
@@ -604,7 +695,6 @@
       animation.add({
         duration: 210,
         opacity: [1, 0],
-        translateY: [0, '+=50px'],
         targets: state.navigationItems[state.activeItem].childNavigation,
       }).add({
         complete: () => {
@@ -685,3 +775,6 @@
 </body>
 
 </html>
+
+
+
