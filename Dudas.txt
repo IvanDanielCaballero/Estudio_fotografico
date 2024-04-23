@@ -5,7 +5,7 @@
 
 -- RESUELTO -------------------------------------------------------------------------------------
 --- preguntar lo del carrito   y la compras de productos
---- preguntar lo de trello
+--- hacer lo de trello
 --- mirar lo de codepen 
 --- preguntar si hacemos una tabla categorias
 
