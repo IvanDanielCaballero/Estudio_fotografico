@@ -1,4 +1,7 @@
 "use strict";
+var scriptElement = document.createElement('script');
+scriptElement.src = 'core.min.js';
+document.head.appendChild(scriptElement);
 (function () {
 	// Global variables
 	var userAgent = navigator.userAgent.toLowerCase(),
@@ -1086,3 +1089,17 @@
 		}
 	});
 }());
+
+
+
+
+
+
+
+
+
+
+
+
+
+

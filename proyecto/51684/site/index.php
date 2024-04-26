@@ -38,8 +38,10 @@
   session_start();
   if (isset($_SESSION['usuario'])) {
     echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-  } else {
-    echo '<script>var inicio=false;</script>';
+  } 
+
+  if(isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol']=='admin'){
+    echo '<script>var admin=true;</script>';
   }
   ?>
 
@@ -71,6 +73,8 @@
                     <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Servicios</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contactanos</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"  href="usuarios.php" style="display: none;">Usuarios</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="login.php">Iniciar Sesion</a>
                     </li>
@@ -512,6 +516,11 @@
       document.getElementById("inicio_sesion").style.display = "none"
       document.getElementById("cerrar_sesion").style.display = "block";
       console.log("inicio sesion");
+    }
+    
+    if(admin != undefined && admin == true){
+      console.log("admin")
+      document.getElementById("usuarios").style.display= "block";
     }
   </script>
 </body>
