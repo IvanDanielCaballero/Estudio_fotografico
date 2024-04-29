@@ -49,8 +49,9 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.search-input{
-  width: calc(100% - 2px) !important;
+.search-input {
+  width: calc(100% + 2px) !important;
+  margin-right: 100px;
 }
 .bootstrap-table .fixed-table-toolbar .columns .btn-group > .btn-group {
   display: inline-block;
