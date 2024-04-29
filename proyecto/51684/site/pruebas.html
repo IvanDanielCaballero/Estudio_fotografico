@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuatro Imágenes en un Div</title>
+  <style>
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 400px; /* Ancho del contenedor */
+      height: 400px; /* Altura del contenedor */
+    }
+    .image-container img {
+      width: 50%; /* Ancho de las imágenes */
+      height: 50%; /* Altura de las imágenes */
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<div class="image-container">
+  <img src="images/galeria-original-5.jpg" alt="images/galeria-original-5.jpg 1">
+  <img src="images/galeria-original-6.jpg" alt="images/galeria-original-6.jpg 2">
+  <img src="images/galeria-original-2.jpg" alt="images/galeria-original-7.jpg 3">
+  <img src="images/galeria-orignal-3.jpg" alt="Imagen 4">
+</div>
+
+</body>
+</html>

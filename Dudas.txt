@@ -5,7 +5,7 @@
 
 -- RESUELTO -------------------------------------------------------------------------------------
 --- preguntar lo del carrito   y la compras de productos
---- preguntar lo de trello
+--- hacer lo de trello
 --- mirar lo de codepen 
 --- preguntar si hacemos una tabla categorias
 
@@ -28,6 +28,7 @@
 
 --- ME FALTA MEJORAR EN EL DIAGRAMA DE CLASES LOS ATRIBUTOS Y COLOCARLE SU TIPO
 -- EN LA PARTE DE SOBRE NOSOTROS QUITAR LA IMAGEN Y DEJAR EL GRAFICO QUE HAY Y DECIR TODO AL 100
+-- HAY QUE QUITAR EN TODOS LOS DOCUMENTOS LA PARTE QUE ES PARA UN  "Navegador especifico"
 
 
 
