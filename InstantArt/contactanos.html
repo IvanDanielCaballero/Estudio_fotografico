@@ -17,7 +17,11 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         #div_formulario {
-            padding:40px;
+            padding: 40px;
+        }
+        #map{
+            height: 400px;
+            width: 100%;
         }
 
         .form {
@@ -27,7 +31,7 @@
             padding-left: 2em;
             padding-right: 2em;
             padding-bottom: 0.4em;
-            background-color: #d3d3d3;
+            background-color: ghostwhite;
             border-radius: 25px;
             transition: 0.4s ease-in-out;
 
@@ -37,7 +41,7 @@
 
         .card {
             background-image: linear-gradient(163deg, red 50%, #ebb85e 75%);
-            height: 60%;
+            height: 80%;
             border-radius: 22px;
             transition: all 0.3s;
         }
@@ -148,10 +152,14 @@
         }
 
         .button3:hover {
-            background-color: red;
-            color: white;
+            background-color: #ebb85e;
+            color: black;
         }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Incluyendo Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -271,42 +279,45 @@
                             <div class="card2">
 
                                 <form class="form">
-                                    <p id="heading">Formulario de Contacto</p>
-
                                     <label for="username">Ingresa tu nombre:</label>
                                     <div class="field">
-                                        <input type="text" class="input-field" placeholder="Nombre" autocomplete="off" name="nombre"  />
+                                        <input type="text" class="input-field" placeholder="Nombre" autocomplete="off"
+                                            name="nombre" />
                                         <div id="nombre_Help" class="form-text">Queremos saber como te llamas.</div>
                                     </div>
 
 
 
-                                    
+
                                     <label for="username">Ingresa tus apellidos:</label>
                                     <div class="field">
-                                        <input type="text" class="input-field" placeholder="Apellidos" name="apellidos" />
+                                        <input type="text" class="input-field" placeholder="Apellidos"
+                                            name="apellidos" />
                                     </div>
 
                                     <label for="username">Ingresa tu Numero:</label>
                                     <div class="field">
-                                        <input type="tel" class="input-field" placeholder="Número de Teléfono" name="telefono" />
+                                        <input type="tel" class="input-field" placeholder="Número de Teléfono"
+                                            name="telefono" />
                                     </div>
 
                                     <label for="username">Ingresa tu Email:</label>
                                     <div class="field">
-                                        <input type="email" class="input-field" placeholder="Correo Electrónico" name="email" />
+                                        <input type="email" class="input-field" placeholder="Correo Electrónico"
+                                            name="email" />
                                         <div id="emailHelp" class="form-text">nos pondremos en contacto contigo por
                                             email.</div>
                                     </div>
-                                  
-<hr>
+
+                                    <hr>
                                     <label for="username">Ingresa tu dudas:</label>
-                                
+
                                     <div class="field">
-                                        <textarea class="input-field" placeholder="Escribe aquí tu duda" name="duda"></textarea>
+                                        <textarea class="input-field" placeholder="Escribe aquí tu duda"
+                                            name="duda"></textarea>
                                     </div>
 
-                                    <button class="button3">Forgot Password</button>
+                                    <button class="button3">Enviar</button>
                                 </form>
                             </div>
                         </div>
@@ -327,29 +338,23 @@
                                     ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
                                     nibh in gravida.</p>
                             </li>
+                           
                             <li>
-                                <h3>H3 Heading</h3>
+                                <h4>Escribimos algo aqui</h4>
                                 <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
                                     metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt
                                     ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
                                     nibh in gravida.</p>
                             </li>
                             <li>
-                                <h4>H4 Heading</h4>
+                                <h5>Otra cosa por aca </h5>
                                 <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
                                     metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt
                                     ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
                                     nibh in gravida.</p>
                             </li>
                             <li>
-                                <h5>H5 Heading</h5>
-                                <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                    metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt
-                                    ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
-                                    nibh in gravida.</p>
-                            </li>
-                            <li>
-                                <h6>H6 Heading</h6>
+                                <h6>Y Otra por aca</h6>
                                 <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
                                     metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt
                                     ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
@@ -358,44 +363,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-5 col-12">
+                <div class="col-xl-12 col-12">
                     <ul class="list-xl">
                         <li>
-                            <h2>Informacion de contacto</h2>
-                            <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id
-                                viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in
-                                gravida.</p>
-                        </li>
-                        <li>
-                            <h3>H3 Heading</h3>
-                            <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id
-                                viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in
-                                gravida.</p>
-                        </li>
-                        <li>
-                            <h4>H4 Heading</h4>
-                            <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id
-                                viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in
-                                gravida.</p>
-                        </li>
-                        <li>
-                            <h5>H5 Heading</h5>
-                            <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id
-                                viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in
-                                gravida.</p>
-                        </li>
-                        <li>
-                            <h6>H6 Heading</h6>
+                            <h2>Puede ubicarnos en el mapa</h2>
                             <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
                                 metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id
                                 viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in
                                 gravida.</p>
                         </li>
                     </ul>
+                    <div id="map"></div>
                 </div>
             </div>
         </section>
@@ -404,7 +382,7 @@
             <div class="container">
                 <div class="row row-50">
                     <div class="col-lg-10 col-xl-8">
-                        <h6>Blockquote</h6>
+                        <h6>Ansel Adamse</h6>
                         <!-- Quote Light-->
                         <blockquote class="quote-light">
                             <svg class="quote-light-mark" x="0px" y="0px" width="35px" height="25px"
@@ -414,11 +392,15 @@
                                 </path>
                             </svg>
                             <div class="quote-light-text">
-                                <p>Nullam a sapien tincidunt, malesuada ipsum ut, convallis augue. Suspendisse fermentum
-                                    sapien rhoncus, posuere nulla sit amet, tempor lorem. Sed sapien enim, imperdiet ut
-                                    ultricies nec, facilisis sit amet nulla. Nulla tempus scelerisque lorem vel
-                                    ultricies. Sed lobortis libero ut fringilla consectetur.</p>
-                            </div>
+                                <p>No haces una fotografía solo con una cámara. Traes al acto de la fotografía todas las imágenes que has visto, los libros que has leído, la música que has escuchado, las personas que has amado.</p>
+                                <svg class="quote-light-mark" x="0px" y="0px" width="35px" height="25px"
+                                viewbox="0 0 35 25">
+                                <path
+                                    d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z">
+                                </path>
+                            </svg>       
+                     </div>
+                           
                         </blockquote>
                     </div>
                 </div>
@@ -686,6 +668,23 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+  
 </body>
+<script>
+     // Coordenadas proporcionadas
+     var coordenadas = [38.60758446483935, -1.1082502039179802];
 
+     // Creación del mapa y configuración inicial
+     var map = L.map('map').setView(coordenadas, 15);
+
+     // Añadir capa de mapa (OpenStreetMap en este caso)
+     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+     }).addTo(map);
+
+     // Añadir marcador en las coordenadas
+     L.marker(coordenadas).addTo(map)
+         .bindPopup('InstantArt')
+         .openPopup();
+</script>
 </html>
