@@ -12,8 +12,6 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/fonts.css">
-
   <style>
     .ie-panel {
       display: none;
@@ -65,7 +63,7 @@
                 <a class="rd-navbar-brand" href="index.html"><img src="images/logo.png" alt="" width="400" height="200" srcset="images/logo.png" /></a>
               </div>
               <div class="rd-navbar-main-element">
-                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+              <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Inicio</a>
@@ -77,6 +75,9 @@
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contactanos</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"  href="usuarios.php" style="display: none;">Usuarios</a>
+                    </li>
+                    <!--Area personal, para descargar proyectos-->
+                    <li class="rd-nav-item"><a class="rd-nav-link" id="area_personal" href="ftp/areaPersonal.php" style="display:none">Area Personal</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="login.php">Iniciar Sesion</a>
                     </li>
@@ -463,7 +464,7 @@
           <div class="row row-50">
             <div class="col-lg-4">
               <div class="inset-right-1">
-                <h4>Mas imformación</h4>
+                <h4>Mas información</h4>
                 <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo momentos ordinarios en extraordinarias obras maestras visuales. </p>
               </div>
             </div>
@@ -517,6 +518,8 @@
     if (inicio != undefined && inicio == true) {
       document.getElementById("inicio_sesion").style.display = "none"
       document.getElementById("cerrar_sesion").style.display = "block";
+      //habitilo la pagina del area personal del cliente
+      document.getElementById("area_personal").style.display = "block";
       console.log("inicio sesion");
     }
     
