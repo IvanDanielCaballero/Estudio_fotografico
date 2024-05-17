@@ -9,7 +9,6 @@ $password = "56lf2G9BnTez";
 $dbname = "fotografia";
 
 
-
 try {
     $bd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // Establecer el modo de error PDO a excepción
