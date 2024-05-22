@@ -18,11 +18,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Por favor, completa el CAPTCHA";
     } else {
 
+
         $nombre = $_POST['nombre'];
-        $email = $_POST['email'];
-        $destinatario = 'vanchocaballero@gmail.com';
-        $asunto = 'Lo logre';
-        $contenido = 'El contenido es que ' . $nombre;
+        $apellidos = $_POST['apellidos'];
+        $telefono = $_POST['telefono'];
+        $duda = $_POST['duda'];
+        $email =$_POST['email'];
+
+        $destinatario = 'instantartoficial@gmail.com';
+        $asunto = 'Envio de duda y/o requerimiento de informacion';
+        $contenido = 'El contenido es que ' . $nombre.$apellidos.$telefono.$duda.$email;
 
         $mail = new PHPMailer(true);
         try {
@@ -30,13 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'vanchocaballero@gmail.com'; // Cambia 'tucorreo' por tu dirección de correo Gmail
-            $mail->Password = 'nrty dhvi aphh czel'; // Cambia 'tucontraseña' por tu contraseña de Gmail
+            $mail->Username = 'instantartcomunicate@gmail.com';
+            $mail->Password = 'puye ubos gkff dlwe'; 
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
             //Destinatarios
-            $mail->setFrom('danielmarinocamberos@gmail.com', 'Ivan'); // Cambia 'tucorreo' por tu dirección de correo Gmail y 'Tu Nombre' por tu nombre
+            $mail->setFrom('instantartoficial@gmail.com', 'Cliente'); 
             $mail->addAddress($destinatario);
 
             //Contenido

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario con CAPTCHA</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <h2>Formulario de Registro</h2>
+
+
+
+
+
+    <form class="form" action="process_form.php" method="POST">
+        <label for="nombre">Ingresa tu nombre:</label>
+        <div class="field">
+            <input type="text" class="input-field" placeholder="Mombre " autocomplete="off" name="nombre" />
+            <div id="nombre_Help" class="form-text">Queremos saber como te llamas.</div>
+        </div>
+
+
+
+        <label for="apellidos">Ingresa tus apellidos:</label>
+        <div class="field">
+            <input type="text" class="input-field" placeholder="apellidos" name="apellidos" />
+        </div>
+
+        <label for="telefono">Ingresa tu telefono:</label>
+        <div class="field">
+            <input type="tel" class="input-field" placeholder="Número de Teléfono" name="telefono" />
+        </div>
+
+        <label for="email">Ingresa tu Email:</label>
+        <div class="field">
+            <input type="email" class="input-field" placeholder="Correo Electrónico" name="email" />
+            <div id="emailHelp" class="form-text">nos pondremos en contacto contigo por
+                email.</div>
+        </div>
+
+
+            
+        <div class="g-recaptcha" data-sitekey="6Lc-ht4pAAAAAFD-hRTNCi5373mfYayLpmz_B-FE"></div><br>
+
+
+        <hr>
+        <label for="duda">Ingresa tu dudas:</label>
+
+        <div class="field">
+            <textarea class="input-field" placeholder="Escribe aquí tu duda" name="duda"></textarea>
+        </div>
+
+        <button class="button3">Enviar</button>
+    </form>
+
+
+
+
+</body>
+
+</html>
