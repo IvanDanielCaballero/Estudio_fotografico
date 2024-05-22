@@ -11,6 +11,7 @@
   <!-- Stylesheets-->
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
     .ie-panel {
@@ -27,6 +28,9 @@
     html.ie-10 .ie-panel,
     html.lt-ie-10 .ie-panel {
       display: block;
+    }
+    li{
+      padding-top: 50px !important;
     }
   </style>
 </head>
@@ -343,7 +347,8 @@
           <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".05s">
             <div class="card-header" id="accordion1-heading-1" role="tab">
               <div class="card-title"><a role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-1" aria-controls="accordion1-collapse-1" aria-expanded="true">¿Ofrecen servicios de edición o retoque fotográfico?
-                  <div class="card-arrow"></div>
+             
+              <div class="card-arrow"> </div>
                 </a></div>
             </div>
             <div class="collapse show" id="accordion1-collapse-1" role="tabpanel" aria-labelledby="accordion1-heading-1">

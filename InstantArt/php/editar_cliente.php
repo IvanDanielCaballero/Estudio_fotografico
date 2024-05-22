@@ -1,17 +1,8 @@
 <?php
-
-
  session_start();
- /*
-if (!isset($_SESSION['usuario'])) {
-    header("location: login.php");
-}  */
+require "funciones.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $servername = "217.160.114.39";
-    $username = "jose";
-    $password = "56lf2G9BnTez";
-    $dbname = "fotografia";
 
     $id=$_SESSION['id_update'];
     $nombre = $_POST['nombre'];
@@ -23,9 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     try {
-        $bd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // Establecer el modo de error PDO a excepción
-        $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $bd=conexion();
         $sql = "UPDATE cliente SET nombre='$nombre', apellidos='$apellido', email='$email', fecha_nacimiento='$fecha', contraseña='$contraseña',telefono='$telefono' WHERE id_cliente='$id'";
         $query = $bd->query($sql);
 

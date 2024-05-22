@@ -1,20 +1,13 @@
 <?php
 session_start();
-$servername = "217.160.114.39";
-$username = "jose";
-$password = "56lf2G9BnTez";
-$dbname = "fotografia";
-
-
+require_once "funciones.php";
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
 echo $usuario;
 echo $contraseña;
 
 try {
-    $bd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-    $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   $bd=conexion();
 
     $sql = "SELECT nombre, contraseña FROM cliente WHERE nombre='$usuario' AND contraseña='$contraseña';";
 

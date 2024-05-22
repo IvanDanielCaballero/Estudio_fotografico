@@ -25,7 +25,7 @@
 
     <link href="css/fresh-bootstrap-table.css" rel="stylesheet" />
     <link href="css/demo.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_old.css">
 
 
     <style>
@@ -60,6 +60,7 @@
 
     <?php
     session_start();
+    require "php/funciones.php";
     if (isset($_SESSION['usuario'])) {
         echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
     }
@@ -131,12 +132,7 @@
         $dbname = "fotografia";
 
         // Crear conexión
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Verificar conexión
-        if ($conn->connect_error) {
-            die("Error en la conexión: " . $conn->connect_error);
-        }
+        $conn = conexion();
 
         // Consulta SQL para obtener los usuarios
         $sql = "SELECT * FROM cliente";
@@ -174,7 +170,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    if ($result->num_rows > 0) {
+                                    if ($result->rowCount() > 0) {
                                         foreach ($result as $row) {
                                             echo "<tr>";
                                             echo "<td>" . $row["id_cliente"] . "</td>";
@@ -230,7 +226,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    if ($result2->num_rows > 0) {
+                                    if ($result2->rowCount() > 0) {
                                         foreach ($result2 as $row) {
                                             echo "<tr>";
 

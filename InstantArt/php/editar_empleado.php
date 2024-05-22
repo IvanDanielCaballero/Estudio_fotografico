@@ -1,19 +1,10 @@
 <?php
-
-
- session_start();
- /*
-if (!isset($_SESSION['usuario'])) {
-    header("location: login.php");
-}  */
+session_start();
+require_once "funciones.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $servername = "217.160.114.39";
-    $username = "jose";
-    $password = "56lf2G9BnTez";
-    $dbname = "fotografia";
 
-    $id=$_SESSION['id_update'];
+    $id = $_SESSION['id_update'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $telefono = $_POST['telefono'];
@@ -22,23 +13,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dni = $_POST['dni'];
     $salario = $_POST['salario'];
 
-    if($tipo=='Administrador' | $tipo =='administrador'){
-        $tipo2=1;
-    }else{
-        $tipo2=2;
+    if ($tipo == 'Administrador' | $tipo == 'administrador') {
+        $tipo2 = 1;
+    } else {
+        $tipo2 = 2;
     }
 
 
 
     try {
-        $bd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // Establecer el modo de error PDO a excepción
-        $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $bd = conexion();
         $sql = "UPDATE empleado SET nombre='$nombre', apellidos='$apellido', salario_mes='$salario' ,id_tipo_empleado='$tipo2', contraseña='$contraseña',telefono='$telefono' WHERE id_empleado=$id";
         $query = $bd->query($sql);
 
         header('Location: ../usuarios.php');
-
     } catch (PDOException $e) {
         echo "Error de conexión: " . $e->getMessage();
     }

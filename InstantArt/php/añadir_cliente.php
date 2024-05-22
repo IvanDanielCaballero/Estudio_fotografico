@@ -1,17 +1,9 @@
 <?php
-
-
  session_start();
- /*
-if (!isset($_SESSION['usuario'])) {
-    header("location: login.php");
-}  */
+ require "funciones.php";
+ 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $servername = "217.160.114.39";
-    $username = "jose";
-    $password = "56lf2G9BnTez";
-    $dbname = "fotografia";
 
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -22,9 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     try {
-        $bd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // Establecer el modo de error PDO a excepción
-        $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $bd = conexion();
         $sql = "INSERT INTO cliente (nombre, apellidos, email, fecha_nacimiento, contraseña, telefono) VALUES ('$nombre', '$apellido', '$email', '$fecha', '$contraseña', '$telefono')";
         $query = $bd->query($sql);
 
