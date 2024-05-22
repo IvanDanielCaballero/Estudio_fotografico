@@ -40,10 +40,14 @@
   session_start();
   if (isset($_SESSION['usuario'])) {
     echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-  } 
+  }else{
+    echo '<scriptvar inicio=false;</script>';
+  }
 
   if(isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol']=='admin'){
     echo '<script>var admin=true;</script>';
+  }else{
+    echo '<script>var admin=false;</script>';
   }
   ?>
 
@@ -518,7 +522,7 @@
 
 
   <script>
-    if (inicio != undefined && inicio == true) {
+    if (inicio) {
       document.getElementById("inicio_sesion").style.display = "none"
       document.getElementById("cerrar_sesion").style.display = "block";
       //habitilo la pagina del area personal del cliente
@@ -526,7 +530,7 @@
       console.log("inicio sesion");
     }
     
-    if(admin != undefined && admin == true){
+    if(admin){
       console.log("admin")
       document.getElementById("usuarios").style.display= "block";
     }
