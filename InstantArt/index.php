@@ -29,9 +29,7 @@
     html.lt-ie-10 .ie-panel {
       display: block;
     }
-    li{
-      padding-top: 50px !important;
-    }
+    
   </style>
 </head>
 
