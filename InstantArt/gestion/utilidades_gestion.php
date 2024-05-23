@@ -1,6 +1,5 @@
 <?php
 
-
 function conexion_bd2() {
     // Configuración de la conexión a la base de datos
     $servername = "217.160.114.39";
@@ -101,3 +100,49 @@ $conn->close();
 // Convertir los resultados a JSON
 return json_encode($nombre);
 }
+
+
+function cliente_id($id_cliente){
+
+    $bd = conexion_bd2();
+
+    // Preparar la consulta SQL para insertar los datos en la tabla evento
+    $sql = "SELECT CONCAT(nombre, ' ', apellidos) AS nombre FROM cliente WHERE id_cliente = ?";
+    $stmt = $bd->prepare($sql);
+    $result=$stmt->execute([$id_cliente]);
+
+        // Obtener el resultado
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Cerrar la conexión
+        $stmt->closeCursor();
+        $bd = null;
+    
+        // Devolver el resultado en formato JSON
+        return json_encode($result['nombre']);
+    }
+
+
+    function eventos_cliente($id_cliente) {
+        $bd = conexion_bd2();
+    
+        // Preparar la consulta SQL para obtener los eventos del cliente
+        $sql = "
+        SELECT CONCAT('Id:', evento.id_evento, '  ', evento.descripcion, ' el ', evento.fecha, ' en ', evento.localidad, ' (', tipo_evento.nombre, ')') AS evento
+        FROM evento
+        JOIN tipo_evento ON evento.id_tipo_evento = tipo_evento.id_tipo_evento
+        WHERE evento.id_cliente = ?
+    ";
+        $stmt = $bd->prepare($sql);
+        $stmt->execute([$id_cliente]);
+    
+        // Obtener todos los resultados
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        // Cerrar la conexión
+        $stmt->closeCursor();
+        $bd = null;
+    
+        // Devolver los resultados en formato JSON
+        return json_encode($result);
+    }

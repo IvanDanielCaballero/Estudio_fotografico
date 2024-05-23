@@ -4,12 +4,14 @@
 <head>
     <title>Home</title>
     <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+    <meta name="viewport"
+        content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="usuarios_form.css" />
     <link rel="stylesheet" href="css.css" />
@@ -20,7 +22,8 @@
 
     <!-- Stylesheets-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table/dist/bootstrap-table.min.js"></script>
 
@@ -51,29 +54,44 @@
     <div class="page"></a>
         <header class="section page-header">
             <div class="rd-navbar-wrap">
-                <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+                    data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed"
+                    data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed"
+                    data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static"
+                    data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static"
+                    data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px"
+                    data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
                     <div class="rd-navbar-main-outer">
                         <div class="rd-navbar-main">
                             <div class="rd-navbar-panel">
-                                <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-                                <a class="rd-navbar-brand" href="index.php"><img src="images/logo.png" alt="" width="400" height="200" srcset="images/logo.png" /></a>
+                                <button class="rd-navbar-toggle"
+                                    data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                                <a class="rd-navbar-brand" href="index.php"><img src="images/logo.png" alt=""
+                                        width="400" height="200" srcset="images/logo.png" /></a>
                             </div>
                             <div class="rd-navbar-main-element">
                                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item active"><a class="rd-nav-link" href="../index.php">Inicio</a>
+                                        <li class="rd-nav-item active"><a class="rd-nav-link"
+                                                href="../index.php">Inicio</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="../about-me.html">Sobre Nosotros</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="../about-me.html">Sobre
+                                                Nosotros</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="../typography.html">Servicios</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link"
+                                                href="../typography.html">Servicios</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="../contacts.html">Contactanos</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link"
+                                                href="../contacts.html">Contactanos</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios" href="../usuarios.php" style="display: none;">Usuarios</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"
+                                                href="../usuarios.php" style="display: none;">Usuarios</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="../login.php" style="margin-left: 40px;">Iniciar Sesion</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion"
+                                                href="../login.php" style="margin-left: 40px;">Iniciar Sesion</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" id="cerrar_sesion" href="../logout.php" style="display: none;">Cerrar Sesion</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" id="cerrar_sesion"
+                                                href="../logout.php" style="display: none;">Cerrar Sesion</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -143,7 +161,7 @@
                                     <?php
                                     if ($result->num_rows > 0) {
                                         foreach ($result as $row) {
-                                            $id= $row["id_cliente"];
+                                            $id = $row["id_cliente"];
                                             echo "<tr>";
                                             echo "<td>" . $row["id_cliente"] . "</td>";
                                             echo "<td>" . $row["nombre"] . "</td>";
@@ -153,8 +171,9 @@
                                             echo "<td>" . $row["fecha_nacimiento"] . "</td>";
                                             echo "<td>" . $row["telefono"] . "</td>";
                                             echo "<td>
-                                            <a rel='tooltip' title='Edit' class='table-action edit'  title='Edit' href='#' onclick='Listar()'><i class='fa fa-edit'></i></a>
-                                            <a rel='tooltip' title='Like' class='table-action like' title='Like' href='#' onclick='Anadir($id)'><i class='fa fa-plus'></i></a>
+                                            <a rel='tooltip' title='Edit' class='table-action edit'  title='Editar' href='#' onclick='Subir($id)'><i class='fas fa-paperclip'></i></a>
+                                            <a rel='tooltip' title='Edit' class='table-action edit'  title='Subir' href='#' onclick='Subir($id)'><i class='fa fa-edit'></i></a>
+                                            <a rel='tooltip' title='Like' class='table-action like' title='Añadir' href='#' onclick='Anadir($id)'><i class='fa fa-plus'></i></a>
                                             </td>";
                                             echo "</tr>";
                                         }
@@ -170,20 +189,20 @@
             </div>
         </div>
 
-        
-        <?php
-            include 'utilidades_gestion.php';
-            // Obtener los eventos en formato JSON
-            $events_json = eventos_bd();
-            $events = json_decode($events_json, true);
-            
-            // Obtener los equipos en formato JSON
-            $equipos_json = equipos_bd();
-            $equipos = json_decode($equipos_json,true);
 
-            // Obtener los equipos en formato JSON
-            $empleados_json = empleados_bd();
-            $empleados = json_decode($empleados_json,true);
+        <?php
+        include 'utilidades_gestion.php';
+        // Obtener los eventos en formato JSON
+        $events_json = eventos_bd();
+        $events = json_decode($events_json, true);
+
+        // Obtener los equipos en formato JSON
+        $equipos_json = equipos_bd();
+        $equipos = json_decode($equipos_json, true);
+
+        // Obtener los equipos en formato JSON
+        $empleados_json = empleados_bd();
+        $empleados = json_decode($empleados_json, true);
 
         ?>
 
@@ -196,16 +215,16 @@
                             <input type='hidden' id='id_cliente' name='id_cliente'>
                             <label for='tipo_evento' class='form-label'>Tipo evento:</label>
                             <select id='tipo_evento' class='form-control' name='tipo_evento'>
-                            <?php foreach($events as $event): ?>
-                                <option value="<?= $event['id_tipo_evento'] ?>"><?= $event['nombre'] ?></option>
-                            <?php endforeach; ?>
+                                <?php foreach ($events as $event): ?>
+                                    <option value="<?= $event['id_tipo_evento'] ?>"><?= $event['nombre'] ?></option>
+                                <?php endforeach; ?>
                             </select>
 
                             <label for='equipo' class='form-label'>Equipo:</label>
                             <select id='equipo' class='form-control' name='equipo'>
-                            <?php foreach($equipos as $equipo): ?>
-                                <option value="<?= $equipo['id_equipo'] ?>"><?= $equipo['nombre'] ?></option>
-                            <?php endforeach; ?>
+                                <?php foreach ($equipos as $equipo): ?>
+                                    <option value="<?= $equipo['id_equipo'] ?>"><?= $equipo['nombre'] ?></option>
+                                <?php endforeach; ?>
                             </select>
 
 
@@ -226,9 +245,9 @@
 
                             <label for='empleado' class='form-label'>Empleado:</label>
                             <select id='empleado' class='form-control' name='empleado'>
-                            <?php foreach($empleados as $empleado): ?>
-                                <option value="<?= $empleado['id_empleado'] ?>"><?= $empleado['nombre'] ?></option>
-                            <?php endforeach; ?>
+                                <?php foreach ($empleados as $empleado): ?>
+                                    <option value="<?= $empleado['id_empleado'] ?>"><?= $empleado['nombre'] ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
 
@@ -239,7 +258,7 @@
                         <button class="btn btn-primary enviar" type="submit">Enviar</button>
                     </div>
                     <div class="col-md-6 col-xs-6 text-start">
-                        <button class="btn btn-primary  cancelar" type="button">Cancelar</button>
+                        <button class="btn btn-primary  cancelar" type="button"  onclick="location.reload();">Cancelar</button>
                     </div>
                 </div>
 
@@ -247,9 +266,42 @@
             </form>
         </div>
 
-       
+
 
         
+        <!-- Formulario para subir imagenes (sin terminar)-->
+
+        <div class="container fo wow slideInDown" id="forSubir" style="display: none;">
+            <form action="subirImagen.php" method="POST" enctype="multipart/form-data" class="text-center">
+                <div class="mb-3 mt-3">
+                    <h3>Subir Imágenes</h3>
+                    <h4 id="nombre_cliente"></h4>
+                    <label for="evento" class="form-label">Seleccionar Evento:</label>
+                    <select id="evento" class="form-control" name="evento">
+                    </select>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <input type="hidden" id="id_cliente_img" name="id_cliente">
+                            <input type="hidden" id="id_evento_img" name="id_evento">
+                            <label for="imagenes" class="form-label">Seleccionar Imágenes:</label>
+                            <input type="file" class="form-control" id="imagenes" name="imagenes[]" multiple>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container text-center row">
+                    <div class="col-md-6 col-xs-6 text-end">
+                        <button class="btn btn-primary enviar" type="submit">Subir</button>
+                    </div>
+                    <div class="col-md-6 col-xs-6 text-start">
+                        <button class="btn btn-primary  cancelar" type="button" onclick="location.reload();">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
 
         <!-- Page Footer-->
         <footer class="section footer-standard bg-gray-700">
@@ -259,29 +311,41 @@
                         <div class="col-lg-4">
                             <div class="inset-right-1">
                                 <h4>Mas imformación</h4>
-                                <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo momentos ordinarios en extraordinarias obras maestras visuales. </p>
+                                <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo
+                                    momentos ordinarios en extraordinarias obras maestras visuales. </p>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-5 col-lg-4">
                             <div class="box-1">
                                 <h4>Información de contacto</h4>
                                 <ul class="list-sm">
-                                    <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a class="link-default" href="#">Calle San José <br> Puerta 3, Piso 2, Número 123.</a></li>
-                                    <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a class="link-default" href="tel:#">675456345</a></li>
-                                    <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a class="link-default" href="mailto:#">InstantArt@gmail.com</a></li>
+                                    <li class="object-inline"><span
+                                            class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
+                                            class="link-default" href="#">Calle San José <br> Puerta 3, Piso 2, Número
+                                            123.</a></li>
+                                    <li class="object-inline"><span
+                                            class="icon icon-md mdi mdi-phone text-gray-700"></span><a
+                                            class="link-default" href="tel:#">675456345</a></li>
+                                    <li class="object-inline"><span
+                                            class="icon icon-md mdi mdi-email text-gray-700"></span><a
+                                            class="link-default" href="mailto:#">InstantArt@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-7 col-lg-4">
                             <h4>Contacto</h4>
                             <p>Pon tu email para consultar lo que quieras</p>
-                            <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                            <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
+                                data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                                 <div class="form-wrap">
-                                    <input class="form-input" id="subscribe-form-2-email" placeholder="email" type="email" name="email" data-constraints="@Email @Required">
+                                    <input class="form-input" id="subscribe-form-2-email" placeholder="email"
+                                        type="email" name="email" data-constraints="@Email @Required">
                                     <label class="form-label" for="subscribe-form-2-email"></label>
                                 </div>
                                 <div class="form-button">
-                                    <button class="button button-primary button-icon button-icon-only button-winona" type="submit" aria-label="submit"><span class="icon mdi mdi-email-outline"></span>Enviar</button>
+                                    <button class="button button-primary button-icon button-icon-only button-winona"
+                                        type="submit" aria-label="submit"><span
+                                            class="icon mdi mdi-email-outline"></span>Enviar</button>
                                 </div>
                             </form>
                         </div>
@@ -292,7 +356,8 @@
         </footer>
     </div>
     <div class="preloader">
-        <div class="preloader-logo"><img src="images/logo.png" alt="" width="176" height="28" srcset="images/logo.png 2x" />
+        <div class="preloader-logo"><img src="images/logo.png" alt="" width="176" height="28"
+                srcset="images/logo.png 2x" />
         </div>
         <div class="preloader-body">
             <div id="loadingProgressG">
@@ -321,7 +386,7 @@
         var $table = $('#fresh-table')
 
 
-        $(function() {
+        $(function () {
             $table.bootstrapTable({
                 classes: 'table table-hover table-striped',
                 toolbar: '.toolbar',
@@ -336,10 +401,10 @@
                 pageSize: 5,
                 pageList: [8, 10],
 
-                formatShowingRows: function(pageFrom, pageTo, totalRows) {
+                formatShowingRows: function (pageFrom, pageTo, totalRows) {
                     return 'Mostrando ' + pageFrom + ' a ' + pageTo + ' de ' + totalRows + ' filas';
                 },
-                formatRecordsPerPage: function(pageNumber) {
+                formatRecordsPerPage: function (pageNumber) {
                     return ''
                 }
             })
