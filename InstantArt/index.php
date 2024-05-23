@@ -534,6 +534,9 @@
     if(admin){
       console.log("admin")
       document.getElementById("usuarios").style.display= "block";
+      document.getElementById("usuarios").style.display= "block";
+      document.getElementById("gestion_proyectos").style.display = "block"
+      document.getElementById("area_personal").style.display = "none";
     }
   </script>
 </body>
