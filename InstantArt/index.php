@@ -85,6 +85,9 @@
                     <!--Area personal, para descargar proyectos-->
                     <li class="rd-nav-item"><a class="rd-nav-link" id="area_personal" href="ftp/areaPersonal.php" style="display:none">Area Personal</a>
                     </li>
+                    <!--Area de gestion de clientes-->
+                    <li class="rd-nav-item"><a class="rd-nav-link" id="gestion_proyectos" href="gestion/gestion_proyectos.php" style="display:none">Gestion de proyectos</a>
+                    </li>
                     <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="login.php">Iniciar Sesion</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" id="cerrar_sesion" href="logout.php" style="display: none;">Cerrar Sesion</a>
