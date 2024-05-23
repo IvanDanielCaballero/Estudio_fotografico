@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/usuarios_form.css" />
+    <link rel="stylesheet" href="usuarios_form.css" />
     <link rel="stylesheet" href="css.css" />
 
 
@@ -27,7 +27,7 @@
 
     <link href="../css/fresh-bootstrap-table.css" rel="stylesheet" />
     <link href="../css/demo.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
