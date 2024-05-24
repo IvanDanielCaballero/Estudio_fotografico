@@ -128,7 +128,7 @@ function cliente_id($id_cliente){
     
         // Preparar la consulta SQL para obtener los eventos del cliente
         $sql = "
-        SELECT CONCAT('Id:', evento.id_evento, '  ', evento.descripcion, ' el ', evento.fecha, ' en ', evento.localidad, ' (', tipo_evento.nombre, ')') AS evento
+        SELECT id_evento, CONCAT('Id:', evento.id_evento, '  ', evento.descripcion, ' el ', evento.fecha, ' en ', evento.localidad, ' (', tipo_evento.nombre, ')') AS evento
         FROM evento
         JOIN tipo_evento ON evento.id_tipo_evento = tipo_evento.id_tipo_evento
         WHERE evento.id_cliente = ?

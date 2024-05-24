@@ -8,13 +8,13 @@
         content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="usuarios_form.css" />
-    <link rel="stylesheet" href="css.css" />
+    <link rel="stylesheet" href="estilos.css" />
 
 
 
@@ -66,8 +66,8 @@
                             <div class="rd-navbar-panel">
                                 <button class="rd-navbar-toggle"
                                     data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-                                <a class="rd-navbar-brand" href="index.php"><img src="images/logo.png" alt=""
-                                        width="400" height="200" srcset="images/logo.png" /></a>
+                                <a class="rd-navbar-brand" href="index.php"><img src="logo.png" alt="" width="400"
+                                        height="200" srcset="logo.png" /></a>
                             </div>
                             <div class="rd-navbar-main-element">
                                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
@@ -172,7 +172,7 @@
                                             echo "<td>" . $row["telefono"] . "</td>";
                                             echo "<td>
                                             <a rel='tooltip' title='Edit' class='table-action edit'  title='Editar' href='#' onclick='Subir($id)'><i class='fas fa-paperclip'></i></a>
-                                            <a rel='tooltip' title='Edit' class='table-action edit'  title='Subir' href='#' onclick='Subir($id)'><i class='fa fa-edit'></i></a>
+                                            <a rel='tooltip' title='Edit' class='table-action edit'  title='Subir' href='#' onclick='Modificar($id)'><i class='fa fa-edit'></i></a>
                                             <a rel='tooltip' title='Like' class='table-action like' title='Añadir' href='#' onclick='Anadir($id)'><i class='fa fa-plus'></i></a>
                                             </td>";
                                             echo "</tr>";
@@ -258,7 +258,8 @@
                         <button class="btn btn-primary enviar" type="submit">Enviar</button>
                     </div>
                     <div class="col-md-6 col-xs-6 text-start">
-                        <button class="btn btn-primary  cancelar" type="button"  onclick="location.reload();">Cancelar</button>
+                        <button class="btn btn-primary  cancelar" type="button"
+                            onclick="location.reload();">Cancelar</button>
                     </div>
                 </div>
 
@@ -268,7 +269,50 @@
 
 
 
-        
+        <!-- Formulario para editar eventos (sin terminar)-->
+
+        <div class="container fo wow slideInDown" id="forEditar" style="display: none;">
+            <form action="editarEvento.php" method="POST" enctype="multipart/form-data" class="text-center">
+                <div class="mb-3 mt-3">
+                    <h3>Editar eventos</h3>
+                    <h4 id="nombre_cliente"></h4>
+                    <label for="evento" class="form-label">Seleccionar Evento:</label>
+                    <select id="evento" class="form-control" name="evento">
+                    </select>
+
+
+                    <div class="row mt-3" id="eventDetails" style="display: block;">
+                        <!-- Aquí se mostrarán los detalles del evento seleccionado -->
+                        <div class="col-md-12">
+                            <label for="descripcion" class="form-label">Descripción:</label>
+                            <input type="text" class="form-control" id="descripcion" name="descripcion">
+
+                            <label for="fecha" class="form-label">Fecha:</label>
+                            <input type="date" class="form-control" id="fecha" name="fecha">
+
+                            <label for="localidad" class="form-label">Localidad:</label>
+                            <input type="text" class="form-control" id="localidad" name="localidad">
+
+                            <input type="hidden" id="id_cliente_img" name="id_cliente">
+                            <input type="hidden" id="id_evento_img" name="id_evento">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container text-center row">
+                    <div class="col-md-6 col-xs-6 text-end">
+                        <button class="btn btn-primary enviar" type="submit">Editar</button>
+                    </div>
+                    <div class="col-md-6 col-xs-6 text-start">
+                        <button class="btn btn-primary  cancelar" type="button"
+                            onclick="location.reload();">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
         <!-- Formulario para subir imagenes (sin terminar)-->
 
         <div class="container fo wow slideInDown" id="forSubir" style="display: none;">
@@ -293,7 +337,8 @@
                         <button class="btn btn-primary enviar" type="submit">Subir</button>
                     </div>
                     <div class="col-md-6 col-xs-6 text-start">
-                        <button class="btn btn-primary  cancelar" type="button" onclick="location.reload();">Cancelar</button>
+                        <button class="btn btn-primary  cancelar" type="button"
+                            onclick="location.reload();">Cancelar</button>
                     </div>
                 </div>
             </form>
@@ -356,8 +401,7 @@
         </footer>
     </div>
     <div class="preloader">
-        <div class="preloader-logo"><img src="images/logo.png" alt="" width="176" height="28"
-                srcset="images/logo.png 2x" />
+        <div class="preloader-logo"><img src="logo.png" alt="" width="176" height="28" srcset="logo.png 2x" />
         </div>
         <div class="preloader-body">
             <div id="loadingProgressG">
@@ -409,9 +453,11 @@
                 }
             })
         })
+
+
     </script>
     <script src="funciones.js"></script>
-    <script src="../js/core.min.js"></script>
+    <script src="core.min.js"></script>
     <script src="../js/script.js"></script>
 
 </body>
