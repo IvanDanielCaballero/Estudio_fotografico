@@ -12,6 +12,8 @@
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css"
         href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
@@ -19,7 +21,8 @@
         #div_formulario {
             padding: 40px;
         }
-        #map{
+
+        #map {
             height: 400px;
             width: 100%;
         }
@@ -163,12 +166,7 @@
 </head>
 
 <body>
-    <div class="page"><a class="section section-banner d-none d-xl-flex"
-            href="https://www.templatemonster.com/website-templates/monstroid2.html"
-            style="background-image: url(images/banner/background-04-1920x60.jpg); background-image: -webkit-image-set( url(images/banner/background-04-1920x60.jpg) 1x, url(images/banner/background-04-3840x120.jpg) 2x )"
-            target="_blank"><img src="images/banner/foreground-04-1600x60.png"
-                srcset="images/banner/foreground-04-1600x60.png 1x, images/banner/foreground-04-3200x120.png 2x" alt=""
-                width="1600" height="310"></a>
+    <div class="page">
         <!-- Page Header-->
         <!-- Page Header-->
         <header class="section page-header">
@@ -278,7 +276,7 @@
                         <div class="card">
                             <div class="card2">
 
-                                <form class="form">
+                                <form class="form" action="php/process_form.php" method="POST">
                                     <label for="nombre">Ingresa tu nombre:</label>
                                     <div class="field">
                                         <input type="text" class="input-field" placeholder="Nombre" autocomplete="off"
@@ -291,15 +289,16 @@
 
                                     <label for="apellidos">Ingresa tus apellidos:</label>
                                     <div class="field">
-                                        <input type="text" class="input-field" placeholder="Apellidos"
+                                        <input type="text" class="input-field" placeholder="apellidos"
                                             name="apellidos" />
                                     </div>
 
-                                    <label for="telefono">Ingresa tu Numero:</label>
+                                    <label for="telefono">Ingresa tu telefono:</label>
                                     <div class="field">
                                         <input type="tel" class="input-field" placeholder="Número de Teléfono"
                                             name="telefono" />
                                     </div>
+
 
                                     <label for="email">Ingresa tu Email:</label>
                                     <div class="field">
@@ -309,8 +308,12 @@
                                             email.</div>
                                     </div>
 
+                                    <div class="g-recaptcha" data-sitekey="6Lc-ht4pAAAAAFD-hRTNCi5373mfYayLpmz_B-FE">
+                                    </div><br>
+
+
                                     <hr>
-                                    <label for="duda">Ingresa tu dudas:</label>
+                                    <label for="username">Ingresa tu dudas:</label>
 
                                     <div class="field">
                                         <textarea class="input-field" placeholder="Escribe aquí tu duda"
@@ -338,7 +341,7 @@
                                     ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
                                     nibh in gravida.</p>
                             </li>
-                           
+
                             <li>
                                 <h4>Escribimos algo aqui</h4>
                                 <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
@@ -363,7 +366,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-12 col-12">
+                <div class="col-xl-12 col-12 mt-5">
                     <ul class="list-xl">
                         <li>
                             <h2>Puede ubicarnos en el mapa</h2>
@@ -392,15 +395,17 @@
                                 </path>
                             </svg>
                             <div class="quote-light-text">
-                                <p>No haces una fotografía solo con una cámara. Traes al acto de la fotografía todas las imágenes que has visto, los libros que has leído, la música que has escuchado, las personas que has amado.</p>
+                                <p>No haces una fotografía solo con una cámara. Traes al acto de la fotografía todas las
+                                    imágenes que has visto, los libros que has leído, la música que has escuchado, las
+                                    personas que has amado.</p>
                                 <svg class="quote-light-mark" x="0px" y="0px" width="35px" height="25px"
-                                viewbox="0 0 35 25">
-                                <path
-                                    d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z">
-                                </path>
-                            </svg>       
-                     </div>
-                           
+                                    viewbox="0 0 35 25">
+                                    <path
+                                        d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z">
+                                    </path>
+                                </svg>
+                            </div>
+
                         </blockquote>
                     </div>
                 </div>
@@ -583,11 +588,7 @@
                 </div>
             </div>
         </section>
-        <a class="section section-banner" href="https://www.templatemonster.com/website-templates/monstroid2.html"
-            style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"
-            target="_blank"><img src="images/banner/foreground-03-1600x310.png"
-                srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt=""
-                width="1600" height="310"></a>
+
         <!-- Page Footer-->
         <footer class="section footer-standard bg-gray-700">
             <div class="footer-standard-main">
@@ -623,19 +624,24 @@
                             <p>Sign up to my newsletter and be the first to know about the latest news, special offers,
                                 events, and discounts.</p>
                             <!-- RD Mailform-->
+                            <a href="contactanos.html">
                             <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
                                 data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                                 <div class="form-wrap">
-                                    <input class="form-input" id="subscribe-form-2-email" type="email" name="email"
-                                        data-constraints="@Email @Required">
+                                    <input class="form-input" id="subscribe-form-2-email" type="email" name="email">
                                     <label class="form-label" for="subscribe-form-2-email">E-mail</label>
                                 </div>
+                             
                                 <div class="form-button">
-                                    <button class="button button-primary button-icon button-icon-only button-winona"
-                                        type="submit" aria-label="submit"><span
-                                            class="icon mdi mdi-email-outline"></span></button>
+                                  
+                                        <div class="button button-primary button-icon button-icon-only button-winona"
+                                         aria-label="submit"><span
+                                                class="icon mdi mdi-email-outline"></span></div>
+                               
                                 </div>
                             </form>
+                        </a>
+
                         </div>
                     </div>
                 </div>
@@ -668,23 +674,24 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-  
+
 </body>
 <script>
-     // Coordenadas proporcionadas
-     var coordenadas = [38.60758446483935, -1.1082502039179802];
+    // Coordenadas proporcionadas
+    var coordenadas = [38.60758446483935, -1.1082502039179802];
 
-     // Creación del mapa y configuración inicial
-     var map = L.map('map').setView(coordenadas, 15);
+    // Creación del mapa y configuración inicial
+    var map = L.map('map').setView(coordenadas, 15);
 
-     // Añadir capa de mapa (OpenStreetMap en este caso)
-     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-     }).addTo(map);
+    // Añadir capa de mapa (OpenStreetMap en este caso)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-     // Añadir marcador en las coordenadas
-     L.marker(coordenadas).addTo(map)
-         .bindPopup('InstantArt')
-         .openPopup();
+    // Añadir marcador en las coordenadas
+    L.marker(coordenadas).addTo(map)
+        .bindPopup('InstantArt')
+        .openPopup();
 </script>
+
 </html>
