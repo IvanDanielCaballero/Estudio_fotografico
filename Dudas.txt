@@ -17,6 +17,11 @@
 
 
 
+--MEJORAR
+la parte del formulario reducirlo y quitar el css 
+la parte de generar factura, quitar el css de ahi 
+
+
 --- ME FALTA MEJORAR EN EL DIAGRAMA DE CLASES LOS ATRIBUTOS Y COLOCARLE SU TIPO
 -- HAY QUE QUITAR EN TODOS LOS DOCUMENTOS LA PARTE QUE ES PARA UN  "Navegador especifico"
 
