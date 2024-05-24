@@ -267,10 +267,7 @@
             </form>
         </div>
 
-
-
-        <!-- Formulario para editar eventos (sin terminar)-->
-
+        <!-- Formularios para editar eventos -->
         <div class="container fo wow slideInDown" id="forEditar" style="display: none;">
             <form action="editarEvento.php" method="POST" enctype="multipart/form-data" class="text-center">
                 <div class="mb-3 mt-3">
@@ -325,6 +322,7 @@
                             </div>
 
                         </div>
+                    
                     </div>
                 </div>
 
@@ -339,10 +337,6 @@
                             onclick="location.reload();">Cancelar</button>
                     </div>
                 </div>
-
-                <div class="button-container text-center row">
-                        <button class="btn btn-primary cancelar" type="submit">Borrar</button>
-                    </div>
                 </div>
             </form>
         </div>
@@ -357,12 +351,12 @@
                     <h3>Subir Imágenes</h3>
                     <h4 id="nombre_cliente"></h4>
                     <label for="evento" class="form-label">Seleccionar Evento:</label>
-                    <select id="evento" class="form-control" name="evento">
+                    <select id="evento2" class="form-control" name="evento">
                     </select>
                     <div class="row mt-3">
                         <div class="col-md-12">
-                            <input type="hidden" id="id_cliente_img" name="id_cliente">
-                            <input type="hidden" id="id_evento_img" name="id_evento">
+                            <input type="hidden" id="id_cliente_img2" name="id_cliente">
+                            <input type="hidden" id="id_evento_img2" name="id_evento">
                             <label for="imagenes" class="form-label">Seleccionar Imágenes:</label>
                             <input type="file" class="form-control" id="imagenes" name="imagenes[]" multiple>
                         </div>

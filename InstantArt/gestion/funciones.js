@@ -5,13 +5,14 @@ function Anadir(id_cliente){
     document.getElementById('id_cliente').value = id_cliente;
     document.getElementById("forAnadir").style.display = "block";
     document.getElementById('forSubir').style.display = 'none';
-    
+    document.getElementById("forEditar").style.display = "none";
 }
 
 function Subir(id_cliente) {
-    document.getElementById('id_cliente_img').value = id_cliente;
+    document.getElementById('id_cliente_img2').value = id_cliente;
     document.getElementById('forSubir').style.display = 'block';
     document.getElementById("forAnadir").style.display = "none";
+    document.getElementById("forEditar").style.display = "none";
 
     // Solicitud Ajax para obtener el nombre del cliente
     fetch(`get_cliente.php?id_cliente=${id_cliente}`)
@@ -27,7 +28,7 @@ function Subir(id_cliente) {
         .then(response => response.json())
         .then(data => {
             console.log('Eventos:', data);
-            let eventoSelect = document.getElementById("evento");
+            let eventoSelect = document.getElementById("evento2");
             eventoSelect.innerHTML = '';
             data.forEach(evento => {
                 let option = document.createElement("option");

@@ -136,7 +136,7 @@ function eventos_cliente($id_cliente)
 
     // Preparar la consulta SQL para obtener los eventos del cliente
     $sql = "
-    SELECT evento.id_evento,
+    SELECT evento.id_evento, empleado.id_empleado,
     CONCAT(tipo_evento.nombre,' ', evento.descripcion, ' el ', evento.fecha, ' en ', evento.localidad,'  a las ', evento.hora,'  ', 'con el ',equipo.nombre, ' por el  empleado ',empleado.nombre) AS evento
     FROM evento
     JOIN tipo_evento ON evento.id_tipo_evento = tipo_evento.id_tipo_evento
@@ -156,4 +156,85 @@ function eventos_cliente($id_cliente)
 
     // Devolver los resultados en formato JSON
     return json_encode($result);
+}
+
+function subirImagenes($id_cliente, $id_evento, $imagenes) {
+
+
+    // Conectar y hacer login al servidor FTP
+
+    $ftp_server = "217.160.114.39";
+    $ftp_user = "usuarioftp";
+    $ftp_pass = "vML0TF1hCW7IIxA5HKjW";
+    $uploadDir = '/'.$id_cliente.'/'.$id_evento.'/';
+  //  echo $uploadDir;
+
+    // Conexión al servidor FTP
+    $conn_id = ftp_connect($ftp_server) or die("No se pudo conectar a $ftp_server");
+
+    // Autenticación con el servidor FTP
+    $login = ftp_login($conn_id, $ftp_user, $ftp_pass);
+
+    // Comprobar si la autenticación fue exitosa
+    if ($login) {
+        echo "Conectado a $ftp_server\n";
+    } else {
+        echo "No se pudo autenticar en $ftp_server\n";
+        ftp_close($conn_id);
+        return false;
+    }
+
+    // Establecer modo pasivo
+    ftp_pasv($conn_id, true);
+
+    $uploadedFiles = [];
+
+    foreach ($imagenes['name'] as $key => $name) {
+        $tmpName = $imagenes['tmp_name'][$key];
+        $error = $imagenes['error'][$key];
+        $size = $imagenes['size'][$key];
+
+        // Verificar que no haya errores en la subida de archivos
+        if ($error === UPLOAD_ERR_OK) {
+            // Crear un nombre único para el archivo
+            $uniqueName = uniqid('img_', true) . '.' . pathinfo($name, PATHINFO_EXTENSION);;
+            $uniqueName = substr($uniqueName,0,10);
+            $remoteFile = $uploadDir . $uniqueName;
+
+            // Subir el archivo al servidor FTP
+            if (ftp_put($conn_id, $remoteFile, $tmpName, FTP_BINARY)) {
+                $uploadedFiles[] = $uniqueName;
+
+                $bd = conexion_bd2();
+
+                // Consultar para obtener el id_empleado
+                $sql2 = "SELECT id_empleado FROM evento_empleado WHERE id_evento = ?";
+                $stmtEmpleado = $bd->prepare($sql2);
+                $stmtEmpleado->execute([$id_evento]);
+                $id_empleado = $stmtEmpleado->fetchColumn();
+                $stmtEmpleado->closeCursor();
+
+                $fecha_creacion = date('Y-m-d H:i:s');
+
+                // Guardar la información del archivo en la base de datos
+                $sql = "INSERT INTO fotos_ftp (id_evento, nombre_archivo, ruta_ftp, id_empleado, fecha_creacion) VALUES (?, ?, ?, ?,?)";
+                $stmt = $bd->prepare($sql);
+                $stmt->execute([$id_evento, $name, $remoteFile, $id_empleado,$fecha_creacion]);
+                $stmt->closeCursor();
+                $bd = null;
+
+            } else {
+                echo json_encode(['success' => false, 'message' => "Error al subir el archivo $name a FTP"]);
+                return;
+            }
+        } else {
+            echo json_encode(['success' => false, 'message' => "Error en el archivo $name: $error"]);
+            return;
+        }
+    }
+
+    // Cerrar la conexión FTP
+    ftp_close($conn_id);
+
+    echo json_encode(['success' => true, 'files' => $uploadedFiles]);
 }
