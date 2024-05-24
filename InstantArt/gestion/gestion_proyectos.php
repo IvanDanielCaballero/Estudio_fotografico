@@ -283,29 +283,65 @@
 
                     <div class="row mt-3" id="eventDetails" style="display: block;">
                         <!-- Aquí se mostrarán los detalles del evento seleccionado -->
-                        <div class="col-md-12">
-                            <label for="descripcion" class="form-label">Descripción:</label>
-                            <input type="text" class="form-control" id="descripcion" name="descripcion">
+                        <div class='row mt-3'>
+                            <div class='col-md-6'>
+                                <input type='hidden' id='id_cliente' name='id_cliente'>
+                                <label for='tipo_evento' class='form-label'>Tipo evento:</label>
+                                <select id='tipo_evento' class='form-control' name='tipo_evento'>
+                                    <?php foreach ($events as $event): ?>
+                                        <option value="<?= $event['id_tipo_evento'] ?>"><?= $event['nombre'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
 
-                            <label for="fecha" class="form-label">Fecha:</label>
-                            <input type="date" class="form-control" id="fecha" name="fecha">
+                                <label for='equipo' class='form-label'>Equipo:</label>
+                                <select id='equipo' class='form-control' name='equipo'>
+                                    <?php foreach ($equipos as $equipo): ?>
+                                        <option value="<?= $equipo['id_equipo'] ?>"><?= $equipo['nombre'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
 
-                            <label for="localidad" class="form-label">Localidad:</label>
-                            <input type="text" class="form-control" id="localidad" name="localidad">
 
-                            <input type="hidden" id="id_cliente_img" name="id_cliente">
-                            <input type="hidden" id="id_evento_img" name="id_evento">
+                                <label for='descripcion' class='form-label'>Descripcion:</label>
+                                <input type='text' class='form-control' id='descripcion' name='descripcion'>
+                                <label for='estado' class='form-label'>Estado:</label>
+                                <input type='text' id='estado' class='form-control' name='estado'>
+
+                            </div>
+
+                            <div class='col-md-6'>
+                                <label for='hora' class='form-label'>Hora:</label>
+                                <input type='time' id='hora' class='form-control' name='hora'>
+                                <label for='localidad' class='form-label'>Localidad:</label>
+                                <input type='text' class='form-control' id='localidad' name='localidad'>
+                                <label for='fecha' class='form-label'>Fecha:</label>
+                                <input type='date' class='form-control' id='fecha' name='fecha'>
+
+                                <label for='empleado' class='form-label'>Empleado:</label>
+                                <select id='empleado' class='form-control' name='empleado'>
+                                    <?php foreach ($empleados as $empleado): ?>
+                                        <option value="<?= $empleado['id_empleado'] ?>"><?= $empleado['nombre'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="button-container text-center row">
+
                     <div class="col-md-6 col-xs-6 text-end">
                         <button class="btn btn-primary enviar" type="submit">Editar</button>
                     </div>
+
                     <div class="col-md-6 col-xs-6 text-start">
-                        <button class="btn btn-primary  cancelar" type="button"
+                        <button class="btn btn-primary  enviar" type="button"
                             onclick="location.reload();">Cancelar</button>
+                    </div>
+                </div>
+
+                <div class="button-container text-center row">
+                        <button class="btn btn-primary cancelar" type="submit">Borrar</button>
                     </div>
                 </div>
             </form>
