@@ -120,10 +120,6 @@ if (!isset($_SESSION['usuario'])) {
         </div>
       </div>
     </section>
-    
-
-
-
 
     <!--Footer-->
     <footer class="section footer-standard bg-gray-700">

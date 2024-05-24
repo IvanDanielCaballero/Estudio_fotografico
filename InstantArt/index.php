@@ -41,7 +41,7 @@
   if (isset($_SESSION['usuario'])) {
     echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
   }else{
-    echo '<scriptvar inicio=false;</script>';
+    echo '<script>var inicio=false;</script>';
   }
 
   if(isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol']=='admin'){
