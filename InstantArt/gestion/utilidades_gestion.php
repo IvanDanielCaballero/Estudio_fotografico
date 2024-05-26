@@ -1,5 +1,6 @@
 <?php
 
+
 function conexion_bd2()
 {
     // Configuración de la conexión a la base de datos
@@ -198,7 +199,6 @@ function subirImagenes($id_cliente, $id_evento, $imagenes) {
         if ($error === UPLOAD_ERR_OK) {
             // Crear un nombre único para el archivo
             $uniqueName = uniqid('img_', true) . '.' . pathinfo($name, PATHINFO_EXTENSION);;
-            $uniqueName = substr($uniqueName,0,10);
             $remoteFile = $uploadDir . $uniqueName;
 
             // Subir el archivo al servidor FTP
@@ -237,4 +237,43 @@ function subirImagenes($id_cliente, $id_evento, $imagenes) {
     ftp_close($conn_id);
 
     echo json_encode(['success' => true, 'files' => $uploadedFiles]);
+}
+
+function borrarFotoPorURL($url) {
+    $bd = conexion_bd2();
+    if ($bd) {
+        try {
+            // Preparar la consulta SQL para eliminar la foto por su URL
+            $sql = 'DELETE FROM fotos_ftp WHERE ruta_ftp = ?';
+            $stmt = $bd->prepare($sql);
+            $stmt->execute([$url]);
+
+            if ($stmt->rowCount() > 0) {
+                echo json_encode(['success' => true, 'message' => 'Foto borrada correctamente']);
+            } else {
+                echo json_encode(['success' => false, 'message' => 'No se encontró la foto con esa URL']);
+            }
+        } catch (PDOException $e) {
+            echo json_encode(['success' => false, 'message' => 'Error al borrar la foto: ' . $e->getMessage()]);
+        } finally {
+            // Cerrar la conexión
+            $bd = null;
+        }
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Error de conexión a la base de datos']);
+    }
+}
+
+// Función para eliminar una carpeta y su contenido en el servidor FTP
+function ftp_rmdir_recursive($conn_id, $dir) {
+    $files = ftp_nlist($conn_id, $dir);
+    foreach ($files as $file) {
+        if ($file == '.' || $file == '..') {
+            continue;
+        }
+        if (@ftp_delete($conn_id, $file) === false) {
+            ftp_rmdir_recursive($conn_id, $file);
+        }
+    }
+    @ftp_rmdir($conn_id, $dir);
 }

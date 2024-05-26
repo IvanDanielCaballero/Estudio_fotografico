@@ -7,7 +7,7 @@ $ftp_server = "217.160.114.39";
 $ftp_name = "usuarioftp";
 $ftp_pass = "vML0TF1hCW7IIxA5HKjW";
 $ftp_conn = ftp_connect($ftp_server) or die("No se pudo conectar a $ftp_server");
-$ftp_path = "/".$_SESSION['usuario'];
+$ftp_path = "/".'18';
 
 // Iniciar sesión FTP
 if (@ftp_login($ftp_conn, $ftp_name, $ftp_pass)) {

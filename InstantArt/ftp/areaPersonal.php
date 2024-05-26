@@ -197,6 +197,7 @@ function cargarCarpetas() {
     fetch('listar_carpetas.php')
         .then(response => response.json())
         .then(data => {
+          console.log(data);
             const listaCarpetas = document.getElementById('carpetas-lista');
             listaCarpetas.innerHTML = ''; // Limpiar la lista antes de agregar nuevas carpetas
             data.forEach(carpeta => {

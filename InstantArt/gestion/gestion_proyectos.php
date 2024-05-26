@@ -273,10 +273,11 @@
                 <div class="mb-3 mt-3">
                     <h3>Editar eventos</h3>
                     <h4 id="nombre_cliente"></h4>
-                    <label for="evento" class="form-label">Seleccionar Evento:</label>
-                    <select id="evento" class="form-control" name="evento">
-                    </select>
-
+                        <label for="evento" class="form-label me-2">Seleccionar Evento:</label>
+                        <select id="evento" class="form-control me-2" name="evento">
+                            <!-- Options will be populated here -->
+                        </select>
+                        <button type="button" class="btn btn-danger" onclick="borrarEvento()">Borrar</button>
 
                     <div class="row mt-3" id="eventDetails" style="display: block;">
                         <!-- Aquí se mostrarán los detalles del evento seleccionado -->
@@ -322,7 +323,7 @@
                             </div>
 
                         </div>
-                    
+
                     </div>
                 </div>
 
@@ -337,98 +338,100 @@
                             onclick="location.reload();">Cancelar</button>
                     </div>
                 </div>
-                </div>
-            </form>
         </div>
+        </form>
+    </div>
 
 
 
-        <!-- Formulario para subir imagenes (sin terminar)-->
+    <!-- Formulario para gestionar las imagenes de los eventos-->
 
-        <div class="container fo wow slideInDown" id="forSubir" style="display: none;">
-            <form action="subirImagen.php" method="POST" enctype="multipart/form-data" class="text-center">
-                <div class="mb-3 mt-3">
-                    <h3>Subir Imágenes</h3>
-                    <h4 id="nombre_cliente"></h4>
-                    <label for="evento" class="form-label">Seleccionar Evento:</label>
-                    <select id="evento2" class="form-control" name="evento">
-                    </select>
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            <input type="hidden" id="id_cliente_img2" name="id_cliente">
-                            <input type="hidden" id="id_evento_img2" name="id_evento">
-                            <label for="imagenes" class="form-label">Seleccionar Imágenes:</label>
-                            <input type="file" class="form-control" id="imagenes" name="imagenes[]" multiple>
-                        </div>
-                    </div>
-                </div>
-                <div class="button-container text-center row">
-                    <div class="col-md-6 col-xs-6 text-end">
-                        <button class="btn btn-primary enviar" type="submit">Subir</button>
-                    </div>
-                    <div class="col-md-6 col-xs-6 text-start">
-                        <button class="btn btn-primary  cancelar" type="button"
-                            onclick="location.reload();">Cancelar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-
-
-
-
-        <!-- Page Footer-->
-        <footer class="section footer-standard bg-gray-700">
-            <div class="footer-standard-main">
-                <div class="container">
-                    <div class="row row-50">
-                        <div class="col-lg-4">
-                            <div class="inset-right-1">
-                                <h4>Mas imformación</h4>
-                                <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo
-                                    momentos ordinarios en extraordinarias obras maestras visuales. </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-5 col-lg-4">
-                            <div class="box-1">
-                                <h4>Información de contacto</h4>
-                                <ul class="list-sm">
-                                    <li class="object-inline"><span
-                                            class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
-                                            class="link-default" href="#">Calle San José <br> Puerta 3, Piso 2, Número
-                                            123.</a></li>
-                                    <li class="object-inline"><span
-                                            class="icon icon-md mdi mdi-phone text-gray-700"></span><a
-                                            class="link-default" href="tel:#">675456345</a></li>
-                                    <li class="object-inline"><span
-                                            class="icon icon-md mdi mdi-email text-gray-700"></span><a
-                                            class="link-default" href="mailto:#">InstantArt@gmail.com</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-7 col-lg-4">
-                            <h4>Contacto</h4>
-                            <p>Pon tu email para consultar lo que quieras</p>
-                            <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
-                                data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="subscribe-form-2-email" placeholder="email"
-                                        type="email" name="email" data-constraints="@Email @Required">
-                                    <label class="form-label" for="subscribe-form-2-email"></label>
-                                </div>
-                                <div class="form-button">
-                                    <button class="button button-primary button-icon button-icon-only button-winona"
-                                        type="submit" aria-label="submit"><span
-                                            class="icon mdi mdi-email-outline"></span>Enviar</button>
-                                </div>
-                            </form>
-                        </div>
+    <div class="container fo wow slideInDown" id="forSubir" style="display: none;">
+        <form id="formularioSubirImagen" enctype="multipart/form-data" class="text-center">
+            <div class="mb-3 mt-3">
+                <h3>Gestionar imágenes</h3>
+                <h4 id="nombre_cliente"></h4>
+                <label for="evento" class="form-label">Seleccionar Evento:</label>
+                <select id="evento2" class="form-control" name="evento">
+                    <!-- Aquí se llenará dinámicamente con los eventos -->
+                </select>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <input type="hidden" id="id_cliente_img2" name="id_cliente">
+                        <input type="hidden" id="id_evento_img2" name="id_evento">
+                        <label for="imagenes" class="form-label">Seleccionar Imágenes:</label>
+                        <input type="file" class="form-control" id="imagenes" name="imagenes[]" multiple>
                     </div>
                 </div>
             </div>
+            <div class="button-container text-center row">
+                <div class="col-md-6 col-xs-6 text-end">
+                    <button class="btn btn-primary enviar" type="submit">Subir</button>
+                </div>
+                <div class="col-md-6 col-xs-6 text-start">
+                    <button class="btn btn-primary cancelar" type="button"
+                        onclick="location.reload();">Cancelar</button>
+                </div>
+            </div>
+        </form>
+        <div class="col-md-12 col-xs-12 text-start" id="fotos2"></div>
+    </div>
 
-        </footer>
+
+
+
+
+    <!-- Page Footer-->
+    <footer class="section footer-standard bg-gray-700">
+        <div class="footer-standard-main">
+            <div class="container">
+                <div class="row row-50">
+                    <div class="col-lg-4">
+                        <div class="inset-right-1">
+                            <h4>Mas imformación</h4>
+                            <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo
+                                momentos ordinarios en extraordinarias obras maestras visuales. </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-5 col-lg-4">
+                        <div class="box-1">
+                            <h4>Información de contacto</h4>
+                            <ul class="list-sm">
+                                <li class="object-inline"><span
+                                        class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
+                                        class="link-default" href="#">Calle San José <br> Puerta 3, Piso 2, Número
+                                        123.</a></li>
+                                <li class="object-inline"><span
+                                        class="icon icon-md mdi mdi-phone text-gray-700"></span><a class="link-default"
+                                        href="tel:#">675456345</a></li>
+                                <li class="object-inline"><span
+                                        class="icon icon-md mdi mdi-email text-gray-700"></span><a class="link-default"
+                                        href="mailto:#">InstantArt@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7 col-lg-4">
+                        <h4>Contacto</h4>
+                        <p>Pon tu email para consultar lo que quieras</p>
+                        <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
+                            data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                            <div class="form-wrap">
+                                <input class="form-input" id="subscribe-form-2-email" placeholder="email" type="email"
+                                    name="email" data-constraints="@Email @Required">
+                                <label class="form-label" for="subscribe-form-2-email"></label>
+                            </div>
+                            <div class="form-button">
+                                <button class="button button-primary button-icon button-icon-only button-winona"
+                                    type="submit" aria-label="submit"><span
+                                        class="icon mdi mdi-email-outline"></span>Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
     </div>
     <div class="preloader">
         <div class="preloader-logo"><img src="logo.png" alt="" width="176" height="28" srcset="logo.png 2x" />

@@ -1,5 +1,6 @@
 <?php
 require 'utilidades_gestion.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_cliente = intval($_POST['id_cliente']);
