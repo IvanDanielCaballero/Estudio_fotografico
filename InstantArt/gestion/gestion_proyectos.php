@@ -78,11 +78,8 @@
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="../about-me.html">Sobre
                                                 Nosotros</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="../typography.html">Servicios</a>
-                                        </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="../contacts.html">Contactanos</a>
+                                        <!--Tabla para ver los trabajos pendientes de un empleado-->
+                                        <li class="rd-nav-item"><a class="rd-nav-link" id="proyectos_empleado" href="gestion/proyecto_empleado.php">Evento empleado</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"
                                                 href="../usuarios.php" style="display: none;">Usuarios</a>

@@ -226,7 +226,7 @@ function borrarEvento() {
     xhr.onload = function() {
         if (xhr.status === 200) {
             console.log('Evento borrado correctamente');
-            // Aquí puedes agregar cualquier acción adicional, como refrescar la página o actualizar la interfaz
+            location.reload();
         } else {
             console.error('Error al borrar el evento:', xhr.statusText);
         }
@@ -234,9 +234,4 @@ function borrarEvento() {
 
     // Enviar la solicitud con los datos necesarios
     xhr.send(`id_cliente=${encodeURIComponent(id_cliente)}&evento=${encodeURIComponent(evento)}`);
-
-    document.getElementById('formularioSubirImagen').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar que el formulario se envíe
-        subirImagen();
-    });
 }

@@ -17,10 +17,13 @@ try {
 
     $sql3 = "SELECT nombre,contraseña,tipo FROM empleado
     JOIN tipo_empleado ON empleado.id_tipo_empleado=tipo_empleado.id_tipo_empleado WHERE nombre='$usuario' AND contraseña='$contraseña' AND tipo='Empleado'";
+
+    $sql4 = "SELECT id_empleado FROM empleado WHERE nombre='$usuario' AND contraseña='$contraseña';";
     
     $query = $bd->query($sql);
     $query2 = $bd->query($sql2);
     $query3 = $bd->query($sql3);
+    $query4 = $bd->query($sql4)->fetchColumn();  //Lo añado para guardame el id de empleado para usarlo para sacar los eventos de este en un dashboard (Miguel)
 
     if ($query->rowCount() > 0) {
         $_SESSION['usuario'] = $_POST['usuario'];
@@ -33,7 +36,9 @@ try {
         $_SESSION['usuario'] = $_POST['usuario'];
         $_SESSION['tiempo'] = time();
         $_SESSION['rol'] = 'admin';
+        $_SESSION['id_empleado']= $query4;
         header("location: ../index.php");
+
     }elseif($query3->rowCount()>0){
         $_SESSION['usuario'] = $_POST['usuario'];
         $_SESSION['tiempo'] = time();

@@ -72,7 +72,7 @@
               <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Inicio</a>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Inicio</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
                     </li>
@@ -87,6 +87,9 @@
                     </li>
                     <!--Area de gestion de clientes-->
                     <li class="rd-nav-item"><a class="rd-nav-link" id="gestion_proyectos" href="gestion/gestion_proyectos.php" style="display:none">Gestion de proyectos</a>
+                    </li>
+                    <!--Tabla para ver los trabajos pendientes de un empleado-->
+                    <li class="rd-nav-item"><a class="rd-nav-link" id="proyectos_empleado" href="gestion/proyecto_empleado.php" style="display:none">Evento empleado</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="login.php">Iniciar Sesion</a>
                     </li>
@@ -544,6 +547,7 @@
       document.getElementById("usuarios").style.display= "block";
       document.getElementById("usuarios").style.display= "block";
       document.getElementById("gestion_proyectos").style.display = "block"
+      document.getElementById("proyectos_empleado").style.display = "block";
       document.getElementById("area_personal").style.display = "none";
     }
   </script>
