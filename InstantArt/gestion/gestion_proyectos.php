@@ -79,7 +79,7 @@
                                                 Nosotros</a>
                                         </li>
                                         <!--Tabla para ver los trabajos pendientes de un empleado-->
-                                        <li class="rd-nav-item"><a class="rd-nav-link" id="proyectos_empleado" href="gestion/proyecto_empleado.php">Evento empleado</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" id="proyectos_empleado" href="proyecto_empleado.php">Evento empleado</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"
                                                 href="../usuarios.php" style="display: none;">Usuarios</a>
