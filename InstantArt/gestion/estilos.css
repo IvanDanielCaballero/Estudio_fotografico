@@ -65,3 +65,9 @@ h3 {
     background-color: firebrick !important;
     border-color: firebrick !important;
 }
+
+img:hover{
+    width: 100%;
+    transform: scale(1.4);
+    transition: all 0.6s;
+}

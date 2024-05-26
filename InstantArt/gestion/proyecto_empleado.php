@@ -113,12 +113,10 @@
 
         // Consulta SQL para obtener los eventos
 
-        $sql = " SELECT e.id_evento,  te.nombre, e.localidad, e.fecha, eq.nombre as equipo, e.hora, e.descripcion, e.id_cliente
+        $sql = " SELECT  CONCAT (te.nombre, e.localidad, e.hora, e.fecha, e.descripcion, e.id_cliente) AS evento
         FROM evento e
         JOIN tipo_evento te ON e.id_tipo_evento = te.id_tipo_evento
-        JOIN evento_empleado ee ON e.id_evento = ee.id_evento
-        JOIN equipo eq ON e.id_equipo = eq.id_equipo
-        WHERE ee.id_empleado = ".$_SESSION['id_empleado']."
+        WHERE e.id_cliente = ".$_SESSION['id_cliente']."
         ORDER BY e.fecha ASC";
         $result = $conn->query($sql);
 

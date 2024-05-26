@@ -50,9 +50,29 @@
 if (!isset($_SESSION['usuario'])) {
   header("Location: ../login.php");
 }
+        // Configuración de la conexión a la base de datos
+        $servername = "217.160.114.39";
+        $username = "jose";
+        $password = "56lf2G9BnTez";
+        $dbname = "fotografia";
 
-  
-  ?>
+        // Crear conexión
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Verificar conexión
+        if ($conn->connect_error) {
+            die("Error en la conexión: " . $conn->connect_error);
+        }
+
+        // Consulta SQL para obtener los eventos
+
+        $sql2 = "SELECT concat(nombre, ' ', apellidos) from cliente where id_cliente =".$_SESSION['id_cliente']."";
+        $result2 = $conn->query($sql2)->fetch_column();
+        echo '<script>var nombre = "' . $result2 .'"</script>';
+        echo '<script>var id_cliente = "' .$_SESSION['id_cliente'].'"</script>';
+        echo '<script> document.getElementById("cliente").innerText=nombre;</script>';
+
+?>
 
 
   <div class="ie-panel"></div>
@@ -106,20 +126,21 @@ if (!isset($_SESSION['usuario'])) {
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-lg-7 col-xl-6">
-              <h1 class="wow-outer"><span class="font-weight-bold wow-outer"><span class="wow slideInUp">Sesiones</span></span></h1>
+              <h1 class="wow-outer"><span class="font-weight-bold wow-outer"><span class="wow slideInUp">Area Personal</span></span></h1>
+              <h4 id="cliente"></h4>
             </div>
-            <div class="col-md-6 col-lg-5 col-xl-4 col-offset-1">
-             <div class="dropdown">
-               <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visualizar trabajo</button>
-               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="carpetas-lista">
-            <!-- Las carpetas se cargarán aquí -->
-            </div>
-            </div>
+            <div class="col-6 mb-3 mt-3">
+                <h3>Selecciona la galeria:</h3>
+                <label for="evento" class="form-label">Seleccionar Evento:</label>
+                <select id="evento2" class="form-control" name="evento">
+                    <!-- Aquí se llenará dinámicamente con los eventos -->
+                </select>
             <div id="fotos"></div>
           </div>
         </div>
       </div>
     </section>
+
 
     <!--Footer-->
     <footer class="section footer-standard bg-gray-700">
@@ -176,86 +197,7 @@ if (!isset($_SESSION['usuario'])) {
   <!-- Javascript-->
   <script src="../js/core.min.js"></script>
   <script src="../js/script.js"></script>
-
-
-  <script>
-    if (inicio != undefined && inicio == true) {
-      document.getElementById("inicio_sesion").style.display = "none"
-      document.getElementById("cerrar_sesion").style.display = "block";
-      console.log("inicio sesion");
-    }
-    
-
-
-    //Muestro las imagenes del cliente
-
-    document.addEventListener('DOMContentLoaded', function() {
-    cargarCarpetas();
-});
-
-function cargarCarpetas() {
-    fetch('listar_carpetas.php')
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-            const listaCarpetas = document.getElementById('carpetas-lista');
-            listaCarpetas.innerHTML = ''; // Limpiar la lista antes de agregar nuevas carpetas
-            data.forEach(carpeta => {
-                const enlace = document.createElement('a');
-                enlace.classList.add('dropdown-item');
-                enlace.href = '#';
-                enlace.textContent = carpeta;
-                enlace.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    cargarFotos(carpeta);
-                });
-                listaCarpetas.appendChild(enlace);
-            });
-        })
-        .catch(error => console.error('Error al cargar las carpetas:', error));
-}
-
-function cargarFotos(url) {
-  const lista = 'listar_imagenes.php?carpeta='+(url);
-    fetch(lista)
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-            const fotosDiv = document.getElementById('fotos');
-            fotosDiv.innerHTML = ''; // Limpiar las fotos antes de agregar nuevas
-            data.forEach(foto => {
-                const img = document.createElement('img');
-                img.src = foto;
-                img.alt = 'ImagenFTP';
-                img.style = 'margin: 10px; width: 150px; height: auto;';
-                img.addEventListener('click', function() {descargarFoto(decodeURIComponent(quitarParteInicial(foto)));});
-                fotosDiv.appendChild(img);
-            });
-        })
-        .catch(error => console.error('Error al cargar las fotos:', error));
-}
-
-
-function descargarFoto(foto) {
-    // Redireccionar a descargar_archivos.php con la URL de la imagen como parámetro
-   console.log(foto);
-  window.location.href = 'descargar_archivo.php?url=' + encodeURIComponent(foto);
-}
-
-
-//Para dar la opcion de descargar las fotos con un click tengo que modificar url, ya en esa variable almaceno la url de descarga
-function quitarParteInicial(url) {
-    var posicionIgual = url.indexOf("=");
-    if (posicionIgual !== -1) {
-        return url.substring(posicionIgual + 1);
-    } else {
-        return url;
-    }
-}
-
-
-
-  </script>
+  <script src="funciones.js"></script>
 </body>
 
 </html>
