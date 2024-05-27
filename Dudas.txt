@@ -56,3 +56,5 @@ solo mostrar las principales y un boton de descargarlas todas.
 --un boton para borrar la foto? no tiene sentido, les ponemos a los usuarios todas las imagenes y ellos ya eligiran las fotos que quieran.
 
 --El formulario de contacto parece que lo haya hecho el diablo.
+
+-- Los formularios son muy grandes al añadir eventos a usuarios etc
