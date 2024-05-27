@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido de Servicios</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Estilos personalizados -->
+  <style>
+body {
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.card-header:first-child {
+  border-radius: 15px 15px 0 0 !important;
+}
+
+.card-header {
+  background-color: #007bff;
+  border-color: transparent !important;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.form-control {
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 12px;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+/*
+.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+*/
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 12px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Estilo para el método de pago */
+#metodoPago label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Estilo para los campos de tarjeta de crédito */
+#tarjetaInputs .row {
+  margin-bottom: 20px;
+}
+
+#tarjetaInputs label {
+  font-weight: normal;
+}
+
+/* Estilo para los iconos de Font Awesome */
+.fa {
+  margin-right: 10px;
+}
+
+/* Estilo para el título del formulario */
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="text-center">Realizar Pedido</h3>
+      </div>
+      <div class="card-body">
+        <form id="pedidoForm" action="hola.php" method="post">
+          <div class="form-group">
+            <label for="servicio">Selecciona el Servicio:</label>
+            <select class="form-control" id="servicio" required>
+              <option value="">Selecciona...</option>
+              <option value="servicio1">Servicio 1</option>
+              <option value="servicio2">Servicio 2</option>
+              <option value="servicio3">Servicio 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" class="form-control" id="cantidad" required>
+          </div>
+          <div class="form-group">
+            <label for="comentarios">Comentarios:</label>
+            <textarea class="form-control" id="comentarios" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="metodoPago">Método de Pago:</label>
+            <select class="form-control" id="metodoPago" required>
+              <option value="">Selecciona...</option>
+              <option value="tarjeta">Tarjeta de Crédito</option>
+              <option value="cheque">Cheque</option>
+              <option value="paypal">PayPal</option>
+            </select>
+          </div>
+          <div class="form-group" id="tarjetaInputs" style="display: none;">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="numTarjeta">Número de Tarjeta:</label>
+                <input type="text" class="form-control" id="numTarjeta" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="nombreTarjeta">Nombre en la Tarjeta:</label>
+                <input type="text" class="form-control" id="nombreTarjeta" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="fechaTarjeta">Fecha de Caducidad:</label>
+                <input type="date" class="form-control" id="fechaTarjeta" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cvvTarjeta">CVV:</label>
+                <input type="text" class="form-control" id="cvvTarjeta" required>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group" id="chequeInputs" style="display: none;">
+            <label for="nombreCheque">Nombre en el Cheque:</label>
+            <input type="text" class="form-control" id="nombreCheque" required>
+            <label for="numCheque">Número de Cheque:</label>
+            <input type="text" class="form-control" id="numCheque" required>
+            <label for="bancoCheque">Banco:</label>
+            <input type="text" class="form-control" id="bancoCheque" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Enviar Pedido <i
+              class="fas fa-shopping-cart ml-2"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS y jQuery (necesario para el funcionamiento de Bootstrap JS) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+  <!-- Script personalizado para mostrar campos adicionales para tarjeta de crédito o cheque -->
+  <script>
+
+    document.getElementById('metodoPago').addEventListener('change', function (event) {
+      var metodoPago = event.target.value;
+      var tarjetaInputs = document.getElementById('tarjetaInputs');
+      var chequeInputs = document.getElementById('chequeInputs');
+
+      if (metodoPago === 'tarjeta') {
+        tarjetaInputs.style.display = 'block';
+        chequeInputs.style.display = 'none';
+      } else if (metodoPago === 'cheque') {
+        tarjetaInputs.style.display = 'none';
+        chequeInputs.style.display = 'block';
+      }
+      else if (metodoPago === 'paypal') {
+        var paypalPopup = window.open('https://www.paypal.com', 'paypalPopup', 'width=600,height=400');
+        tarjetaInputs.style.display = 'none';
+        chequeInputs.style.display = 'none';
+      } else {
+        tarjetaInputs.style.display = 'none';
+        chequeInputs.style.display = 'none';
+      }
+
+    });
+
+    document.getElementById('pedidoForm').addEventListener('submit', function (event) {
+     console.log("hola");
+      // Aquí puedes agregar la lógica para procesar el pedido, como enviar los datos a un servidor
+      // y mostrar un mensaje de confirmación al usuario
+      // Por ejemplo:
+      alert('¡Pedido enviado con éxito!');
+      // Luego, podrías redirigir al usuario a una página de confirmación o agradecimiento
+      // window.location.href = 'pagina-de-confirmacion.html';
+    });
+
+
+
+  
+  </script>
+</body>
+
+</html>
