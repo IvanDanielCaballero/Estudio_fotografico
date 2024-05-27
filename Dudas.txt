@@ -33,11 +33,6 @@
 *hablar en el proyecto sobre las medidas que tuvimos para prevenir el SQL injection
 
 
-
-
-
-
-
 -- Dudas de Jose Carlos:
 
 --se deben crear las carpetas de los usuarios cuando se contrata un servicio, no cuando se añade un usuario
