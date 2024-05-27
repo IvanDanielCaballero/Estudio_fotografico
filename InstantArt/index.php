@@ -76,7 +76,7 @@
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contactanos</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.php">Contactanos</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"  href="usuarios.php" style="display: none;">Usuarios</a>
                     </li>
@@ -491,7 +491,7 @@
               <h4>Contacto</h4>
               <p>Pon tu email para consultar lo que quieras</p>
               <!-- RD Mailform-->
-              <a href="contactanos.html">
+              <a href="contactanos.php">
                             <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
                                 data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                                 <div class="form-wrap">

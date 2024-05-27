@@ -1,3 +1,7 @@
+<?php
+$message = isset($_GET['message']) ? $_GET['message'] : '';
+$messageClass = isset($_GET['type']) ? $_GET['type'] : '';
+?>
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 
@@ -125,7 +129,11 @@
             background-color: black;
             color: white;
         }
-
+.error{
+    color: red;
+    font-size: 1.4em;
+    text-align: center;
+}
         .button2 {
             padding: 0.5em;
             padding-left: 2.3em;
@@ -196,14 +204,14 @@
                                     <ul class="rd-navbar-nav">
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">INICIO</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="about-me.html">SOBRE
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">SOBRE
                                                 NOSOTROS</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link"
                                                 href="servicios.html">SERVICIOS</a>
                                         </li>
                                         <li class="rd-nav-item  active"><a class="rd-nav-link"
-                                                href="contacts.html">CONTACTANOS</a>
+                                                href="contactanos.php">CONTACTANOS</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -269,14 +277,20 @@
         <section class="section section-sm section-first">
             <div class="container">
                 <div class="row row-50">
+                  
 
                     <div id="div_formulario" class="col-xl-7 col-12">
 
                         <h1>Rellene este formulario</h1>
+                        <?php if ($message): ?>
+                        <p class="<?php echo htmlspecialchars($messageClass); ?>"><?php echo htmlspecialchars($message); ?>
+                        </p>
+                    <?php endif; ?>
                         <div class="card">
+
                             <div class="card2">
 
-                                <form class="form" action="php/process_form.php" method="POST">
+                                <form class="form" action="php/enviar_email.php" method="POST">
                                     <label for="nombre">Ingresa tu nombre:</label>
                                     <div class="field">
                                         <input type="text" class="input-field" placeholder="Nombre" autocomplete="off"
@@ -624,23 +638,22 @@
                             <p>Sign up to my newsletter and be the first to know about the latest news, special offers,
                                 events, and discounts.</p>
                             <!-- RD Mailform-->
-                            <a href="contactanos.html">
-                            <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
-                                data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="subscribe-form-2-email" type="email" name="email">
-                                    <label class="form-label" for="subscribe-form-2-email">E-mail</label>
-                                </div>
-                             
-                                <div class="form-button">
-                                  
+                            <a href="contactanos.php">
+                                <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
+                                    data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                                    <div class="form-wrap">
+                                        <input class="form-input" id="subscribe-form-2-email" type="email" name="email">
+                                        <label class="form-label" for="subscribe-form-2-email">E-mail</label>
+                                    </div>
+
+                                    <div class="form-button">
+
                                         <div class="button button-primary button-icon button-icon-only button-winona"
-                                         aria-label="submit"><span
-                                                class="icon mdi mdi-email-outline"></span></div>
-                               
-                                </div>
-                            </form>
-                        </a>
+                                            aria-label="submit"><span class="icon mdi mdi-email-outline"></span></div>
+
+                                    </div>
+                                </form>
+                            </a>
 
                         </div>
                     </div>

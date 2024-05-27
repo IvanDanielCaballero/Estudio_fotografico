@@ -18,8 +18,10 @@
 
 
 --MEJORAR
-la parte del formulario reducirlo y quitar el css 
-la parte de generar factura, quitar el css de ahi 
+*la parte del formulario reducirlo y quitar el css 
+*la parte de generar factura, quitar el css de ahi 
+*mejorar la parte cuando envias el email que aparezca mejor el mensajes
+*el fichero enviar_email.php en php/ tengo que cambiar el location en vez de localhost la ip del host
 
 
 --- ME FALTA MEJORAR EN EL DIAGRAMA DE CLASES LOS ATRIBUTOS Y COLOCARLE SU TIPO
