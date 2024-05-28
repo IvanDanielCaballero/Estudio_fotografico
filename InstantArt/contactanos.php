@@ -38,14 +38,26 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
             padding-left: 2em;
             padding-right: 2em;
             padding-bottom: 0.4em;
-            background-color: ghostwhite;
+            background-color: black;
             border-radius: 25px;
             transition: 0.4s ease-in-out;
-
+            color: #d3d3d3;
             height: 100%;
+            padding: 8px;
+         
 
         }
 
+
+        @media screen and (max-width: 492px) {
+            #contenedor_recapt{
+    transform: scale(0.75);
+}
+}
+#contenedor_recapt{
+display: flex;
+justify-content: center;
+}
         .card {
             background-image: linear-gradient(163deg, red 50%, #ebb85e 75%);
             height: 80%;
@@ -129,11 +141,13 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
             background-color: black;
             color: white;
         }
-.error{
-    color: red;
-    font-size: 1.4em;
-    text-align: center;
-}
+
+        .error {
+            color: red;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
         .button2 {
             padding: 0.5em;
             padding-left: 2.3em;
@@ -277,22 +291,23 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
         <section class="section section-sm section-first">
             <div class="container">
                 <div class="row row-50">
-                  
+
 
                     <div id="div_formulario" class="col-xl-7 col-12">
 
                         <h1>Rellene este formulario</h1>
                         <?php if ($message): ?>
-                        <p class="<?php echo htmlspecialchars($messageClass); ?>"><?php echo htmlspecialchars($message); ?>
+                        <p class="<?php echo htmlspecialchars($messageClass); ?>">
+                            <?php echo htmlspecialchars($message); ?>
                         </p>
-                    <?php endif; ?>
+                        <?php endif; ?>
                         <div class="card">
 
                             <div class="card2">
 
                                 <form class="form" action="php/enviar_email.php" method="POST">
-                                    <label for="nombre">Ingresa tu nombre:</label>
-                                    <div class="field">
+                                    <label for="nombre" class="pt-3">Ingresa tu nombre:</label>
+                                    <div class="field mb-3">
                                         <input type="text" class="input-field" placeholder="Nombre" autocomplete="off"
                                             name="nombre" />
                                         <div id="nombre_Help" class="form-text">Queremos saber como te llamas.</div>
@@ -302,28 +317,29 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
 
 
                                     <label for="apellidos">Ingresa tus apellidos:</label>
-                                    <div class="field">
+                                    <div class="field mb-3">
                                         <input type="text" class="input-field" placeholder="apellidos"
                                             name="apellidos" />
                                     </div>
 
                                     <label for="telefono">Ingresa tu telefono:</label>
-                                    <div class="field">
+                                    <div class="field mb-3">
                                         <input type="tel" class="input-field" placeholder="Número de Teléfono"
                                             name="telefono" />
                                     </div>
 
 
                                     <label for="email">Ingresa tu Email:</label>
-                                    <div class="field">
+                                    <div class="field mb-3">
                                         <input type="email" class="input-field" placeholder="Correo Electrónico"
                                             name="email" />
                                         <div id="emailHelp" class="form-text">nos pondremos en contacto contigo por
                                             email.</div>
                                     </div>
-
-                                    <div class="g-recaptcha" data-sitekey="6Lc-ht4pAAAAAFD-hRTNCi5373mfYayLpmz_B-FE">
-                                    </div><br>
+                                    <div id="contenedor_recapt">
+                                    <div class="g-recaptcha" data-sitekey="6Lc-ht4pAAAAAFD-hRTNCi5373mfYayLpmz_B-FE"  data-theme="dark">
+                                    </div>
+                                </div><br>
 
 
                                     <hr>

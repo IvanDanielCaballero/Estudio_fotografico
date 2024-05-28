@@ -53,7 +53,7 @@
 
 
   <div class="ie-panel"></div>
-  <div class="page"></a>
+  <div class="page">
     <!-- Page Header-->
     <header class="section page-header">
       <!-- RD Navbar-->

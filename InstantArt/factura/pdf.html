@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="pdf.css" />
+    <script src="pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center mt-50 mb-50">
+        <div class="row">
+            <div class="col-md-12 text-right mb-3">
+                <button class="btn btn-primary" id="download">Descargar pdf</button>
+            </div>
+            <div class="col-md-12">
+                <div class="card" id="invoice">
+                    <div class="card-header bg-transparent header-elements-inline">
+                        <h6 class="card-title text-primary">Factura de venta</h6>
+                    </div>
+                    <div class="card-body" style="padding-bottom: 0px;">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="mb-4 pull-left">
+
+                                    <ul class="list list-unstyled mb-0 text-left">
+                                        <li>InstantArt</li>
+                                        <li>Yecla</li>
+                                        <li>675456345</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="mb-4 ">
+                                    <div class="text-sm-right">
+                                        <h4 class="invoice-color mb-2 mt-md-2">Invoice #BBB1243</h4>
+                                        <ul class="list list-unstyled mb-0">
+                                            <li>Date: <span class="font-weight-semibold">Marzo 15, 2020</span></li>
+                                            <li>Fecha de vencimiento:    <span class="font-weight-semisbold">Marzo 30, 2020</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-md-flex flex-md-wrap">
+                            <div class="mb-4 mb-md-2 text-left">
+                                <span class="text-muted">Factura para:</span>
+                                <ul class="list list-unstyled mb-0">
+                                    <li>
+                                        <h5 class="my-2">Juan Pérez</h5>
+                                    </li>
+                                    <li><span class="font-weight-semibold">Inversiones Pérez S.L.</span></li>
+                                    <li>Calle Mayor</li>
+                                    <li>123, 2ºB</li>
+                                    <li>Madrid</li>
+                                    <li>28013</li>
+                                    <li>912 345 678</li>
+                                    <li><a href="#" data-abc="true">juan.perez@inversionesperez.com</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-2 ml-auto">
+                                <span class="text-muted">Detalles del Pago</span>
+                                <div class="d-flex flex-wrap wmin-md-400">
+                                    <ul class="list list-unstyled mb-0 text-left">
+                                        <li>
+                                            <h5 class="my-2">Total Adeudado:</h5>
+                                        </li>
+                                        <li>Nombre del banco:</li>
+                                        <li>País:</li>
+                                        <li>Ciudad:</li>
+                                        <li>Dirección:</li>
+                                        <li>IBAN:</li>
+                                        <li>Código SWIFT:</li>
+                                    </ul>
+                                    <ul class="list list-unstyled text-right mb-0 ml-auto">
+                                        <li>
+                                            <h5 class="font-weight-semibold my-2">€1,090</h5>
+                                        </li>
+                                        <li><span class="font-weight-semibold">Banco Santander</span></li>
+                                        <li>España</li>
+                                        <li>Madrid</li>
+                                        <li>Calle de Alcalá, 45</li>
+                                        <li><span class="font-weight-semibold">ES9121000418450200051332</span></li>
+                                        <li><span class="font-weight-semibold">BSCHESMMXXX</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-lg">
+                            <thead>
+                                <tr>
+                                    <th>Descripción</th>
+                                    <th>Coste</th>
+                                    <th>Horas</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h6 class="mb-0">Sesión de fotos en estudio</h6> 
+                                        <span class="text-muted">Sesión fotográfica profesional en estudio con iluminación y fondo personalizado.</span>
+                                    </td>
+                                    <td>€200</td>
+                                    <td>2</td>
+                                    <td><span class="font-weight-semibold">€400</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6 class="mb-0">Fotografía al aire libre</h6> 
+                                        <span class="text-muted">Sesión de fotos en exteriores, incluyendo desplazamiento y preparación del equipo.</span>
+                                    </td>
+                                    <td>€150</td>
+                                    <td>3</td>
+                                    <td><span class="font-weight-semibold">€450</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h6 class="mb-0">Edición y retoque fotográfico</h6> 
+                                        <span class="text-muted">Proceso de postproducción y retoque de imágenes para obtener resultados profesionales.</span>
+                                    </td>
+                                    <td>€100</td>
+                                    <td>5</td>
+                                    <td><span class="font-weight-semibold">€500</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="d-md-flex flex-md-wrap">
+                            <div class="pt-2 mb-3 wmin-md-400 ml-auto">
+                                <h6 class="mb-3 text-left">Total a pagar</h6>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <th class="text-left">Subtotal:</th>
+                                                <td class="text-right">€1,090</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-left">Impuesto: <span class="font-weight-normal">(21%)</span></th>
+                                                <td class="text-right">€228.90</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-left">Total:</th>
+                                                <td class="text-right text-primary">
+                                                    <h5 class="font-weight-semibold">€1,318.90</h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer mt-0">
+                        <span class="text-muted">
+                            Los servicios prestados son exclusivamente para el propósito acordado y detallado en la factura.
+                            El pago total debe recibirse en la cuenta designada dentro de los 30 días posteriores a la emisión de esta factura.
+                            La factura y los servicios asociados son estrictamente confidenciales y no pueden ser compartidos con terceros sin consentimiento previo.
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
