@@ -16,6 +16,7 @@
 *mejorar la parte cuando envias el email que aparezca mejor el mensajes
 *el fichero enviar_email.php en php/ tengo que cambiar el location en vez de localhost la ip del host
 *hacer lo de trello
+*rd-navbar--is-stuckyoo es la clase que bugea la pagina
 
 --- MEJORAR LOS COLORES DEL FORMULARIO DE CONTACTANOS
 --- CAMBIAR EL COLOR DE LAS TABLAS

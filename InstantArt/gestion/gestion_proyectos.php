@@ -16,7 +16,11 @@
     <link rel="stylesheet" href="usuarios_form.css" />
     <link rel="stylesheet" href="estilos.css" />
 
-
+<style>
+    .texto_centrado{
+        text-align: center;
+    }
+</style>
 
 
 
@@ -153,6 +157,8 @@
                                     <th data-field="fecha_nacimiento">Fecha Nacimiento</th>
                                     <th data-field="telefono">Telefono</th>
                                     <th data-field="actions">Acciones</th>
+                                    <th data-field="budget">Presupuestos</th>
+
                                 </thead>
                                 <tbody>
                                     <?php
@@ -168,10 +174,17 @@
                                             echo "<td>" . $row["fecha_nacimiento"] . "</td>";
                                             echo "<td>" . $row["telefono"] . "</td>";
                                             echo "<td>
-                                            <a rel='tooltip' title='Edit' class='table-action edit'  title='Editar' href='#' onclick='Subir($id)'><i class='fas fa-paperclip'></i></a>
-                                            <a rel='tooltip' title='Edit' class='table-action edit'  title='Subir' href='#' onclick='Modificar($id)'><i class='fa fa-edit'></i></a>
-                                            <a rel='tooltip' title='Like' class='table-action like' title='Añadir' href='#' onclick='Anadir($id)'><i class='fa fa-plus'></i></a>
+                                            <a rel='tooltip' title='subir' class='table-action edit'  title='Editar' href='#' onclick='Subir($id)'><i class='fas fa-paperclip'></i></a>
+                                            <a rel='tooltip' title='Editar' class='table-action edit'  title='Subir' href='#' onclick='Modificar($id)'><i class='fa fa-edit'></i></a>
+                                            <a rel='tooltip' title='añadir' class='table-action like' title='Añadir' href='#' onclick='Anadir($id)'><i class='fa fa-plus'></i></a>
+                                           
                                             </td>";
+
+                                            echo "<td class='texto_centrado'>
+                                            <a rel='tooltip' title='ver presupuestos' onclick=\"window.location.href = '../presupuesto/presupuesto.html?id=" . $id . "'\">
+                                                <i class='fa fa-list'></i>
+                                            </a>
+                                          </td>";
                                             echo "</tr>";
                                         }
                                     } else {
