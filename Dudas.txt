@@ -37,7 +37,7 @@
 
 --se deben crear las carpetas de los usuarios cuando se contrata un servicio, no cuando se añade un usuario
 
--- En algunas paginas sale el logo de la pagina en en footer.
+--En algunas paginas sale el logo de la pagina en en footer.
 
 --Mejorar la interfaz en donde se muestran las imagenes del trabajo no podemos reutilizar tanto codigo.
 

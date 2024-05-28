@@ -16,65 +16,86 @@
   <link rel="stylesheet" href="../css/css_ulia.css">
   <link rel="stylesheet" href="../css/fonts.css">
 
-  <style>
-    .ie-panel {
-      display: none;
-      background: #212121;
-      padding: 10px 0;
-      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
-      clear: both;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    html.ie-10 .ie-panel,
-    html.lt-ie-10 .ie-panel {
-      display: block;
-    }
-
-     .b-6{
-        max-width: 257.7px !important;
-        max-height: 386.65 !important;
-        vertical-align: top;
-    }
-
-    .b-5{
-      max-width: 424.8px !important;
-        max-height: 386.65px !important;
-        vertical-align: top;
-    }
-
-    .b-2{
-       max-width: 439.217px !important;
-        max-height: 538.73px !important; 
-        vertical-align: top;
-    }
-    .b-4{
-       max-width: 702.65px !important;
-        max-height: 215.6px !important; 
-        vertical-align: top;
-    }
-
-    .b-3{
-      max-width: 702.65px !important;
-        max-height: 230.4px !important; 
-        vertical-align: top;
-    }
-
-    .b-1{
-      max-width: 439.217px !important;
-        max-height: 313.95px !important; 
-        vertical-align: top;
-    } 
-  </style>
 </head>
+<style>
+  
+  .b-6 {
+      max-width: 257.7px !important;
+      max-height: 386.65 !important;
+      overflow: hidden;
+
+    }
+
+    .b-5 {
+      max-width: 424.8px !important;
+      max-height: 386.65px !important;
+      overflow: hidden;
+
+    }
+
+    .b-2 {
+      max-width: 439.217px !important;
+      max-height: 538.73px !important;
+      overflow: hidden;
+
+    }
+
+
+
+    .b-3 {
+      max-width: 702.65px !important;
+      max-height: 230.4px !important;
+      overflow: hidden;
+
+
+    }
+
+    .b-4 {
+      max-width: 702.65px !important;
+      max-height: 215.6px !important;
+      overflow: hidden;
+
+
+    }
+
+    .b-1 {
+      max-width: 439.217px !important;
+      max-height: 313.95px !important;
+      overflow: hidden;
+    }
+
+    i.fas.fa-download {
+      font-size: 24px;
+      margin-left: 10px;
+      /* Cambia el tamaño de la fuente del icono a 24px */
+    }
+
+    .see_btn {
+      text-align: center;
+    }
+
+
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        /* Inicia con opacidad 0 */
+      }
+
+      to {
+        opacity: 1;
+        /* Termina con opacidad 1 */
+      }
+    }
+</style>
 
 <body>
 
 
   <?php
+  
   session_start();
+  require_once "ruebaimagenesftp.php";
   if (isset($_SESSION['usuario'])) {
     echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
   }
@@ -104,6 +125,9 @@
   echo '<script>var nombre = "' . $result2 . '"</script>';
   echo '<script>var id_cliente = "' . $_SESSION['id_cliente'] . '"</script>';
   echo '<script> document.getElementById("cliente").innerText=nombre;</script>';
+
+
+
 
   ?>
 
@@ -153,7 +177,6 @@
       </div>
     </header>
 
-
     <section class="about_section layout_padding6">
       <div class="container">
         <div class="heading_container">
@@ -175,17 +198,17 @@
               capturando momentos especiales y recuerdos duraderos. Nos esforzamos por reflejar la visión y las emociones
               de cada cliente en nuestras fotos, asegurando que cada proyecto sea tan único como las personas que están en él
             </p>
-            <div>    
+            <div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="col-6 mb-3 mt-3"  style="margin: 0 auto; display: none;">
+    <div class="col-6 mb-3 mt-3" style="margin: 0 auto; display: none;">
       <h4 id="cliente"></h4>
       <h3>Selecciona la galeria:</h3>
-     
+
       <div id="fotos"></div>
     </div>
 
@@ -197,29 +220,29 @@
         <div class="heading_container">
           <h3 class="mb-3">
             Selecciona la galeria
-          </h3 >
+          </h3>
           <label for="evento" class="form-label mb-3">Seleccionar Evento:</label>
           <select id="evento2" class="form-control" name="evento" style="text-align: center;">
             <!-- Aquí se llenará dinámicamente con los eventos -->
           </select>
 
           <a href="#fotografia" onclick="MostrarFotos()" class="mismo_color mt-5">
-                Mostrar fotografias
-              </a>
+            Mostrar fotografias
+          </a>
         </div>
-        <div class="portfolio_container layout_padding2 "id="fotografia">
+        <div class="portfolio_container layout_padding2 " id="fotografia">
           <div class="box-1">
-            <div class="img-box b-1">
-              
+            <div class="img-box b-1 prueba" style="display: none;">
+
               <div class="btn-box">
-                <a href=""><i class="fas fa-link"></i></a>
+                <a href="#evento2" id="icono1"></a>
               </div>
               <img src="../images/p-1.jpg" alt="" id="imagen1">
             </div>
-            <div class="img-box b-2">
+            <div class="img-box b-2 prueba" style="display: none;">
               <img src="../images/fondo.jpg" alt="" id="imagen2">
               <div class="btn-box">
-                <a href="" class="btn-1">
+                <a href="#evento2" id="icono2">
 
                 </a>
               </div>
@@ -227,51 +250,55 @@
           </div>
           <div class="box-2">
             <div class="box-2-top">
-              <div class="img-box b-3">
-                <img src="../images/p-3.jpg" alt="" id="imagen3"> 
+              <div class="img-box b-3 prueba" style="display: none;">
+                <img src="../images/p-3.jpg" alt="" id="imagen3">
                 <div class="btn-box">
-                  <a href="" class="btn-1">
+                  <a href="#evento2" id="icono3">
 
                   </a>
                 </div>
               </div>
             </div>
             <div class="box-2-top2">
-              <div class="img-box b-4">
+              <div class="img-box b-4 prueba" style="display: none;">
                 <img src="../images/p-4.jpg" alt="" id="imagen4">
                 <div class="btn-box">
-                  <a href="" class="btn-1">
+                  <a href="#evento2" id="icono4">
 
                   </a>
                 </div>
               </div>
             </div>
             <div class="box-2-btm">
-              <div class="img-box b-5">
+              <div class="img-box b-5 prueba" style="display: none;">
                 <img src="../images/p-5.jpg" alt="" id="imagen5">
                 <div class="btn-box">
-                  <a href="" class="btn-1">
+                  <a href="#imagen1" id="icono5">
 
                   </a>
                 </div>
               </div>
-              <div class="img-box b-6">
-                <img src="../images/galeria-2.jpg" alt="" id="imagen5">
+              <div class="img-box b-6 prueba" style="display: none;">
+                <img src="../images/galeria-2.jpg" alt="" id="imagen6">
                 <div class="btn-box">
-                  <a href="" class="btn-1">
+                  <a href="#imagen1" id="icono6">
 
                   </a>
                 </div>
               </div>
             </div>
           </div>
+
+        </div>
+        <div class="see_btn" style="display: none;">
+          <?php 
+          if (file_exists($zip_filename)) : ?>
+            <a href="<?php echo $zip_filename;?>" download>Descargar Imágenes</a>
+            
+          <?php endif; ?>
           
         </div>
-        <div class="see_btn">
-          <a href="">
-            Descargar todas
-          </a>
-        </div>
+
       </div>
 
     </section>
@@ -334,20 +361,13 @@
   <div class="snackbars" id="form-output-global"></div>
   <!-- Javascript-->
   <script>
-   /*  let altura= window.getComputedStyle(fotografia).height;
-    document.getElementById("fotografia").style.height="2px";
-
-
-
     function MostrarFotos() {
-      document.getElementById("fotografia").style.visibility = "visible";
-      document.getElementById("fotografia").style.height=altura;
-      document.getElementsByClassName("see_btn")[0].style.visibility="visible";
+      const fotos = document.getElementsByClassName("prueba");
+      for (let i = 0; i < fotos.length; i++) {
+        fotos[i].style.display = "block";
+      }
+      document.getElementsByClassName("see_btn")[0].style.display = "block";
     }
-    
- */
-    
-    
   </script>
   <script src="../js/core.min.js"></script>
   <script src="../js/script.js"></script>
