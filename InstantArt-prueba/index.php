@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="php/comprobar_login.php"></script>
   <style>
     .ie-panel {
       display: none;
@@ -34,22 +35,6 @@
 </head>
 
 <body>
-
-
-  <?php
-  session_start();
-  if (isset($_SESSION['usuario'])) {
-    echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-  }else{
-    echo '<script>var inicio=false;</script>';
-  }
-
-  if(isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol']=='admin'){
-    echo '<script>var admin=true;</script>';
-  }else{
-    echo '<script>var admin=false;</script>';
-  }
-  ?>
 
 
   <div class="ie-panel"></div>
@@ -532,22 +517,7 @@
 
 
   <script>
-    if (inicio) {
-      document.getElementById("inicio_sesion").style.display = "none"
-      document.getElementById("cerrar_sesion").style.display = "block";
-      //habitilo la pagina del area personal del cliente
-      document.getElementById("area_personal").style.display = "block";
-      console.log("inicio sesion");
-    }
     
-    if(admin){
-      console.log("admin")
-      document.getElementById("usuarios").style.display= "block";
-      document.getElementById("usuarios").style.display= "block";
-      document.getElementById("gestion_proyectos").style.display = "block"
-      document.getElementById("proyectos_empleado").style.display = "block";
-      document.getElementById("area_personal").style.display = "none";
-    }
   </script>
 </body>
 

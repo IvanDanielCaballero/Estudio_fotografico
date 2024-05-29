@@ -66,10 +66,9 @@
 
   i.fas.fa-download {
     font-size: 24px;
-    margin-left: 10px;
   }
 
-  img {
+  .img-box img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -85,12 +84,10 @@
   @keyframes aparecer {
     from {
       opacity: 0;
-      /* Inicia con opacidad 0 */
     }
 
     to {
       opacity: 1;
-      /* Termina con opacidad 1 */
     }
   }
 </style>
@@ -131,9 +128,6 @@
   echo '<script>var nombre = "' . $result2 . '"</script>';
   echo '<script>var id_cliente = "' . $_SESSION['id_cliente'] . '"</script>';
   echo '<script> document.getElementById("cliente").innerText=nombre;</script>';
-
-
-
 
   ?>
 
@@ -186,9 +180,9 @@
     <section class="about_section layout_padding6">
       <div class="container">
         <div class="heading_container">
-          <h3 style="text-align: center; margin-bottom: 50px !important;">
-            Galería de Proyectos de Clientes
-          </h3>
+        <div class="col-12 text-center">
+            <h3 class="section-title wow-outer"><span class="wow slideInUp">Galería de Proyectos de Clientes</span></h3>
+        </div>
         </div>
         <div class="box">
           <div class="img-box">
@@ -201,8 +195,7 @@
             <p>
               Bienvenidos a nuestra galería de proyectos, donde nos enorgullece presentar las fotografías personalizadas
               que hemos creado para nuestros valiosos clientes. Cada imagen es el resultado de una colaboración única,
-              capturando momentos especiales y recuerdos duraderos. Nos esforzamos por reflejar la visión y las emociones
-              de cada cliente en nuestras fotos, asegurando que cada proyecto sea tan único como las personas que están en él
+              capturando momentos especiales y recuerdos duraderos.
             </p>
             <div>
             </div>
@@ -217,10 +210,6 @@
 
       <div id="fotos"></div>
     </div>
-
-
-
-
     <section class="portfolio_section layout_padding">
       <div class="container">
         <div class="heading_container">
@@ -298,10 +287,7 @@
         </div>
         <div class="see_btn" style="display: none;">
 
-
           <a href="descargarzip.php" download>Descargar Imágenes</a>
-
-
 
         </div>
 
@@ -355,7 +341,7 @@
     </footer>
   </div>
   <div class="preloader">
-    <div class="preloader-logo"><img src="../images/logo.png " class="imagen" alt="" width="50" height="28" srcset="../images/logo.png" />
+    <div class="preloader-logo"><img src="../images/logo.png " class="imagen" alt="" width="176" height="28" srcset="../images/logo.png 2x"  />
     </div>
     <div class="preloader-body">
       <div id="loadingProgressG">

@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="php/comprobar_login.php"></script>
   <style>
     .ie-panel {
       display: none;
@@ -34,23 +35,6 @@
 </head>
 
 <body>
-
-
-  <?php
-  session_start();
-  if (isset($_SESSION['usuario'])) {
-    echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-  }else{
-    echo '<script>var inicio=false;</script>';
-  }
-
-  if(isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol']=='admin'){
-    echo '<script>var admin=true;</script>';
-  }else{
-    echo '<script>var admin=false;</script>';
-  }
-  ?>
-
 
   <div class="ie-panel"></div>
   <div class="page">
@@ -128,6 +112,7 @@
     <!-- Projects - Modern Layout-->
     <section class="section section-lg bg-default">
       <div class="container">
+      <div class="container">
         <div class="row row-50">
           <div class="col-12 text-center">
             <h3 class="section-title wow-outer"><span class="wow slideInUp">Trabajos</span></h3>
@@ -139,8 +124,8 @@
                   <!-- Thumbnail Corporate-->
                   <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto2.jpg" alt="" width="370" height="256" />
                     <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Mary Williams</a></p>
-                      <p>I offer high-quality photography &amp; retouch services to individual and corporate clients all over the US.</p><a class="thumbnail-corporate-link" href="images/foto2.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      <p class="thumbnail-corporate-title"><a href="#">Jose Carlos</a></p>
+                      <p>Una foto corta pero cautivadora de un colibrí en vuelo, con sus alas vibrantes y colores brillantes</p><a class="thumbnail-corporate-link" href="images/foto2.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                     </div>
                     <div class="thumbnail-corporate-dummy"></div>
                   </article>
@@ -149,8 +134,8 @@
                   <!-- Thumbnail Corporate-->
                   <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto1.jpg" alt="" width="370" height="464" />
                     <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">YouthWear</a></p>
-                      <p>I offer high-quality photography &amp; retouch services to individual and corporate clients all over the US.</p><a class="thumbnail-corporate-link" href="images/foto1.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      <p class="thumbnail-corporate-title"><a href="#">Ivan</a></p>
+                      <p>Un par de zapatos elegantes, con un diseño moderno y detalles cuidadosamente elaborados</p><a class="thumbnail-corporate-link" href="images/foto1.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                     </div>
                     <div class="thumbnail-corporate-dummy"></div>
                   </article>
@@ -159,8 +144,8 @@
                   <!-- Thumbnail Corporate-->
                   <article class="thumbnail-corporate wow slideInUp"><img class="thumbnail-corporate-image" src="images/foto3.jpg" alt="" width="370" height="256" />
                     <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Ultra Optix</a></p>
-                      <p>I offer high-quality photography &amp; retouch services to individual and corporate clients all over the US.</p><a class="thumbnail-corporate-link" href="images/foto3.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      <p class="thumbnail-corporate-title"><a href="#">Miguel</a></p>
+                      <p>Un imponente edificio de cristal y acero, se alza majestuoso en el horizonte urbano </p><a class="thumbnail-corporate-link" href="images/foto3.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                     </div>
                     <div class="thumbnail-corporate-dummy"></div>
                   </article>
@@ -169,8 +154,8 @@
                   <!-- Thumbnail Corporate-->
                   <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInUp"><img class="thumbnail-corporate-image" src="images/foto6.jpg" alt="" width="370" height="464" />
                     <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Accessories Inc.</a></p>
-                      <p>I offer high-quality photography &amp; retouch services to individual and corporate clients all over the US.</p><a class="thumbnail-corporate-link" href="images/foto6.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      <p class="thumbnail-corporate-title"><a href="#">Jose Carlos</a></p>
+                      <p>Un coche reluciente y elegante, con líneas aerodinámicas y detalles sofisticados</p><a class="thumbnail-corporate-link" href="images/foto6.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                     </div>
                     <div class="thumbnail-corporate-dummy"></div>
                   </article>
@@ -179,8 +164,8 @@
                   <!-- Thumbnail Corporate-->
                   <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto5.jpg" alt="" width="370" height="464" />
                     <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Dwayne Winston</a></p>
-                      <p>I offer high-quality photography &amp; retouch services to individual and corporate clients all over the US.</p><a class="thumbnail-corporate-link" href="images/foto5.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      <p class="thumbnail-corporate-title"><a href="#">Ivan</a></p>
+                      <p>Un loro colorido y juguetón, con plumas brillantes y una expresión curiosa</p><a class="thumbnail-corporate-link" href="images/foto5.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                     </div>
                     <div class="thumbnail-corporate-dummy"></div>
                   </article>
@@ -189,8 +174,8 @@
                   <!-- Thumbnail Corporate-->
                   <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto4.jpg" alt="" width="370" height="256" />
                     <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Sue Peterson</a></p>
-                      <p>I offer high-quality photography &amp; retouch services to individual and corporate clients all over the US.</p><a class="thumbnail-corporate-link" href="images/foto4.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      <p class="thumbnail-corporate-title"><a href="#">Miguel</a></p>
+                      <p>Un bullicioso puerto marítimo, lleno de actividad y vida, con barcos diferentes</p><a class="thumbnail-corporate-link" href="images/foto4.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                     </div>
                     <div class="thumbnail-corporate-dummy"></div>
                   </article>
@@ -530,25 +515,6 @@
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
 
-
-  <script>
-    if (inicio) {
-      document.getElementById("inicio_sesion").style.display = "none"
-      document.getElementById("cerrar_sesion").style.display = "block";
-      //habitilo la pagina del area personal del cliente
-      document.getElementById("area_personal").style.display = "block";
-      console.log("inicio sesion");
-    }
-    
-    if(admin){
-      console.log("admin")
-      document.getElementById("usuarios").style.display= "block";
-      document.getElementById("usuarios").style.display= "block";
-      document.getElementById("gestion_proyectos").style.display = "block"
-      document.getElementById("proyectos_empleado").style.display = "block";
-      document.getElementById("area_personal").style.display = "none";
-    }
-  </script>
 </body>
 
 </html>

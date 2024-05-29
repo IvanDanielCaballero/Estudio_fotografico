@@ -54,3 +54,6 @@ solo mostrar las principales y un boton de descargarlas todas.
 --El formulario de contacto parece que lo haya hecho el diablo.
 
 -- Los formularios son muy grandes al añadir eventos a usuarios etc
+
+-- Deberiamos cambiar el nombre de la carpeta ftp y php por nombres mas adecuados al contexto de la pagina
+queda mal cuando acceder a la pagina y ves: php y ftp como rutas
