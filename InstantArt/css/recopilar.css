@@ -113,7 +113,7 @@
 
   .inputBox select:valid~span,
   .inputBox select:focus~span {
-    transform: translateX(10%) translateY(-15px);
+    transform: translateX(20%) translateY(-15px);
     font-size: 0.8em;
     padding: 5px 10px;
     background: #000;
@@ -124,7 +124,7 @@
 
   .inputBox input:valid~span,
   .inputBox input:focus~span {
-    transform: translateX(10%) translateY(-15px);
+    transform: translateX(20%) translateY(-15px);
     font-size: 0.8em;
     padding: 5px 10px;
     background: #000;
