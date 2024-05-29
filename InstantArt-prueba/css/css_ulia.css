@@ -381,10 +381,9 @@ a:focus {
           align-items: stretch;
 }
 
-.portfolio_section .portfolio_container .box-2-btm {
+ .portfolio_section .portfolio_container .box-2-btm {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
@@ -397,7 +396,7 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
+} 
 
 .portfolio_section .see_btn {
   display: -webkit-box;

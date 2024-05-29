@@ -54,11 +54,7 @@ function cargarFotos(url) {
                 img.alt = 'ImagenFTP';
 
                 let enlance=document.getElementById("icono"+i);
-                
-                const icon = document.createElement('i');
-                icon.classList.add('fas', 'fa-download');
-                enlance.appendChild(icon);
-                enlance.onclick= () => descargarFoto(foto);
+                enlance.onclick= () => descargarFoto(foto); 
 
                 i++;
 

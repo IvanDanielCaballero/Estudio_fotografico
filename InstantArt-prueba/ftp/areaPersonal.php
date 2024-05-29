@@ -18,84 +18,90 @@
 
 </head>
 <style>
-  
   .b-6 {
-      max-width: 257.7px !important;
-      max-height: 386.65 !important;
-      overflow: hidden;
+    max-width: 257.7px !important;
+    max-height: 386.65 !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+  }
 
+  .b-5 {
+    max-width: 424.8px !important;
+    max-height: 386.65px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+  }
+
+  .b-2 {
+    max-width: 439.217px !important;
+    max-height: 538.73px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+  }
+
+
+
+  .b-3 {
+    max-width: 702.65px !important;
+    max-height: 230.4px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+
+  }
+
+  .b-4 {
+    max-width: 702.65px !important;
+    max-height: 215.6px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+
+  }
+
+  .b-1 {
+    max-width: 439.217px !important;
+    max-height: 313.95px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+  }
+
+  i.fas.fa-download {
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+
+  .see_btn {
+    text-align: center;
+  }
+
+
+
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      /* Inicia con opacidad 0 */
     }
 
-    .b-5 {
-      max-width: 424.8px !important;
-      max-height: 386.65px !important;
-      overflow: hidden;
-
+    to {
+      opacity: 1;
+      /* Termina con opacidad 1 */
     }
-
-    .b-2 {
-      max-width: 439.217px !important;
-      max-height: 538.73px !important;
-      overflow: hidden;
-
-    }
-
-
-
-    .b-3 {
-      max-width: 702.65px !important;
-      max-height: 230.4px !important;
-      overflow: hidden;
-
-
-    }
-
-    .b-4 {
-      max-width: 702.65px !important;
-      max-height: 215.6px !important;
-      overflow: hidden;
-
-
-    }
-
-    .b-1 {
-      max-width: 439.217px !important;
-      max-height: 313.95px !important;
-      overflow: hidden;
-    }
-
-    i.fas.fa-download {
-      font-size: 24px;
-      margin-left: 10px;
-      /* Cambia el tamaño de la fuente del icono a 24px */
-    }
-
-    .see_btn {
-      text-align: center;
-    }
-
-
-
-    @keyframes aparecer {
-      from {
-        opacity: 0;
-        /* Inicia con opacidad 0 */
-      }
-
-      to {
-        opacity: 1;
-        /* Termina con opacidad 1 */
-      }
-    }
+  }
 </style>
 
 <body>
 
 
   <?php
-  
+
   session_start();
-  require_once "ruebaimagenesftp.php";
+
   if (isset($_SESSION['usuario'])) {
     echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
   }
@@ -235,15 +241,15 @@
             <div class="img-box b-1 prueba" style="display: none;">
 
               <div class="btn-box">
-                <a href="#evento2" id="icono1"></a>
+                <a href="#evento2" id="icono1"><i class="fas fa-download download-icon"></i></a>
               </div>
-              <img src="../images/p-1.jpg" alt="" id="imagen1">
+              <img src="" alt="" id="imagen1">
             </div>
             <div class="img-box b-2 prueba" style="display: none;">
-              <img src="../images/fondo.jpg" alt="" id="imagen2">
+              <img src="" alt="" id="imagen2">
               <div class="btn-box">
                 <a href="#evento2" id="icono2">
-
+                <i class="fas fa-download download-icon"></i>
                 </a>
               </div>
             </div>
@@ -251,38 +257,38 @@
           <div class="box-2">
             <div class="box-2-top">
               <div class="img-box b-3 prueba" style="display: none;">
-                <img src="../images/p-3.jpg" alt="" id="imagen3">
+                <img src="" alt="" id="imagen3">
                 <div class="btn-box">
                   <a href="#evento2" id="icono3">
-
+                  <i class="fas fa-download download-icon"></i>
                   </a>
                 </div>
               </div>
             </div>
             <div class="box-2-top2">
               <div class="img-box b-4 prueba" style="display: none;">
-                <img src="../images/p-4.jpg" alt="" id="imagen4">
+                <img src="" alt="" id="imagen4">
                 <div class="btn-box">
                   <a href="#evento2" id="icono4">
-
+                  <i class="fas fa-download download-icon"></i>
                   </a>
                 </div>
               </div>
             </div>
             <div class="box-2-btm">
               <div class="img-box b-5 prueba" style="display: none;">
-                <img src="../images/p-5.jpg" alt="" id="imagen5">
+                <img src="" alt="" id="imagen5">
                 <div class="btn-box">
                   <a href="#imagen1" id="icono5">
-
+                  <i class="fas fa-download download-icon"></i>
                   </a>
                 </div>
               </div>
               <div class="img-box b-6 prueba" style="display: none;">
-                <img src="../images/galeria-2.jpg" alt="" id="imagen6">
+                <img src="" alt="" id="imagen6">
                 <div class="btn-box">
                   <a href="#imagen1" id="icono6">
-
+                  <i class="fas fa-download download-icon"></i>
                   </a>
                 </div>
               </div>
@@ -291,12 +297,12 @@
 
         </div>
         <div class="see_btn" style="display: none;">
-          <?php 
-          if (file_exists($zip_filename)) : ?>
-            <a href="<?php echo $zip_filename;?>" download>Descargar Imágenes</a>
-            
-          <?php endif; ?>
-          
+
+
+          <a href="descargarzip.php" download>Descargar Imágenes</a>
+
+
+
         </div>
 
       </div>
@@ -349,7 +355,7 @@
     </footer>
   </div>
   <div class="preloader">
-    <div class="preloader-logo"><img src="../images/logo.png " class="imagen" alt="" width="176" height="28" srcset="../images/logo.png 2x" />
+    <div class="preloader-logo"><img src="../images/logo.png " class="imagen" alt="" width="50" height="28" srcset="../images/logo.png" />
     </div>
     <div class="preloader-body">
       <div id="loadingProgressG">
