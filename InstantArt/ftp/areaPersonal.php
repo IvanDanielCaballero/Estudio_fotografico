@@ -90,6 +90,7 @@
       opacity: 1;
     }
   }
+
 </style>
 
 <body>
@@ -180,9 +181,9 @@
     <section class="about_section layout_padding6">
       <div class="container">
         <div class="heading_container">
-        <div class="col-12 text-center">
+          <div class="col-12 text-center">
             <h3 class="section-title wow-outer"><span class="wow slideInUp">Galería de Proyectos de Clientes</span></h3>
-        </div>
+          </div>
         </div>
         <div class="box">
           <div class="img-box">
@@ -238,7 +239,7 @@
               <img src="" alt="" id="imagen2">
               <div class="btn-box">
                 <a href="#evento2" id="icono2">
-                <i class="fas fa-download download-icon"></i>
+                  <i class="fas fa-download download-icon"></i>
                 </a>
               </div>
             </div>
@@ -249,7 +250,7 @@
                 <img src="" alt="" id="imagen3">
                 <div class="btn-box">
                   <a href="#evento2" id="icono3">
-                  <i class="fas fa-download download-icon"></i>
+                    <i class="fas fa-download download-icon"></i>
                   </a>
                 </div>
               </div>
@@ -259,7 +260,7 @@
                 <img src="" alt="" id="imagen4">
                 <div class="btn-box">
                   <a href="#evento2" id="icono4">
-                  <i class="fas fa-download download-icon"></i>
+                    <i class="fas fa-download download-icon"></i>
                   </a>
                 </div>
               </div>
@@ -269,7 +270,7 @@
                 <img src="" alt="" id="imagen5">
                 <div class="btn-box">
                   <a href="#imagen1" id="icono5">
-                  <i class="fas fa-download download-icon"></i>
+                    <i class="fas fa-download download-icon"></i>
                   </a>
                 </div>
               </div>
@@ -277,7 +278,7 @@
                 <img src="" alt="" id="imagen6">
                 <div class="btn-box">
                   <a href="#imagen1" id="icono6">
-                  <i class="fas fa-download download-icon"></i>
+                    <i class="fas fa-download download-icon"></i>
                   </a>
                 </div>
               </div>
@@ -338,7 +339,7 @@
     </footer>
   </div>
   <div class="preloader">
-    <div class="preloader-logo"><img src="../images/logo.png " class="imagen" alt="" width="176" height="28" srcset="../images/logo.png 2x"  />
+    <div class="preloader-logo"><img src="../images/logo.png " class="imagen" alt="" width="176" height="28" srcset="../images/logo.png 2x" />
     </div>
     <div class="preloader-body">
       <div id="loadingProgressG">
@@ -357,6 +358,30 @@
       }
       document.getElementsByClassName("see_btn")[0].style.display = "block";
     }
+
+const imgBoxes = document.querySelectorAll('.img-box');
+
+
+
+
+imgBoxes.forEach(imgBox => {
+    imgBox.addEventListener('touchstart', function() {
+        const btnLink = imgBox.querySelector('.btn-box a');
+        
+        // Si el enlace está oculto, mostrarlo y mostrar el pseudo-elemento ::before
+        if (btnLink.style.display === 'none' || btnLink.style.display === '') {
+            btnLink.style.display = 'block';
+
+        } else { 
+          setTimeout(function() {
+            btnLink.style.display = 'none';
+        }, 100);
+
+        }
+    });
+});
+
+
   </script>
   <script src="../js/core.min.js"></script>
   <script src="../js/script.js"></script>
