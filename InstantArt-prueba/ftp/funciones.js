@@ -10,6 +10,11 @@ inicio(id_cliente);
 document.getElementById("evento2").addEventListener("change", function () {
     let id_evento = document.getElementById('evento2').value;
     cargarFotos('/' + id_cliente + '/' + id_evento);
+    const fotos = document.getElementsByClassName("prueba");
+      for (let i = 0; i < fotos.length; i++) {
+        fotos[i].style.display = "none";
+      }
+      document.getElementsByClassName("see_btn")[0].style.display = "none";
 });
 
 function inicio(id_cliente) {
@@ -119,4 +124,5 @@ function obtenerCaminoCompleto(url) {
 function refrescar_fotos() {
     let id_evento = document.getElementById('evento2').value;
     cargarFotos('/' + id_cliente + '/' + id_evento);
+    
 };

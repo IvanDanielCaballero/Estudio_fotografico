@@ -11,68 +11,125 @@
   <!-- Stylesheets-->
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
   <link rel="stylesheet" href="../css/bootstrap.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .ie-panel {
-      display: none;
-      background: #212121;
-      padding: 10px 0;
-      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
-      clear: both;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style_old.css">
+  <link rel="stylesheet" href="../css/css_ulia.css">
+  <link rel="stylesheet" href="../css/fonts.css">
 
-    html.ie-10 .ie-panel,
-    html.lt-ie-10 .ie-panel {
-      display: block;
-    }
-
-    img:hover{
-    width: 100%;
-    transform: scale(1.4);
-    transition: all 0.6s;
-}
-  </style>
 </head>
+<style>
+  .b-6 {
+    max-width: 257.7px !important;
+    max-height: 386.65 !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+  }
+
+  .b-5 {
+    max-width: 424.8px !important;
+    max-height: 386.65px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+  }
+
+  .b-2 {
+    max-width: 439.217px !important;
+    max-height: 538.73px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+  }
+
+
+
+  .b-3 {
+    max-width: 702.65px !important;
+    max-height: 230.4px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+
+  }
+
+  .b-4 {
+    max-width: 702.65px !important;
+    max-height: 215.6px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+
+  }
+
+  .b-1 {
+    max-width: 439.217px !important;
+    max-height: 313.95px !important;
+    overflow: hidden;
+    animation: aparecer 2s forwards;
+  }
+
+  i.fas.fa-download {
+    font-size: 24px;
+  }
+
+  .img-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+
+  .see_btn {
+    text-align: center;
+  }
+
+
+
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+</style>
 
 <body>
 
 
   <?php
+
   session_start();
+
   if (isset($_SESSION['usuario'])) {
     echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-  } 
+  }
 
-// Verifica si la sesión de usuario no está establecida
-if (!isset($_SESSION['usuario'])) {
-  header("Location: ../login.php");
-}
-        // Configuración de la conexión a la base de datos
-        $servername = "217.160.114.39";
-        $username = "jose";
-        $password = "56lf2G9BnTez";
-        $dbname = "fotografia";
+  // Verifica si la sesión de usuario no está establecida
+  if (!isset($_SESSION['usuario'])) {
+    header("Location: ../login.php");
+  }
+  // Configuración de la conexión a la base de datosFi
+  $servername = "217.160.114.39";
+  $username = "jose";
+  $password = "56lf2G9BnTez";
+  $dbname = "fotografia";
 
-        // Crear conexión
-        $conn = new mysqli($servername, $username, $password, $dbname);
+  // Crear conexión
+  $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Verificar conexión
-        if ($conn->connect_error) {
-            die("Error en la conexión: " . $conn->connect_error);
-        }
+  // Verificar conexión
+  if ($conn->connect_error) {
+    die("Error en la conexión: " . $conn->connect_error);
+  }
 
-        // Consulta SQL para obtener los eventos
+  // Consulta SQL para obtener los eventos
 
-        $sql2 = "SELECT concat(nombre, ' ', apellidos) from cliente where id_cliente =".$_SESSION['id_cliente']."";
-        $result2 = $conn->query($sql2)->fetch_column();
-        echo '<script>var nombre = "' . $result2 .'"</script>';
-        echo '<script>var id_cliente = "' .$_SESSION['id_cliente'].'"</script>';
-        echo '<script> document.getElementById("cliente").innerText=nombre;</script>';
+  $sql2 = "SELECT concat(nombre, ' ', apellidos) from cliente where id_cliente =" . $_SESSION['id_cliente'] . "";
+  $result2 = $conn->query($sql2)->fetch_column();
+  echo '<script>var nombre = "' . $result2 . '"</script>';
+  echo '<script>var id_cliente = "' . $_SESSION['id_cliente'] . '"</script>';
+  echo '<script> document.getElementById("cliente").innerText=nombre;</script>';
 
-?>
+  ?>
 
 
   <div class="ie-panel"></div>
@@ -89,7 +146,7 @@ if (!isset($_SESSION['usuario'])) {
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <a class="rd-navbar-brand" href="index.html"><img src="../images/logo.png" alt="" width="400" height="200" srcset="images/logo.png" /></a>
+                <a class="rd-navbar-brand" href="index.html"><img src="../images/logo.png" alt="no se ha cargado el logo" width="400" height="200" srcset="../images/logo.png" /></a>
               </div>
               <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
@@ -103,7 +160,7 @@ if (!isset($_SESSION['usuario'])) {
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../contacts.html">Contactanos</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"  href="../usuarios.php" style="display: none;">Usuarios</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios" href="../usuarios.php" style="display: none;">Usuarios</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="../login.php">Iniciar Sesion</a>
                     </li>
@@ -119,26 +176,123 @@ if (!isset($_SESSION['usuario'])) {
         </nav>
       </div>
     </header>
-    <!-- Overlapping Screen-->
-    <section class="section section-overlap bg-decorate">
-      <div class="section-overlap-image" style="background-image: url(../images/fotografia_principal2.jpg)"></div>
-      <div class="section-overlap-content">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-lg-7 col-xl-6">
-              <h1 class="wow-outer"><span class="font-weight-bold wow-outer"><span class="wow slideInUp">Area Personal</span></span></h1>
-              <h4 id="cliente"></h4>
+
+    <section class="about_section layout_padding6">
+      <div class="container">
+        <div class="heading_container">
+        <div class="col-12 text-center">
+            <h3 class="section-title wow-outer"><span class="wow slideInUp">Galería de Proyectos de Clientes</span></h3>
+        </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="../images/about-img.jpg" alt="">
+            <div class="about_img-bg">
+              <img src="../images/about-img-bg.png" alt="">
             </div>
-            <div class="col-6 mb-3 mt-3">
-                <h3>Selecciona la galeria:</h3>
-                <label for="evento" class="form-label">Seleccionar Evento:</label>
-                <select id="evento2" class="form-control" name="evento">
-                    <!-- Aquí se llenará dinámicamente con los eventos -->
-                </select>
-            <div id="fotos"></div>
+          </div>
+          <div class="detail-box" style="margin-top: 100px;">
+            <p>
+              Bienvenidos a nuestra galería de proyectos, donde nos enorgullece presentar las fotografías personalizadas
+              que hemos creado para nuestros valiosos clientes. Cada imagen es el resultado de una colaboración única,
+              capturando momentos especiales y recuerdos duraderos.
+            </p>
+            <div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <div class="col-6 mb-3 mt-3" style="margin: 0 auto; display: none;">
+      <h4 id="cliente"></h4>
+      <h3>Selecciona la galeria:</h3>
+
+      <div id="fotos"></div>
+    </div>
+    <section class="portfolio_section layout_padding">
+      <div class="container">
+        <div class="heading_container">
+          <h3 class="mb-3">
+            Selecciona la galeria
+          </h3>
+          <label for="evento" class="form-label mb-3">Seleccionar Evento:</label>
+          <select id="evento2" class="form-control" name="evento" style="text-align: center;">
+            <!-- Aquí se llenará dinámicamente con los eventos -->
+          </select>
+
+          <a href="#fotografia" onclick="MostrarFotos()" class="mismo_color mt-5">
+            Mostrar fotografias
+          </a>
+        </div>
+        <div class="portfolio_container layout_padding2 " id="fotografia">
+          <div class="box-1">
+            <div class="img-box b-1 prueba" style="display: none;">
+
+              <div class="btn-box">
+                <a href="#evento2" id="icono1"><i class="fas fa-download download-icon"></i></a>
+              </div>
+              <img src="" alt="" id="imagen1">
+            </div>
+            <div class="img-box b-2 prueba" style="display: none;">
+              <img src="" alt="" id="imagen2">
+              <div class="btn-box">
+                <a href="#evento2" id="icono2">
+                <i class="fas fa-download download-icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="box-2">
+            <div class="box-2-top">
+              <div class="img-box b-3 prueba" style="display: none;">
+                <img src="" alt="" id="imagen3">
+                <div class="btn-box">
+                  <a href="#evento2" id="icono3">
+                  <i class="fas fa-download download-icon"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="box-2-top2">
+              <div class="img-box b-4 prueba" style="display: none;">
+                <img src="" alt="" id="imagen4">
+                <div class="btn-box">
+                  <a href="#evento2" id="icono4">
+                  <i class="fas fa-download download-icon"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="box-2-btm">
+              <div class="img-box b-5 prueba" style="display: none;">
+                <img src="" alt="" id="imagen5">
+                <div class="btn-box">
+                  <a href="#imagen1" id="icono5">
+                  <i class="fas fa-download download-icon"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="img-box b-6 prueba" style="display: none;">
+                <img src="" alt="" id="imagen6">
+                <div class="btn-box">
+                  <a href="#imagen1" id="icono6">
+                  <i class="fas fa-download download-icon"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="see_btn" style="display: none;">
+
+          <a href="descargarzip.php" download>Descargar Imágenes</a>
+
+        </div>
+
+      </div>
+
     </section>
 
 
@@ -184,7 +338,7 @@ if (!isset($_SESSION['usuario'])) {
     </footer>
   </div>
   <div class="preloader">
-    <div class="preloader-logo"><img src="images/logo.png" alt="" width="176" height="28" srcset="images/logo.png 2x" />
+    <div class="preloader-logo"><img src="../images/logo.png " class="imagen" alt="" width="176" height="28" srcset="../images/logo.png 2x"  />
     </div>
     <div class="preloader-body">
       <div id="loadingProgressG">
@@ -195,6 +349,15 @@ if (!isset($_SESSION['usuario'])) {
   <!-- Global Mailform Output-->
   <div class="snackbars" id="form-output-global"></div>
   <!-- Javascript-->
+  <script>
+    function MostrarFotos() {
+      const fotos = document.getElementsByClassName("prueba");
+      for (let i = 0; i < fotos.length; i++) {
+        fotos[i].style.display = "block";
+      }
+      document.getElementsByClassName("see_btn")[0].style.display = "block";
+    }
+  </script>
   <script src="../js/core.min.js"></script>
   <script src="../js/script.js"></script>
   <script src="funciones.js"></script>

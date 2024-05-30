@@ -3,13 +3,18 @@ document.getElementById("inicio_sesion").style.display = "none"
 document.getElementById("cerrar_sesion").style.display = "block";
 
 //Cargar el nombre del usuario 
-document.getElementById('cliente').innerText=nombre;
+document.getElementById('cliente').innerText = nombre;
 inicio(id_cliente);
 
 // Llamar a la función cargarFotos cuando se selecciona un evento
-document.getElementById("evento2").addEventListener("change", function() {
+document.getElementById("evento2").addEventListener("change", function () {
     let id_evento = document.getElementById('evento2').value;
-    cargarFotos('/'+id_cliente+'/'+id_evento);
+    cargarFotos('/' + id_cliente + '/' + id_evento);
+    const fotos = document.getElementsByClassName("prueba");
+      for (let i = 0; i < fotos.length; i++) {
+        fotos[i].style.display = "none";
+      }
+      document.getElementsByClassName("see_btn")[0].style.display = "none";
 });
 
 function inicio(id_cliente) {
@@ -27,7 +32,7 @@ function inicio(id_cliente) {
                 option.text = evento.evento;
                 eventoSelect.add(option);
             });
-                if (data.length > 0) {
+            if (data.length > 0) {
                 eventoSelect.selectedIndex = 0;
                 eventoSelect.dispatchEvent(new Event('change'));
             }
@@ -36,7 +41,8 @@ function inicio(id_cliente) {
 }
 
 
-//Carga las fotos del proyecto seleccionado
+
+
 function cargarFotos(url) {
     const lista = '../gestion/listar_imagenes.php?carpeta=' + url;
     fetch(lista)
@@ -45,36 +51,38 @@ function cargarFotos(url) {
             console.log(data);
             const fotosDiv = document.getElementById('fotos');
             fotosDiv.innerHTML = ''; // Limpiar las fotos antes de agregar nuevas
+            i = 1
             data.forEach(foto => {
-                const fotoContainer = document.createElement('div');
-                fotoContainer.style = 'display: inline-block; margin: 10px; text-align: center;';
 
-                const img = document.createElement('img');
+                let img = document.getElementById("imagen" + i);
                 img.src = foto;
                 img.alt = 'ImagenFTP';
-                img.style = 'margin: 10px; width: 150px; height: auto; display: block;';
 
-                const downloadButton = document.createElement('button');
-                downloadButton.textContent = 'Descargar';
-                downloadButton.style = 'margin-top: 5px;';
-                console.log(foto);
-                downloadButton.onclick = () => descargarFoto(foto);
+                let enlance=document.getElementById("icono"+i);
+                enlance.onclick= () => descargarFoto(foto); 
 
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Borrar';
-                deleteButton.style = 'margin-top: 5px; margin-left: 5px;';
-                deleteButton.onclick = () => borrarFoto(foto);
+                i++;
 
-                fotoContainer.appendChild(img);
-                fotoContainer.appendChild(downloadButton);
-                fotoContainer.appendChild(deleteButton);
-
-                fotosDiv.appendChild(fotoContainer);
             });
         })
         .catch(error => console.error('Error al cargar las fotos:', error));
 }
-
+/*  const downloadButton = document.createElement('button');
+                 downloadButton.textContent = 'Descargar';
+                 downloadButton.style = 'margin-top: 5px;';
+                 console.log(foto);
+                 downloadButton.onclick = () => descargarFoto(foto);
+ 
+                 const deleteButton = document.createElement('button');
+                 deleteButton.textContent = 'Borrar';
+                 deleteButton.style = 'margin-top: 5px; margin-left: 5px;';
+                 deleteButton.onclick = () => borrarFoto(foto);
+ 
+                 fotoContainer.appendChild(img);
+                 fotoContainer.appendChild(downloadButton);
+                 fotoContainer.appendChild(deleteButton);
+ 
+                 fotosDiv.appendChild(fotoContainer); */
 
 function descargarFoto(fotoUrl) {
     const link = document.createElement('a');
@@ -87,12 +95,12 @@ function descargarFoto(fotoUrl) {
 // Función para borrar una foto
 function borrarFoto(fotoUrl) {
     console.log(fotoUrl);
-    fotoUrl= obtenerCaminoCompleto(fotoUrl);
+    fotoUrl = obtenerCaminoCompleto(fotoUrl);
     console.log(fotoUrl);
-        // Realizar solicitud para borrar la foto del servidor
-        fetch(`../gestion/borrar_foto.php?image=${encodeURIComponent(fotoUrl)}`, {
-            method: 'DELETE'
-        })
+    // Realizar solicitud para borrar la foto del servidor
+    fetch(`../gestion/borrar_foto.php?image=${encodeURIComponent(fotoUrl)}`, {
+        method: 'DELETE'
+    })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -113,7 +121,8 @@ function obtenerCaminoCompleto(url) {
 }
 
 //Para refescar la galeria cuando borro una foto
-function refrescar_fotos(){
+function refrescar_fotos() {
     let id_evento = document.getElementById('evento2').value;
-    cargarFotos('/'+id_cliente+'/'+id_evento);
+    cargarFotos('/' + id_cliente + '/' + id_evento);
+    
 };

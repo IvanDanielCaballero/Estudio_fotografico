@@ -30,7 +30,6 @@
     html.lt-ie-10 .ie-panel {
       display: block;
     }
-    
   </style>
 </head>
 
@@ -53,7 +52,7 @@
                 <a class="rd-navbar-brand" href="index.html"><img src="images/logo.png" alt="" width="400" height="200" srcset="images/logo.png" /></a>
               </div>
               <div class="rd-navbar-main-element">
-              <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
@@ -62,7 +61,7 @@
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.php">Contactanos</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"  href="usuarios.php" style="display: none;">Usuarios</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios" href="usuarios.php" style="display: none;">Usuarios</a>
                     </li>
                     <!--Area personal, para descargar proyectos-->
                     <li class="rd-nav-item"><a class="rd-nav-link" id="area_personal" href="ftp/areaPersonal.php" style="display:none">Area Personal</a>
@@ -112,79 +111,79 @@
     <!-- Projects - Modern Layout-->
     <section class="section section-lg bg-default">
       <div class="container">
-      <div class="container">
-        <div class="row row-50">
-          <div class="col-12 text-center">
-            <h3 class="section-title wow-outer"><span class="wow slideInUp">Trabajos</span></h3>
-          </div>
-          <div class="col-12 isotope-wrap">
-            <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group" data-lg-thumbnail="false">
-              <div class="row row-30">
-                <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                  <!-- Thumbnail Corporate-->
-                  <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto2.jpg" alt="" width="370" height="256" />
-                    <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Jose Carlos</a></p>
-                      <p>Una foto corta pero cautivadora de un colibrí en vuelo, con sus alas vibrantes y colores brillantes</p><a class="thumbnail-corporate-link" href="images/foto2.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
-                    </div>
-                    <div class="thumbnail-corporate-dummy"></div>
-                  </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                  <!-- Thumbnail Corporate-->
-                  <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto1.jpg" alt="" width="370" height="464" />
-                    <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Ivan</a></p>
-                      <p>Un par de zapatos elegantes, con un diseño moderno y detalles cuidadosamente elaborados</p><a class="thumbnail-corporate-link" href="images/foto1.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
-                    </div>
-                    <div class="thumbnail-corporate-dummy"></div>
-                  </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                  <!-- Thumbnail Corporate-->
-                  <article class="thumbnail-corporate wow slideInUp"><img class="thumbnail-corporate-image" src="images/foto3.jpg" alt="" width="370" height="256" />
-                    <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Miguel</a></p>
-                      <p>Un imponente edificio de cristal y acero, se alza majestuoso en el horizonte urbano </p><a class="thumbnail-corporate-link" href="images/foto3.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
-                    </div>
-                    <div class="thumbnail-corporate-dummy"></div>
-                  </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                  <!-- Thumbnail Corporate-->
-                  <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInUp"><img class="thumbnail-corporate-image" src="images/foto6.jpg" alt="" width="370" height="464" />
-                    <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Jose Carlos</a></p>
-                      <p>Un coche reluciente y elegante, con líneas aerodinámicas y detalles sofisticados</p><a class="thumbnail-corporate-link" href="images/foto6.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
-                    </div>
-                    <div class="thumbnail-corporate-dummy"></div>
-                  </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                  <!-- Thumbnail Corporate-->
-                  <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto5.jpg" alt="" width="370" height="464" />
-                    <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Ivan</a></p>
-                      <p>Un loro colorido y juguetón, con plumas brillantes y una expresión curiosa</p><a class="thumbnail-corporate-link" href="images/foto5.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
-                    </div>
-                    <div class="thumbnail-corporate-dummy"></div>
-                  </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
-                  <!-- Thumbnail Corporate-->
-                  <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto4.jpg" alt="" width="370" height="256" />
-                    <div class="thumbnail-corporate-caption">
-                      <p class="thumbnail-corporate-title"><a href="#">Miguel</a></p>
-                      <p>Un bullicioso puerto marítimo, lleno de actividad y vida, con barcos diferentes</p><a class="thumbnail-corporate-link" href="images/foto4.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
-                    </div>
-                    <div class="thumbnail-corporate-dummy"></div>
-                  </article>
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-12 text-center">
+              <h3 class="section-title wow-outer"><span class="wow slideInUp">Trabajos</span></h3>
+            </div>
+            <div class="col-12 isotope-wrap">
+              <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group" data-lg-thumbnail="false">
+                <div class="row row-30">
+                  <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
+                    <!-- Thumbnail Corporate-->
+                    <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto2.jpg" alt="" width="370" height="256" />
+                      <div class="thumbnail-corporate-caption">
+                        <p class="thumbnail-corporate-title"><a href="#">Jose Carlos</a></p>
+                        <p>Una foto corta pero cautivadora de un colibrí en vuelo, con sus alas vibrantes y colores brillantes</p><a class="thumbnail-corporate-link" href="images/foto2.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      </div>
+                      <div class="thumbnail-corporate-dummy"></div>
+                    </article>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
+                    <!-- Thumbnail Corporate-->
+                    <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto1.jpg" alt="" width="370" height="464" />
+                      <div class="thumbnail-corporate-caption">
+                        <p class="thumbnail-corporate-title"><a href="#">Ivan</a></p>
+                        <p>Un par de zapatos elegantes, con un diseño moderno y detalles cuidadosamente elaborados</p><a class="thumbnail-corporate-link" href="images/foto1.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      </div>
+                      <div class="thumbnail-corporate-dummy"></div>
+                    </article>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
+                    <!-- Thumbnail Corporate-->
+                    <article class="thumbnail-corporate wow slideInUp"><img class="thumbnail-corporate-image" src="images/foto3.jpg" alt="" width="370" height="256" />
+                      <div class="thumbnail-corporate-caption">
+                        <p class="thumbnail-corporate-title"><a href="#">Miguel</a></p>
+                        <p>Un imponente edificio de cristal y acero, se alza majestuoso en el horizonte urbano </p><a class="thumbnail-corporate-link" href="images/foto3.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      </div>
+                      <div class="thumbnail-corporate-dummy"></div>
+                    </article>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
+                    <!-- Thumbnail Corporate-->
+                    <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInUp"><img class="thumbnail-corporate-image" src="images/foto6.jpg" alt="" width="370" height="464" />
+                      <div class="thumbnail-corporate-caption">
+                        <p class="thumbnail-corporate-title"><a href="#">Jose Carlos</a></p>
+                        <p>Un coche reluciente y elegante, con líneas aerodinámicas y detalles sofisticados</p><a class="thumbnail-corporate-link" href="images/foto6.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      </div>
+                      <div class="thumbnail-corporate-dummy"></div>
+                    </article>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
+                    <!-- Thumbnail Corporate-->
+                    <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto5.jpg" alt="" width="370" height="464" />
+                      <div class="thumbnail-corporate-caption">
+                        <p class="thumbnail-corporate-title"><a href="#">Ivan</a></p>
+                        <p>Un loro colorido y juguetón, con plumas brillantes y una expresión curiosa</p><a class="thumbnail-corporate-link" href="images/foto5.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      </div>
+                      <div class="thumbnail-corporate-dummy"></div>
+                    </article>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
+                    <!-- Thumbnail Corporate-->
+                    <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto4.jpg" alt="" width="370" height="256" />
+                      <div class="thumbnail-corporate-caption">
+                        <p class="thumbnail-corporate-title"><a href="#">Miguel</a></p>
+                        <p>Un bullicioso puerto marítimo, lleno de actividad y vida, con barcos diferentes</p><a class="thumbnail-corporate-link" href="images/foto4.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                      </div>
+                      <div class="thumbnail-corporate-dummy"></div>
+                    </article>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
     <!-- Advantages and Achievements-->
     <section class="section section-lg text-center bg-default">
@@ -318,124 +317,122 @@
               </blockquote>
             </div>
           </div>
-
-
         </div>
       </div>
     </section>
     <section class="section section-lg">
-  <div class="container">
-    <div class="row row-50 justify-content-lg-between offset-top-1">
-      <div class="col-12">
-        <h3 class="section-title text-center wow-outer"><span class="wow slideInDown">Preguntas Frecuentes</span></h3>
-      </div>
-      <div class="col-lg-7 col-xl-6">
-        <!-- Bootstrap collapse-->
-        <div class="card-group-custom card-group-corporate wow-outer" id="accordion1" role="tablist" aria-multiselectable="false">
-          <!-- Bootstrap card-->
-          <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".05s">
-            <div class="card-header" id="accordion1-heading-1" role="tab">
-              <div class="card-title"><a role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-1" aria-controls="accordion1-collapse-1" aria-expanded="true">¿Ofrecen servicios de edición o retoque fotográfico?
-             
-              <div class="card-arrow"> </div>
-                </a></div>
+      <div class="container">
+        <div class="row row-50 justify-content-lg-between offset-top-1">
+          <div class="col-12">
+            <h3 class="section-title text-center wow-outer"><span class="wow slideInDown">Preguntas Frecuentes</span></h3>
+          </div>
+          <div class="col-lg-7 col-xl-6">
+            <!-- Bootstrap collapse-->
+            <div class="card-group-custom card-group-corporate wow-outer" id="accordion1" role="tablist" aria-multiselectable="false">
+              <!-- Bootstrap card-->
+              <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".05s">
+                <div class="card-header" id="accordion1-heading-1" role="tab">
+                  <div class="card-title"><a role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-1" aria-controls="accordion1-collapse-1" aria-expanded="true">¿Ofrecen servicios de edición o retoque fotográfico?
+
+                      <div class="card-arrow"> </div>
+                    </a></div>
+                </div>
+                <div class="collapse show" id="accordion1-collapse-1" role="tabpanel" aria-labelledby="accordion1-heading-1">
+                  <div class="card-body">
+                    <p>Sí, en InstantArt ofrecemos servicios de edición y retoque fotográfico para mejorar la calidad y el aspecto de tus imágenes. Nuestro equipo de expertos en retoque está dedicado a perfeccionar cada detalle y cumplir con tus expectativas.</p>
+                  </div>
+                </div>
+              </article>
+              <!-- Bootstrap card-->
+              <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".1s">
+                <div class="card-header" id="accordion1-heading-2" role="tab">
+                  <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-2" aria-controls="accordion1-collapse-2" aria-expanded="false">¿Puedo solicitar un servicio de fotografía personalizado?
+                      <div class="card-arrow"></div>
+                    </a></div>
+                </div>
+                <div class="collapse" id="accordion1-collapse-2" role="tabpanel" aria-labelledby="accordion1-heading-2">
+                  <div class="card-body">
+                    <p>Absolutamente, en InstantArt entendemos que cada cliente tiene necesidades únicas. Por lo tanto, ofrecemos servicios de fotografía personalizados para adaptarnos a tus requisitos específicos. ¡Contáctanos para discutir tu proyecto y encontrar la mejor solución para ti!</p>
+                  </div>
+                </div>
+              </article>
+              <!-- Bootstrap card-->
+              <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".15s">
+                <div class="card-header" id="accordion1-heading-3" role="tab">
+                  <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-3" aria-controls="accordion1-collapse-3" aria-expanded="false">¿Cuál es el tiempo de entrega de las imágenes editadas?
+                      <div class="card-arrow"></div>
+                    </a></div>
+                </div>
+                <div class="collapse" id="accordion1-collapse-3" role="tabpanel" aria-labelledby="accordion1-heading-3">
+                  <div class="card-body">
+                    <p>El tiempo de entrega de las imágenes editadas puede variar según la cantidad y la complejidad del trabajo. Sin embargo, nos esforzamos por entregar los resultados lo más rápido posible sin comprometer la calidad. Te proporcionaremos un plazo de entrega claro al comenzar el proyecto.</p>
+                  </div>
+                </div>
+              </article>
+              <!-- Bootstrap card-->
+              <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".2s">
+                <div class="card-header" id="accordion1-heading-4" role="tab">
+                  <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-4" aria-controls="accordion1-collapse-4" aria-expanded="false">¿Puedo obtener derechos de autor de las imágenes editadas?
+                      <div class="card-arrow"></div>
+                    </a></div>
+                </div>
+                <div class="collapse" id="accordion1-collapse-4" role="tabpanel" aria-labelledby="accordion1-heading-4">
+                  <div class="card-body">
+                    <p>Sí, al trabajar con InstantArt, tendrás derechos de autor completos sobre las imágenes editadas. Nosotros respetamos y valoramos tu propiedad intelectual, por lo que te proporcionaremos todos los derechos necesarios para utilizar y distribuir las imágenes según tus necesidades.</p>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="collapse show" id="accordion1-collapse-1" role="tabpanel" aria-labelledby="accordion1-heading-1">
-              <div class="card-body">
-                <p>Sí, en InstantArt ofrecemos servicios de edición y retoque fotográfico para mejorar la calidad y el aspecto de tus imágenes. Nuestro equipo de expertos en retoque está dedicado a perfeccionar cada detalle y cumplir con tus expectativas.</p>
-              </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="progress-linear-outer wow-outer">
+              <!-- Linear progress bar-->
+              <article class="progress-linear wow slideInDown" data-wow-delay=".05s">
+                <div class="progress-header">
+                  <p>Fotografía</p><span class="progress-value">90</span>
+                </div>
+                <div class="progress-bar-linear-wrap">
+                  <div class="progress-bar-linear"></div>
+                </div>
+              </article>
             </div>
-          </article>
-          <!-- Bootstrap card-->
-          <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".1s">
-            <div class="card-header" id="accordion1-heading-2" role="tab">
-              <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-2" aria-controls="accordion1-collapse-2" aria-expanded="false">¿Puedo solicitar un servicio de fotografía personalizado?
-                  <div class="card-arrow"></div>
-                </a></div>
+            <div class="progress-linear-outer wow-outer">
+              <!-- Linear progress bar-->
+              <article class="progress-linear wow slideInDown" data-wow-delay=".1s">
+                <div class="progress-header">
+                  <p>Creatividad</p><span class="progress-value">85</span>
+                </div>
+                <div class="progress-bar-linear-wrap">
+                  <div class="progress-bar-linear progress-red"></div>
+                </div>
+              </article>
             </div>
-            <div class="collapse" id="accordion1-collapse-2" role="tabpanel" aria-labelledby="accordion1-heading-2">
-              <div class="card-body">
-                <p>Absolutamente, en InstantArt entendemos que cada cliente tiene necesidades únicas. Por lo tanto, ofrecemos servicios de fotografía personalizados para adaptarnos a tus requisitos específicos. ¡Contáctanos para discutir tu proyecto y encontrar la mejor solución para ti!</p>
-              </div>
+            <div class="progress-linear-outer wow-outer">
+              <!-- Linear progress bar-->
+              <article class="progress-linear wow slideInDown" data-wow-delay=".15s">
+                <div class="progress-header">
+                  <p>Retoques</p><span class="progress-value">100</span>
+                </div>
+                <div class="progress-bar-linear-wrap">
+                  <div class="progress-bar-linear progress-blue"></div>
+                </div>
+              </article>
             </div>
-          </article>
-          <!-- Bootstrap card-->
-          <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".15s">
-            <div class="card-header" id="accordion1-heading-3" role="tab">
-              <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-3" aria-controls="accordion1-collapse-3" aria-expanded="false">¿Cuál es el tiempo de entrega de las imágenes editadas?
-                  <div class="card-arrow"></div>
-                </a></div>
+            <div class="progress-linear-outer wow-outer">
+              <!-- Linear progress bar-->
+              <article class="progress-linear wow slideInDown" data-wow-delay=".2s">
+                <div class="progress-header">
+                  <p>Comunicación</p><span class="progress-value">80</span>
+                </div>
+                <div class="progress-bar-linear-wrap">
+                  <div class="progress-bar-linear progress-green"></div>
+                </div>
+              </article>
             </div>
-            <div class="collapse" id="accordion1-collapse-3" role="tabpanel" aria-labelledby="accordion1-heading-3">
-              <div class="card-body">
-                <p>El tiempo de entrega de las imágenes editadas puede variar según la cantidad y la complejidad del trabajo. Sin embargo, nos esforzamos por entregar los resultados lo más rápido posible sin comprometer la calidad. Te proporcionaremos un plazo de entrega claro al comenzar el proyecto.</p>
-              </div>
-            </div>
-          </article>
-          <!-- Bootstrap card-->
-          <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".2s">
-            <div class="card-header" id="accordion1-heading-4" role="tab">
-              <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-4" aria-controls="accordion1-collapse-4" aria-expanded="false">¿Puedo obtener derechos de autor de las imágenes editadas?
-                  <div class="card-arrow"></div>
-                </a></div>
-            </div>
-            <div class="collapse" id="accordion1-collapse-4" role="tabpanel" aria-labelledby="accordion1-heading-4">
-              <div class="card-body">
-                <p>Sí, al trabajar con InstantArt, tendrás derechos de autor completos sobre las imágenes editadas. Nosotros respetamos y valoramos tu propiedad intelectual, por lo que te proporcionaremos todos los derechos necesarios para utilizar y distribuir las imágenes según tus necesidades.</p>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
-      <div class="col-lg-5">
-        <div class="progress-linear-outer wow-outer">
-          <!-- Linear progress bar-->
-          <article class="progress-linear wow slideInDown" data-wow-delay=".05s">
-            <div class="progress-header">
-              <p>Fotografía</p><span class="progress-value">90</span>
-            </div>
-            <div class="progress-bar-linear-wrap">
-              <div class="progress-bar-linear"></div>
-            </div>
-          </article>
-        </div>
-        <div class="progress-linear-outer wow-outer">
-          <!-- Linear progress bar-->
-          <article class="progress-linear wow slideInDown" data-wow-delay=".1s">
-            <div class="progress-header">
-              <p>Creatividad</p><span class="progress-value">85</span>
-            </div>
-            <div class="progress-bar-linear-wrap">
-              <div class="progress-bar-linear progress-red"></div>
-            </div>
-          </article>
-        </div>
-        <div class="progress-linear-outer wow-outer">
-          <!-- Linear progress bar-->
-          <article class="progress-linear wow slideInDown" data-wow-delay=".15s">
-            <div class="progress-header">
-              <p>Retoques</p><span class="progress-value">100</span>
-            </div>
-            <div class="progress-bar-linear-wrap">
-              <div class="progress-bar-linear progress-blue"></div>
-            </div>
-          </article>
-        </div>
-        <div class="progress-linear-outer wow-outer">
-          <!-- Linear progress bar-->
-          <article class="progress-linear wow slideInDown" data-wow-delay=".2s">
-            <div class="progress-header">
-              <p>Comunicación</p><span class="progress-value">80</span>
-            </div>
-            <div class="progress-bar-linear-wrap">
-              <div class="progress-bar-linear progress-green"></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section class="section section-xs bg-gray-700 text-center">
       <div class="container">
@@ -450,7 +447,7 @@
       </div>
     </section>
     <!-- Latest Blog Posts-->
-    
+
     <!-- Page Footer-->
     <footer class="section footer-standard bg-gray-700">
       <div class="footer-standard-main">
@@ -477,22 +474,19 @@
               <p>Pon tu email para consultar lo que quieras</p>
               <!-- RD Mailform-->
               <a href="contactanos.php">
-                            <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
-                                data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="subscribe-form-2-email" type="email" name="email">
-                                    <label class="form-label" for="subscribe-form-2-email">E-mail</label>
-                                </div>
-                             
-                                <div class="form-button">
-                                  
-                                  <div class="button button-primary button-icon button-icon-only button-winona"
-                                   aria-label="submit"><span
-                                          class="icon mdi mdi-email-outline"></span></div>
-                         
-                          </div>
-                            </form>
-                        </a>
+                <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                  <div class="form-wrap">
+                    <input class="form-input" id="subscribe-form-2-email" type="email" name="email">
+                    <label class="form-label" for="subscribe-form-2-email">E-mail</label>
+                  </div>
+
+                  <div class="form-button">
+
+                    <div class="button button-primary button-icon button-icon-only button-winona" aria-label="submit"><span class="icon mdi mdi-email-outline"></span></div>
+
+                  </div>
+                </form>
+              </a>
             </div>
           </div>
         </div>
