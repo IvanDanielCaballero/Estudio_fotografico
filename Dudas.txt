@@ -18,6 +18,8 @@
 *hacer lo de trello
 *rd-navbar--is-stuckyoo es la clase que bugea la pagina
 
+
+
 --- MEJORAR LOS COLORES DEL FORMULARIO DE CONTACTANOS
 --- CAMBIAR EL COLOR DE LAS TABLAS
 --- ME FALTA MEJORAR EN EL DIAGRAMA DE CLASES LOS ATRIBUTOS Y COLOCARLE SU TIPO
@@ -25,39 +27,42 @@
 
 
 
+
 -- IMPORTANTE!!!!
 *hablar en el proyecto sobre las medidas que tuvimos para prevenir el SQL injection
 
 
--- Dudas de Jose Carlos:
 
---se deben crear las carpetas de los usuarios cuando se contrata un servicio, no cuando se añade un usuario
+
+
+
+-- DUDAS IMPORTANTES:
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--Se deben crear las carpetas de los usuarios cuando se contrata un servicio, no cuando se añade un usuario
 
 --En algunas paginas sale el logo de la pagina en en footer.
 
---Mejorar la interfaz en donde se muestran las imagenes del trabajo no podemos reutilizar tanto codigo.
-
 --Deberiamos meter en un archivo aparte la comprobacion de admin y login ya que se repite mucho.
 
---en area personal porque no hay logo?
-
--- se puede poner un archivo aparte php para comprobar el login y no tener que ponerlo
+--Se puede poner un archivo aparte php para comprobar el login y no tener que ponerlo
 en cada pagina?
 
---arreglar rutas a logo en area personal.
-
---cuando se muestran las imagenes en la pagina web deberiamos poner un limite para 
-solo mostrar las principales y un boton de descargarlas todas.
-
---un boton para borrar la foto? no tiene sentido, les ponemos a los usuarios todas las imagenes y ellos ya eligiran las fotos que quieran.
+--Un boton para borrar la foto? no tiene sentido, les ponemos a los usuarios todas las imagenes y ellos ya eligiran las fotos que quieran.
 
 --El formulario de contacto parece que lo haya hecho el diablo.
 
--- Los formularios son muy grandes al añadir eventos a usuarios etc
+--Los formularios son muy grandes al añadir eventos a usuarios etc
 
--- Deberiamos cambiar el nombre de la carpeta ftp y php por nombres mas adecuados al contexto de la pagina
-queda mal cuando acceder a la pagina y ves: php y ftp como rutas
+--La pagina AreaPersonal debe ir fuera como las otras paginas.
 
 --El formulario de contacto ahora parece que lo haya hecho el mismisimo satanás
 
---no se puede eliminar un usario da un error al paracer por la carpeta creada en el ftp.
+--No se puede eliminar un usuario da un error al parecer por la carpeta creada en el ftp.
+
+--Cuando se registra un usuario y accede a area personal da error de sql, hasta que este cierra sesion y vuelve a iniciar sesion entonces si entra
+
+--Arreglar navbar, no se deben ocultar los enlaces, se deben ocultar los li para que no ocupen espacio.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------

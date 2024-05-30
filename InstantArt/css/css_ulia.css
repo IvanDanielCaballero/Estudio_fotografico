@@ -1,3 +1,32 @@
+/* Estilo para el select */
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid #ced4da; 
+  border-radius: 8px; 
+  padding: 0.5rem 2rem 0.5rem 1rem; 
+  background-color: #ffffff;
+  color: #495057;
+  font-size: 1rem;
+  cursor: pointer;
+  height: 45px !important;
+  
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Estilo para el select cuando está enfocado */
+.custom-select:focus {
+  border-color: #80bdff; 
+  outline: 0; 
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
+}
+.custom-select-container{
+  width: 600px;
+}
+
+
+/*css para ulia */
 .layout_padding {
   padding: 90px 0;
 }

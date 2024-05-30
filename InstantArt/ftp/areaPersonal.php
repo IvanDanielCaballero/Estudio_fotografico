@@ -90,7 +90,6 @@
       opacity: 1;
     }
   }
-
 </style>
 
 <body>
@@ -128,7 +127,7 @@
   $result2 = $conn->query($sql2)->fetch_column();
   echo '<script>var nombre = "' . $result2 . '"</script>';
   echo '<script>var id_cliente = "' . $_SESSION['id_cliente'] . '"</script>';
-  echo '<script> document.getElementById("cliente").innerText=nombre;</script>';
+
 
   ?>
 
@@ -205,37 +204,36 @@
       </div>
     </section>
 
-    <div class="col-6 mb-3 mt-3" style="margin: 0 auto; display: none;">
-      <h4 id="cliente"></h4>
-      <h3>Selecciona la galeria:</h3>
-
-      <div id="fotos"></div>
-    </div>
     <section class="portfolio_section layout_padding">
       <div class="container">
         <div class="heading_container">
           <h3 class="mb-3">
-            Selecciona la galeria
+            Selecciona el evento
           </h3>
-          <label for="evento" class="form-label mb-3">Seleccionar Evento:</label>
-          <select id="evento2" class="form-control" name="evento" style="text-align: center;">
-            <!-- Aquí se llenará dinámicamente con los eventos -->
-          </select>
-
-          <a href="#fotografia" onclick="MostrarFotos()" class="mismo_color mt-5">
+          <label for="evento" id="cliente" class="form-label mb-3"></label>
+          <div class="custom-select-container">
+            <select id="evento2" class="form-control custom-select" name="evento">
+              <!-- Aquí se llenará dinámicamente con los eventos -->
+            </select>
+          </div>
+          <a href="#fotografia" onclick="MostrarFotos()" id="imagenes" class="mismo_color mt-5" style="display: none;">
             Mostrar fotografias
+          </a>
+
+          <a href="../servicios.html" id="servicios" class="mismo_color mt-5" style="display: none;">
+            Contratar un servicio
           </a>
         </div>
         <div class="portfolio_container layout_padding2 " id="fotografia">
           <div class="box-1">
-            <div class="img-box b-1 prueba" style="display: none;">
+            <div class="img-box b-1 mostrar" style="display: none;">
 
               <div class="btn-box">
                 <a href="#evento2" id="icono1"><i class="fas fa-download download-icon"></i></a>
               </div>
               <img src="" alt="" id="imagen1">
             </div>
-            <div class="img-box b-2 prueba" style="display: none;">
+            <div class="img-box b-2 mostrar" style="display: none;">
               <img src="" alt="" id="imagen2">
               <div class="btn-box">
                 <a href="#evento2" id="icono2">
@@ -246,7 +244,7 @@
           </div>
           <div class="box-2">
             <div class="box-2-top">
-              <div class="img-box b-3 prueba" style="display: none;">
+              <div class="img-box b-3 mostrar" style="display: none;">
                 <img src="" alt="" id="imagen3">
                 <div class="btn-box">
                   <a href="#evento2" id="icono3">
@@ -256,7 +254,7 @@
               </div>
             </div>
             <div class="box-2-top2">
-              <div class="img-box b-4 prueba" style="display: none;">
+              <div class="img-box b-4 mostrar" style="display: none;">
                 <img src="" alt="" id="imagen4">
                 <div class="btn-box">
                   <a href="#evento2" id="icono4">
@@ -266,7 +264,7 @@
               </div>
             </div>
             <div class="box-2-btm">
-              <div class="img-box b-5 prueba" style="display: none;">
+              <div class="img-box b-5 mostrar" style="display: none;">
                 <img src="" alt="" id="imagen5">
                 <div class="btn-box">
                   <a href="#imagen1" id="icono5">
@@ -274,7 +272,7 @@
                   </a>
                 </div>
               </div>
-              <div class="img-box b-6 prueba" style="display: none;">
+              <div class="img-box b-6 mostrar" style="display: none;">
                 <img src="" alt="" id="imagen6">
                 <div class="btn-box">
                   <a href="#imagen1" id="icono6">
@@ -352,36 +350,34 @@
   <!-- Javascript-->
   <script>
     function MostrarFotos() {
-      const fotos = document.getElementsByClassName("prueba");
+      const fotos = document.getElementsByClassName("mostrar");
       for (let i = 0; i < fotos.length; i++) {
         fotos[i].style.display = "block";
       }
       document.getElementsByClassName("see_btn")[0].style.display = "block";
     }
+    document.getElementById("cliente").innerText = nombre;
+    const allImgBoxes = document.querySelectorAll('.portfolio_section .portfolio_container .img-box');
+    const imgBoxes = [...allImgBoxes].slice(0);
 
-const imgBoxes = document.querySelectorAll('.img-box');
-
-
-
-
-imgBoxes.forEach(imgBox => {
-    imgBox.addEventListener('touchstart', function() {
+    imgBoxes.forEach(imgBox => {
+      imgBox.addEventListener('touchstart', function() {
         const btnLink = imgBox.querySelector('.btn-box a');
-        
-        // Si el enlace está oculto, mostrarlo y mostrar el pseudo-elemento ::before
-        if (btnLink.style.display === 'none' || btnLink.style.display === '') {
-            btnLink.style.display = 'block';
 
-        } else { 
+        if (btnLink.style.display === 'none' || btnLink.style.display === '') {
+          btnLink.style.display = 'block';
           setTimeout(function() {
-            btnLink.style.display = 'none';
-        }, 100);
+            btnLink.style.display = '';
+          }, 5000);
+
+        } else {
+          setTimeout(function() {
+            btnLink.style.display = '';
+          }, 100);
 
         }
+      });
     });
-});
-
-
   </script>
   <script src="../js/core.min.js"></script>
   <script src="../js/script.js"></script>

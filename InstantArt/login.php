@@ -40,7 +40,7 @@
 
                 <div class="Register">
                     <br>
-                    <p>No tengo una cuenta <a href="registrarse.html">Registrate</a></p>
+                    <p>No tengo una cuenta <a href="registrarse.html">Registrarse</a></p>
                 </div>
             </form>
         </section>

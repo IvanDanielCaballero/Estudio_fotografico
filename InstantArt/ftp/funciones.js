@@ -10,11 +10,11 @@ inicio(id_cliente);
 document.getElementById("evento2").addEventListener("change", function () {
     let id_evento = document.getElementById('evento2').value;
     cargarFotos('/' + id_cliente + '/' + id_evento);
-    const fotos = document.getElementsByClassName("prueba");
-      for (let i = 0; i < fotos.length; i++) {
+    const fotos = document.getElementsByClassName("mostrar");
+    for (let i = 0; i < fotos.length; i++) {
         fotos[i].style.display = "none";
-      }
-      document.getElementsByClassName("see_btn")[0].style.display = "none";
+    }
+    document.getElementsByClassName("see_btn")[0].style.display = "none";
 });
 
 function inicio(id_cliente) {
@@ -25,13 +25,23 @@ function inicio(id_cliente) {
         .then(data => {
             console.log('Eventos:', data);
             let eventoSelect = document.getElementById("evento2");
-            eventoSelect.innerHTML = '';
+            /* eventoSelect.innerHTML = ''; */
             data.forEach(evento => {
                 let option = document.createElement("option");
                 option.value = evento.id_evento;
                 option.text = evento.evento;
                 eventoSelect.add(option);
             });
+            //añadido por jose carlos si no hay ningun evento añade una opcion diciendo que no hay eventos
+            if (eventoSelect.childElementCount == 0) {
+                var option = document.createElement('option');
+                option.text = 'No tienes eventos contratados';
+                eventoSelect.appendChild(option);
+                document.getElementById("servicios").style.display="block"
+            } else {
+                document.getElementById("imagenes").style.display = "block"
+            }
+
             if (data.length > 0) {
                 eventoSelect.selectedIndex = 0;
                 eventoSelect.dispatchEvent(new Event('change'));
@@ -49,21 +59,19 @@ function cargarFotos(url) {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            const fotosDiv = document.getElementById('fotos');
-            fotosDiv.innerHTML = ''; // Limpiar las fotos antes de agregar nuevas
-            i = 1
-            data.forEach(foto => {
+            let i = 1;
+            for (let j = 0; j < 6; j++) {
+                let foto = data[j];
 
                 let img = document.getElementById("imagen" + i);
                 img.src = foto;
                 img.alt = 'ImagenFTP';
 
-                let enlance=document.getElementById("icono"+i);
-                enlance.onclick= () => descargarFoto(foto); 
+                let enlace = document.getElementById("icono" + i);
+                enlace.onclick = () => descargarFoto(foto);
 
                 i++;
-
-            });
+            }
         })
         .catch(error => console.error('Error al cargar las fotos:', error));
 }
@@ -124,5 +132,5 @@ function obtenerCaminoCompleto(url) {
 function refrescar_fotos() {
     let id_evento = document.getElementById('evento2').value;
     cargarFotos('/' + id_cliente + '/' + id_evento);
-    
+
 };
