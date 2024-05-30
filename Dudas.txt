@@ -57,3 +57,5 @@ solo mostrar las principales y un boton de descargarlas todas.
 
 -- Deberiamos cambiar el nombre de la carpeta ftp y php por nombres mas adecuados al contexto de la pagina
 queda mal cuando acceder a la pagina y ves: php y ftp como rutas
+
+--El formulario de contacto ahora parece que lo haya hecho el mismisimo satanás
