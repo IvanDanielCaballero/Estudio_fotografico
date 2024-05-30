@@ -107,6 +107,10 @@
   if (!isset($_SESSION['usuario'])) {
     header("Location: ../login.php");
   }
+
+  if(!isset($_SESSION['id_cliente'])){
+    header("Location: ../index.php");
+  }
   // Configuración de la conexión a la base de datosFi
   $servername = "217.160.114.39";
   $username = "jose";
