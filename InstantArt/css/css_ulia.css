@@ -218,6 +218,15 @@ a:focus {
   margin: 50px 0;
 }
 
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .about_section .box .img-box {
+    width: 150px; /* Utilizar el ancho completo del contenedor */
+    margin: 50px 0; /* Espaciado reducido */
+  }
+}
+
+
 .about_section .box .img-box .about_img-bg {
   position: absolute;
   top: 50%;
