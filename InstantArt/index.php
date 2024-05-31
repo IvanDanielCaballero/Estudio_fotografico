@@ -4,12 +4,14 @@
 <head>
   <title>Home</title>
   <meta name="format-detection" content="telephone=no">
-  <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+  <meta name="viewport"
+    content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <!-- Stylesheets-->
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
+  <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
@@ -41,7 +43,12 @@
     <header class="section page-header">
       <!-- RD Navbar-->
       <div class="rd-navbar-wrap">
-        <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+        <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+          data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+          data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
+          data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+          data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
+          data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
           <div class="rd-navbar-main-outer">
             <div class="rd-navbar-main">
               <!-- RD Navbar Panel-->
@@ -49,39 +56,45 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <a class="rd-navbar-brand" href="index.html"><img src="images/logo.png" alt="" width="400" height="200" srcset="images/logo.png" /></a>
+                <a class="rd-navbar-brand" href="index.html"><img src="images/logo.png" alt="" width="400" height="200"
+                    srcset="images/logo.png" /></a>
               </div>
               <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Inicio</a>
+                    </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.php">Contactanos</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.html">Contactanos</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios" href="usuarios.php" style="display: none;">Usuarios</a>
+
+                    <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="usuarios.php">Usuarios</a>
                     </li>
                     <!--Area personal, para descargar proyectos-->
-                    <li class="rd-nav-item"><a class="rd-nav-link" id="area_personal" href="ftp/areaPersonal.php" style="display:none">Area Personal</a>
+                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href="ftp/areaPersonal.php">Area Personal</a>
                     </li>
                     <!--Area de gestion de clientes-->
-                    <li class="rd-nav-item"><a class="rd-nav-link" id="gestion_proyectos" href="gestion/gestion_proyectos.php" style="display:none">Gestion de proyectos</a>
+                    <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestion de proyectos</a>
                     </li>
                     <!--Tabla para ver los trabajos pendientes de un empleado-->
-                    <li class="rd-nav-item"><a class="rd-nav-link" id="proyectos_empleado" href="gestion/proyecto_empleado.php" style="display:none">Evento empleado</a>
+                    <li class="rd-nav-item"id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"  href="gestion/proyecto_empleado.php">Evento empleado</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="login.php">Iniciar Sesion</a>
+                    <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5"  href="login.php">Iniciar Sesion</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" id="cerrar_sesion" href="logout.php" style="display: none;">Cerrar Sesion</a>
+                    <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"  href="logout.php" >Cerrar Sesion</a>
                     </li>
+
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </nav>
+
       </div>
     </header>
     <!-- Overlapping Screen-->
@@ -96,13 +109,17 @@
               </div>
             </div>
             <div class="col-md-8 col-lg-7 col-xl-6">
-              <h1 class="wow-outer"><span class="font-weight-bold wow-outer"><span class="wow slideInUp">Fotografía</span></span><span class="font-weight-exlight wow-outer"><span class="wow slideInUp" data-wow-delay=".1s">y Retoques</span></span></h1>
+              <h1 class="wow-outer"><span class="font-weight-bold wow-outer"><span
+                    class="wow slideInUp">Fotografía</span></span><span class="font-weight-exlight wow-outer"><span
+                    class="wow slideInUp" data-wow-delay=".1s">y Retoques</span></span></h1>
             </div>
             <div class="col-md-6 col-lg-5 col-xl-4 col-offset-1">
               <div class="wow-outer">
-                <h4 class="font-weight-light wow slideInUp" data-wow-delay=".2s">Danos una idea, nosotros hacemos la magia</h4>
+                <h4 class="font-weight-light wow slideInUp" data-wow-delay=".2s">Danos una idea, nosotros hacemos la
+                  magia</h4>
               </div>
-              <div class="wow-outer button-outer"><a class="button button-lg button-primary button-winona wow slideInUp" href="#" data-wow-delay=".3s">Ver trabajos</a></div>
+              <div class="wow-outer button-outer"><a class="button button-lg button-primary button-winona wow slideInUp"
+                  href="#" data-wow-delay=".3s">Ver trabajos</a></div>
             </div>
           </div>
         </div>
@@ -117,64 +134,84 @@
               <h3 class="section-title wow-outer"><span class="wow slideInUp">Trabajos</span></h3>
             </div>
             <div class="col-12 isotope-wrap">
-              <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group" data-lg-thumbnail="false">
+              <div class="isotope offset-top-2" data-isotope-layout="masonry" data-lightgallery="group"
+                data-lg-thumbnail="false">
                 <div class="row row-30">
                   <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                     <!-- Thumbnail Corporate-->
-                    <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto2.jpg" alt="" width="370" height="256" />
+                    <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image"
+                        src="images/foto2.jpg" alt="" width="370" height="256" />
                       <div class="thumbnail-corporate-caption">
                         <p class="thumbnail-corporate-title"><a href="#">Jose Carlos</a></p>
-                        <p>Una foto corta pero cautivadora de un colibrí en vuelo, con sus alas vibrantes y colores brillantes</p><a class="thumbnail-corporate-link" href="images/foto2.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                        <p>Una foto corta pero cautivadora de un colibrí en vuelo, con sus alas vibrantes y colores
+                          brillantes</p><a class="thumbnail-corporate-link" href="images/foto2.jpg"
+                          data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span
+                            class="icon mdi mdi-magnify"></span></a>
                       </div>
                       <div class="thumbnail-corporate-dummy"></div>
                     </article>
                   </div>
                   <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                     <!-- Thumbnail Corporate-->
-                    <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto1.jpg" alt="" width="370" height="464" />
+                    <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img
+                        class="thumbnail-corporate-image" src="images/foto1.jpg" alt="" width="370" height="464" />
                       <div class="thumbnail-corporate-caption">
                         <p class="thumbnail-corporate-title"><a href="#">Ivan</a></p>
-                        <p>Un par de zapatos elegantes, con un diseño moderno y detalles cuidadosamente elaborados</p><a class="thumbnail-corporate-link" href="images/foto1.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                        <p>Un par de zapatos elegantes, con un diseño moderno y detalles cuidadosamente elaborados</p><a
+                          class="thumbnail-corporate-link" href="images/foto1.jpg" data-lightgallery="item"><span
+                            class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                       </div>
                       <div class="thumbnail-corporate-dummy"></div>
                     </article>
                   </div>
                   <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                     <!-- Thumbnail Corporate-->
-                    <article class="thumbnail-corporate wow slideInUp"><img class="thumbnail-corporate-image" src="images/foto3.jpg" alt="" width="370" height="256" />
+                    <article class="thumbnail-corporate wow slideInUp"><img class="thumbnail-corporate-image"
+                        src="images/foto3.jpg" alt="" width="370" height="256" />
                       <div class="thumbnail-corporate-caption">
                         <p class="thumbnail-corporate-title"><a href="#">Miguel</a></p>
-                        <p>Un imponente edificio de cristal y acero, se alza majestuoso en el horizonte urbano </p><a class="thumbnail-corporate-link" href="images/foto3.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                        <p>Un imponente edificio de cristal y acero, se alza majestuoso en el horizonte urbano </p><a
+                          class="thumbnail-corporate-link" href="images/foto3.jpg" data-lightgallery="item"><span
+                            class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                       </div>
                       <div class="thumbnail-corporate-dummy"></div>
                     </article>
                   </div>
                   <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                     <!-- Thumbnail Corporate-->
-                    <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInUp"><img class="thumbnail-corporate-image" src="images/foto6.jpg" alt="" width="370" height="464" />
+                    <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInUp"><img
+                        class="thumbnail-corporate-image" src="images/foto6.jpg" alt="" width="370" height="464" />
                       <div class="thumbnail-corporate-caption">
                         <p class="thumbnail-corporate-title"><a href="#">Jose Carlos</a></p>
-                        <p>Un coche reluciente y elegante, con líneas aerodinámicas y detalles sofisticados</p><a class="thumbnail-corporate-link" href="images/foto6.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                        <p>Un coche reluciente y elegante, con líneas aerodinámicas y detalles sofisticados</p><a
+                          class="thumbnail-corporate-link" href="images/foto6.jpg" data-lightgallery="item"><span
+                            class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                       </div>
                       <div class="thumbnail-corporate-dummy"></div>
                     </article>
                   </div>
                   <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                     <!-- Thumbnail Corporate-->
-                    <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto5.jpg" alt="" width="370" height="464" />
+                    <article class="thumbnail-corporate thumbnail-corporate-lg wow slideInDown"><img
+                        class="thumbnail-corporate-image" src="images/foto5.jpg" alt="" width="370" height="464" />
                       <div class="thumbnail-corporate-caption">
                         <p class="thumbnail-corporate-title"><a href="#">Ivan</a></p>
-                        <p>Un loro colorido y juguetón, con plumas brillantes y una expresión curiosa</p><a class="thumbnail-corporate-link" href="images/foto5.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                        <p>Un loro colorido y juguetón, con plumas brillantes y una expresión curiosa</p><a
+                          class="thumbnail-corporate-link" href="images/foto5.jpg" data-lightgallery="item"><span
+                            class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                       </div>
                       <div class="thumbnail-corporate-dummy"></div>
                     </article>
                   </div>
                   <div class="col-12 col-sm-6 col-lg-4 isotope-item wow-outer">
                     <!-- Thumbnail Corporate-->
-                    <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image" src="images/foto4.jpg" alt="" width="370" height="256" />
+                    <article class="thumbnail-corporate wow slideInDown"><img class="thumbnail-corporate-image"
+                        src="images/foto4.jpg" alt="" width="370" height="256" />
                       <div class="thumbnail-corporate-caption">
                         <p class="thumbnail-corporate-title"><a href="#">Miguel</a></p>
-                        <p>Un bullicioso puerto marítimo, lleno de actividad y vida, con barcos diferentes</p><a class="thumbnail-corporate-link" href="images/foto4.jpg" data-lightgallery="item"><span class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
+                        <p>Un bullicioso puerto marítimo, lleno de actividad y vida, con barcos diferentes</p><a
+                          class="thumbnail-corporate-link" href="images/foto4.jpg" data-lightgallery="item"><span
+                            class="icon mdi mdi-magnify"></span><span class="icon mdi mdi-magnify"></span></a>
                       </div>
                       <div class="thumbnail-corporate-dummy"></div>
                     </article>
@@ -189,7 +226,9 @@
     <section class="section section-lg text-center bg-default">
       <div class="container">
         <h3 class="section-title wow-outer"><span class="wow slideInUp">Sobre nosotros</span></h3>
-        <p class="wow-outer"><span class="text-width-1 wow slideInDown">En InstantArt, capturamos momentos con pasión y precisión. Nuestro equipo de fotógrafos expertos se compromete a ofrecerte imágenes de calidad excepcional, que reflejen la esencia y la emoción de cada ocasión.</span></p>
+        <p class="wow-outer"><span class="text-width-1 wow slideInDown">En InstantArt, capturamos momentos con pasión y
+            precisión. Nuestro equipo de fotógrafos expertos se compromete a ofrecerte imágenes de calidad excepcional,
+            que reflejen la esencia y la emoción de cada ocasión.</span></p>
         <div class="row row-50">
           <div class="col-6 col-md-3 wow-outer">
             <!-- Counter Minimal-->
@@ -239,29 +278,41 @@
       <div class="container">
         <h3 class="section-title">Opiniones</h3>
         <div class="slick-widget-testimonials wow fadeIn">
-          <div class="slick-slider carousel-child" id="child-carousel" data-for=".carousel-parent" data-arrows="true" data-loop="true" data-dots="false" data-swipe="true" data-items="1" data-sm-items="3" data-md-items="5" data-lg-items="5" data-xl-items="5" data-center-mode="true" data-slide-to-scroll="1">
-            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona3.jpg" alt="" width="96" height="96" />
+          <div class="slick-slider carousel-child" id="child-carousel" data-for=".carousel-parent" data-arrows="true"
+            data-loop="true" data-dots="false" data-swipe="true" data-items="1" data-sm-items="3" data-md-items="5"
+            data-lg-items="5" data-xl-items="5" data-center-mode="true" data-slide-to-scroll="1">
+            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona3.jpg" alt="" width="96"
+                height="96" />
             </div>
-            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona1.jpg" alt="" width="96" height="96" />
+            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona1.jpg" alt="" width="96"
+                height="96" />
             </div>
-            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona4.jpg" alt="" width="96" height="96" />
+            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona4.jpg" alt="" width="96"
+                height="96" />
             </div>
-            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona2.jpg" alt="" width="96" height="96" />
+            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona2.jpg" alt="" width="96"
+                height="96" />
             </div>
-            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona5.jpg" alt="" width="96" height="96" />
+            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona5.jpg" alt="" width="96"
+                height="96" />
             </div>
-            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona6.jpg" alt="" width="96" height="96" />
+            <div class="item wow-outer"><img class="wow slideInLeft" src="images/persona6.jpg" alt="" width="96"
+                height="96" />
             </div>
           </div>
           <!-- Slick Carousel-->
-          <div class="slick-slider carousel-parent" data-arrows="false" data-loop="true" data-dots="false" data-swipe="false" data-items="1" data-fade="true" data-child="#child-carousel" data-for="#child-carousel">
+          <div class="slick-slider carousel-parent" data-arrows="false" data-loop="true" data-dots="false"
+            data-swipe="false" data-items="1" data-fade="true" data-child="#child-carousel" data-for="#child-carousel">
             <div class="item">
               <!-- Quote Light 1-->
               <blockquote class="quote-light">
                 <cite class="quote-light-cite">María López</cite>
-                <p class="quote-light-caption">Cliente Regular</p><span class="icon quote-light-mark linearicons-quote-open"></span>
+                <p class="quote-light-caption">Cliente Regular</p><span
+                  class="icon quote-light-mark linearicons-quote-open"></span>
                 <div class="quote-light-text">
-                  <p>Me encantó absolutamente mi sesión y todas las fotos que resultaron de ella. ¡Tienen una pasión clara por lo que hacen y se nota en su trabajo! ¡Recomiendo altamente a InstantArt para cualquier necesidad fotográfica!</p>
+                  <p>Me encantó absolutamente mi sesión y todas las fotos que resultaron de ella. ¡Tienen una pasión
+                    clara por lo que hacen y se nota en su trabajo! ¡Recomiendo altamente a InstantArt para cualquier
+                    necesidad fotográfica!</p>
                 </div>
               </blockquote>
             </div>
@@ -269,9 +320,11 @@
               <!-- Quote Light 2-->
               <blockquote class="quote-light">
                 <cite class="quote-light-cite">Juan Martínez</cite>
-                <p class="quote-light-caption">Cliente Regular</p><span class="icon quote-light-mark linearicons-quote-open"></span>
+                <p class="quote-light-caption">Cliente Regular</p><span
+                  class="icon quote-light-mark linearicons-quote-open"></span>
                 <div class="quote-light-text">
-                  <p>Estaba muy contento con las fotos tomadas por InstantArt. Fueron muy amables y pacientes con mi hijo de dos meses y mis enérgicos niños de 6 años. ¡Voy a InstantArt a partir de ahora!</p>
+                  <p>Estaba muy contento con las fotos tomadas por InstantArt. Fueron muy amables y pacientes con mi
+                    hijo de dos meses y mis enérgicos niños de 6 años. ¡Voy a InstantArt a partir de ahora!</p>
                 </div>
               </blockquote>
             </div>
@@ -279,9 +332,12 @@
               <!-- Quote Light 3-->
               <blockquote class="quote-light">
                 <cite class="quote-light-cite">Sofía García</cite>
-                <p class="quote-light-caption">Cliente Regular</p><span class="icon quote-light-mark linearicons-quote-open"></span>
+                <p class="quote-light-caption">Cliente Regular</p><span
+                  class="icon quote-light-mark linearicons-quote-open"></span>
                 <div class="quote-light-text">
-                  <p>Acabo de recibir mis hermosas fotos hoy de InstantArt y estoy asombrada de lo guapo que se ve mi hijo en las fotos. ¡Muchas gracias por tan buenos recuerdos! Voy a recomendar InstantArt a mis amigos.</p>
+                  <p>Acabo de recibir mis hermosas fotos hoy de InstantArt y estoy asombrada de lo guapo que se ve mi
+                    hijo en las fotos. ¡Muchas gracias por tan buenos recuerdos! Voy a recomendar InstantArt a mis
+                    amigos.</p>
                 </div>
               </blockquote>
             </div>
@@ -289,9 +345,12 @@
               <!-- Quote Light 4 -->
               <blockquote class="quote-light">
                 <cite class="quote-light-cite">Carlos Sánchez</cite>
-                <p class="quote-light-caption">Cliente Regular</p><span class="icon quote-light-mark linearicons-quote-open"></span>
+                <p class="quote-light-caption">Cliente Regular</p><span
+                  class="icon quote-light-mark linearicons-quote-open"></span>
                 <div class="quote-light-text">
-                  <p>Jose es verdaderamente un fotógrafo excepcional (y una persona maravillosa) con una habilidad casi mística para capturar la verdadera naturaleza de las personas y los eventos. ¡Lo recomiendo a cualquiera!</p>
+                  <p>Jose es verdaderamente un fotógrafo excepcional (y una persona maravillosa) con una habilidad casi
+                    mística para capturar la verdadera naturaleza de las personas y los eventos. ¡Lo recomiendo a
+                    cualquiera!</p>
                 </div>
               </blockquote>
             </div>
@@ -300,9 +359,11 @@
               <!-- Quote Light 5 -->
               <blockquote class="quote-light">
                 <cite class="quote-light-cite">Laura Pérez</cite>
-                <p class="quote-light-caption">Cliente Regular</p><span class="icon quote-light-mark linearicons-quote-open"></span>
+                <p class="quote-light-caption">Cliente Regular</p><span
+                  class="icon quote-light-mark linearicons-quote-open"></span>
                 <div class="quote-light-text">
-                  <p>Las fotos que recibí de InstantArt son simplemente impresionantes. Capturaron la esencia de nuestro evento de una manera que nunca antes había visto. ¡Altamente recomendado!</p>
+                  <p>Las fotos que recibí de InstantArt son simplemente impresionantes. Capturaron la esencia de nuestro
+                    evento de una manera que nunca antes había visto. ¡Altamente recomendado!</p>
                 </div>
               </blockquote>
             </div>
@@ -310,9 +371,11 @@
               <!-- Quote Light 6 -->
               <blockquote class="quote-light">
                 <cite class="quote-light-cite">Eduardo Gutiérrez</cite>
-                <p class="quote-light-caption">Cliente Regular</p><span class="icon quote-light-mark linearicons-quote-open"></span>
+                <p class="quote-light-caption">Cliente Regular</p><span
+                  class="icon quote-light-mark linearicons-quote-open"></span>
                 <div class="quote-light-text">
-                  <p>Estoy muy satisfecho con el servicio de InstantArt. Fueron muy profesionales y el resultado final superó mis expectativas. Definitivamente volveré a trabajar con ellos en el futuro.</p>
+                  <p>Estoy muy satisfecho con el servicio de InstantArt. Fueron muy profesionales y el resultado final
+                    superó mis expectativas. Definitivamente volveré a trabajar con ellos en el futuro.</p>
                 </div>
               </blockquote>
             </div>
@@ -324,61 +387,80 @@
       <div class="container">
         <div class="row row-50 justify-content-lg-between offset-top-1">
           <div class="col-12">
-            <h3 class="section-title text-center wow-outer"><span class="wow slideInDown">Preguntas Frecuentes</span></h3>
+            <h3 class="section-title text-center wow-outer"><span class="wow slideInDown">Preguntas Frecuentes</span>
+            </h3>
           </div>
           <div class="col-lg-7 col-xl-6">
             <!-- Bootstrap collapse-->
-            <div class="card-group-custom card-group-corporate wow-outer" id="accordion1" role="tablist" aria-multiselectable="false">
+            <div class="card-group-custom card-group-corporate wow-outer" id="accordion1" role="tablist"
+              aria-multiselectable="false">
               <!-- Bootstrap card-->
               <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".05s">
                 <div class="card-header" id="accordion1-heading-1" role="tab">
-                  <div class="card-title"><a role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-1" aria-controls="accordion1-collapse-1" aria-expanded="true">¿Ofrecen servicios de edición o retoque fotográfico?
+                  <div class="card-title"><a role="button" data-toggle="collapse" data-parent="#accordion1"
+                      href="#accordion1-collapse-1" aria-controls="accordion1-collapse-1" aria-expanded="true">¿Ofrecen
+                      servicios de edición o retoque fotográfico?
 
                       <div class="card-arrow"> </div>
                     </a></div>
                 </div>
-                <div class="collapse show" id="accordion1-collapse-1" role="tabpanel" aria-labelledby="accordion1-heading-1">
+                <div class="collapse show" id="accordion1-collapse-1" role="tabpanel"
+                  aria-labelledby="accordion1-heading-1">
                   <div class="card-body">
-                    <p>Sí, en InstantArt ofrecemos servicios de edición y retoque fotográfico para mejorar la calidad y el aspecto de tus imágenes. Nuestro equipo de expertos en retoque está dedicado a perfeccionar cada detalle y cumplir con tus expectativas.</p>
+                    <p>Sí, en InstantArt ofrecemos servicios de edición y retoque fotográfico para mejorar la calidad y
+                      el aspecto de tus imágenes. Nuestro equipo de expertos en retoque está dedicado a perfeccionar
+                      cada detalle y cumplir con tus expectativas.</p>
                   </div>
                 </div>
               </article>
               <!-- Bootstrap card-->
               <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".1s">
                 <div class="card-header" id="accordion1-heading-2" role="tab">
-                  <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-2" aria-controls="accordion1-collapse-2" aria-expanded="false">¿Puedo solicitar un servicio de fotografía personalizado?
+                  <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse"
+                      data-parent="#accordion1" href="#accordion1-collapse-2" aria-controls="accordion1-collapse-2"
+                      aria-expanded="false">¿Puedo solicitar un servicio de fotografía personalizado?
                       <div class="card-arrow"></div>
                     </a></div>
                 </div>
                 <div class="collapse" id="accordion1-collapse-2" role="tabpanel" aria-labelledby="accordion1-heading-2">
                   <div class="card-body">
-                    <p>Absolutamente, en InstantArt entendemos que cada cliente tiene necesidades únicas. Por lo tanto, ofrecemos servicios de fotografía personalizados para adaptarnos a tus requisitos específicos. ¡Contáctanos para discutir tu proyecto y encontrar la mejor solución para ti!</p>
+                    <p>Absolutamente, en InstantArt entendemos que cada cliente tiene necesidades únicas. Por lo tanto,
+                      ofrecemos servicios de fotografía personalizados para adaptarnos a tus requisitos específicos.
+                      ¡Contáctanos para discutir tu proyecto y encontrar la mejor solución para ti!</p>
                   </div>
                 </div>
               </article>
               <!-- Bootstrap card-->
               <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".15s">
                 <div class="card-header" id="accordion1-heading-3" role="tab">
-                  <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-3" aria-controls="accordion1-collapse-3" aria-expanded="false">¿Cuál es el tiempo de entrega de las imágenes editadas?
+                  <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse"
+                      data-parent="#accordion1" href="#accordion1-collapse-3" aria-controls="accordion1-collapse-3"
+                      aria-expanded="false">¿Cuál es el tiempo de entrega de las imágenes editadas?
                       <div class="card-arrow"></div>
                     </a></div>
                 </div>
                 <div class="collapse" id="accordion1-collapse-3" role="tabpanel" aria-labelledby="accordion1-heading-3">
                   <div class="card-body">
-                    <p>El tiempo de entrega de las imágenes editadas puede variar según la cantidad y la complejidad del trabajo. Sin embargo, nos esforzamos por entregar los resultados lo más rápido posible sin comprometer la calidad. Te proporcionaremos un plazo de entrega claro al comenzar el proyecto.</p>
+                    <p>El tiempo de entrega de las imágenes editadas puede variar según la cantidad y la complejidad del
+                      trabajo. Sin embargo, nos esforzamos por entregar los resultados lo más rápido posible sin
+                      comprometer la calidad. Te proporcionaremos un plazo de entrega claro al comenzar el proyecto.</p>
                   </div>
                 </div>
               </article>
               <!-- Bootstrap card-->
               <article class="card card-custom card-corporate wow fadeInDown" data-wow-delay=".2s">
                 <div class="card-header" id="accordion1-heading-4" role="tab">
-                  <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse-4" aria-controls="accordion1-collapse-4" aria-expanded="false">¿Puedo obtener derechos de autor de las imágenes editadas?
+                  <div class="card-title"><a class="collapsed" role="button" data-toggle="collapse"
+                      data-parent="#accordion1" href="#accordion1-collapse-4" aria-controls="accordion1-collapse-4"
+                      aria-expanded="false">¿Puedo obtener derechos de autor de las imágenes editadas?
                       <div class="card-arrow"></div>
                     </a></div>
                 </div>
                 <div class="collapse" id="accordion1-collapse-4" role="tabpanel" aria-labelledby="accordion1-heading-4">
                   <div class="card-body">
-                    <p>Sí, al trabajar con InstantArt, tendrás derechos de autor completos sobre las imágenes editadas. Nosotros respetamos y valoramos tu propiedad intelectual, por lo que te proporcionaremos todos los derechos necesarios para utilizar y distribuir las imágenes según tus necesidades.</p>
+                    <p>Sí, al trabajar con InstantArt, tendrás derechos de autor completos sobre las imágenes editadas.
+                      Nosotros respetamos y valoramos tu propiedad intelectual, por lo que te proporcionaremos todos los
+                      derechos necesarios para utilizar y distribuir las imágenes según tus necesidades.</p>
                   </div>
                 </div>
               </article>
@@ -439,8 +521,10 @@
         <div class="row justify-content-center">
           <div class="col-sm-10 col-md-12">
             <div class="box-cta-thin">
-              <h4 class="wow-outer"><span class="wow slideInRight">Buscando un <span class="text-italic">Fotografo de calidad?</span> </span></h4>
-              <div class="wow-outer button-outer"><a class="button button-primary button-winona wow slideInLeft" href="#">Sesion</a></div>
+              <h4 class="wow-outer"><span class="wow slideInRight">Buscando un <span class="text-italic">Fotografo de
+                    calidad?</span> </span></h4>
+              <div class="wow-outer button-outer"><a class="button button-primary button-winona wow slideInLeft"
+                  href="#">Sesion</a></div>
             </div>
           </div>
         </div>
@@ -456,16 +540,20 @@
             <div class="col-lg-4">
               <div class="inset-right-1">
                 <h4>Mas información</h4>
-                <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo momentos ordinarios en extraordinarias obras maestras visuales. </p>
+                <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo momentos
+                  ordinarios en extraordinarias obras maestras visuales. </p>
               </div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4">
               <div class="box-1">
                 <h4>Información de contacto</h4>
                 <ul class="list-sm">
-                  <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a class="link-default" href="#">Calle San José <br> Puerta 3, Piso 2, Número 123.</a></li>
-                  <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a class="link-default" href="tel:#">675456345</a></li>
-                  <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a class="link-default" href="mailto:#">InstantArt@gmail.com</a></li>
+                  <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
+                      class="link-default" href="#">Calle San José <br> Puerta 3, Piso 2, Número 123.</a></li>
+                  <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
+                      class="link-default" href="tel:#">675456345</a></li>
+                  <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
+                      class="link-default" href="mailto:#">InstantArt@gmail.com</a></li>
                 </ul>
               </div>
             </div>
@@ -474,7 +562,8 @@
               <p>Pon tu email para consultar lo que quieras</p>
               <!-- RD Mailform-->
               <a href="contactanos.php">
-                <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
+                  data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                   <div class="form-wrap">
                     <input class="form-input" id="subscribe-form-2-email" type="email" name="email">
                     <label class="form-label" for="subscribe-form-2-email">E-mail</label>
@@ -482,7 +571,8 @@
 
                   <div class="form-button">
 
-                    <div class="button button-primary button-icon button-icon-only button-winona" aria-label="submit"><span class="icon mdi mdi-email-outline"></span></div>
+                    <div class="button button-primary button-icon button-icon-only button-winona" aria-label="submit">
+                      <span class="icon mdi mdi-email-outline"></span></div>
 
                   </div>
                 </form>
