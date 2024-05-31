@@ -17,80 +17,6 @@
   <link rel="stylesheet" href="../css/fonts.css">
 
 </head>
-<style>
-  .b-6 {
-    max-width: 257.7px !important;
-    max-height: 386.65 !important;
-    overflow: hidden;
-    animation: aparecer 2s forwards;
-  }
-
-  .b-5 {
-    max-width: 424.8px !important;
-    max-height: 386.65px !important;
-    overflow: hidden;
-    animation: aparecer 2s forwards;
-  }
-
-  .b-2 {
-    max-width: 439.217px !important;
-    max-height: 538.73px !important;
-    overflow: hidden;
-    animation: aparecer 2s forwards;
-  }
-
-
-
-  .b-3 {
-    max-width: 702.65px !important;
-    max-height: 230.4px !important;
-    overflow: hidden;
-    animation: aparecer 2s forwards;
-
-  }
-
-  .b-4 {
-    max-width: 702.65px !important;
-    max-height: 215.6px !important;
-    overflow: hidden;
-    animation: aparecer 2s forwards;
-
-  }
-
-  .b-1 {
-    max-width: 439.217px !important;
-    max-height: 313.95px !important;
-    overflow: hidden;
-    animation: aparecer 2s forwards;
-  }
-
-  i.fas.fa-download {
-    font-size: 24px;
-  }
-
-  .img-box img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-
-
-  .see_btn {
-    text-align: center;
-  }
-
-
-
-  @keyframes aparecer {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-</style>
 
 <body>
 
@@ -108,7 +34,7 @@
     header("Location: ../login.php");
   }
 
-  if(!isset($_SESSION['id_cliente'])){
+  if (!isset($_SESSION['id_cliente'])) {
     header("Location: ../index.php");
   }
   // Configuración de la conexión a la base de datosFi
@@ -180,6 +106,44 @@
         </nav>
       </div>
     </header>
+
+
+    <section class="slider_section position-relative mb-5">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-5 offset-md-1 ">
+                  <div class="detail_box">
+                    <h1>
+                      TU GALERIA
+                    </h1>
+                    <p>
+                      Esperamos sinceramente que nuestros servicios sean de tu completo agrado y cumplan con todas tus expectativas.
+                    </p>
+                    <div class="btn-box">
+                      <a href="../sobre_nosotros.html" class="btn-1">
+                        Sobre Nosotros
+                      </a>
+                      <a href="../servicios.html" class="btn-2">
+                        Servicios
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 px-0">
+                  <div class="">
+                    <img src="../images/slider-img.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <section class="about_section layout_padding6">
       <div class="container">
@@ -326,11 +290,11 @@
               <!-- RD Mailform-->
               <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                 <div class="form-wrap">
-                  <input class="form-input" id="subscribe-form-2-email" type="email" name="email" data-constraints="@Email @Required">
-                  <label class="form-label" for="subscribe-form-2-email">E-mail</label>
+                  <input class="form-input" id="subscribe-form-2-email" placeholder="email" type="email" name="email" data-constraints="@Email @Required">
+                  <label class="form-label" for="subscribe-form-2-email"></label>
                 </div>
                 <div class="form-button">
-                  <button class="button button-primary button-icon button-icon-only button-winona" type="submit" aria-label="submit"><span class="icon mdi mdi-email-outline"></span></button>
+                  <button class="button button-primary button-icon button-icon-only button-winona" type="submit" aria-label="submit"><span class="icon mdi mdi-email-outline"></span>Enviar</button>
                 </div>
               </form>
             </div>

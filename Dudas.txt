@@ -60,9 +60,16 @@ en cada pagina?
 --El formulario de contacto ahora parece que lo haya hecho el mismisimo satanás
 
 --No se puede eliminar un usuario da un error al parecer por la carpeta creada en el ftp.
+--No se pueden borrar usuarios desde el apartado de usuarios debido a que estan ligados con claves foraneas, hay que poner el on update cascade, on delete cascade.
 
 --Cuando se registra un usuario y accede a area personal da error de sql, hasta que este cierra sesion y vuelve a iniciar sesion entonces si entra
 
 --Arreglar navbar, no se deben ocultar los enlaces, se deben ocultar los li para que no ocupen espacio.
+
+--En Servicios porque cuando sale una ventana de un servicio al pulsar se oculta y ya no se muestra?.
+
+--En la base de datos en evento porque id_cliente está ligado con la contraseña, se puede subir para poner el nombre antes que la contraseña en bd?. 
+
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
