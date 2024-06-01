@@ -84,7 +84,7 @@
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item active"><a class="rd-nav-link" href="../index.html">Inicio</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="../about-me.html">Sobre Nosotros</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">Sobre Nosotros</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../servicios.html">Servicios</a>
                     </li>
