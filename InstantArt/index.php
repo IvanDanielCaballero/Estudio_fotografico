@@ -75,7 +75,7 @@
                     <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="usuarios.php">Usuarios</a>
                     </li>
                     <!--Area personal, para descargar proyectos-->
-                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href="ftp/areaPersonal.php">Area Personal</a>
+                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href=areaPersonal/areaPersonal.php">Area Personal</a>
                     </li>
                     <!--Area de gestion de clientes-->
                     <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestion de proyectos</a>
