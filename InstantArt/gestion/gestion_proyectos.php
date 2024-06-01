@@ -16,11 +16,11 @@
     <link rel="stylesheet" href="usuarios_form.css" />
     <link rel="stylesheet" href="estilos.css" />
 
-<style>
-    .texto_centrado{
-        text-align: center;
-    }
-</style>
+    <style>
+        .texto_centrado {
+            text-align: center;
+        }
+    </style>
 
 
 
@@ -83,7 +83,8 @@
                                                 Nosotros</a>
                                         </li>
                                         <!--Tabla para ver los trabajos pendientes de un empleado-->
-                                        <li class="rd-nav-item"><a class="rd-nav-link" id="proyectos_empleado" href="proyecto_empleado.php">Evento empleado</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" id="proyectos_empleado"
+                                                href="proyecto_empleado.php">Evento empleado</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"
                                                 href="../usuarios.php" style="display: none;">Usuarios</a>
@@ -143,7 +144,7 @@
                 <div class="row">
                     <div class="col-md-12 ">
 
-                        <div class="fresh-table full-color-orange">
+                        <div class="fresh-table full-color-gestion">
                             <div class="toolbar">
                             </div>
 
@@ -216,6 +217,7 @@
 
         ?>
 
+        <!-- Formulario para añadir proyectos-->
         <div class='container fo wow slideInDown' id='forAnadir' style='display: none;'>
             <form action='anadirProyecto.php' method='POST' class='text-center'>
                 <div class='mb-3 mt-3'>
@@ -277,82 +279,78 @@
             </form>
         </div>
 
+
+
+
         <!-- Formularios para editar eventos -->
-        <div class="container fo wow slideInDown" id="forEditar" style="display: none;">
-            <form action="editarEvento.php" method="POST" enctype="multipart/form-data" class="text-center">
-                <div class="mb-3 mt-3">
+        
+        <div class='container fo wow slideInDown' id='forEditar' style='display: none;'>
+            <form action='editarEvento.php' method='POST' enctype="multipart/form-data" class='text-center'>
+                <div class='mb-3 mt-3'>
                     <h3>Editar eventos</h3>
                     <h4 id="nombre_cliente"></h4>
-                        <label for="evento" class="form-label me-2">Seleccionar Evento:</label>
+                    <label for="evento" class="form-label me-2">Seleccionar Evento:</label>
                         <select id="evento" class="form-control me-2" name="evento">
                             <!-- Options will be populated here -->
                         </select>
                         <button type="button" class="btn btn-danger" onclick="borrarEvento()">Borrar</button>
+                    <div class='row mt-3'>
+                        <div class='col-md-6'>
+                                    <input type='hidden' id='id_cliente' name='id_cliente'>
+                                    <label for='tipo_evento' class='form-label'>Tipo evento:</label>
+                                    <select id='tipo_evento' class='form-control' name='tipo_evento'>
+                                        <?php foreach ($events as $event): ?>
+                                            <option value="<?= $event['id_tipo_evento'] ?>"><?= $event['nombre'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
 
-                    <div class="row mt-3" id="eventDetails" style="display: block;">
-                        <!-- Aquí se mostrarán los detalles del evento seleccionado -->
-                        <div class='row mt-3'>
-                            <div class='col-md-6'>
-                                <input type='hidden' id='id_cliente' name='id_cliente'>
-                                <label for='tipo_evento' class='form-label'>Tipo evento:</label>
-                                <select id='tipo_evento' class='form-control' name='tipo_evento'>
-                                    <?php foreach ($events as $event): ?>
-                                        <option value="<?= $event['id_tipo_evento'] ?>"><?= $event['nombre'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-
-                                <label for='equipo' class='form-label'>Equipo:</label>
-                                <select id='equipo' class='form-control' name='equipo'>
-                                    <?php foreach ($equipos as $equipo): ?>
-                                        <option value="<?= $equipo['id_equipo'] ?>"><?= $equipo['nombre'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                    <label for='equipo' class='form-label'>Equipo:</label>
+                                    <select id='equipo' class='form-control' name='equipo'>
+                                        <?php foreach ($equipos as $equipo): ?>
+                                            <option value="<?= $equipo['id_equipo'] ?>"><?= $equipo['nombre'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
 
 
-                                <label for='descripcion' class='form-label'>Descripcion:</label>
-                                <input type='text' class='form-control' id='descripcion' name='descripcion'>
-                                <label for='estado' class='form-label'>Estado:</label>
-                                <input type='text' id='estado' class='form-control' name='estado'>
+                                    <label for='descripcion' class='form-label'>Descripcion:</label>
+                                    <input type='text' class='form-control' id='descripcion' name='descripcion'>
+                                    <label for='estado' class='form-label'>Estado:</label>
+                                    <input type='text' id='estado' class='form-control' name='estado'>
 
-                            </div>
+                        </div>
 
-                            <div class='col-md-6'>
-                                <label for='hora' class='form-label'>Hora:</label>
-                                <input type='time' id='hora' class='form-control' name='hora'>
-                                <label for='localidad' class='form-label'>Localidad:</label>
-                                <input type='text' class='form-control' id='localidad' name='localidad'>
-                                <label for='fecha' class='form-label'>Fecha:</label>
-                                <input type='date' class='form-control' id='fecha' name='fecha'>
+                        <div class='col-md-6'>
+                        <label for='hora' class='form-label'>Hora:</label>
+                                    <input type='time' id='hora' class='form-control' name='hora'>
+                                    <label for='localidad' class='form-label'>Localidad:</label>
+                                    <input type='text' class='form-control' id='localidad' name='localidad'>
+                                    <label for='fecha' class='form-label'>Fecha:</label>
+                                    <input type='date' class='form-control' id='fecha' name='fecha'>
 
-                                <label for='empleado' class='form-label'>Empleado:</label>
-                                <select id='empleado' class='form-control' name='empleado'>
-                                    <?php foreach ($empleados as $empleado): ?>
-                                        <option value="<?= $empleado['id_empleado'] ?>"><?= $empleado['nombre'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-
+                                    <label for='empleado' class='form-label'>Empleado:</label>
+                                    <select id='empleado' class='form-control' name='empleado'>
+                                        <?php foreach ($empleados as $empleado): ?>
+                                            <option value="<?= $empleado['id_empleado'] ?>"><?= $empleado['nombre'] ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
                         </div>
 
                     </div>
                 </div>
-
                 <div class="button-container text-center row">
-
                     <div class="col-md-6 col-xs-6 text-end">
-                        <button class="btn btn-primary enviar" type="submit">Editar</button>
+                        <button class="btn btn-primary enviar" type="submit">Enviar</button>
                     </div>
-
                     <div class="col-md-6 col-xs-6 text-start">
-                        <button class="btn btn-primary  enviar" type="button"
+                        <button class="btn btn-primary  cancelar" type="button"
                             onclick="location.reload();">Cancelar</button>
                     </div>
                 </div>
+
+
+            </form>
         </div>
-        </form>
-    </div>
-
-
 
     <!-- Formulario para gestionar las imagenes de los eventos-->
 

@@ -136,7 +136,7 @@
                 <div class="row">
                     <div class="col-md-12 ">
 
-                        <div class="fresh-table full-color-orange">
+                        <div class="fresh-table full-color-evento">
                             <div class="toolbar">
                             </div>
 

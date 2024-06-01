@@ -1493,6 +1493,43 @@ input[type=file] > input[type=button]::-moz-focus-inner {
 .fresh-table .fixed-table-container.fixed-height .table thead th {
   border-bottom: 1px solid rgba(220, 220, 220, 0.15) !important;
 }
+
+.fresh-table.full-color-evento {
+  background: #5c91dc;
+  background: -moz-radial-gradient(center, ellipse cover, #5384ce 0%, #d4bb41 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #5384ce), color-stop(100%, #d4bb41));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #5384ce 0%, #d4bb41 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #5384ce 0%, #d4bb41 100%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #5384ce 0%, #d4bb41 100%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, #5384ce 0%, #d4bb41 100%);
+  /* W3C */
+  background-size: 250% 250%;
+}
+
+
+.fresh-table.full-color-gestion {
+  background: #d1d866;
+  background: -moz-radial-gradient(center, ellipse cover, #d1d866 0%, #4087ea 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #d1d866), color-stop(100%, #4087ea));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #d1d866 0%, #4087ea 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #d1d866 0%, #4087ea 100%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #d1d866 0%, #4087ea 100%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, #d1d866 0%, #4087ea 100%);
+  /* W3C */
+  background-size: 250% 250%;
+}
+
+
 .fresh-table.full-color-blue {
   background: #4087ea;
   background: -moz-radial-gradient(center, ellipse cover, #533ce1 0%, #4087ea 100%);

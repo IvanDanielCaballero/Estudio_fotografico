@@ -3,8 +3,17 @@
 }
 
 
-#forAnadir {
-    width: 500px !important;
+#forAnadir, #forEditar, #forSubir {
+    width: 700px !important;
+    margin: 50px auto !important;
+    padding: 20px !important;
+    background-color: #ffffff !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+#forSubir {
+    width: 850px !important;
     margin: 50px auto !important;
     padding: 20px !important;
     background-color: #ffffff !important;
