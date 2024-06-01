@@ -79,7 +79,7 @@
                                         <li class="rd-nav-item active"><a class="rd-nav-link"
                                                 href="../index.php">Inicio</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="../about-me.html">Sobre
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">Sobre
                                                 Nosotros</a>
                                         </li>
                                         <!--Tabla para ver los trabajos pendientes de un empleado-->

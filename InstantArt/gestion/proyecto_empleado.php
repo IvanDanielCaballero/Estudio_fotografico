@@ -73,7 +73,7 @@
                                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                     <ul class="rd-navbar-nav">
                                         <li class="rd-nav-item active"><a class="rd-nav-link"href="../index.php">Inicio</a></li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="../about-me.html">SobreNosotros</a></li>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">SobreNosotros</a></li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios"href="../usuarios.php" style="display: none;">Usuarios</a></li>
                                         <!--Area de gestion de clientes-->
                                         <li class="rd-nav-item"><a class="rd-nav-link" id="gestion_proyectos" href="gestion_proyectos.php">Gestion de proyectos</a></li>

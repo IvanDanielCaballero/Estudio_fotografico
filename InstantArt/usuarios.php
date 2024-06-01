@@ -68,7 +68,7 @@
                                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                     <!-- RD Navbar Nav-->
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Inicio</a>
+                                        <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Inicio</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="about-me.html">Sobre Nosotros</a>
                                         </li>
@@ -76,8 +76,8 @@
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contactanos</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios" href="usuarios.php" style="display: none;">Usuarios</a>
-                                        </li>
+                                       <!-- <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios" href="usuarios.php" style="display: none;">Usuarios</a>
+                                        </li>  Estamos dentro de la opcion usuarios-->
                                         <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="login.php" style="margin-left: 40px;">Iniciar Sesion</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" id="cerrar_sesion" href="logout.php" style="display: none;">Cerrar Sesion</a>

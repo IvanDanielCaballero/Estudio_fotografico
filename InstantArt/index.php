@@ -63,31 +63,19 @@
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Inicio</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.html">Contactanos</a>
-                    </li>
-
-                    <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="usuarios.php">Usuarios</a>
-                    </li>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.php">Inicio</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.php">Contactanos</a></li>
+                    <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="usuarios.php">Usuarios</a></li>
                     <!--Area personal, para descargar proyectos-->
-                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href=areaPersonal/areaPersonal.php">Area Personal</a>
-                    </li>
+                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href="areaPersonal/areaPersonal.php">Area Personal</a></li>
                     <!--Area de gestion de clientes-->
-                    <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestion de proyectos</a>
-                    </li>
+                    <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
                     <!--Tabla para ver los trabajos pendientes de un empleado-->
-                    <li class="rd-nav-item"id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"  href="gestion/proyecto_empleado.php">Evento empleado</a>
-                    </li>
-                    <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5"  href="login.php">Iniciar Sesion</a>
-                    </li>
-                    <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"  href="logout.php" >Cerrar Sesion</a>
-                    </li>
-
+                    <li class="rd-nav-item"id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"  href="gestion/proyecto_empleado.php">Evento empleado</a></li>
+                    <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5"  href="login.php">Iniciar Sesion</a></li>
+                    <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"  href="logout.php" >Cerrar Sesion</a></li>
                   </ul>
                 </div>
               </div>
