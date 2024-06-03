@@ -50,11 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $mail->send();
             $message = "El mensaje ha sido enviado correctamente.";
-            header("Location: http://localhost/Estudio_fotografico/InstantArt/contactanos.php?message=" . $message . "&type=success");
+            header("Location: ../contactanos.php?message=" . $message . "&type=success");
 
         } catch (Exception $e) {
             $message = "El mensaje no pudo ser enviado. Mailer Error: {$mail->ErrorInfo}";
-            header("Location: http://localhost/Estudio_fotografico/InstantArt/contactanos.php?message=" . $message . "&type=error");
+            header("Location: ../contactanos.php?message=" . $message . "&type=error");
  
         }
     }

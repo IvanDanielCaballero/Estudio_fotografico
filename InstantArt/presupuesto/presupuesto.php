@@ -174,11 +174,7 @@ if (!$eventos) {
               <span class="id_cliente" style="margin-left: 50px;">Id cliente</span>
             </div>
 
-            <div class="inputBox mb3">
-              <input type="number" name="id_presupuesto" required="required">
-              <span class="id_presupuesto">Id presupuesto</span>
-              <p>NO hace falta rellenar, es autoincrement</p>
-            </div>
+          
             <div class="inputBox mb3">
               <input type="text" id="id_evento" name="id_evento"
                 readonly>
@@ -200,9 +196,9 @@ if (!$eventos) {
             <div class="inputBox mb3">
               <select name="estado" required="required">
                 <option value="" disabled selected></option>
-                <option value="aprobado">Aprobado</option>
-                <option value="pendiente">Pendiente</option>
-                <option value="rechazado">Rechazado</option>
+                <option value="1">Aprobado</option>
+                <option value="2">Pendiente</option>
+                <option value="3">Rechazado</option>
               </select>
               <span class="estado_presupuesto">Estado presupuesto</span>
             </div>
@@ -341,7 +337,8 @@ function insertar_presupuesto(e) {
     document.getElementById('tabla_eventos').style.display = 'none'
     document.getElementById('section_insertar_presupuesto').style.display = 'block'
     let id_boton=e.target.getAttribute("id");
-    id_evento=id_boton.split("_")[1]
+    let id_evento=id_boton.split("_")[1]
+    console.log(id_evento)
     document.getElementById('id_evento').value = id_evento;
   }
 let botones=document.getElementsByClassName('btn btn-warning');

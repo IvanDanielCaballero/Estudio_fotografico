@@ -13,8 +13,7 @@
 --MEJORAR
 *la parte del formulario reducirlo y quitar el css 
 *la parte de generar factura, quitar el css de ahi 
-*mejorar la parte cuando envias el email que aparezca mejor el mensajes
-*el fichero enviar_email.php en php/ tengo que cambiar el location en vez de localhost la ip del host
+*MEJORAR LA PARTE DEL MENSAJE CUANDO ENVIAS EL EMAIL TANTO NEGATIVO COMO POSITIVO
 *hacer lo de trello
 *rd-navbar--is-stuckyoo es la clase que bugea la pagina
 
