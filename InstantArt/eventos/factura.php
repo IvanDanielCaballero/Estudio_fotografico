@@ -2,11 +2,21 @@
 require '../php/funciones.php';
 $bd = conexion();
 
+
+// aqui tengo que hacer una consulta con los datos que me pase de cliente y de evento para saber si hay una factura
+// si hay una factura redireccionar a generar factura sino ingresar a esta pagina haciendo la consulta 
+// $_GET['id_cliente']  y $_GET['id_evento']
+
+
+
+
+
+
 // Preparar la consulta SQL para obtener los factura del cliente
 $sql = "SELECT factura.id_factura, factura.id_cliente , factura.id_empleado, factura.id_evento, factura.id_estado_factura, factura.iva, factura.importe, factura.fecha_emision FROM factura 
  WHERE id_cliente = :id_cliente";
 $stmt = $bd->prepare($sql);
-$stmt->execute(['id_cliente' => $_GET['id']]);
+$stmt->execute(['id_cliente' => $_GET['id_cliente']]);
 
 // Obtener todos los resultados
 $facturas = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -44,8 +54,11 @@ if (empty($facturas)) {
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/recopilar.css">
   <style>
-    #section_insertar_presupuesto {
+
+
+    #section_insertar_factura {
       display: none;
+
     }
 
     td,
@@ -187,17 +200,22 @@ if (empty($facturas)) {
     </section>
 
 
-    <section class="section section-sm">
-      <div class="container" id="container_recopilar">
+    <section id="section_insertar_factura" class="section-sm">
+      <div class="container container_recopilar">
         <div class="card_recopilar">
           <a class="titulo_recopilar">Insertar Factura</a>
 
           <form id="form_recopilar" action="insertar_factura.php" method="post">
-          <div class="inputBox mb3">
+            <div class="inputBox mb3">
               <input type="text" id="id_cliente" name="id_cliente" value="<?php echo htmlspecialchars($_GET['id']); ?>"
                 readonly>
 
               <span class="id_cliente" style="margin-left: 50px;">Id cliente</span>
+            </div>
+            <div class="inputBox mb3">
+              <input type="text" id="id_evento_factura" name="id_evento_factura" readonly>
+
+              <span class="id_evento_factura" style="margin-left: 50px;">Id evento</span>
             </div>
 
 
@@ -205,21 +223,13 @@ if (empty($facturas)) {
               <input type="text" name="empleado" required="required">
               <span class="empleado_factura">Empleado</span>
             </div>
-            <div class="inputBox mb3">
-              <input type="text" id="id_evento" name="id_evento"
-                readonly>
 
-              <span class="id_evento" style="margin-left: 50px;">Id evento</span>
-            </div>
-
-
-         
             <div class="inputBox mb3">
               <select name="estado" required="required">
                 <option value="" disabled selected>Seleccione el estado de la factura</option>
-                <option value="aprobado">Aprobado</option>
-                <option value="pendiente">Pendiente</option>
-                <option value="rechazado">Rechazado</option>
+                <option value="1">Pendiente</option>
+                <option value="2">Pagada</option>
+                <option value="3">Cancelada</option>
               </select>
               <span class="estado_factura">Estado factura</span>
             </div>
@@ -229,17 +239,13 @@ if (empty($facturas)) {
               <span class="precio">Importe</span>
             </div>
 
-
-            <div class="column">
-              <div class="inputBox col-12 m-4">
-                <input type="date" name="fecha_vencimiento" required="required">
-                <span class="fecha_vencimiento">Fecha vencimiento</span>
-              </div>
-              <div class="inputBox col-12 m-4">
-                <input type="date" name="fecha_creacion" required="required">
-                <span class="fecha_creacion">Fecha creación</span>
-              </div>
+            <div class="inputBox mb3">
+              <input type="date" name="fecha_emision" required="required">
+              <span class="fecha_emision">Fecha emision</span>
             </div>
+
+
+            <button type="submit" class="enter btn_volver">Volver</button>
 
             <button type="submit" class="enter">Enviar</button>
           </form>

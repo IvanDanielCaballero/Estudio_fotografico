@@ -6,10 +6,15 @@ $bd = conexion();
 $sql = "SELECT evento.id_evento, tipo_evento.nombre , evento.id_equipo, evento.descripcion, evento.fecha, evento.localidad, evento.hora, evento.estado FROM evento join tipo_evento on evento.id_tipo_evento=tipo_evento.id_tipo_evento 
  WHERE id_cliente = :id_cliente";
 $stmt = $bd->prepare($sql);
-$stmt->execute(['id_cliente' => $_GET['id']]);
+$id_cliente = $_GET['id'];
+$stmt->execute(['id_cliente' => $id_cliente]);
 
 // Obtener todos los resultados
 $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
 
 
 if (empty($eventos)) {
@@ -46,10 +51,8 @@ if (empty($eventos)) {
       display: none;
     }
 
-    #section_insertar_factura{
-      display: none;
-      
-    }
+  
+
     td,
     th {
       text-align: center;
@@ -177,63 +180,10 @@ if (empty($eventos)) {
         </table>
       </div>
     </section>
-    
 
 
 
-    <section id="section_insertar_factura" class="section-sm">
-      <div class="container container_recopilar">
-        <div class="card_recopilar">
-          <a class="titulo_recopilar">Insertar Factura</a>
 
-          <form id="form_recopilar" action="insertar_factura.php" method="post">
-          <div class="inputBox mb3">
-              <input type="text" id="id_cliente" name="id_cliente" value="<?php echo htmlspecialchars($_GET['id']); ?>"
-                readonly>
-
-              <span class="id_cliente" style="margin-left: 50px;">Id cliente</span>
-            </div>
-            <div class="inputBox mb3">
-              <input type="text" id="id_evento_factura" name="id_evento_factura"
-                readonly>
-
-              <span class="id_evento_factura" style="margin-left: 50px;">Id evento</span>
-            </div>
-
-
-            <div class="inputBox mb3">
-              <input type="text" name="empleado" required="required">
-              <span class="empleado_factura">Empleado</span>
-            </div>
-          
-            <div class="inputBox mb3">
-              <select name="estado" required="required">
-                <option value="" disabled selected>Seleccione el estado de la factura</option>
-                <option value="1">Pendiente</option>
-                <option value="2">Pagada</option>
-                <option value="3">Cancelada</option>
-              </select>
-              <span class="estado_factura">Estado factura</span>
-            </div>
-
-            <div class="inputBox mb3">
-              <input type="number" name="precio" required="required">
-              <span class="precio">Importe</span>
-            </div>
-
-              <div class="inputBox mb3">
-                <input type="date" name="fecha_emision" required="required">
-                <span class="fecha_emision">Fecha emision</span>
-              </div>
-              
-         
-              <button type="submit"  class="enter btn_volver">Volver</button>
-
-            <button type="submit" class="enter">Enviar</button>
-          </form>
-        </div>
-      </div>
-    </section>
 
 
 
@@ -251,10 +201,9 @@ if (empty($eventos)) {
               <span class="id_cliente" style="margin-left: 50px;">Id cliente</span>
             </div>
 
-          
+
             <div class="inputBox mb3">
-              <input type="text" id="id_evento_presupuesto" name="id_evento_presupuesto"
-                readonly>
+              <input type="text" id="id_evento_presupuesto" name="id_evento_presupuesto" readonly>
 
               <span class="id_evento_presupuesto" style="margin-left: 50px;">Id evento</span>
             </div>
@@ -410,43 +359,43 @@ if (empty($eventos)) {
 
 <script>
 
-function insertar_presupuesto(e) {
+  function insertar_presupuesto(e) {
     document.getElementById('tabla_eventos').style.display = 'none'
     document.getElementById('section_insertar_presupuesto').style.display = 'block'
-    let id_boton=e.target.getAttribute("id");
-    let id_evento=id_boton.split("_")[1]
+    let id_boton = e.target.getAttribute("id");
+    let id_evento = id_boton.split("_")[1]
     console.log(id_evento)
     document.getElementById('id_evento_presupuesto').value = id_evento;
   }
 
   function insertar_factura(e) {
-    document.getElementById('tabla_eventos').style.display = 'none'
-    document.getElementById('section_insertar_factura').style.display = 'block'
-    let id_boton=e.target.getAttribute("id");
-    let id_evento=id_boton.split("_")[1]
-    console.log(id_evento)
-    document.getElementById('id_evento_factura').value = id_evento;
+    var idCliente = <?php echo json_encode($id_cliente); ?>;
+    let id_boton = e.target.getAttribute("id");
+    let id_evento = id_boton.split("_")[1]
+
+    window.location.href = 'factura.php?id_evento=' + id_evento + '&id_cliente=' + idCliente;
+      
   }
-function volver_pagina(e){
-  window.location.reload();
+  function volver_pagina(e) {
+    window.location.reload();
 
-}
+  }
 
-let botones_presupuesto=document.getElementsByClassName('btn btn-warning');
-let botones_factura=document.getElementsByClassName('btn btn-dark');
-let botones_volver=document.getElementsByClassName('btn_volver');
+  let botones_presupuesto = document.getElementsByClassName('btn btn-warning');
+  let botones_factura = document.getElementsByClassName('btn btn-dark');
+  let botones_volver = document.getElementsByClassName('btn_volver');
 
 
-for (let  btn of botones_presupuesto) {
-  btn.addEventListener('click', insertar_presupuesto)
-}
-for (let  btn of botones_volver) {
-  btn.addEventListener('click', volver_pagina)
-}
+  for (let btn of botones_presupuesto) {
+    btn.addEventListener('click', insertar_presupuesto)
+  }
+  for (let btn of botones_volver) {
+    btn.addEventListener('click', volver_pagina)
+  }
 
-for (let  btn of botones_factura) {
-  btn.addEventListener('click', insertar_factura)
-}
+  for (let btn of botones_factura) {
+    btn.addEventListener('click', insertar_factura)
+  }
 
 
 
