@@ -12,8 +12,9 @@ $stmt->execute(['id_cliente' => $_GET['id']]);
 $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-if (!$eventos) {
-  die("No se encontraron datos para el cliente especificado.");
+if (empty($eventos)) {
+  header('Location: NO_presupuesto.html');
+  exit(); // Es buena práctica agregar exit() después de una redirección
 }
 
 
@@ -24,7 +25,7 @@ if (!$eventos) {
 <html class="wide wow-animation" lang="en">
 
 <head>
-  <title>Presupuesto</title>
+  <title>Eventos</title>
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport"
     content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
@@ -45,6 +46,10 @@ if (!$eventos) {
       display: none;
     }
 
+    #section_insertar_factura{
+      display: none;
+      
+    }
     td,
     th {
       text-align: center;
@@ -102,12 +107,12 @@ if (!$eventos) {
       <div class="breadcrumbs-custom-inner">
         <div class="container breadcrumbs-custom-container">
           <div class="breadcrumbs-custom-main">
-            <h6 class="breadcrumbs-custom-subtitle title-decorated">Presupuesto</h6>
-            <h1 class="breadcrumbs-custom-title">Presupuesto</h1>
+            <h6 class="breadcrumbs-custom-subtitle title-decorated">Eventos</h6>
+            <h1 class="breadcrumbs-custom-title">Eventos</h1>
           </div>
           <ul class="breadcrumbs-custom-path">
             <li><a href="../index.html">Inicio</a></li>
-            <li>Presupuesto</li>
+            <li>Eventos</li>
             <li class="active">Formulario</li>
           </ul>
         </div>
@@ -116,7 +121,7 @@ if (!$eventos) {
 
     <section id="tabla_eventos" class="section section-sm">
       <div class="container">
-        <h5>Eventos del cliente: <?php echo htmlspecialchars($_GET['id']); ?></h5>
+        <h5>Estos son los eventos del cliente: <?php echo htmlspecialchars($_GET['id']); ?></h5>
         <table class="table table-hover">
           <thead>
             <tr>
@@ -129,6 +134,8 @@ if (!$eventos) {
               <th scope="col">Hora</th>
               <th scope="col">Estado</th>
               <th scope="col">Presupuesto</th>
+              <th scope="col">Factura</th>
+
             </tr>
           </thead>
           <tbody>
@@ -152,6 +159,16 @@ if (!$eventos) {
                     </svg>
                   </button>
                 </td>
+                <td>
+                  <button id="NuevoFactura_<?php echo htmlspecialchars($evento['id_evento']); ?>" type="button"
+                    class="btn btn-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-caret-up-square-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11" />
+                    </svg>
+                  </button>
+                </td>
 
 
               </tr>
@@ -160,8 +177,68 @@ if (!$eventos) {
         </table>
       </div>
     </section>
+    
+
+
+
+    <section id="section_insertar_factura" class="section-sm">
+      <div class="container container_recopilar">
+        <div class="card_recopilar">
+          <a class="titulo_recopilar">Insertar Factura</a>
+
+          <form id="form_recopilar" action="insertar_factura.php" method="post">
+          <div class="inputBox mb3">
+              <input type="text" id="id_cliente" name="id_cliente" value="<?php echo htmlspecialchars($_GET['id']); ?>"
+                readonly>
+
+              <span class="id_cliente" style="margin-left: 50px;">Id cliente</span>
+            </div>
+            <div class="inputBox mb3">
+              <input type="text" id="id_evento_factura" name="id_evento_factura"
+                readonly>
+
+              <span class="id_evento_factura" style="margin-left: 50px;">Id evento</span>
+            </div>
+
+
+            <div class="inputBox mb3">
+              <input type="text" name="empleado" required="required">
+              <span class="empleado_factura">Empleado</span>
+            </div>
+          
+            <div class="inputBox mb3">
+              <select name="estado" required="required">
+                <option value="" disabled selected>Seleccione el estado de la factura</option>
+                <option value="1">Pendiente</option>
+                <option value="2">Pagada</option>
+                <option value="3">Cancelada</option>
+              </select>
+              <span class="estado_factura">Estado factura</span>
+            </div>
+
+            <div class="inputBox mb3">
+              <input type="number" name="precio" required="required">
+              <span class="precio">Importe</span>
+            </div>
+
+              <div class="inputBox mb3">
+                <input type="date" name="fecha_emision" required="required">
+                <span class="fecha_emision">Fecha emision</span>
+              </div>
+              
+         
+              <button type="submit"  class="enter btn_volver">Volver</button>
+
+            <button type="submit" class="enter">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+
     <section id="section_insertar_presupuesto" class="section section-sm">
-      <div class="container" id="container_recopilar">
+      <div class="container container_recopilar">
         <div class="card_recopilar">
           <a class="titulo_recopilar">Insertar Presupuesto</a>
 
@@ -176,10 +253,10 @@ if (!$eventos) {
 
           
             <div class="inputBox mb3">
-              <input type="text" id="id_evento" name="id_evento"
+              <input type="text" id="id_evento_presupuesto" name="id_evento_presupuesto"
                 readonly>
 
-              <span class="id_evento" style="margin-left: 50px;">Id evento</span>
+              <span class="id_evento_presupuesto" style="margin-left: 50px;">Id evento</span>
             </div>
 
 
@@ -213,7 +290,7 @@ if (!$eventos) {
                 <span class="fecha_creacion">Fecha creación</span>
               </div>
             </div>
-
+            <button type="submit" class="enter btn_volver">Volver</button>
             <button type="submit" class="enter">Enviar</button>
           </form>
         </div>
@@ -339,13 +416,36 @@ function insertar_presupuesto(e) {
     let id_boton=e.target.getAttribute("id");
     let id_evento=id_boton.split("_")[1]
     console.log(id_evento)
-    document.getElementById('id_evento').value = id_evento;
+    document.getElementById('id_evento_presupuesto').value = id_evento;
   }
-let botones=document.getElementsByClassName('btn btn-warning');
+
+  function insertar_factura(e) {
+    document.getElementById('tabla_eventos').style.display = 'none'
+    document.getElementById('section_insertar_factura').style.display = 'block'
+    let id_boton=e.target.getAttribute("id");
+    let id_evento=id_boton.split("_")[1]
+    console.log(id_evento)
+    document.getElementById('id_evento_factura').value = id_evento;
+  }
+function volver_pagina(e){
+  window.location.reload();
+
+}
+
+let botones_presupuesto=document.getElementsByClassName('btn btn-warning');
+let botones_factura=document.getElementsByClassName('btn btn-dark');
+let botones_volver=document.getElementsByClassName('btn_volver');
 
 
-for (const btn of botones) {
+for (let  btn of botones_presupuesto) {
   btn.addEventListener('click', insertar_presupuesto)
+}
+for (let  btn of botones_volver) {
+  btn.addEventListener('click', volver_pagina)
+}
+
+for (let  btn of botones_factura) {
+  btn.addEventListener('click', insertar_factura)
 }
 
 

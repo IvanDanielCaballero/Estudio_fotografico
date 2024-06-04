@@ -40,7 +40,7 @@
     font-size: x-large;
   }
 
-  #container_recopilar {
+  .container_recopilar {
     display: flex;
     justify-content: center;
   }

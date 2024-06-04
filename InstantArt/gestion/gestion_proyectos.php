@@ -158,7 +158,8 @@
                                     <th data-field="fecha_nacimiento">Fecha Nacimiento</th>
                                     <th data-field="telefono">Telefono</th>
                                     <th data-field="actions">Acciones</th>
-                                    <th data-field="budget">Presupuestos</th>
+                                    <th data-field="events">Eventos</th>
+
 
                                 </thead>
                                 <tbody>
@@ -182,10 +183,11 @@
                                             </td>";
 
                                             echo "<td class='texto_centrado'>
-                                            <a rel='tooltip' title='ver presupuestos' onclick=\"window.location.href = '../presupuesto/presupuesto.html?id=" . $id . "'\">
+                                            <a rel='tooltip' title='ver eventos' onclick=\"window.location.href = '../eventos/eventos.php?id=" . $id . "'\">
                                                 <i class='fa fa-list'></i>
                                             </a>
                                           </td>";
+                                    
                                             echo "</tr>";
                                         }
                                     } else {

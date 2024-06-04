@@ -15,6 +15,7 @@
 *la parte de generar factura, quitar el css de ahi 
 *MEJORAR LA PARTE DEL MENSAJE CUANDO ENVIAS EL EMAIL TANTO NEGATIVO COMO POSITIVO
 *hacer lo de trello
+*en los botones de continuar y de descarga en generar presupuesto colocarle un icon
 *rd-navbar--is-stuckyoo es la clase que bugea la pagina
 
 

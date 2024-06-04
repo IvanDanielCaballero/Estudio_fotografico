@@ -5,7 +5,7 @@ require '../php/funciones.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
     $id_cliente=$_POST['id_cliente'];
-    $id_evento =$_POST['id_evento'];
+    $id_evento =$_POST['id_evento_presupuesto'];
 
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];

@@ -1,6 +1,6 @@
 <?php
 require '../php/funciones.php';
-$id_presupuesto = 2;
+$id_presupuesto = $_GET['id'];
 
 
 try {
@@ -70,6 +70,8 @@ try {
     <title>Presupuesto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-Q5oIJ5xvLOQeL6isSWAWZsO8F0nVJd9o3+xL//VqoXLlf4uJ+ec0cObrxAvCIdkUwKXuRtlZ3kF9VVrE7j/eVQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -397,7 +399,8 @@ try {
                         <hr>
                         <div class="mb-4">
                             <h5 class="text-muted">Presupuesto para:</h5>
-                            <h5><?php echo htmlspecialchars($cliente['nombre']).' '. htmlspecialchars($cliente['apellidos']); ?></h5>
+                            <h5><?php echo htmlspecialchars($cliente['nombre']) . ' ' . htmlspecialchars($cliente['apellidos']); ?>
+                            </h5>
                             <ul class="list-unstyled">
                                 <li>+34 <?php echo htmlspecialchars($cliente['telefono']); ?></li>
                                 <li><?php echo htmlspecialchars($cliente['email']); ?></li>
@@ -420,9 +423,12 @@ try {
                                             <span
                                                 class="text-muted"><?php echo htmlspecialchars($presupuesto['descripcion_detallada']); ?></span>
                                         </td>
-                                        <td><?php echo htmlspecialchars($evento['fecha']).' '.htmlspecialchars($evento['localidad']); ?></td>
+                                        <td><?php echo htmlspecialchars($evento['fecha']) . ' ' . htmlspecialchars($evento['localidad']); ?>
+                                        </td>
                                         <td><?php echo htmlspecialchars($evento['hora']); ?></td>
-                                        <td><span class="font-weight-semibold"><?php echo htmlspecialchars($presupuesto['precio']); ?></span></td>
+                                        <td><span
+                                                class="font-weight-semibold"><?php echo htmlspecialchars($presupuesto['precio']); ?></span>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -432,11 +438,13 @@ try {
                                 <tbody>
                                     <tr>
                                         <th class="text-left">Subtotal:</th>
-                                        <td class="text-right"><?php echo htmlspecialchars($presupuesto['precio']); ?></td>
+                                        <td class="text-right"><?php echo htmlspecialchars($presupuesto['precio']); ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th class="text-left">Total (sin IVA):</th>
-                                        <td class="text-right text-primary"><?php echo htmlspecialchars($presupuesto['precio']); ?></td>
+                                        <td class="text-right text-primary">
+                                            <?php echo htmlspecialchars($presupuesto['precio']); ?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -478,12 +486,16 @@ try {
                         </div>
                     </div>
                     <div class="footer">
-                        <p class="text-muted">El precio de este presupuesto no incluye el IVA. Los servicios propuestos están sujetos a términos y condiciones acordados
+                        <p class="text-muted">El precio de este presupuesto no incluye el IVA. Los servicios propuestos
+                            están sujetos a términos y condiciones acordados
                         </p>
                     </div>
                 </div>
                 <div class="card-footer text-right">
                     <button class="btn btn-primary" id="download"><i class="fas fa-download"></i> Descargar PDF</button>
+                    <button class="btn btn-primary" id="btn_continuar"> <i
+                            class="bi bi-arrow-right-circle-fill"></i>Continuar</button>
+
                 </div>
             </div>
         </div>
@@ -494,8 +506,9 @@ try {
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script>
-
-
+        document.getElementById('btn_continuar').onclick = function () {
+            window.location.href = '../gestion/gestion_proyectos.php';
+        };
 
         document.getElementById('download').addEventListener('click', function () {
             var element = document.getElementById('invoice');

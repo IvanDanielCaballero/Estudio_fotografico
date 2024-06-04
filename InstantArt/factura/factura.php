@@ -1,3 +1,28 @@
+<?php
+require '../php/funciones.php';
+$bd = conexion();
+
+// Preparar la consulta SQL para obtener los factura del cliente
+$sql = "SELECT factura.id_factura, factura.id_cliente , factura.id_empleado, factura.id_evento, factura.id_estado_factura, factura.iva, factura.importe, factura.fecha_emision FROM factura 
+ WHERE id_cliente = :id_cliente";
+$stmt = $bd->prepare($sql);
+$stmt->execute(['id_cliente' => $_GET['id']]);
+
+// Obtener todos los resultados
+$facturas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+if (empty($facturas)) {
+  header('Location: NO_presupuesto.html');
+  exit(); // Es buena práctica agregar exit() después de una redirección
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 
@@ -13,11 +38,25 @@
   <link rel="stylesheet" type="text/css"
     href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
   <link rel="stylesheet" href="../css/bootstrap.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/recopilar.css">
+  <style>
+    #section_insertar_presupuesto {
+      display: none;
+    }
 
-  
+    td,
+    th {
+      text-align: center;
+    }
+
+    .id_cliente {
+      margin-left: 50px;
+    }
+  </style>
 </head>
 
 <body>
@@ -25,7 +64,6 @@
   <div class="page">
     <!-- Page Header-->
     <header class="section page-header">
-      <!-- RD Navbar-->
       <div class="rd-navbar-wrap">
         <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
           data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
@@ -35,57 +73,26 @@
           data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
           <div class="rd-navbar-main-outer">
             <div class="rd-navbar-main">
-              <!-- RD Navbar Panel-->
               <div class="rd-navbar-panel">
-                <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-                <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="../index.html"><img
-                    src="../images/logo-default-176x28.png" alt="" width="176" height="28"
-                    srcset="images/logo-default-352x56.png 2x" /></a>
+                <a class="rd-navbar-brand" href="index.php"><img src="../images/logo.png" alt="" width="400"
+                    height="200" srcset="logo.png" /></a>
               </div>
               <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
-                  <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="../index.php">INICIO</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="../about-me.html">SOBRE NOSOTROS</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="../servicios.html">SERVICIOS</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="../contacts.html">CONTACTANOS</a>
-                    </li>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../about-me.html">Sobre Nosotros</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" id="proyectos_empleado"
+                        href="proyecto_empleado.php">Evento empleado</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios" href="../usuarios.php"
+                        style="display: none;">Usuarios</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="../login.php"
+                        style="margin-left: 40px;">Iniciar Sesion</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" id="cerrar_sesion" href="../logout.php"
+                        style="display: none;">Cerrar Sesion</a></li>
                   </ul>
                 </div>
-                <!-- RD Navbar Search-->
-                <!-- <div class="rd-navbar-search"><a class="nav-icon" href="#">
-                      <svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px" height="17px"
-                        viewBox="0 0 17 17" enable-background="new 0 0 17 17" xml:space="preserve">
-                        <path fill="none" stroke="" stroke-miterlimit="0" d="M4.775,0.588H0.708v4.286"></path>
-                        <polyline fill="none" stroke="" stroke-miterlimit="0"
-                          points="16.552,4.654 16.552,0.588 12.485,0.588 "></polyline>
-                        <polyline fill="none" stroke="" stroke-miterlimit="0"
-                          points="12.485,16.432 16.552,16.432 16.552,12.525 "></polyline>
-                        <polyline fill="none" stroke="" stroke-miterlimit="0"
-                          points="0.708,12.577 0.708,16.432 4.722,16.432 "></polyline>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M0.708,8.404"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M40.875,37.651"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M8.313-0.151"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M37.574,10.094"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M0.067,10.094"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M0.708,4.707"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M16.552,4.655"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M16.816,12.524"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M0.708,12.577"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M4.722,16.432"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M4.734,12.886"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M4.76,4.9"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M4.775,0.905"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M12.485,16.432"></path>
-                        <path fill="none" stroke="" stroke-miterlimit="10" d="M12.485,0.905"></path>
-                        <circle fill="" stroke="" stroke-miterlimit="10" cx="8.63" cy="8.193" r="0.911"> </circle>
-                      </svg></a></div> -->
               </div>
             </div>
           </div>
@@ -114,26 +121,70 @@
 
 
 
-    <!-- Base typography  -->
-    <section class="section section-sm section-first">
+    <section id="tabla_factura" class="section section-sm">
       <div class="container">
-        <div class="row row-50">
-          <div class="col-6">
-            <h1>Titulo 1</h1>
-            <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus, quis tempus
-              ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra accumsan. In semper vel
-              tortor eu euismod. Nullam sodales elementum nibh in gravida.</p>
-          </div>
-          <div class="col-6">
-            <h2>Titulo 2</h2>
-            <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus, quis tempus
-              ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra accumsan. In semper vel
-              tortor eu euismod. Nullam sodales elementum nibh in gravida.</p>
-          </div>
-        </div>
+        <h5>factura del cliente:
+          <?php echo htmlspecialchars($_GET['id']); ?>
+        </h5>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Empleado</th>
+              <th scope="col">Evento</th>
+              <th scope="col">Estado</th>
+              <th scope="col">IVA</th>
+              <th scope="col">Importe</th>
+              <th scope="col">Fecha emision</th>
+              <th scope="col">Presupuesto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($facturas as $factura): ?>
+            <tr>
+              <th scope="row">
+                <?php echo htmlspecialchars($factura['id_factura']); ?>
+              </th>
+              <td>
+                <?php echo htmlspecialchars($factura['id_cliente']); ?>
+              </td>
+              <td>
+                <?php echo htmlspecialchars($factura['id_empleado']); ?>
+              </td>
+              <td>
+                <?php echo htmlspecialchars($factura['id_evento']); ?>
+              </td>
+              <td>
+                <?php echo htmlspecialchars($factura['id_estado_factura']); ?>
+              </td>
+              <td>
+                <?php echo htmlspecialchars($factura['iva']); ?>
+              </td>
+              <td>
+                <?php echo htmlspecialchars($factura['importe']); ?>
+              </td>
+              <td>
+                <?php echo htmlspecialchars($factura['fecha_emision']); ?>
+              </td>
+              <td>
+                <button id="NuevaFactura_<?php echo htmlspecialchars($factura['id_factura']); ?>" type="button"
+                  class="btn btn-warning">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-caret-up-square-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11" />
+                  </svg>
+                </button>
+              </td>
+
+
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
       </div>
     </section>
-
 
 
     <section class="section section-sm">
@@ -142,31 +193,42 @@
           <a class="titulo_recopilar">Insertar Factura</a>
 
           <form id="form_recopilar" action="insertar_factura.php" method="post">
-            <div class="inputBox mb3">
-              <input type="number" name="id_factura" required="required">
-              <span class="id_factura">Id factura</span>
-              <p>NO hace falta rellenar, es autoincrement</p>
+          <div class="inputBox mb3">
+              <input type="text" id="id_cliente" name="id_cliente" value="<?php echo htmlspecialchars($_GET['id']); ?>"
+                readonly>
+
+              <span class="id_cliente" style="margin-left: 50px;">Id cliente</span>
             </div>
 
-            <div class="inputBox mb3">
-              <input type="text" name="descripcion" required="required">
-              <span class="descripcion_factura">Descripción</span>
-            </div>
 
             <div class="inputBox mb3">
-              <input type="number" name="precio" required="required">
-              <span class="precio">Precio</span>
+              <input type="text" name="empleado" required="required">
+              <span class="empleado_factura">Empleado</span>
+            </div>
+            <div class="inputBox mb3">
+              <input type="text" id="id_evento" name="id_evento"
+                readonly>
+
+              <span class="id_evento" style="margin-left: 50px;">Id evento</span>
             </div>
 
+
+         
             <div class="inputBox mb3">
               <select name="estado" required="required">
-                <option value="" disabled selected>Seleccione el estado del factura</option>
+                <option value="" disabled selected>Seleccione el estado de la factura</option>
                 <option value="aprobado">Aprobado</option>
                 <option value="pendiente">Pendiente</option>
                 <option value="rechazado">Rechazado</option>
               </select>
               <span class="estado_factura">Estado factura</span>
             </div>
+
+            <div class="inputBox mb3">
+              <input type="number" name="precio" required="required">
+              <span class="precio">Importe</span>
+            </div>
+
 
             <div class="column">
               <div class="inputBox col-12 m-4">
