@@ -2,6 +2,32 @@
 require '../php/funciones.php';
 $bd = conexion();
 
+try {
+  // Obtener parámetros de la solicitud GET
+  $cliente_id = isset($_GET['id_cliente']) ? $_GET['id_cliente'] : null;
+  $evento_id = isset($_GET['id_evento']) ? $_GET['id_evento'] : null;
+
+  if ($cliente_id === null || $evento_id === null) {
+    throw new Exception("Los parámetros id_cliente e id_evento son requeridos.");
+  }
+
+  // Consulta para verificar si existe una factura
+  $sql = 'SELECT * FROM factura WHERE id_cliente = :cliente_id AND id_evento = :evento_id';
+  $stmt = $bd->prepare($sql);
+  $stmt->bindParam(':cliente_id', $cliente_id, PDO::PARAM_INT);
+  $stmt->bindParam(':evento_id', $evento_id, PDO::PARAM_INT);
+  $stmt->execute();
+
+  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  if ($stmt->rowCount() > 0) {
+    header('Location: generar_factura.php');
+    exit(); // Es buena práctica agregar exit() después de una redirección
+  }
+} catch (Exception $e) {
+  echo "Error: " . $e->getMessage();
+}
+
 
 // aqui tengo que hacer una consulta con los datos que me pase de cliente y de evento para saber si hay una factura
 // si hay una factura redireccionar a generar factura sino ingresar a esta pagina haciendo la consulta 
@@ -12,20 +38,8 @@ $bd = conexion();
 
 
 
-// Preparar la consulta SQL para obtener los factura del cliente
-$sql = "SELECT factura.id_factura, factura.id_cliente , factura.id_empleado, factura.id_evento, factura.id_estado_factura, factura.iva, factura.importe, factura.fecha_emision FROM factura 
- WHERE id_cliente = :id_cliente";
-$stmt = $bd->prepare($sql);
-$stmt->execute(['id_cliente' => $_GET['id_cliente']]);
-
-// Obtener todos los resultados
-$facturas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-if (empty($facturas)) {
-  header('Location: NO_presupuesto.html');
-  exit(); // Es buena práctica agregar exit() después de una redirección
-}
 
 
 
@@ -54,13 +68,6 @@ if (empty($facturas)) {
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/recopilar.css">
   <style>
-
-
-    #section_insertar_factura {
-      display: none;
-
-    }
-
     td,
     th {
       text-align: center;
@@ -134,70 +141,6 @@ if (empty($facturas)) {
 
 
 
-    <section id="tabla_factura" class="section section-sm">
-      <div class="container">
-        <h5>factura del cliente:
-          <?php echo htmlspecialchars($_GET['id']); ?>
-        </h5>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Cliente</th>
-              <th scope="col">Empleado</th>
-              <th scope="col">Evento</th>
-              <th scope="col">Estado</th>
-              <th scope="col">IVA</th>
-              <th scope="col">Importe</th>
-              <th scope="col">Fecha emision</th>
-              <th scope="col">Presupuesto</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($facturas as $factura): ?>
-            <tr>
-              <th scope="row">
-                <?php echo htmlspecialchars($factura['id_factura']); ?>
-              </th>
-              <td>
-                <?php echo htmlspecialchars($factura['id_cliente']); ?>
-              </td>
-              <td>
-                <?php echo htmlspecialchars($factura['id_empleado']); ?>
-              </td>
-              <td>
-                <?php echo htmlspecialchars($factura['id_evento']); ?>
-              </td>
-              <td>
-                <?php echo htmlspecialchars($factura['id_estado_factura']); ?>
-              </td>
-              <td>
-                <?php echo htmlspecialchars($factura['iva']); ?>
-              </td>
-              <td>
-                <?php echo htmlspecialchars($factura['importe']); ?>
-              </td>
-              <td>
-                <?php echo htmlspecialchars($factura['fecha_emision']); ?>
-              </td>
-              <td>
-                <button id="NuevaFactura_<?php echo htmlspecialchars($factura['id_factura']); ?>" type="button"
-                  class="btn btn-warning">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-caret-up-square-fill" viewBox="0 0 16 16">
-                    <path
-                      d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11" />
-                  </svg>
-                </button>
-              </td>
-
-
-            </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
-      </div>
-    </section>
 
 
     <section id="section_insertar_factura" class="section-sm">
@@ -207,15 +150,16 @@ if (empty($facturas)) {
 
           <form id="form_recopilar" action="insertar_factura.php" method="post">
             <div class="inputBox mb3">
-              <input type="text" id="id_cliente" name="id_cliente" value="<?php echo htmlspecialchars($_GET['id']); ?>"
-                readonly>
+              <input type="text" id="id_cliente" name="id_cliente"
+                value="<?php echo htmlspecialchars($_GET['id_cliente']); ?>" readonly>
 
               <span class="id_cliente" style="margin-left: 50px;">Id cliente</span>
             </div>
             <div class="inputBox mb3">
-              <input type="text" id="id_evento_factura" name="id_evento_factura" readonly>
+              <input type="text" id="id_evento" name="id_evento"
+                value="<?php echo htmlspecialchars($_GET['id_evento']); ?>" readonly>
 
-              <span class="id_evento_factura" style="margin-left: 50px;">Id evento</span>
+              <span class="id_evento" style="margin-left: 50px;">Id evento</span>
             </div>
 
 
@@ -237,6 +181,10 @@ if (empty($facturas)) {
             <div class="inputBox mb3">
               <input type="number" name="precio" required="required">
               <span class="precio">Importe</span>
+            </div>
+            <div class="inputBox mb3">
+              <input type="number" name="IVA" required="required">
+              <span class="IVA">IVA</span>
             </div>
 
             <div class="inputBox mb3">
@@ -357,5 +305,19 @@ if (empty($facturas)) {
   <script src="../js/core.min.js"></script>
   <script src="../js/script.js"></script>
 </body>
+
+<script>
+  function volver_pagina(e) {
+    window.location.href = '../gestion/gestion_proyectos.php';
+
+  }
+  let botones_volver = document.getElementsByClassName('btn_volver');
+
+  for (let btn of botones_volver) {
+    btn.addEventListener('click', volver_pagina)
+  }
+
+
+</script>
 
 </html>
