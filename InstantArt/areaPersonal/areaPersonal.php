@@ -76,7 +76,7 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <a class="rd-navbar-brand" href="index.html"><img src="../images/logo.png" alt="no se ha cargado el logo" width="400" height="200" srcset="../images/logo.png" /></a>
+                <a class="rd-navbar-brand" href="index.php"><img src="../images/logo.png" alt="no se ha cargado el logo" width="400" height="200" srcset="../images/logo.png" /></a>
               </div>
               <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
