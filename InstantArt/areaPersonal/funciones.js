@@ -30,6 +30,7 @@ function inicio(id_cliente) {
                 let option = document.createElement("option");
                 option.value = evento.id_evento;
                 option.text = evento.evento;
+                console.log(evento.evento);
                 eventoSelect.add(option);
             });
             //añadido por jose carlos si no hay ningun evento añade una opcion diciendo que no hay eventos
