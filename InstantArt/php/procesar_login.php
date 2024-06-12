@@ -3,9 +3,9 @@ session_start();
 require_once "funciones.php";
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
-echo $usuario;
+/* echo $usuario;
 echo $contraseña;
-
+ */
 try {
    $bd=conexion();
 
@@ -46,6 +46,8 @@ try {
         $_SESSION['usuario'] = $_POST['usuario'];
         $_SESSION['tiempo'] = time();
         $_SESSION['rol'] = 'empleado';
+        $_SESSION['id_empleado']= $query4;
+
         header("location: ../index.php");
 
     }else{

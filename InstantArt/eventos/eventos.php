@@ -18,7 +18,7 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 if (empty($eventos)) {
-  header('Location: NO_presupuesto.html');
+  header('Location: NO_eventos.html');
   exit(); // Es buena práctica agregar exit() después de una redirección
 }
 
@@ -369,7 +369,7 @@ if (empty($eventos)) {
   }
 
   function insertar_factura(e) {
-    var idCliente = <?php echo json_encode($id_cliente); ?>;
+    let idCliente = <?php echo json_encode($id_cliente); ?>;
     let id_boton = e.target.getAttribute("id");
     let id_evento = id_boton.split("_")[1]
 

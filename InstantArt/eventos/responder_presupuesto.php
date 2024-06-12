@@ -1,60 +1,41 @@
 <?php
-
 session_start();
+
 require '../php/funciones.php';
 $bd = conexion();
 
-try {
-  // Obtener parámetros de la solicitud GET
-  $cliente_id = isset($_GET['id_cliente']) ? $_GET['id_cliente'] : null;
-  $evento_id = isset($_GET['id_evento']) ? $_GET['id_evento'] : null;
+// Preparar la consulta SQL para obtener los presupuesto del cliente
+$sql = "SELECT * FROM presupuesto join estado_presupuesto on presupuesto.id_estado=estado_presupuesto.id_estado  WHERE id_cliente = :id_cliente";
+$stmt = $bd->prepare($sql);
+$stmt->execute(['id_cliente' => $_SESSION['id_cliente']]);
 
-  if ($cliente_id === null || $evento_id === null) {
-    throw new Exception("Los parámetros id_cliente e id_evento son requeridos.");
-  }
+// Obtener todos los resultados
+$presupuesto = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  // Consulta para verificar si existe una factura
-  $sql = 'SELECT * FROM factura WHERE id_cliente = :cliente_id AND id_evento = :evento_id';
-  $stmt = $bd->prepare($sql);
-  $stmt->bindParam(':cliente_id', $cliente_id, PDO::PARAM_INT);
-  $stmt->bindParam(':evento_id', $evento_id, PDO::PARAM_INT);
-  $stmt->execute();
+if (condition) {
+  # code...
+}elseif(condition){ 
 
-  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-  if ($stmt->rowCount() > 0) {
-    $url = 'generar_factura.php?id_cliente=' . $cliente_id . '&id_evento=' . $evento_id;
-    header('Location: ' . $url);
-    exit(); // Es buena práctica agregar exit() después de una redirección
-  }
-} catch (Exception $e) {
-  echo "Error: " . $e->getMessage();
+}else {
+  # code...
 }
 
 
-// aqui tengo que hacer una consulta con los datos que me pase de cliente y de evento para saber si hay una factura
-// si hay una factura redireccionar a generar factura sino ingresar a esta pagina haciendo la consulta 
-// $_GET['id_cliente']  y $_GET['id_evento']
+if (empty($presupuesto)) {
 
-
-
-
-
-
-
-
+  header('Location: NO_eventos.html');
+  exit();  // Es buena práctica agregar exit() después de una redirección
+}
 
 
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 
 <head>
-  <title>Factura</title>
+  <title>Presupuestos</title>
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport"
     content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
@@ -71,6 +52,12 @@ try {
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/recopilar.css">
   <style>
+    #section_insertar_presupuesto {
+      display: none;
+    }
+
+
+
     td,
     th {
       text-align: center;
@@ -83,7 +70,6 @@ try {
 </head>
 
 <body>
-
   <div class="page">
     <!-- Page Header-->
     <header class="section page-header">
@@ -125,83 +111,84 @@ try {
 
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom bg-image context-dark"
-      style="background-image: url(../images/towfiqu-barbhuiya-xkArbdUcUeE-unsplash.jpg);">
+      style="background-image: url(../images/pexels-pixabay-53621.jpg);">
       <div class="breadcrumbs-custom-inner">
         <div class="container breadcrumbs-custom-container">
           <div class="breadcrumbs-custom-main">
-            <h6 class="breadcrumbs-custom-subtitle title-decorated">Factura</h6>
-            <h1 class="breadcrumbs-custom-title">Factura</h1>
+            <h6 class="breadcrumbs-custom-subtitle title-decorated">Presupuestos</h6>
+            <h1 class="breadcrumbs-custom-title">Presupuestos</h1>
           </div>
           <ul class="breadcrumbs-custom-path">
-            <li><a href="index.html">Inicio</a></li>
-            <li>Factura</li>
-            <li class="active">Formulario</li>
+            <li><a href="../index.html">Inicio</a></li>
+            <li>Presupuestos</li>
+            <li class="active">Tabla</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <section id="tabla_eventos" class="section section-sm">
+      <div class="container">
+        <h5>Estos son tus presupuestos: <?php echo htmlspecialchars($_SESSION['id_cliente']); ?></h5>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">id_evento</th>
+              <th scope="col">descripcion_detallada</th>
+              <th scope="col">fecha creacion</th>
+              <th scope="col">fecha vencimiento</th>
+              <th scope="col">precio</th>
+              <th scope="col">id_estado</th>
+              <th scope="col">ver</th>
 
 
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($presupuesto as $presu): ?>
+              <tr>
+                <th scope="row"><?php echo htmlspecialchars($presu['id_presupuesto']); ?></th>
+                <td><?php echo htmlspecialchars($presu['id_evento']); ?></td>
+                <td><?php echo htmlspecialchars($presu['descripcion_detallada']); ?></td>
+                <td><?php echo htmlspecialchars($presu['fecha_creacion']); ?></td>
+                <td><?php echo htmlspecialchars($presu['fecha_vencimiento']); ?></td>
+                <td><?php echo htmlspecialchars($presu['precio']); ?></td>
+                <td><?php echo htmlspecialchars($presu['nombre']); ?></td>
 
 
-
-    <section id="section_insertar_factura" class="section-sm">
-      <div class="container container_recopilar">
-        <div class="card_recopilar">
-          <a class="titulo_recopilar">Insertar Factura</a>
-
-          <form id="form_recopilar" action="insertar_factura.php" method="post">
-            <div class="inputBox mb3">
-              <input type="text" id="id_cliente" name="id_cliente"
-                value="<?php echo htmlspecialchars($_GET['id_cliente']); ?>" readonly>
-
-              <span class="id_cliente" style="margin-left: 50px;">Id cliente</span>
-            </div>
-            <div class="inputBox mb3">
-              <input type="text" id="id_evento" name="id_evento"
-                value="<?php echo htmlspecialchars($_GET['id_evento']); ?>" readonly>
-
-              <span class="id_evento" style="margin-left: 50px;">Id evento</span>
-            </div>
-
-
-            <div class="inputBox mb3">
-        <input type="text" name="empleado" value="<?php echo htmlspecialchars($_SESSION['id_empleado']); ?>" readonly>
-        <span class="empleado_factura"  style="margin-left: 50px;">Empleado</span>
-    </div>
-
-            <div class="inputBox mb3">
-              <select name="estado" required="required">
-                <option value="" disabled selected>Seleccione el estado de la factura</option>
-                <option value="1">Pendiente</option>
-                <option value="2">Pagada</option>
-              </select>
-              <span class="estado_factura">Estado factura</span>
-            </div>
-
-            <div class="inputBox mb3">
-              <input type="number" name="precio" required="required">
-              <span class="precio">Importe</span>
-            </div>
-            <div class="inputBox mb3">
-              <input type="number" name="IVA" required="required">
-              <span class="IVA">IVA</span>
-            </div>
-
-            <div class="inputBox mb3">
-              <input type="date" name="fecha_emision" required="required">
-              <span class="fecha_emision">Fecha emision</span>
-            </div>
+                <td>
+                  <button id="NuevoPresupuesto_<?php echo htmlspecialchars($presu['id_presupuesto']); ?>" type="button"
+                    class="btn btn-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-caret-up-square-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11" />
+                    </svg>
+                  </button>
+                </td>
+                <!-- <td>
+                  <button id="NuevoFactura_<?php echo htmlspecialchars($evento['id_evento']); ?>" type="button"
+                    class="btn btn-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-caret-up-square-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11" />
+                    </svg>
+                  </button>
+                </td> -->
 
 
-            <button type="submit" class="enter btn_volver">Volver</button>
-
-            <button type="submit" class="enter">Enviar</button>
-          </form>
-        </div>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
       </div>
     </section>
+
+
+
+
 
 
 
@@ -282,7 +269,7 @@ try {
       <div class="container">
         <div class="footer-standard-aside"><a class="brand" href="index.html"><img
               src="../images/logo-inverse-176x28.png" alt="" width="176" height="28"
-              srcset="images/logo-inverse-352x56.png 2x" /></a>
+              srcset="../images/logo-inverse-352x56.png" /></a>
           <!-- Rights-->
           <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All
               Rights Reserved.</span><span>&nbsp;</span><br class="d-sm-none" />Design&nbsp;by&nbsp;<a
@@ -292,7 +279,7 @@ try {
     </footer>
   </div>
   <div class="preloader">
-    <div class="preloader-logo"><img src="../images/logo-default-176x28.png" alt="" width="176" height="28"
+    <div class="preloader-logo"><img src="../images/logo-inverse-176x28.png" alt="" width="176" height="28"
         srcset="images/logo-default-352x56.png 2x" />
     </div>
     <div class="preloader-body">
@@ -304,20 +291,40 @@ try {
   <!-- Global Mailform Output-->
   <div class="snackbars" id="form-output-global"></div>
   <!-- Javascript-->
-  <script src="../js/core.min.js"></script>
-  <script src="../js/script.js"></script>
+
 </body>
 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../js/core.min.js"></script>
+<script src="../js/script.js"></script>
+
 <script>
-  function volver_pagina(e) {
-    window.location.href = '../gestion/gestion_proyectos.php';
+  var id_presupuesto;
 
-  }
-  let botones_volver = document.getElementsByClassName('btn_volver');
+  document.addEventListener('DOMContentLoaded', function() {
+  /*  function volver_pagina(e) {
+     window.location.reload();
+ 
+   } */
 
-  for (let btn of botones_volver) {
-    btn.addEventListener('click', volver_pagina)
+  let botones_presupuesto = document.getElementsByClassName('btn btn-warning');
+  /*  let botones_factura = document.getElementsByClassName('btn btn-dark');
+  */
+  console.log(botones_presupuesto)
+  function generar_presupuesto(e) {
+    let id_boton = e.target.getAttribute("id");
+    id_presupuesto = id_boton.split("_")[1]
+
+    window.location.href = 'generar_presupuesto.php?id=' + id_presupuesto;
   }
+
+  for (let btn of botones_presupuesto) {
+    btn.addEventListener('click', generar_presupuesto)
+  }
+});
+
 
 
 </script>

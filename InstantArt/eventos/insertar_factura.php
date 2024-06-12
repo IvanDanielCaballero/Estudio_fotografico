@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pdo = conexion();
 
         // Preparar la consulta SQL para insertar los datos
-        $sql = "INSERT INTO presupuesto (id_estado, id_cliente, id_evento, descripcion_detallada, fecha_creacion, fecha_vencimiento, precio) 
-                VALUES (:id_estado_factura, :id_cliente, :id_evento, :descripcion_detallada, :fecha_creacion, :fecha_vencimiento, :importe)";
+        $sql = "INSERT INTO factura (id_cliente, id_empleado, id_evento, id_estado_factura, iva, importe, fecha_emision) 
+                VALUES (:id_cliente, :id_empleado, :id_evento, :id_estado_factura, :iva, :importe, :fecha_emision)";
 
         $stmt = $pdo->prepare($sql);
 
@@ -31,16 +31,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':id_estado_factura', $id_estado_factura, PDO::PARAM_INT);
         $stmt->bindParam(':id_cliente', $id_cliente, PDO::PARAM_INT);
         $stmt->bindParam(':id_evento', $id_evento, PDO::PARAM_INT);
-        $stmt->bindParam(':descripcion_detallada', $descripcion_detallada, PDO::PARAM_STR);
-        $stmt->bindParam(':fecha_creacion', $fecha_creacion, PDO::PARAM_STR);
-        $stmt->bindParam(':fecha_vencimiento', $fecha_vencimiento, PDO::PARAM_STR);
+        $stmt->bindParam(':fecha_emision', $fecha_emision, PDO::PARAM_STR);
+        $stmt->bindParam(':id_empleado', $id_empleado, PDO::PARAM_STR);
+        $stmt->bindParam(':iva', $IVA, PDO::PARAM_STR);
         $stmt->bindParam(':importe', $importe, PDO::PARAM_STR);
 
         // Ejecutar la consulta
         $stmt->execute();
         $lastInsertedId = $pdo->lastInsertId();
 
-        header("Location: generar_factura.php?id=" . $lastInsertedId.'&importe='.$importe.'&evento='.$id_evento);
+        header("Location: generar_factura.php?id_cliente=" . $_POST['id_cliente'].'&id_evento='.$id_evento);
         exit();
 
     } catch (PDOException $e) {
