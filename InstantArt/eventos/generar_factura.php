@@ -127,6 +127,7 @@ if (!$estado_factura) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="pdf.css" />
+    
     <script src="pdf.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <style>

@@ -51,7 +51,7 @@ if (empty($eventos)) {
       display: none;
     }
 
-  
+
 
     td,
     th {
@@ -249,27 +249,6 @@ if (empty($eventos)) {
 
 
 
-    <section class="section section-sm">
-      <div class="container">
-
-        <div class="col-lg-10 col-xl-8">
-          <h2>HTML Text Elements</h2>
-          <p><a href="#">Text Link</a><a class="link-hover" href="#">Hover link</a><strong>Bold text</strong>
-            <mark>This is a highlighted text</mark><span class="tooltip-custom" data-toggle="tooltip"
-              data-placement="top" title="Tooltips text">Tooltips</span><span>Welcome to our wonderful world. We
-              sincerely hope that each and every user entering our website will find exactly what he/she is
-              looking
-              for</span><span>With advanced features of activating account and new login widgets, you will
-              definitely
-              have a great experience of using our web page.</span><span class="text-strike">This is a
-              strickethrough
-              text</span><span class="text-underline">This is an underlined text.</span>
-          </p>
-        </div>
-
-      </div>
-    </section>
-
 
     <!-- Page Footer-->
     <footer class="section footer-standard bg-gray-700">
@@ -323,21 +302,12 @@ if (empty($eventos)) {
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="footer-standard-aside"><a class="brand" href="index.html"><img
-              src="../images/logo-inverse-176x28.png" alt="" width="176" height="28"
-              srcset="../images/logo-inverse-352x56.png" /></a>
-          <!-- Rights-->
-          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All
-              Rights Reserved.</span><span>&nbsp;</span><br class="d-sm-none" />Design&nbsp;by&nbsp;<a
-              href="https://www.templatemonster.com/">Templatemonster</a></p>
-        </div>
-      </div>
+     
     </footer>
   </div>
   <div class="preloader">
     <div class="preloader-logo"><img src="../images/logo-inverse-176x28.png" alt="" width="176" height="28"
-        srcset="images/logo-default-352x56.png 2x" />
+        srcset="../images/logo-default-352x56.png 2x" />
     </div>
     <div class="preloader-body">
       <div id="loadingProgressG">
@@ -374,7 +344,7 @@ if (empty($eventos)) {
     let id_evento = id_boton.split("_")[1]
 
     window.location.href = 'factura.php?id_evento=' + id_evento + '&id_cliente=' + idCliente;
-      
+
   }
   function volver_pagina(e) {
     window.location.reload();
