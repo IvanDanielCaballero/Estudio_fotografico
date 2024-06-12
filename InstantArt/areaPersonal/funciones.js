@@ -1,6 +1,34 @@
 
-document.getElementById("inicio_sesion").style.display = "none"
-document.getElementById("cerrar_sesion").style.display = "block";
+function MostrarFotos() {
+    const fotos = document.getElementsByClassName("mostrar");
+    for (let i = 0; i < fotos.length; i++) {
+      fotos[i].style.display = "block";
+    }
+    document.getElementsByClassName("see_btn")[0].style.display = "block";
+  }
+  document.getElementById("cliente").innerText = nombre;
+  const allImgBoxes = document.querySelectorAll('.portfolio_section .portfolio_container .img-box');
+  const imgBoxes = [...allImgBoxes].slice(0);
+
+  imgBoxes.forEach(imgBox => {
+    imgBox.addEventListener('touchstart', function() {
+      const btnLink = imgBox.querySelector('.btn-box a');
+
+      if (btnLink.style.display === 'none' || btnLink.style.display === '') {
+        btnLink.style.display = 'block';
+        setTimeout(function() {
+          btnLink.style.display = '';
+        }, 5000);
+
+      } else {
+        setTimeout(function() {
+          btnLink.style.display = '';
+        }, 100);
+
+      }
+    });
+  });
+
 
 //Cargar el nombre del usuario 
 document.getElementById('cliente').innerText = nombre;
@@ -72,25 +100,10 @@ function cargarFotos(url) {
 
                 i++;
             }
+            refrescar_fotos()
         })
         .catch(error => console.error('Error al cargar las fotos:', error));
 }
-/*  const downloadButton = document.createElement('button');
-                 downloadButton.textContent = 'Descargar';
-                 downloadButton.style = 'margin-top: 5px;';
-                 console.log(foto);
-                 downloadButton.onclick = () => descargarFoto(foto);
- 
-                 const deleteButton = document.createElement('button');
-                 deleteButton.textContent = 'Borrar';
-                 deleteButton.style = 'margin-top: 5px; margin-left: 5px;';
-                 deleteButton.onclick = () => borrarFoto(foto);
- 
-                 fotoContainer.appendChild(img);
-                 fotoContainer.appendChild(downloadButton);
-                 fotoContainer.appendChild(deleteButton);
- 
-                 fotosDiv.appendChild(fotoContainer); */
 
 function descargarFoto(fotoUrl) {
     const link = document.createElement('a');
@@ -131,6 +144,17 @@ function obtenerCaminoCompleto(url) {
 //Para refescar la galeria cuando borro una foto
 function refrescar_fotos() {
     let id_evento = document.getElementById('evento2').value;
-    cargarFotos('/' + id_cliente + '/' + id_evento);
+    /* cargarFotos('/' + id_cliente + '/' + id_evento); */
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+
+        }
+    };
+    xhr.open("POST", "almacenar_evento.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("id_evento=" + id_evento);
 
 };

@@ -1,9 +1,10 @@
 <?php
+session_start();
 function downloadZipFromFTP() {
     $ftp_server = "217.160.114.39";
     $ftp_username = "usuarioftp";
     $ftp_password = "vML0TF1hCW7IIxA5HKjW";
-    $ftp_directory = "18/4";
+    $ftp_directory = "$_SESSION[id_cliente]/$_SESSION[id_evento]";
     $zip_filename = 'imagenes.zip';
 
     // Conectar al servidor FTP

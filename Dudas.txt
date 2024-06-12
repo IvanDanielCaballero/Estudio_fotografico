@@ -40,36 +40,9 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---Se deben crear las carpetas de los usuarios cuando se contrata un servicio, no cuando se añade un usuario
-
---En algunas paginas sale el logo de la pagina en en footer.
-
---Deberiamos meter en un archivo aparte la comprobacion de admin y login ya que se repite mucho.
-
---Se puede poner un archivo aparte php para comprobar el login y no tener que ponerlo
-en cada pagina?
-
---Un boton para borrar la foto? no tiene sentido, les ponemos a los usuarios todas las imagenes y ellos ya eligiran las fotos que quieran.
 
 --El formulario de contacto parece que lo haya hecho el diablo.
 
---Los formularios son muy grandes al añadir eventos a usuarios etc
-
---La pagina AreaPersonal debe ir fuera como las otras paginas.
-
 --El formulario de contacto ahora parece que lo haya hecho el mismisimo satanás
-
---No se puede eliminar un usuario da un error al parecer por la carpeta creada en el ftp.
---No se pueden borrar usuarios desde el apartado de usuarios debido a que estan ligados con claves foraneas, hay que poner el on update cascade, on delete cascade.
-
---Cuando se registra un usuario y accede a area personal da error de sql, hasta que este cierra sesion y vuelve a iniciar sesion entonces si entra
-
---Arreglar navbar, no se deben ocultar los enlaces, se deben ocultar los li para que no ocupen espacio.
-
---En Servicios porque cuando sale una ventana de un servicio al pulsar se oculta y ya no se muestra?.
-
---En la base de datos en evento porque id_cliente está ligado con la contraseña, se puede subir para poner el nombre antes que la contraseña en bd?. 
-
-
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
