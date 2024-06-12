@@ -1,14 +1,3 @@
-if (inicio != undefined && inicio == true) {
-    document.getElementById("inicio_sesion").style.display = "none"
-    document.getElementById("cerrar_sesion").style.display = "block";
-    console.log("inicio sesion");
-}
-
-if (admin != undefined && admin == true) {
-    console.log("admin")
-    document.getElementById("usuarios").style.display = "block";
-}
-
 document.getElementById("clientes").addEventListener("click", function(e) {
     document.getElementById("tabla1").style.display = "block"
     document.getElementById("tabla2").style.display = "none"
@@ -98,6 +87,7 @@ function eliminarFila1(boton) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
             fila.remove();
 
         }

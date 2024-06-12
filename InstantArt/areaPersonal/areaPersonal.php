@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/style_old.css">
   <link rel="stylesheet" href="../css/css_ulia.css">
   <link rel="stylesheet" href="../css/fonts.css">
-
+  <script src="../php/comprobar_login.php"></script>
 </head>
 
 <body>
@@ -316,37 +316,7 @@
   <!-- Global Mailform Output-->
   <div class="snackbars" id="form-output-global"></div>
   <!-- Javascript-->
-  <script>
-    function MostrarFotos() {
-      const fotos = document.getElementsByClassName("mostrar");
-      for (let i = 0; i < fotos.length; i++) {
-        fotos[i].style.display = "block";
-      }
-      document.getElementsByClassName("see_btn")[0].style.display = "block";
-    }
-    document.getElementById("cliente").innerText = nombre;
-    const allImgBoxes = document.querySelectorAll('.portfolio_section .portfolio_container .img-box');
-    const imgBoxes = [...allImgBoxes].slice(0);
-
-    imgBoxes.forEach(imgBox => {
-      imgBox.addEventListener('touchstart', function() {
-        const btnLink = imgBox.querySelector('.btn-box a');
-
-        if (btnLink.style.display === 'none' || btnLink.style.display === '') {
-          btnLink.style.display = 'block';
-          setTimeout(function() {
-            btnLink.style.display = '';
-          }, 5000);
-
-        } else {
-          setTimeout(function() {
-            btnLink.style.display = '';
-          }, 100);
-
-        }
-      });
-    });
-  </script>
+ 
   <script src="../js/core.min.js"></script>
   <script src="../js/script.js"></script>
   <script src="funciones.js"></script>

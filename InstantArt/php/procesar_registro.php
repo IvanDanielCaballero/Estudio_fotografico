@@ -1,5 +1,6 @@
 <?php
 require_once "funciones.php";
+require "../areaPersonal/utilidades.php";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,8 +22,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($query->rowCount() > 0) {
             $_SESSION['usuario'] = $_POST['nombre'];
             $_SESSION['tiempo'] = time();
+            $_SESSION['id_cliente'] = $bd->lastInsertId();
 
-            header("location: ../index.php");
+            //Añadir carpeta que almacenara los distintos proyectos (Miguel);
+            $sql2 = "SELECT id_cliente FROM cliente  WHERE nombre = '$nombre' AND contraseña = '$contraseña'";
+            $query2 = $bd->query($sql2);
+            $dir = $query2->fetch(PDO::FETCH_ASSOC);
+            $dir = $dir['id_cliente'];
+            $conn_id = conexion_ftp();
+
+            if ($conn_id) {
+                crearDirectorioFTP($conn_id, $dir);
+                ftp_close($conn_id);
+                echo "Directorio creado";
+            } else {
+                echo "Nose ha podido crear el directorio";
+            }
+
+
+
+             header("location: ../index.php"); 
         } else {
             header("location: ../registrarse.html");
         }

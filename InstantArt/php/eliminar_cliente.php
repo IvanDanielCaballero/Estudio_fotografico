@@ -1,8 +1,10 @@
 <?php
 session_start();
-require '../ftp/utilidades.php';
+require '../areaPersonal/utilidades.php';
 require_once "funciones.php";
 $id = $_POST['id'];
+
+echo "el id es".$id;
 
 
 try {
@@ -18,7 +20,7 @@ try {
         echo "success";
     } else {
       
-        echo "Error al eliminar usuario: " . $conn->error;
+        echo "Error al eliminar usuario: ";
     }
 
     

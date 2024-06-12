@@ -26,6 +26,7 @@
     <link href="css/fresh-bootstrap-table.css" rel="stylesheet" />
     <link href="css/demo.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style_old.css">
+    <script src="php/comprobar_login.php"></script>
     
 
 </head>
@@ -76,8 +77,8 @@
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contactanos</a>
                                         </li>
-                                       <!-- <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios" href="usuarios.php" style="display: none;">Usuarios</a>
-                                        </li>  Estamos dentro de la opcion usuarios-->
+                                        <li class="rd-nav-item"><a class="rd-nav-link" id="usuarios" href="usuarios.php" style="display: none;">Usuarios</a>
+                                        </li> 
                                         <li class="rd-nav-item"><a class="rd-nav-link ml-5" id="inicio_sesion" href="login.php" style="margin-left: 40px;">Iniciar Sesion</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" id="cerrar_sesion" href="logout.php" style="display: none;">Cerrar Sesion</a>

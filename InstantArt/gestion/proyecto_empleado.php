@@ -31,6 +31,7 @@
     <link href="../css/fresh-bootstrap-table.css" rel="stylesheet" />
     <link href="../css/demo.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    <script src="../php/comprobar_login.php"></script>
 </head>
 
 <body>
@@ -248,16 +249,7 @@
 
 
     <script type="text/javascript">
-        if (inicio != undefined && inicio == true) {
-            document.getElementById("inicio_sesion").style.display = "none"
-            document.getElementById("cerrar_sesion").style.display = "block";
-            console.log("inicio sesion");
-        }
-
-        if (admin != undefined && admin == true) {
-            console.log("admin")
-            document.getElementById("usuarios").style.display = "block";
-        }
+      
 
 
         var $table = $('#fresh-table')

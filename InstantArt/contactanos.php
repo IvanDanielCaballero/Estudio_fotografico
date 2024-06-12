@@ -21,6 +21,7 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="php/comprobar_login.php"></script>
     <style>
         #div_formulario {
             padding: 40px;
