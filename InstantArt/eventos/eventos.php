@@ -180,13 +180,6 @@ if (empty($eventos)) {
         </table>
       </div>
     </section>
-
-
-
-
-
-
-
     <section id="section_insertar_presupuesto" class="section section-sm">
       <div class="container container_recopilar">
         <div class="card_recopilar">
