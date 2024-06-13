@@ -1,5 +1,4 @@
 <?php
-require '../areaPersonal/utilidades.php';
 require 'utilidades_gestion.php';
 session_start();
 if (isset($_SESSION['usuario'])) {

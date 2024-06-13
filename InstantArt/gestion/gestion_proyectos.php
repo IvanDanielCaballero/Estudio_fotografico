@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
+    <!-- <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="usuarios_form.css" />
     <link rel="stylesheet" href="estilos.css" />
 
@@ -21,7 +21,7 @@
             text-align: center;
         }
     </style>
-
+ 
 
 
     <!-- Stylesheets-->
@@ -155,8 +155,7 @@
                                     <th data-field="fecha_nacimiento">Fecha Nacimiento</th>
                                     <th data-field="telefono">Telefono</th>
                                     <th data-field="actions">Acciones</th>
-                                    <th data-field="events">Eventos</th>
-
+                                    <th data-field="budget">Presupuestos</th>
 
                                 </thead>
                                 <tbody>
@@ -180,11 +179,10 @@
                                             </td>";
 
                                             echo "<td class='texto_centrado'>
-                                            <a rel='tooltip' title='ver eventos' onclick=\"window.location.href = '../eventos/eventos.php?id=" . $id . "'\">
+                                            <a rel='tooltip' title='ver presupuestos' onclick=\"window.location.href = '../presupuesto/presupuesto.html?id=" . $id . "'\">
                                                 <i class='fa fa-list'></i>
                                             </a>
                                           </td>";
-                                    
                                             echo "</tr>";
                                         }
                                     } else {
@@ -290,7 +288,6 @@
                     <h4 id="nombre_cliente"></h4>
                     <label for="evento" class="form-label me-2">Seleccionar Evento:</label>
                         <select id="evento" class="form-control me-2" name="evento">
-                            <!-- Options will be populated here -->
                         </select>
                         <button type="button" class="btn btn-danger" onclick="borrarEvento()">Borrar</button>
                     <div class='row mt-3'>

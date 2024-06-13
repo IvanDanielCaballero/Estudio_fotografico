@@ -1,6 +1,5 @@
 <?php
 session_start();
-require '../areaPersonal/utilidades.php';
 require_once "funciones.php";
 $id = $_POST['id'];
 
@@ -13,7 +12,7 @@ try {
     $query = $bd->query($sql);
 
     $conn_id = conexion_ftp();
-    borrarDirectorios($conn_id,'$id');
+    borrarDirectorios($conn_id, $id);
 
 
     if ($bd->query($sql) === TRUE) {

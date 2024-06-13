@@ -1,6 +1,5 @@
 <?php
  session_start();
- require "../areaPersonal/utilidades.php";  //Require para las utilidades de la parte de ftp (Miguel);
  require "funciones.php";
  
 
