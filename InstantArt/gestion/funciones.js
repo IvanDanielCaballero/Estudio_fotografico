@@ -15,7 +15,6 @@ function Subir(id_cliente) {
     document.getElementById("forEditar").style.display = "none";
 
     //Borro las fotos por si han pulsado repetidamente a gestionar imagenes
-    console.log('hola');
     const fotosDiv = document.getElementById('fotos2');
     fotosDiv.innerHTML = ''
 
@@ -41,6 +40,7 @@ function Subir(id_cliente) {
                 option.text = evento.evento;
                 eventoSelect.add(option);
             });
+            //Pongo el evento por defecto
                 if (data.length > 0) {
                 eventoSelect.selectedIndex = 0;
                 eventoSelect.dispatchEvent(new Event('change'));
@@ -77,7 +77,7 @@ function Modificar(id_cliente) {
             data.forEach(evento => {
                 let option = document.createElement("option");
                 option.value = evento.id_evento;
-                option.text = evento.evento;
+                option.text = evento.evento; //Guardamos el id del evento
                 eventoSelect.add(option);
             });
             
