@@ -37,9 +37,50 @@
 </head>
 
 <body>
+  
+  <?php
+
+  session_start();
+
+  if (isset($_SESSION['usuario'])) {
+    echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
+  }
+
+  // Verifica si la sesión de usuario no está establecida
+  if (!isset($_SESSION['usuario'])) {
+    header("Location: ../login.php");
+  }
+
+  if (!isset($_SESSION['id_cliente'])) {
+    header("Location: ../index.php");
+  }
+  // Configuración de la conexión a la base de datosFi
+  $servername = "217.160.114.39";
+  $username = "jose";
+  $password = "56lf2G9BnTez";
+  $dbname = "fotografia";
+
+  // Crear conexión
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  // Verificar conexión
+  if ($conn->connect_error) {
+    die("Error en la conexión: " . $conn->connect_error);
+  }
+
+  // Consulta SQL para obtener los eventos
+
+  $sql2 = "SELECT concat(nombre, ' ', apellidos) from cliente where id_cliente =" . $_SESSION['id_cliente'] . "";
+  $result2 = $conn->query($sql2)->fetch_column();
+
+
+  ?>
+<div class="ie-panel"></div>
+
   <div class="page">
     <!-- Page Header-->
     <header class="section page-header">
+      <!-- RD Navbar-->
       <div class="rd-navbar-wrap">
         <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
           data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
@@ -49,13 +90,19 @@
           data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
           <div class="rd-navbar-main-outer">
             <div class="rd-navbar-main">
+              <!-- RD Navbar Panel-->
               <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
                 <a class="rd-navbar-brand" href="index.php"><img src="../images/logo.png" alt="" width="400"
                     height="200" srcset="logo.png" /></a>
+                <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="index.html"><img
+                    src="../images/logo-default-176x28.png" alt="" width="176" height="28"
+                    srcset="../images/logo-default-352x56.png 2x" /></a>
               </div>
               <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                  <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item active"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../about-me.html">Sobre Nosotros</a></li>
@@ -67,8 +114,41 @@
                         style="margin-left: 40px;">Iniciar Sesion</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" id="cerrar_sesion" href="../logout.php"
                         style="display: none;">Cerrar Sesion</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="about-me.html">About me</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a></li>
                   </ul>
                 </div>
+                <!-- RD Navbar Search-->
+                <div class="rd-navbar-search"><a class="nav-icon" href="#">
+                    <svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px" height="17px"
+                      viewBox="0 0 17 17" enable-background="new 0 0 17 17" xml:space="preserve">
+                      <path fill="none" stroke="" stroke-miterlimit="0" d="M4.775,0.588H0.708v4.286"></path>
+                      <polyline fill="none" stroke="" stroke-miterlimit="0"
+                        points="16.552,4.654 16.552,0.588 12.485,0.588 "></polyline>
+                      <polyline fill="none" stroke="" stroke-miterlimit="0"
+                        points="12.485,16.432 16.552,16.432 16.552,12.525 "></polyline>
+                      <polyline fill="none" stroke="" stroke-miterlimit="0"
+                        points="0.708,12.577 0.708,16.432 4.722,16.432 "></polyline>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M0.708,8.404"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M40.875,37.651"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M8.313-0.151"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M37.574,10.094"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M0.067,10.094"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M0.708,4.707"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M16.552,4.655"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M16.816,12.524"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M0.708,12.577"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M4.722,16.432"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M4.734,12.886"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M4.76,4.9"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M4.775,0.905"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M12.485,16.432"></path>
+                      <path fill="none" stroke="" stroke-miterlimit="10" d="M12.485,0.905"></path>
+                      <circle fill="" stroke="" stroke-miterlimit="10" cx="8.63" cy="8.193" r="0.911"> </circle>
+                    </svg></a></div>
               </div>
             </div>
           </div>

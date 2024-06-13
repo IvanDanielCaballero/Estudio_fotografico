@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
-  <title>Home</title>
+  <title>Area Personal</title>
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,8 +41,8 @@
   ?>
 
 
-  <div class="ie-panel"></div>
-  <div class="page"></a>
+<div class="ie-panel"></div>
+  <div class="page">
     <!-- Page Header-->
     <header class="section page-header">
       <!-- RD Navbar-->
@@ -60,22 +60,20 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <a class="rd-navbar-brand" href="index.php"><img src="../images/logo.png" alt="" width="400" height="200"
-
+                <a class="rd-navbar-brand" href="index.html"><img src="../images/logo.png" alt="" width="400" height="200"
                     srcset="../images/logo.png" /></a>
               </div>
               <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-
-                    <li class="rd-nav-item "><a class="rd-nav-link" href="../index.php">Inicio</a></li>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">Sobre Nosotros</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../servicios.html">Servicios</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../contactanos.php">Contactanos</a></li>
                     <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="../usuarios.php">Usuarios</a></li>
                     <!--Area personal, para descargar proyectos-->
-                    <li class="rd-nav-item active" id="area_personal" style="display: none;"><a class="rd-nav-link" href="areaPersonal.php">Area Personal</a></li>
+                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href="../areaPersonal/areaPersonal.php">Area Personal</a></li>
                     <!--Area de gestion de clientes-->
                     <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="../gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
                     <!--Tabla para ver los trabajos pendientes de un empleado-->
@@ -92,7 +90,6 @@
       </div>
     </header>
 
-
     <section class="slider_section position-relative mb-5">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -108,7 +105,7 @@
                       Esperamos sinceramente que nuestros servicios sean de tu completo agrado y cumplan con todas tus expectativas.
                     </p>
                     <div class="btn-box">
-                      <a href="../eventos/responder_presupuesto.html" class="btn-1">
+                      <a href="../eventos/responder_presupuesto.php" class="btn-1">
                         Presupuestos
                       </a>
                       <a href="../servicios.html" class="btn-2">

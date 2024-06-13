@@ -17,7 +17,7 @@
 *hacer lo de trello
 *en los botones de continuar y de descarga en generar presupuesto colocarle un icon
 *rd-navbar--is-stuckyoo es la clase que bugea la pagina
-
+*en la pagina de responder_presupuesto.php colocar el navbar 
 
 
 --- MEJORAR LOS COLORES DEL FORMULARIO DE CONTACTANOS

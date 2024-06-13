@@ -1,786 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="wide wow-animation" lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Servicios</title>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <!-- Stylesheets-->
-  <link rel="stylesheet" type="text/css"
-    href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
-  <!--  <link rel="stylesheet" href="css/fonts.css"> -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <title>Servicios</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+        content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+        href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
   <script src="php/comprobar_login.php"></script>
 
-
-
-  <style>
-    ul,
-    .layout__header {
-      padding: 0px;
-    }
-
-    .layout__header nav {
-      padding: 0px;
-    }
-
-    li {
-      height: 100px;
-    }
-
-    #home {
-      margin-top: 200px;
-      margin-bottom: 0px;
-
-    }
-
-    #body_servicios {
-      --ccft-cs-background: #000;
-      --ccft-cs-on-surface: #fff;
-      --ccft-cs-surface: #fff;
-      --ccft-cs-primary: gold;
-      --ccft-cs-primary-alt: hsla(14, 97%, 65%, .3);
-      --ccft-ts-primary: Montserrat, sans-serif;
-      --ccft-ts-secondary: 'Abril Fatface', serif;
-      --ccft-spacer-x: 40px;
-      --ccft-spacer-y: 40px;
-      --ccft-brand-size: 60px;
-
-      background-color: var(--ccft-cs-background);
-      font-family: var(--ccft-ts-primary);
-      margin: 0;
-    }
-
-    .layout_servicios {
-      /* puedo utilizar esa imagen o esta... */
-      background-image: url(https://images.unsplash.com/photo-1599652522180-5378a3be1b42?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-      background-position: 0 0;
-      background-size: cover;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .layout_servicios.nav--active main {
-      opacity: .2;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    .layout__backdrop,
-    .layout__frontdrop {
-      background-color: rgba(0, 0, 0, .3);
-      content: '';
-      display: block;
-      height: 100%;
-      left: 0;
-      position: fixed;
-      transform-origin: 0% 50%;
-      width: 100%;
-      z-index: 0;
-    }
-
-    .layout__backdrop {
-      transform: scaleX(.34) translateX(calc(67% * 3));
-    }
-
-    .layout_servicios.nav--active .layout__frontdrop {
-      background-color: var(--ccft-cs-primary-alt);
-      visibility: visible;
-    }
-
-    .layout__frontdrop {
-      opacity: 0;
-      visibility: hidden;
-      z-index: 2;
-    }
-
-    .layout__wrapper {
-      display: grid;
-      grid-template-columns: 300px repeat(3, 1fr);
-      margin: auto;
-      height: 100%;
-    }
-
-    .layout__main {
-      transition: opacity .3s;
-      z-index: 1;
-    }
-    .layout__main {
-      height: 100%; /* Ajusta la altura según sea necesario */
-    }
-
-    .hero {
-      padding-top: 10rem;
-    }
-
-    .hero-title {
-      color: gold;
-      font-family: var(--ccft-ts-secondary);
-      font-weight: 400;
-      font-size: 4.75rem;
-      line-height: 1.2;
-      margin-left: auto;
-      margin-right: 5rem;
-      margin-bottom: 0;
-      position: relative;
-      width: 32.5rem;
-      z-index: 1;
-    }
-
-    .hero-title em {
-      display: block;
-      font-size: 2rem;
-      font-style: normal;
-      line-height: 1.2;
-      transform: translateX(2.5rem);
-    }
-
-    .hero-text {
-      background-color: rgba(0, 0, 0, .3);
-      color: #fff;
-      font-size: .92rem;
-      line-height: 1.75;
-      margin: 0;
-      margin-left: auto;
-      margin-right: 6rem;
-      padding: 5rem 3rem 3rem;
-      transform: translateY(-3rem);
-      width: 50%;
-      z-index: 0;
-    }
-
-    .hero-text a {
-      box-shadow: 0 4px #fff;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .hero-block--content>*:last-child {
-      margin-bottom: 0;
-    }
-
-    .layout__main {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .layout__header {
-      height: 100%;
-      z-index: 2;
-    }
-
-    .layout__header nav {
-      height: 100%;
-    }
-
-    .layout__main {
-      grid-column: span 3;
-    }
-
-    .nav {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav--header-1 {
-      margin-top: 0;
-      counter-reset: n;
-      height: 70%;
-      padding: 0 2rem;
-      position: relative;
-    }
-
-    .nav--header-1>.nav__item:not(.nav__item--home) {
-      counter-increment: n;
-    }
-
-    .nav--header-1>.nav__item:not(.nav__item--home)>.nav__link {
-      color: var(--ccft-cs-on-surface);
-      display: block;
-
-      font-size: 1.75rem;
-      line-height: 1;
-      letter-spacing: .045em;
-      padding: 1rem 1rem;
-      padding-left: 3rem;
-      padding-top: 3rem;
-      position: relative;
-      overflow: hidden;
-      text-decoration: none;
-      transition: transform .2s;
-      transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-      z-index: 1;
-    }
-
-    .nav--header-1>.nav__item>.nav__link::before {
-      content: counter(n, decimal-leading-zero);
-      display: block;
-      font-family: var(--ccft-ts-primary);
-      font-size: 6rem;
-      font-weight: bold;
-      left: 0;
-      top: 0;
-      opacity: .25;
-      position: absolute;
-      transition: transform .2s;
-      z-index: -1;
-    }
-
-    .nav--header-1>.nav__item>.nav__link:hover,
-    .nav--header-1>.nav__item.nav__item--active>.nav__link {
-      color: var(--ccft-cs-primary);
-      transform: translateX(.5rem);
-    }
-
-    .nav--header-1>.nav__item.nav__item--active .nav--header-2 {
-      visibility: visible;
-    }
-
-    .nav--header-1 .nav__item--home {
-      background-position: 0px 50%;
-      background-repeat: no-repeat;
-      background-size: var(--ccft-brand-size) var(--ccft-brand-size);
-      margin-bottom: 60px;
-      padding: 0;
-    }
-
-    .nav--header-1 .nav__item--home>.nav__link {
-      display: block;
-      /* Necessary for text-indent to work */
-      height: calc(var(--ccft-brand-size) + 40px);
-      text-indent: -999px;
-    }
-
-    .nav--header-2 {
-      height: 100%;
-      margin-top: 0px;
-      left: 270px;
-      opacity: 0;
-      padding: 2.5rem 5rem;
-      position: fixed;
-      padding-right: 10%;
-      top: 0;
-      visibility: hidden;
-      width: 100%;
-
-    }
-
-    .nav--header-2::before {
-      background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" fill="rgb(255, 255, 255)"/></svg>');
-      background-repeat: no-repeat;
-      background-size: 30px 30px;
-      content: '';
-      cursor: pointer;
-      display: block;
-      margin-bottom: 6rem;
-      height: 30px;
-      width: 30px;
-    }
-
-    .nav--header-2>.nav__item {
-      margin-bottom: 2.75rem;
-    }
-
-    .nav--header-2>.nav__item>.nav__link {
-      background-image: linear-gradient(to bottom, var(--ccft-cs-primary) 0%, var(--ccft-cs-primary) 100%);
-      background-position: 0 100%;
-      background-repeat: repeat-x;
-      background-size: 6px 6px;
-      color: #fff;
-      font-family: var(--ccft-ts-primary);
-      font-size: 2.75rem;
-      font-weight: bold;
-      letter-spacing: .05em;
-      text-decoration: none;
-      transition: background-size .25s, color .3s;
-    }
-
-    .nav--header-2>.nav__item>.nav__link:hover {
-      background-size: 6px 50px;
-      color: #000000;
-    }
-
-    .section {
-      padding-top: 0px;
-      padding-bottom: 0px;
-
-    }
-
-    .layout__backdrop {
-      height: 100%;
-      z-index: 1;
-      position: absolute;
-    }
-
-    .footer-standard {
-      z-index: 2;
-
-
-    }
-
-    .nav--header-2>p {
-      color: white;
-      width: 70%;
-
-    }
-
-    .nav--header-2 {
-      margin-left: 200px;
-    }
-
-    .nav--header-2>ul {
-      color: white;
-      width: 90%;
-
-    }
-
-    .nav--header-2>h3 {
-      color: ghostwhite;
-      text-align: center;
-      margin-left: 5%;
-      margin-right: 30vh;
-      padding:0px;
-      margin-top: 0px;
-      padding: 2%;
-    }
-
-    .nav--header-2 ul li {
-      height: 50px;
-    }
-
-    .nav--header-2>p {
-      height: 150px;
-    }     
-    /*
-    .nav__item{
- 
-      text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
- 
-    }  */
-  </style>
-
-</head>
-
-<body id="body_servicios">
-
-  <section class="section section-sm">
-
-    <!-- partial:index.partial.html -->
-    <div class="layout_servicios">
-      <div class="layout__backdrop"></div>
-      <div class="layout__frontdrop"></div>
-      <div class="layout__wrapper">
-        <header class="layout__header">
-          <nav>
-            <ul class="nav nav--header nav--header-1">
-              <li class="nav__item nav__item--home">
-                <img src="images/logo-default-176x28.png" alt="" width="176" height="28"
-                  srcset="images/logo-default-352x56.png 2x" />
-              </li>
-              <li class="nav__item">
-                <a class="nav__link" href="#0">Edición fotográfica</a>
-                <div class="nav nav--header nav--header-2">
-                  <h3>Transforma Fotos en Obras Maestras</h3>
-                  <p>
-                    En nuestro estudio, entendemos que la captura de una imagen es solo el primer paso hacia la creación de una obra de arte. La edición fotográfica es el proceso que lleva tus imágenes al siguiente nivel. Nuestro equipo está dedicado a resaltar la belleza intrínseca de cada imagen. Utilizamos las últimas herramientas y técnicas para mejorar la iluminación, el color, el contraste y la composición, creando fotografías que cuentan historias y despiertan emociones.
-                    <button class="btn btn-primary" onclick="window.location.href = 'contactanos.php'">Contactanos</button>
-                  </p>
-                  <div class="row" style="margin:10%; margin-top: 0px">
-                    <div class="col-md-4">
-                      <img src="images/edicion_1.jpg" height="400px" width="200px" alt="Imagen 1" class="img-fluid">
-                    </div>
-                    <div class="col-md-4">
-                      <img src="images/edicion_4.jpg" height="400px" width="200px" alt="Imagen 2" class="img-fluid">
-                    </div>
-                    <div class="col-md-4">
-                      <img src="images/edicion_3.jpg" height="400px" width="200px" alt="Imagen 3" class="img-fluid">
-                    </div>
-                  </div>
-                </div>
-              </li>              
-              <li class="nav__item nav__item--personalizadas">
-                <a class="nav__link" href="#0">Sesiones personalizadas</a>
-                <div class="nav nav--header nav--header-2">
-                  <h3>
-                  Capturando Tus Momentos Más Especiales
-                  </h3>
-                  <p>En nuestro estudio fotográfico, creemos que cada persona es única y que cada momento merece ser capturado de una manera especial y auténtica. Es por eso que ofrecemos sesiones personalizadas, diseñadas específicamente para ti y para reflejar tu personalidad, estilo y emociones.
-
-                    Nuestras sesiones personalizadas son mucho más que simplemente tomar fotografías; son una experiencia memorable y significativa. Desde la planificación inicial hasta la sesión en sí, nos enfocamos en entender tus gustos, preferencias y deseos, para crear un ambiente cómodo y relajado donde puedas ser tú mismo.
-                    <button class="btn btn-primary" onclick="window.location.href = 'contactanos.php'">Contactanos</button>
-                  </p>
-                  <div class="row"style="margin:17%; margin-top: 0px">
-                    <div class="col-md-12">
-                      <img src="images/personalizacion_1.jpg" height="200px" width="400px" alt="Imagen 1" class="img-fluid">
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="nav__item nav__item--eventos">
-                <a class="nav__link" href="#0">Fotografía de eventos</a>
-                <div class="nav nav--header nav--header-2">
-                  <h3>
-                    Las mejores fotografias para tus eventos
-                  </h3>
-                  <p>En nuestro estudio fotográfico nos especializamos en capturar los momentos más especiales de tus
-                    eventos. Nos dedicamos a plasmar cada detalle con la mejor calidad y creatividad, para que puedas
-                    revivir esas experiencias únicas una y otra vez. Nuestro equipo de fotógrafos profesionales se
-                    encarga de inmortalizar cada instante, desde los momentos más emotivos hasta los detalles más
-                    pequeños que hacen de tu evento algo único. Confía en nosotros para capturar la esencia de tu evento
-                    y transformarla en recuerdos inolvidables. ¡Déjanos ser parte de tu historia fotográfica!</p>
-                    <button class="btn btn-primary" onclick="window.location.href = 'contactanos.php'">Contactanos</button>
-                  <ul>
-                    <li>Bodas</li>
-                    <li>Cumpleaños</li>
-                    <li>Fiestas</li>
-                    <li>XV años</li>
-                    <li>Comuniones</li>
-                    <li>Grados</li>
-                  </ul>
-
-                </div>
-              </li>
-              <li class="nav__item nav__item--services">
-                <a class="nav__link" href="#0">Asesoramiento de estudio</a>
-                <div class="nav nav--header nav--header-2">
-                  <h3>
-                    Las mejores fotografias para tus eventos
-                  </h3>
-                  <p>En nuestro estudio fotográfico nos especializamos en capturar los momentos más especiales de tus
-                    eventos. Nos dedicamos a plasmar cada detalle con la mejor calidad y creatividad, para que puedas
-                    revivir esas experiencias únicas una y otra vez. Nuestro equipo de fotógrafos profesionales se
-                    encarga de inmortalizar cada instante, desde los momentos más emotivos hasta los detalles más
-                    pequeños que hacen de tu evento algo único. Confía en nosotros para capturar la esencia de tu evento
-                    y transformarla en recuerdos inolvidables. ¡Déjanos ser parte de tu historia fotográfica!</p>
-                    <button class="btn btn-primary" onclick="window.location.href = 'contactanos.php'">Contactanos</button>
-                  <ul>
-                    <li>Bodas</li>
-                    <li>Cumpleaños</li>
-                    <li>Fiestas</li>
-                    <li>XV años</li>
-                    <li>Comuniones</li>
-                    <li>Grados</li>
-                  </ul>
-
-                </div>
-              </li>
-              <li class="nav__item nav__item--contact">
-                <a class="nav__link" href="#0">Impresión y álbumes fotográficos</a>
-                <div class="nav nav--header nav--header-2">
-                  <h3>
-                    Las mejores fotografias para tus eventos
-                  </h3>
-                  <p>En nuestro estudio fotográfico nos especializamos en capturar los momentos más especiales de tus
-                    eventos. Nos dedicamos a plasmar cada detalle con la mejor calidad y creatividad, para que puedas
-                    revivir esas experiencias únicas una y otra vez. Nuestro equipo de fotógrafos profesionales se
-                    encarga de inmortalizar cada instante, desde los momentos más emotivos hasta los detalles más
-                    pequeños que hacen de tu evento algo único. Confía en nosotros para capturar la esencia de tu evento
-                    y transformarla en recuerdos inolvidables. ¡Déjanos ser parte de tu historia fotográfica!</p>
-                    <button class="btn btn-primary" onclick="window.location.href = 'contactanos.php'">Contactanos</button>
-                  <ul>
-                    <li>Bodas</li>
-                    <li>Cumpleaños</li>
-                    <li>Fiestas</li>
-                    <li>XV años</li>
-                    <li>Comuniones</li>
-                    <li>Grados</li>
-                  </ul>
-
-                </div>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main class="layout__main">
-          <section class='hero'>
-            <div class="hero-block hero-block--header">
-              <h1 class="hero-title">
-                Servicios <em>¡Bienvenido a nuestro estudio fotográfico! </em>
-              </h1>
-              <p class="hero-text">En nuestro estudio fotográfico, <a>
-                  capturamos momentos especiales y creamos recuerdos</a> que perdurarán para siempre.
-                Nuestro equipo de profesionales se esfuerza por brindarle la mejor experiencia y los resultados más
-                sorprendentes.
-                Explore nuestras galerías y descubra la magia de la fotografía en cada imagen. ¡Estamos aquí para
-                capturar sus momentos más preciosos!
-                <br>
-                <button class="btn btn-primary" onclick="window.location.href = 'index.php'">Volver</button>
-              </p>
-               
-
-            </div>
-          </section>
-        </main>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-  <footer class="section footer-standard bg-gray-700">
-    <div class="footer-standard-main">
-      <div class="container">
-        <div class="row row-50">
-          <div class="col-lg-4">
-            <div class="inset-right-1">
-              <h4>Mas imformación</h4>
-              <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo momentos
-                ordinarios en extraordinarias obras maestras visuales. </p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-5 col-lg-4">
-            <div class="box-1">
-              <h4>Información de contacto</h4>
-              <ul class="list-sm">
-                <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
-                    class="link-default" href="#">Calle San José <br> Puerta 3, Piso 2, Número 123.</a></li>
-                <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
-                    class="link-default" href="tel:#">675456345</a></li>
-                <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
-                    class="link-default" href="mailto:#">InstantArt@gmail.com</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-7 col-lg-4">
-            <h4>Contacto</h4>
-            <p>Pon tu email para consultar lo que quieras</p>
-            <!-- RD Mailform-->
-            <a href="contactanos.php">
-              <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
-                  data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                  <div class="form-wrap">
-                      <input class="form-input" id="subscribe-form-2-email" type="email" name="email">
-                      <label class="form-label" for="subscribe-form-2-email">E-mail</label>
-                  </div>
-               
-                  <div class="form-button">
-                                  
-                    <div class="button button-primary button-icon button-icon-only button-winona"
-                     aria-label="submit"><span
-                            class="icon mdi mdi-email-outline"></span></div>
-           
-            </div>
-              </form>
-          </a>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="footer-standard-aside"><a class="brand" href="index.html"><img src="images/logo-default-176x28.png"
-              alt="" width="176" height="28" srcset="images/logo-inverse-352x56.png 2x" /></a>
-          <!-- Rights-->
-          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All
-              Rights Reserved.</span><span>&nbsp;</span><br class="d-sm-none" />Design&nbsp;by&nbsp;<a
-              href="https://www.templatemonster.com/">Templatemonster</a></p>
-        </div>
-      </div>
-
-    </div>
-
-  </footer>
-
-
-  <!-- partial -->
-  <script src='https://unpkg.com/animejs@3.0.0/lib/anime.min.js'></script>
-  <script>
-    const items = document.querySelectorAll('.nav--header-1 > .nav__item');
-    const rootElement = document.querySelector('.layout_servicios');
-
-    const colors = [
-      'hsla(220, 7%, 44%, 0.9)',
-    ];
-
-    // Local state.
-    const state = {
-      navigationItems: {},
-      root: rootElement,
-    };
-
-    for (let navItemIndex = 0; navItemIndex < items.length; ++navItemIndex) {
-      const stateItem = {
-        color: colors[navItemIndex % colors.length],
-        element: items[navItemIndex],
-        id: navItemIndex,
-        isActive: false,
-        type: 'DEFAULT',
-      }
-
-      const subNav = items[navItemIndex].querySelector('.nav');
-      if (subNav) {
-        // current element has a subNav.
-        stateItem.childNavigation = subNav;
-        stateItem.type = 'PARENT';
-      }
-
-      stateItem.onClick = (event) => {
-        const actualOnClick = () => {
-          if (state.activeItem === navItemIndex) {
-            return;
-          }
-
-          if (state.activeItem) {
-            state.activeItem = null;
-          }
-
-          if ('PARENT' === state.navigationItems[navItemIndex].type) {
-            // Set new active item.
-            state.activeItem = navItemIndex;
-
-            animateShow(state);
-          }
-        };
-
-        if (state.activeItem) {
-          return animateHide(state, actualOnClick);
+    <style>
+        .ie-panel {
+            display: none;
+            background: #212121;
+            padding: 10px 0;
+            box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+            clear: both;
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
-        return actualOnClick();
-      };
+        html.ie-10 .ie-panel,
+        html.lt-ie-10 .ie-panel {
+            display: block;
+        }
+    </style>
+</head>
 
-      // Add this item to the state.
-      state.navigationItems[navItemIndex] = stateItem;
-    }
+<body>
+    <div class="ie-panel"></div>
+  <div class="page">
+    <!-- Page Header-->
+    <header class="section page-header">
+      <!-- RD Navbar-->
+      <div class="rd-navbar-wrap">
+        <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+          data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+          data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
+          data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+          data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
+          data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+          <div class="rd-navbar-main-outer">
+            <div class="rd-navbar-main">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <a class="rd-navbar-brand" href="index.html"><img src="images/logo.png" alt="" width="400" height="200"
+                    srcset="images/logo.png" /></a>
+              </div>
+              <div class="rd-navbar-main-element">
+                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                  <!-- RD Navbar Nav-->
+                  <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Inicio</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.php">Contactanos</a></li>
+                    <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="usuarios.php">Usuarios</a></li>
+                    <!--Area personal, para descargar proyectos-->
+                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href="areaPersonal/areaPersonal.php">Area Personal</a></li>
+                    <!--Area de gestion de clientes-->
+                    <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
+                    <!--Tabla para ver los trabajos pendientes de un empleado-->
+                    <li class="rd-nav-item"id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"  href="gestion/proyecto_empleado.php">Evento empleado</a></li>
+                    <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5"  href="login.php">Iniciar Sesion</a></li>
+                    <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"  href="logout.php" >Cerrar Sesion</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
 
-    const animateShow = (state) => {
-      const animation = anime.timeline();
-      console.log(state.navigationItems[state.activeItem]);
+      </div>
+    </header>
+        <!-- Breadcrumbs-->
+        <section class="breadcrumbs-custom bg-image context-dark"
+            style="background-image: url(images/pexels-paduret-1476316.jpg);">
+            <div class="breadcrumbs-custom-inner">
+                <div class="container breadcrumbs-custom-container">
+                    <div class="breadcrumbs-custom-main">
+                        <h6 class="breadcrumbs-custom-subtitle title-decorated">Servicios</h6>
+                        <h1 class="breadcrumbs-custom-title">Nuestros Servicios</h1>
+                    </div>
+                    <ul class="breadcrumbs-custom-path">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Servicios</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section class="section section-sm section-first">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="row row-50 justify-content-center">
+                            <!-- Service 1 -->
+                            <div class="col-md-6 col-lg-4">
 
-      animation.add({
-        backgroundColor: state.navigationItems[state.activeItem].color,
-        begin: () => {
-          state.root.classList.add('nav--active');
-        },
-        complete: () => {
-          state.navigationItems[state.activeItem].element.classList.add('nav__item--active');
-        },
-        duration: 450,
-        easing: 'easeOutExpo',
-        opacity: 1,
-        translateX: [
-          { delay: 300, value: '500px', },
-        ],
-        scaleX: [
-          { value: 0 },
-          { value: 1 },
-        ],
-        targets: '.layout__frontdrop',
-      })
-        .add({
-          duration: 70,
-          opacity: [0, 1],
-          targets: state.navigationItems[state.activeItem].childNavigation,
-        }).add({
-          delay: anime.stagger(70),
-          opacity: [0, 1],
-          translateY: ['100%', '0'],
-          targets: state.navigationItems[state.activeItem].childNavigation.querySelectorAll('.nav__item'),
-        });
+                                <div class="service-box text-center">
+                                    <a href="contactanos.php">
+                                        <img src="images/edicion.jpg" alt="Servicio 1" width="370" height="250">
+                                        <h3>Edición fotográfica</h3>
+                                    </a>
 
-      return animation;
-    };
+                                    <p>Ofrecemos servicios de consultoría para ayudar a tu negocio a crecer y
+                                        alcanzar sus objetivos.</p>
+                                </div>
+                            </div>
+                            <!-- Service 2 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-box text-center">
+                                    <a href="contactanos.php">
+                                    <img src="images/sesiones.jpg" alt="Servicio 2" width="370" height="250">
+                                    <h3>Sesiones Personalizadas</h3>
+                                    </a>
+                                    <p>Desarrollamos sitios web personalizados y funcionales que se adaptan a tus
+                                        necesidades.</p>
+                                </div>
+                            </div>
+                            <!-- Service 3 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-box text-center">
+                                    <a href="contactanos.php">
+                                    <img src="images/fotografia.jpg" alt="Servicio 3" width="370" height="250">
+                                    <h3>Fotografía de eventos</h3>
+                                    </a>
+                                    <p>Implementamos estrategias de marketing digital para aumentar tu presencia en
+                                        línea y atraer más clientes.</p>
+                                </div>
+                            </div>
+                            <!-- Service 4 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-box text-center">
+                                    <a href="contactanos.php">
+                                    <img src="images/asesoramiento.jpg" alt="Servicio 4" width="370" height="250">
+                                    <h3>Asesoramiento de estudio</h3>
+                                    </a>
+                                    <p>Capturamos los momentos importantes de tu vida con servicios de fotografía de
+                                        alta calidad.</p>
+                                </div>
+                            </div>
+                            <!-- Service 5 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-box text-center">
+                                    <a href="contactanos.php">
+                                    <img src="images/album.jpg" alt="Servicio 5" width="370" height="250">
+                                    </a>
+                                    <h3>Impresión y álbumes fotográficos</h3>
+                                    <p>Proporcionamos soporte técnico para resolver cualquier problema relacionado con
+                                        tus dispositivos y software.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    const animateHide = (state, complete) => {
-      const animation = anime.timeline({
-        complete: complete,
-      });
+        <!-- Page Footer-->
+        <footer class="section footer-standard bg-gray-700">
+            <div class="footer-standard-main">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-lg-4">
+                            <div class="inset-right-1">
+                                <h4>About Me</h4>
+                                <p>My name is Jonathan Davis and I’m professional photographer and retoucher. I’m
+                                    offering my services
+                                    to individual and corporate clients throughout the USA. Make your favorite life
+                                    moment or event last
+                                    and remain in your memory!</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-5 col-lg-4">
+                            <div class="box-1">
+                                <h4>Contact Information</h4>
+                                <ul class="list-sm">
+                                    <li class="object-inline"><span
+                                            class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
+                                            class="link-default" href="#">2130 Fulton Street <br> San Diego, CA
+                                            94117-1080 USA</a></li>
+                                    <li class="object-inline"><span
+                                            class="icon icon-md mdi mdi-phone text-gray-700"></span><a
+                                            class="link-default" href="tel:#">1-800-1234-678</a></li>
+                                    <li class="object-inline"><span
+                                            class="icon icon-md mdi mdi-email text-gray-700"></span><a
+                                            class="link-default" href="mailto:#">info@demolink.org</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-7 col-lg-4">
+                            <h4>Newsletter</h4>
+                            <p>Sign up to my newsletter and be the first to know about the latest news, special offers,
+                                events, and
+                                discounts.</p>
+                            <!-- RD Mailform-->
+                            <a href="contactanos.php">
+                                <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
+                                    data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                                    <div class="form-wrap">
+                                        <input class="form-input" id="subscribe-form-2-email" type="email" name="email">
+                                        <label class="form-label" for="subscribe-form-2-email">E-mail</label>
+                                    </div>
 
-      animation.add({
-        duration: 210,
-        opacity: [1, 0],
-        targets: state.navigationItems[state.activeItem].childNavigation,
-      }).add({
-        complete: () => {
-          // Clean-up current active item.
-          state.root.classList.remove('nav--active');
-          state
-            .navigationItems[state.activeItem]
-            .element
-            .classList
-            .remove('nav__item--active')
-            ;
-        },
-        duration: 250,
-        easing: 'easeOutCirc',
-        scaleX: [
-          { value: 0, },
-        ],
-        translateX: [
-          { value: 0 },
-        ],
-        targets: '.layout__frontdrop',
-      });
+                                    <div class="form-button">
 
-      return animation;
-    };
+                                        <div class="button button-primary button-icon button-icon-only button-winona"
+                                            aria-label="submit">
+                                            <span class="icon mdi mdi-email-outline"></span>
+                                        </div>
 
-    (() => {
-      // Ready to fight.
-      const introAnimation = anime.timeline({
-        complete: () => {
-          for (let stateItemIndex = 0; stateItemIndex < Object.values(state.navigationItems).length; ++stateItemIndex) {
-            state.navigationItems[stateItemIndex].element.addEventListener(
-              'click',
-              state.navigationItems[stateItemIndex].onClick
-            );
+                                    </div>
+                                </form>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            // Reset transform to prevent the implicit z-index / position relative to trigger.
-            state.navigationItems[stateItemIndex].element.style.transform = '';
-          }
-        },
-      });
-
-      introAnimation.add({
-        duration: 350,
-        delay: 1000,
-        easing: 'easeOutCirc',
-        targets: '.layout__backdrop',
-        scaleX: [0, 1],
-      }).add({
-        delay: anime.stagger(75),
-        duration: 450,
-        easing: 'easeOutCirc',
-        opacity: [0, 1],
-        translateY: ['100%', '0%'],
-        targets: '.nav--header-1 > .nav__item:not(.nav__item--home)',
-      }).add({
-        easing: 'easeOutExpo',
-        targets: '.layout__backdrop',
-        translateX: [
-          { delay: 350, value: (67) + '%' },
-        ],
-      }).add({
-        duration: 350,
-        easing: 'easeOutExpo',
-        targets: '.hero-title',
-        opacity: [0, 1],
-        translateY: ['50px', '0'],
-      }).add({
-        duration: 350,
-        easing: 'easeOutExpo',
-        targets: '.hero-text',
-        opacity: [0, 1],
-        translateY: ['0', '-3rem'],
-      }, '-=100');
-    })();
-  </script>
-
+        </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
-
-
-
