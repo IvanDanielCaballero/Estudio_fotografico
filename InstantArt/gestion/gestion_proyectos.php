@@ -454,13 +454,13 @@
     <script type="text/javascript">
         if (inicio != undefined && inicio == true) {
             document.getElementById("inicio_sesion").style.display = "none"
-            document.getElementById("cerrar_sesion").style.display = "block";
+            document.getElementById("cerrar_sesion").style.display = "inline-block";
             console.log("inicio sesion");
         }
 
         if (admin != undefined && admin == true) {
             console.log("admin")
-            document.getElementById("usuarios").style.display = "block";
+            document.getElementById("usuarios").style.display = "inline-block";
         }
 
 
