@@ -1,33 +1,46 @@
 
 function MostrarFotos() {
-    const fotos = document.getElementsByClassName("mostrar");
-    for (let i = 0; i < fotos.length; i++) {
+  // Obtiene todos los elementos con la clase "mostrar"
+  const fotos = document.getElementsByClassName("mostrar");
+  
+  // Itera sobre los elementos y cambia su estilo display a "block"
+  for (let i = 0; i < fotos.length; i++) {
       fotos[i].style.display = "block";
-    }
-    document.getElementsByClassName("see_btn")[0].style.display = "block";
   }
-  document.getElementById("cliente").innerText = nombre;
-  const allImgBoxes = document.querySelectorAll('.portfolio_section .portfolio_container .img-box');
-  const imgBoxes = [...allImgBoxes].slice(0);
+  
+  // Muestra el primer elemento con la clase "see_btn"
+  document.getElementsByClassName("see_btn")[0].style.display = "block";
+}
 
-  imgBoxes.forEach(imgBox => {
-    imgBox.addEventListener('touchstart', function() {
+
+// Selecciona todos los elementos con la clase "img-box" dentro de la sección del portafolio
+const allImgBoxes = document.querySelectorAll('.portfolio_section .portfolio_container .img-box');
+// Convierte la NodeList a un array
+const imgBoxes = [...allImgBoxes].slice(0);
+
+
+
+// Agrega un evento 'touchstart' a cada elemento "img-box"
+imgBoxes.forEach(imgBox => {
+  imgBox.addEventListener('touchstart', function() {
+      // Selecciona el enlace dentro de la caja de botones del img-box
       const btnLink = imgBox.querySelector('.btn-box a');
 
+      // Verifica el estilo de display del enlace y lo alterna entre visible y oculto
       if (btnLink.style.display === 'none' || btnLink.style.display === '') {
-        btnLink.style.display = 'block';
-        setTimeout(function() {
-          btnLink.style.display = '';
-        }, 5000);
-
+          // Muestra el enlace y lo oculta después de 5 segundos
+          btnLink.style.display = 'block';
+          setTimeout(function() {
+              btnLink.style.display = '';
+          }, 5000);
       } else {
-        setTimeout(function() {
-          btnLink.style.display = '';
-        }, 100);
-
+          // Oculta el enlace después de 100 milisegundos
+          setTimeout(function() {
+              btnLink.style.display = '';
+          }, 100);
       }
-    });
   });
+});
 
 
   
@@ -85,37 +98,48 @@ function inicio(id_cliente) {
 
 
 function cargarFotos(url) {
-    const lista = '../gestion/listar_imagenes.php?carpeta=' + url;
-    fetch(lista)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            let i = 1;
-            for (let j = 0; j < 6; j++) {
-                let foto = data[j];
+  // Construye la URL para listar imágenes en la carpeta especificada
+  const lista = '../gestion/listar_imagenes.php?carpeta=' + url;
+  
+  // Realiza una solicitud fetch a la URL construida
+  fetch(lista)
+      .then(response => response.json()) // Convierte la respuesta a JSON
+      .then(data => {
+          console.log(data); 
+          let i = 1;
+          
+          // Itera sobre los primeros 6 elementos de los datos recibidos
+          for (let j = 0; j < 6; j++) {
+              let foto = data[j]; // Obtiene la URL de la foto
 
-                let img = document.getElementById("imagen" + i);
-                img.src = foto;
-                img.alt = 'ImagenFTP';
+              let img = document.getElementById("imagen" + i); // Obtiene el elemento de imagen correspondiente
+              img.src = foto; // Establece la URL de la imagen
+              img.alt = 'ImagenFTP'; // Establece el texto alternativo de la imagen
 
-                let enlace = document.getElementById("icono" + i);
-                enlace.onclick = () => descargarFoto(foto);
-
-                i++;
-            }
-            refrescar_fotos()
-        })
-        .catch(error => console.error('Error al cargar las fotos:', error));
+              let enlace = document.getElementById("icono" + i); // Obtiene el elemento de enlace correspondiente
+              // Asigna una función de clic para descargar la foto
+              enlace.onclick = () => descargarFoto(foto);
+              i++;
+          }
+          refrescar_fotos();
+      })
+      .catch(error => console.error('Error al cargar las fotos:', error)); // Maneja errores en la solicitud
 }
 
 
 
+
+//Descargar la foto cuando le das click al icono de descarga
 function descargarFoto(fotoUrl) {
-    const link = document.createElement('a');
-    link.href = fotoUrl;
-    link.download = 'img';
-    link.click();
+  const link = document.createElement('a');
+  // Establece la URL de la foto como el atributo href del enlace
+  link.href = fotoUrl;
+  // Establece el atributo download para sugerir el nombre del archivo descargado
+  link.download = 'img';
+  // Simula un clic en el enlace para iniciar la descarga
+  link.click();
 }
+
 
 
 //Almacenamos el id del evento
