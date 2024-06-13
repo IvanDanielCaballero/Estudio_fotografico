@@ -245,11 +245,7 @@ function borrarEvento() {
 
 
 //CSS de las tablas
-
-
-
 var $table = $('#fresh-table')
-
 
 $(function () {
     $table.bootstrapTable({

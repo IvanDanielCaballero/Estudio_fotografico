@@ -15,7 +15,7 @@
     <!-- <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="usuarios_form.css" />
     <link rel="stylesheet" href="estilos.css" />
-
+    <script src="../php/comprobar_login.php"></script>
     <style>
         .texto_centrado {
             text-align: center;
@@ -42,15 +42,7 @@
 
     <?php
     session_start();
-    if (isset($_SESSION['usuario'])) {
-        echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-    }
-
-    if (isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin') {
-        echo '<script>var admin=true;</script>';
-    } else {
-        header("Location: index.php");
-    }
+    require 'login.php';
     ?>
 
 

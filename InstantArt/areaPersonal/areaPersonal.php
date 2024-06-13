@@ -24,32 +24,11 @@
   <?php
 
   session_start();
-
-  if (isset($_SESSION['usuario'])) {
-    echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-  }
-
-  // Verifica si la sesión de usuario no está establecida
-  if (!isset($_SESSION['usuario'])) {
-    header("Location: ../login.php");
-  }
-
-  if (!isset($_SESSION['id_cliente'])) {
-    header("Location: ../index.php");
-  }
-  // Configuración de la conexión a la base de datosFi
-  $servername = "217.160.114.39";
-  $username = "jose";
-  $password = "56lf2G9BnTez";
-  $dbname = "fotografia";
-
-  // Crear conexión
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  // Verificar conexión
-  if ($conn->connect_error) {
-    die("Error en la conexión: " . $conn->connect_error);
-  }
+  require '../gestion/utilidades_gestion.php';
+  require 'login.php';
+ 
+  //Conexion con la base de datos
+  $conn = conexion_bd();
 
   // Consulta SQL para obtener los eventos
 

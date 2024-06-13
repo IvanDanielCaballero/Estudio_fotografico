@@ -1,15 +1,8 @@
 <?php
-require 'utilidades_gestion.php';
 session_start();
-if (isset($_SESSION['usuario'])) {
-    echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-}
+require 'utilidades_gestion.php';
+require 'login.php';
 
-if (isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin') {
-    echo '<script>var admin=true;</script>';
-} else {
-    header("Location: index.php");
-}
 $cliente = $_POST['id_cliente'];
 $tipo = $_POST['tipo_evento'];
 $equipo = $_POST['equipo'];
