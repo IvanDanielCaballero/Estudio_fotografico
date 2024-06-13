@@ -163,7 +163,7 @@
                                             </td>";
 
                                             echo "<td class='texto_centrado'>
-                                            <a rel='tooltip' title='ver presupuestos' onclick=\"window.location.href = '../presupuesto/presupuesto.html?id=" . $id . "'\">
+                                            <a rel='tooltip' title='ver presupuestos' onclick=\"window.location.href = '../eventos/eventos.php?id=" . $id . "'\">
                                                 <i class='fa fa-list'></i>
                                             </a>
                                           </td>";

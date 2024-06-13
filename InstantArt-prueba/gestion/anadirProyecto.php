@@ -1,5 +1,5 @@
 <?php
-require '../ftp/utilidades.php';
+require '../gestion/utilidades_gestion.php';
 require 'utilidades_gestion.php';
 session_start();
 if (isset($_SESSION['usuario'])) {

@@ -66,13 +66,13 @@
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">Sobre Nosotros</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../servicios.html">Servicios</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../contactanos.php">Contactanos</a></li>
                     <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="../usuarios.php">Usuarios</a></li>
                     <!--Area personal, para descargar proyectos-->
-                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href="../areaPersonal/areaPersonal.php">Area Personal</a></li>
+                    <li class="rd-nav-item active" id="area_personal" style="display: none;"><a class="rd-nav-link" href="../areaPersonal/areaPersonal.php">Area Personal</a></li>
                     <!--Area de gestion de clientes-->
                     <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="../gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
                     <!--Tabla para ver los trabajos pendientes de un empleado-->
@@ -108,7 +108,7 @@
                         Presupuestos
                       </a>
                       <a href="../servicios.html" class="btn-2">
-                        Servicios
+                        Facturas
                       </a>
                     </div>
                   </div>
@@ -130,7 +130,7 @@
       <div class="container">
         <div class="heading_container">
           <div class="col-12 text-center">
-            <h3 class="section-title wow-outer"><span class="wow slideInUp">Galería de Proyectos de Clientes</span></h3>
+            <h3 class="section-title wow-outer"><span class="wow slideInUp">Galería de Proyectos</span></h3>
           </div>
         </div>
         <div class="box">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../ftp/utilidades.php';
+require '../gestion/utilidades_gestion.php';
 require_once "funciones.php";
 $id = $_POST['id'];
 

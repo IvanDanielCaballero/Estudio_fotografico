@@ -3,14 +3,19 @@ require '../php/funciones.php';
 $bd = conexion();
 
 // Preparar la consulta SQL para obtener los eventos del cliente
-$sql = "SELECT evento.id_evento, tipo_evento.nombre , evento.id_equipo, evento.descripcion, evento.fecha, evento.localidad, evento.hora, evento.estado FROM evento join tipo_evento on evento.id_tipo_evento=tipo_evento.id_tipo_evento 
- WHERE id_cliente = :id_cliente";
+$sql = "SELECT evento.id_evento, tipo_evento.nombre , evento.id_equipo, evento.descripcion, evento.fecha, evento.localidad, evento.hora, evento.estado, estado_factura.estado FROM tipo_evento  join evento on evento.id_tipo_evento=tipo_evento.id_tipo_evento 
+join factura on evento.id_evento = factura.id_evento join estado_factura on factura.id_estado_factura=estado_factura.id_estado_factura
+ WHERE evento.id_cliente = :id_cliente";
 $stmt = $bd->prepare($sql);
 $id_cliente = $_GET['id'];
 $stmt->execute(['id_cliente' => $id_cliente]);
 
 // Obtener todos los resultados
 $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
 
 
 
