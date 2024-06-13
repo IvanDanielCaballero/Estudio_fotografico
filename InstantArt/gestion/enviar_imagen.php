@@ -1,6 +1,6 @@
 <?php
+require 'utilidades_gestion.php';
 
-session_start();
 
 $ftp_server = "217.160.114.39";
 $ftp_username = "usuarioftp";

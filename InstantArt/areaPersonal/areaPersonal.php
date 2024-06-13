@@ -31,7 +31,6 @@
   $conn = conexion_bd();
 
   // Consulta SQL para obtener los eventos
-
   $sql2 = "SELECT concat(nombre, ' ', apellidos) from cliente where id_cliente =" . $_SESSION['id_cliente'] . "";
   $result2 = $conn->query($sql2)->fetch_column();
   echo '<script>var nombre = "' . $result2 . '"</script>';

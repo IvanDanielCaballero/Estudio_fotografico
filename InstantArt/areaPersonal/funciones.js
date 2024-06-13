@@ -30,6 +30,8 @@ function MostrarFotos() {
   });
 
 
+  
+
 //Cargar el nombre del usuario 
 document.getElementById('cliente').innerText = nombre;
 inicio(id_cliente);
@@ -106,6 +108,8 @@ function cargarFotos(url) {
         .catch(error => console.error('Error al cargar las fotos:', error));
 }
 
+
+
 function descargarFoto(fotoUrl) {
     const link = document.createElement('a');
     link.href = fotoUrl;
@@ -114,35 +118,7 @@ function descargarFoto(fotoUrl) {
 }
 
 
-// Función para borrar una foto
-function borrarFoto(fotoUrl) {
-    console.log(fotoUrl);
-    fotoUrl = obtenerCaminoCompleto(fotoUrl);
-    console.log(fotoUrl);
-    // Realizar solicitud para borrar la foto del servidor
-    fetch(`../gestion/borrar_foto.php?image=${encodeURIComponent(fotoUrl)}`, {
-        method: 'DELETE'
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                refrescar_fotos();
-            } else {
-                alert('Error al borrar la foto');
-            }
-        })
-        .catch(refrescar_fotos());
-}
-
-function obtenerCaminoCompleto(url) {
-    // Crear un objeto URL a partir de la cadena de consulta
-    const urlObj = new URL(url, window.location.origin);
-    // Decodificar el parámetro 'image'
-    const imagenRuta = decodeURIComponent(urlObj.searchParams.get('image'));
-    return imagenRuta;
-}
-
-//Para refescar la galeria cuando borro una foto
+//Almacenamos el id del evento
 function refrescar_fotos() {
     let id_evento = document.getElementById('evento2').value;
     /* cargarFotos('/' + id_cliente + '/' + id_evento); */

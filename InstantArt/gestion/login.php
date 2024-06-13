@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_SESSION['usuario'])) {
     echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
 }

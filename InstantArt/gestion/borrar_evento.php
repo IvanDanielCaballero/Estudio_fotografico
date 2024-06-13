@@ -8,18 +8,9 @@ $evento = isset($_POST['evento']) ? $_POST['evento'] : '';
 // Construir la URL de la carpeta del evento
 $url = '/' . $id_cliente . '/' . $evento;
 
-// Datos del servidor FTP
-$ftp_server = "217.160.114.39";
-$ftp_username = "usuarioftp";
-$ftp_userpass = "vML0TF1hCW7IIxA5HKjW";
-
-$conn_id = ftp_connect($ftp_server);
+// Conectar al servidor FTP
+$conn_id = conexion_ftp();
 $login_result = ftp_login($conn_id, $ftp_username, $ftp_userpass);
-
-if ((!$conn_id) || (!$login_result)) {
-    echo json_encode(['success' => false, 'message' => 'Error de conexión FTP']);
-    exit;
-}
 
 // Eliminar la carpeta del evento en el servidor FTP
 borrarDirectorios($conn_id, $url);
