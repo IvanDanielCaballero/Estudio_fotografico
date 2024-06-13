@@ -104,10 +104,10 @@
                       Esperamos sinceramente que nuestros servicios sean de tu completo agrado y cumplan con todas tus expectativas.
                     </p>
                     <div class="btn-box">
-                      <a href="../eventos/responder_presupuesto.php" class="btn-1">
+                      <a href="responder_presupuesto.php" class="btn-1">
                         Presupuestos
                       </a>
-                      <a href="../servicios.html" class="btn-2">
+                      <a href="mirar_facturas.html" class="btn-2">
                         Facturas
                       </a>
                     </div>
