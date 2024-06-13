@@ -14,6 +14,11 @@ function Subir(id_cliente) {
     document.getElementById("forAnadir").style.display = "none";
     document.getElementById("forEditar").style.display = "none";
 
+    //Borro las fotos por si han pulsado repetidamente a gestionar imagenes
+    console.log('hola');
+    const fotosDiv = document.getElementById('fotos2');
+    fotosDiv.innerHTML = ''
+
     // Solicitud Ajax para obtener el nombre del cliente
     fetch(`get_cliente.php?id_cliente=${id_cliente}`)
         .then(response => response.json())

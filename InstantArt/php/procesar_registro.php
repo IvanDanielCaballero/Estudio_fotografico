@@ -1,6 +1,5 @@
 <?php
 require_once "funciones.php";
-require "../areaPersonal/utilidades.php";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

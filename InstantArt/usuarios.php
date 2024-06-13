@@ -26,7 +26,7 @@
     <link href="css/fresh-bootstrap-table.css" rel="stylesheet" />
     <link href="css/demo.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style_old.css">
-   <!-- <script src="php/comprobar_login.php"></script> -->
+    <script src="php/comprobar_login.php"></script>
     
 
 </head>
