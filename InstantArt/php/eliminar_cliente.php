@@ -15,7 +15,7 @@ try {
     borrarDirectorios($conn_id, $id);
 
 
-    if ($bd->query($sql) === TRUE) {
+    if ($bd->query($sql) == TRUE) {
         echo "success";
     } else {
       

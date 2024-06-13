@@ -265,18 +265,35 @@ function borrarFotoPorURL($url) {
 }
 
 // Función para eliminar una carpeta y su contenido en el servidor FTP
-function ftp_rmdir_recursive($conn_id, $dir) {
+function borrarDirectorios($conn_id, $dir) {
+    // Obtener una lista de archivos en el directorio
     $files = ftp_nlist($conn_id, $dir);
-    foreach ($files as $file) {
-        if ($file == '.' || $file == '..') {
-            continue;
+    if ($files !== false) {
+        // Recorrer la lista de archivos y eliminar cada uno
+        foreach ($files as $file) {
+            // Ignorar los directorios . y ..
+            if ($file == '.' || $file == '..') {
+                continue;
+            }
+
+            // Si es un directorio, llamamos recursivamente a borrarDirectorio
+            if (ftp_size($conn_id, $file) == -1) {
+                borrarDirectorios($conn_id, $file);
+            } else {
+                ftp_delete($conn_id, $file);
+            }
         }
-        if (@ftp_delete($conn_id, $file) === false) {
-            ftp_rmdir_recursive($conn_id, $file);
+        // Finalmente, eliminar el directorio
+        if (ftp_rmdir($conn_id, $dir)) {
+            echo "Directorio $dir eliminado exitosamente\n";
+        } else {
+            echo "No se pudo eliminar el directorio $dir\n";
         }
+    } else {
+        echo "No se pudo obtener la lista de archivos para $dir\n";
     }
-    @ftp_rmdir($conn_id, $dir);
 }
+
 
 function conexion_ftp(){
 
@@ -300,6 +317,7 @@ function conexion_ftp(){
         return false;
     }
 }
+
 
 //Creamos un directorio con el id_cliente, se ejecuta al dar de alta el cliente
 function crearDirectorioFTP($conn_id, $dir) {

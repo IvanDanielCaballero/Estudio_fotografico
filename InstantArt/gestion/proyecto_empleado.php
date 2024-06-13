@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
+    <!-- <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">-->
     <link rel="stylesheet" href="usuarios_form.css" />
     <link rel="stylesheet" href="estilos.css" />
 
@@ -98,22 +98,12 @@
 
 
         <?php
-        // Configuración de la conexión a la base de datos
-        $servername = "217.160.114.39";
-        $username = "jose";
-        $password = "56lf2G9BnTez";
-        $dbname = "fotografia";
+        require 'utilidades_gestion.php';
 
         // Crear conexión
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Verificar conexión
-        if ($conn->connect_error) {
-            die("Error en la conexión: " . $conn->connect_error);
-        }
+        $conn = conexion_bd();
 
         // Consulta SQL para obtener los eventos
-
         $sql = " SELECT  e.id_evento,  te.nombre, e.localidad, e.fecha, eq.nombre as equipo, e.hora, e.descripcion, e.id_cliente
         FROM evento e
         JOIN tipo_evento te ON e.id_tipo_evento = te.id_tipo_evento
@@ -245,42 +235,7 @@
     </div>
 
     <div class="snackbars" id="form-output-global"></div>
-
-
-
-    <script type="text/javascript">
-      
-
-
-        var $table = $('#fresh-table')
-
-
-        $(function () {
-            $table.bootstrapTable({
-                classes: 'table table-hover table-striped',
-                toolbar: '.toolbar',
-                search: true,
-                showPaginationSwitch: true,
-                showRefresh: true,
-                showToggle: true,
-                showColumns: false,
-                pagination: true,
-                striped: true,
-                sortable: true,
-                pageSize: 5,
-                pageList: [8, 10],
-
-                formatShowingRows: function (pageFrom, pageTo, totalRows) {
-                    return 'Mostrando ' + pageFrom + ' a ' + pageTo + ' de ' + totalRows + ' filas';
-                },
-                formatRecordsPerPage: function (pageNumber) {
-                    return ''
-                }
-            })
-        })
-
-
-    </script>
+    <script src="funciones_proyectoE.js"></script>
     <script src="core.min.js"></script>
     <script src="../js/script.js"></script>
 

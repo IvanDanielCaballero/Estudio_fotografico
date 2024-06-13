@@ -22,7 +22,7 @@ if ((!$conn_id) || (!$login_result)) {
 }
 
 // Eliminar la carpeta del evento en el servidor FTP
-ftp_rmdir_recursive($conn_id, $url);
+borrarDirectorios($conn_id, $url);
 
 // Cerrar la conexión FTP
 ftp_close($conn_id);

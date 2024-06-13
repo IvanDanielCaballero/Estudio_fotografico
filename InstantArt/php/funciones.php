@@ -13,17 +13,12 @@ function conexion(){
 
 
 function borrarDirectorios($conn_id, $dir) {
-    // Obtener una lista de archivos en el directorio
-
     $dir= '/'.$dir;
+    // Obtener una lista de archivos en el directorio
     $files = ftp_nlist($conn_id, $dir);
-
     if ($files !== false) {
         // Recorrer la lista de archivos y eliminar cada uno
         foreach ($files as $file) {
-            // Formar el camino completo del archivo o directorio
-            echo $file;
-
             // Ignorar los directorios . y ..
             if ($file == '.' || $file == '..') {
                 continue;
@@ -39,14 +34,11 @@ function borrarDirectorios($conn_id, $dir) {
         // Finalmente, eliminar el directorio
         if (ftp_rmdir($conn_id, $dir)) {
             echo "Directorio $dir eliminado exitosamente\n";
-            return true;
         } else {
             echo "No se pudo eliminar el directorio $dir\n";
-            return false;
         }
     } else {
         echo "No se pudo obtener la lista de archivos para $dir\n";
-        return false;
     }
 }
 

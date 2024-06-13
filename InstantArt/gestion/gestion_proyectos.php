@@ -110,18 +110,10 @@
 
         <?php
         // Configuración de la conexión a la base de datos
-        $servername = "217.160.114.39";
-        $username = "jose";
-        $password = "56lf2G9BnTez";
-        $dbname = "fotografia";
+        require 'utilidades_gestion.php';
 
         // Crear conexión
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Verificar conexión
-        if ($conn->connect_error) {
-            die("Error en la conexión: " . $conn->connect_error);
-        }
+        $conn = conexion_bd();
 
         // Consulta SQL para obtener los usuarios
         $sql = "SELECT * FROM cliente";
@@ -199,7 +191,6 @@
 
 
         <?php
-        include 'utilidades_gestion.php';
         // Obtener los eventos en formato JSON
         $events_json = eventos_bd();
         $events = json_decode($events_json, true);
@@ -448,51 +439,6 @@
     </div>
 
     <div class="snackbars" id="form-output-global"></div>
-
-
-
-    <script type="text/javascript">
-        if (inicio != undefined && inicio == true) {
-            document.getElementById("inicio_sesion").style.display = "none"
-            document.getElementById("cerrar_sesion").style.display = "inline-block";
-            console.log("inicio sesion");
-        }
-
-        if (admin != undefined && admin == true) {
-            console.log("admin")
-            document.getElementById("usuarios").style.display = "inline-block";
-        }
-
-
-        var $table = $('#fresh-table')
-
-
-        $(function () {
-            $table.bootstrapTable({
-                classes: 'table table-hover table-striped',
-                toolbar: '.toolbar',
-                search: true,
-                showPaginationSwitch: true,
-                showRefresh: true,
-                showToggle: true,
-                showColumns: false,
-                pagination: true,
-                striped: true,
-                sortable: true,
-                pageSize: 5,
-                pageList: [8, 10],
-
-                formatShowingRows: function (pageFrom, pageTo, totalRows) {
-                    return 'Mostrando ' + pageFrom + ' a ' + pageTo + ' de ' + totalRows + ' filas';
-                },
-                formatRecordsPerPage: function (pageNumber) {
-                    return ''
-                }
-            })
-        })
-
-
-    </script>
     <script src="funciones.js"></script>
     <script src="core.min.js"></script>
     <script src="../js/script.js"></script>
