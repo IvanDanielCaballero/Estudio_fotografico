@@ -444,7 +444,8 @@ try {
                                     <tr>
                                         <th class="text-left">Total (sin IVA):</th>
                                         <td class="text-right text-primary">
-                                            <?php echo htmlspecialchars($presupuesto['precio']); ?></td>
+                                            <?php echo htmlspecialchars($presupuesto['precio']); ?>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -493,8 +494,8 @@ try {
                 </div>
                 <div class="card-footer text-right">
                     <button class="btn btn-primary" id="download"><i class="fas fa-download"></i> Descargar PDF</button>
-                    <button class="btn btn-primary" id="btn_continuar"> <i
-                            class="bi bi-arrow-right-circle-fill"></i>Continuar</button>
+                    <button class="btn btn-primary" id="btn_continuar"> <i class="bi bi-arrow-right-circle-fill"
+                           ></i>Continuar</button>
 
                 </div>
             </div>
@@ -507,7 +508,7 @@ try {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script>
         document.getElementById('btn_continuar').onclick = function () {
-            window.location.href = '../gestion/gestion_proyectos.php';
+            window.location.href = '../index.php';
         };
 
         document.getElementById('download').addEventListener('click', function () {
