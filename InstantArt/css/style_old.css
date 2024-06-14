@@ -9425,6 +9425,7 @@ html.tablet .ui-to-top {
 
 .rd-navbar-static .rd-nav-item {
 	display: inline-block;
+	padding-bottom:10px ;
 }
 
 .rd-navbar-static .rd-nav-item.focus .rd-nav-link, .rd-navbar-static .rd-nav-item.opened .rd-nav-link {
