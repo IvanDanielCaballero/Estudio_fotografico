@@ -66,6 +66,12 @@ try {
 
   <!-- Script externo -->
   <script src="php/comprobar_login.php"></script>
+
+  <style>
+    .centrar{
+      margin: 0 auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -157,7 +163,7 @@ try {
     <section class="section section-sm">
       <div class="container">
         <div class="row">
-          <div class="col-lg-10 col-xl-8">
+          <div class="col-lg-10 col-xl-8 centrar">
             <!-- Título de los beneficios -->
             <h3>Beneficios de nuestro servicio de pago</h3>
             <!-- Citas con detalles de los beneficios -->
@@ -299,7 +305,8 @@ try {
                 </div>
               </div>
             </div>
-            <button type="submit" class="purchase--btn">pagar</button>
+            <button type="button" class="purchase--btn" onclick="window.location.href='areaPersonal/mirar_facturas.php'">Pagar</button>
+
           </form>
           <!-- Fin del formulario de pago -->
         </div>
@@ -310,7 +317,7 @@ try {
     <section class="section section-sm">
       <div class="container">
         <div class="row">
-          <div class="col-lg-10 col-xl-8">
+          <div class="col-lg-10 col-xl-8 centrar">
             <h2>Detalles importantes para completar tu pago</h2>
             <p>
               <a href="#">Ir al resumen de la compra</a> <!-- Enlace para resumen de compra -->
