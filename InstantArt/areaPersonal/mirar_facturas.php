@@ -43,7 +43,44 @@
 </head>
 
 <body>
+  <?php
 
+  session_start();
+
+  if (isset($_SESSION['usuario'])) {
+    echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
+  }
+
+  // Verifica si la sesión de usuario no está establecida
+  if (!isset($_SESSION['usuario'])) {
+    header("Location: ../login.php");
+  }
+
+  if (!isset($_SESSION['id_cliente'])) {
+    header("Location: ../index.php");
+  }
+  // Configuración de la conexión a la base de datosFi
+  $servername = "217.160.114.39";
+  $username = "jose";
+  $password = "56lf2G9BnTez";
+  $dbname = "fotografia";
+
+  // Crear conexión
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  // Verificar conexión
+  if ($conn->connect_error) {
+    die("Error en la conexión: " . $conn->connect_error);
+  }
+
+  // Consulta SQL para obtener los eventos
+  
+  $sql2 = "SELECT concat(nombre, ' ', apellidos) from cliente where id_cliente =" . $_SESSION['id_cliente'] . "";
+  $result2 = $conn->query($sql2)->fetch_column();
+
+
+  ?>
+  
 
   <div class="ie-panel"></div>
   <div class="page">
@@ -101,16 +138,16 @@
     </header>
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom bg-image context-dark"
-      style="background-image: url(images/breadcrumbs-image-1.jpg);">
+      style="background-image: url(../images/pexels-mikhail-nilov-6963030.jpg);">
       <div class="breadcrumbs-custom-inner">
         <div class="container breadcrumbs-custom-container">
           <div class="breadcrumbs-custom-main">
-            <h6 class="breadcrumbs-custom-subtitle title-decorated">Sin Eventos</h6>
-            <h1 class="breadcrumbs-custom-title">No Hay Eventos</h1>
+            <h6 class="breadcrumbs-custom-subtitle title-decorated">Facturas</h6>
+            <h1 class="breadcrumbs-custom-title">Facturas</h1>
           </div>
           <ul class="breadcrumbs-custom-path">
             <li><a href="index.html">Inicio</a></li>
-            <li class="active">Sin Eventos</li>
+            <li class="active">Facturas</li>
           </ul>
         </div>
       </div>
@@ -118,18 +155,21 @@
     <!-- Contenido Principal -->
     <section id="tabla_eventos" class="section section-sm">
       <div class="container">
+      <div class="table-responsive">
         <h5>Estos son tus presupuestos: <span id="cliente-id"></span></h5>
         <table class="table table-hover">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">id_evento</th>
-              <th scope="col">descripcion_detallada</th>
-              <th scope="col">fecha creacion</th>
-              <th scope="col">fecha vencimiento</th>
-              <th scope="col">precio</th>
-              <th scope="col">ver</th>
+              <th scope="col">descripcion</th>
               <th scope="col">estado</th>
+              <th scope="col">fecha emision</th>
+
+              <th scope="col">iva</th>
+              <th scope="col">importe</th>
+              <th scope="col">ver</th>
+
+
 
 
             </tr>
@@ -137,6 +177,7 @@
           <tbody id="factura-table-body">
           </tbody>
         </table>
+        </div>
       </div>
     </section>
 
@@ -218,13 +259,13 @@
                   let row = `<tr>
                                 <td>${factura.id_factura}</td>
                                 <td>${factura.descripcion}</td>
-                                <td>${factura.id_empleado}</td>
                                 <td>${factura.estado}</td>
+                                <td>${factura.fecha_emision}</td>
+
                                 <td>${factura.iva}</td>
                                 <td>${factura.importe}</td>
-                                <td>${factura.fecha_emision}</td>
                                 <td>
-                                    <a href="generar_factura.php?id=${factura.id_factura}">
+                                    <a href="../eventos/generar_factura.php?id_cliente=${factura.id_cliente}&id_evento=${factura.id_evento}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-square-fill" viewBox="0 0 16 16">
                                             <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11" />
                                         </svg>

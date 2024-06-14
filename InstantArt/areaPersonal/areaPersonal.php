@@ -107,7 +107,7 @@
                       <a href="responder_presupuesto.php" class="btn-1">
                         Presupuestos
                       </a>
-                      <a href="mirar_facturas.html" class="btn-2">
+                      <a href="mirar_facturas.php" class="btn-2">
                         Facturas
                       </a>
                     </div>

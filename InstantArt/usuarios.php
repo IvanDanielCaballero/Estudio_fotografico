@@ -420,7 +420,7 @@
                     <div class="row row-50">
                         <div class="col-lg-4">
                             <div class="inset-right-1">
-                                <h4>Mas imformación</h4>
+                                <h4>Mas información</h4>
                                 <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo momentos ordinarios en extraordinarias obras maestras visuales. </p>
                             </div>
                         </div>

@@ -82,55 +82,61 @@
 
 
   ?>
-  
-<div class="ie-panel"></div>
-<div class="page">
-  <!-- Page Header-->
-  <header class="section page-header">
-    <!-- RD Navbar-->
-    <div class="rd-navbar-wrap">
-      <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
-        data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
-        data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
-        data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
-        data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
-        data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-        <div class="rd-navbar-main-outer">
-          <div class="rd-navbar-main">
-            <!-- RD Navbar Panel-->
-            <div class="rd-navbar-panel">
-              <!-- RD Navbar Toggle-->
-              <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-              <!-- RD Navbar Brand-->
-              <a class="rd-navbar-brand" href="index.html"><img src="../images/logo.png" alt="" width="400" height="200"
-                  srcset="../images/logo.png" /></a>
-            </div>
-            <div class="rd-navbar-main-element">
-              <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
-                <!-- RD Navbar Nav-->
-                <ul class="rd-navbar-nav">
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">Sobre Nosotros</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="../servicios.html">Servicios</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="../contactanos.php">Contactanos</a></li>
-                  <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="../usuarios.php">Usuarios</a></li>
-                  <!--Area personal, para descargar proyectos-->
-                  <li class="rd-nav-item active" id="area_personal" style="display: none;"><a class="rd-nav-link" href="areaPersonal.php">Area Personal</a></li>
-                  <!--Area de gestion de clientes-->
-                  <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="../gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
-                  <!--Tabla para ver los trabajos pendientes de un empleado-->
-                  <li class="rd-nav-item"id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"  href="../gestion/proyecto_empleado.php">Evento empleado</a></li>
-                  <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5"  href="../login.php">Iniciar Sesion</a></li>
-                  <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"  href="../logout.php" >Cerrar Sesion</a></li>
-                </ul>
+
+  <div class="ie-panel"></div>
+  <div class="page">
+    <!-- Page Header-->
+    <header class="section page-header">
+      <!-- RD Navbar-->
+      <div class="rd-navbar-wrap">
+        <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+          data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+          data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
+          data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+          data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
+          data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+          <div class="rd-navbar-main-outer">
+            <div class="rd-navbar-main">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <a class="rd-navbar-brand" href="index.html"><img src="../images/logo.png" alt="" width="400"
+                    height="200" srcset="../images/logo.png" /></a>
+              </div>
+              <div class="rd-navbar-main-element">
+                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                  <!-- RD Navbar Nav-->
+                  <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">Sobre Nosotros</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../servicios.html">Servicios</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../contactanos.php">Contactanos</a></li>
+                    <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"
+                        href="../usuarios.php">Usuarios</a></li>
+                    <!--Area personal, para descargar proyectos-->
+                    <li class="rd-nav-item active" id="area_personal" style="display: none;"><a class="rd-nav-link"
+                        href="areaPersonal.php">Area Personal</a></li>
+                    <!--Area de gestion de clientes-->
+                    <li class="rd-nav-item" id="gestion_proyectos" style="display: none;"><a class="rd-nav-link"
+                        href="../gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
+                    <!--Tabla para ver los trabajos pendientes de un empleado-->
+                    <li class="rd-nav-item" id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"
+                        href="../gestion/proyecto_empleado.php">Evento empleado</a></li>
+                    <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5" href="../login.php">Iniciar
+                        Sesion</a></li>
+                    <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"
+                        href="../logout.php">Cerrar Sesion</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
-    </div>
-  </header>
+      </div>
+    </header>
 
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom bg-image context-dark"
@@ -152,25 +158,28 @@
 
     <section id="tabla_eventos" class="section section-sm">
       <div class="container">
-        <h5>Estos son tus presupuestos: <span id="cliente-id"></span></h5>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">id_evento</th>
-              <th scope="col">descripcion_detallada</th>
-              <th scope="col">fecha creacion</th>
-              <th scope="col">fecha vencimiento</th>
-              <th scope="col">precio</th>
-              <th scope="col">ver</th>
-              <th scope="col">estado</th>
+        <div class="table-responsive">
+          <h5>Estos son tus presupuestos: <span id="cliente-id"></span></h5>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">id_evento</th>
+                <th scope="col">descripcion_detallada</th>
+                <th scope="col">fecha creacion</th>
+                <th scope="col">fecha vencimiento</th>
+                <th scope="col">precio</th>
+                <th scope="col">ver</th>
+                <th scope="col">estado</th>
 
 
-            </tr>
-          </thead>
-          <tbody id="presupuesto-table-body">
-          </tbody>
-        </table>
+              </tr>
+            </thead>
+            <tbody id="presupuesto-table-body">
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 

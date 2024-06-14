@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt->execute(['estado' => $estado, 'id_presupuesto' => $id_presupuesto]);
 
   // Redirigir de vuelta a la página de presupuestos
-  header('Location: ../eventos/prueba.html');
+  header('Location: ../areaPersonal/responder_presupuesto.php');
   exit();
 }
 ?>

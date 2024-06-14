@@ -3,8 +3,8 @@ require '../php/funciones.php';
 $bd = conexion();
 
 // Preparar la consulta SQL para obtener los eventos del cliente
-$sql = "SELECT evento.id_evento, tipo_evento.nombre , evento.id_equipo, evento.descripcion, evento.fecha, evento.localidad, evento.hora, evento.estado, estado_factura.estado FROM tipo_evento  join evento on evento.id_tipo_evento=tipo_evento.id_tipo_evento 
-join factura on evento.id_evento = factura.id_evento join estado_factura on factura.id_estado_factura=estado_factura.id_estado_factura
+$sql = "SELECT evento.id_evento, tipo_evento.nombre , evento.id_equipo, evento.descripcion, evento.fecha, evento.localidad, evento.hora, evento.estado FROM tipo_evento  join evento on evento.id_tipo_evento=tipo_evento.id_tipo_evento 
+
  WHERE evento.id_cliente = :id_cliente";
 $stmt = $bd->prepare($sql);
 $id_cliente = $_GET['id'];
@@ -127,7 +127,7 @@ if (empty($eventos)) {
 
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom bg-image context-dark"
-      style="background-image: url(../images/pexels-pixabay-53621.jpg);">
+      style="background-image: url(https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
       <div class="breadcrumbs-custom-inner">
         <div class="container breadcrumbs-custom-container">
           <div class="breadcrumbs-custom-main">
@@ -145,6 +145,7 @@ if (empty($eventos)) {
 
     <section id="tabla_eventos" class="section section-sm">
       <div class="container">
+      <div class="table-responsive">
         <h5>Estos son los eventos del cliente: <?php echo htmlspecialchars($_GET['id']); ?></h5>
         <table class="table table-hover">
           <thead>
@@ -156,7 +157,7 @@ if (empty($eventos)) {
               <th scope="col">Fecha</th>
               <th scope="col">Localidad</th>
               <th scope="col">Hora</th>
-              <th scope="col">Estado</th>
+
               <th scope="col">Presupuesto</th>
               <th scope="col">Factura</th>
 
@@ -172,7 +173,7 @@ if (empty($eventos)) {
                 <td><?php echo htmlspecialchars($evento['fecha']); ?></td>
                 <td><?php echo htmlspecialchars($evento['localidad']); ?></td>
                 <td><?php echo htmlspecialchars($evento['hora']); ?></td>
-                <td><?php echo htmlspecialchars($evento['estado']); ?></td>
+  
                 <td>
                   <button id="NuevoPresupuesto_<?php echo htmlspecialchars($evento['id_evento']); ?>" type="button"
                     class="btn btn-warning">
@@ -199,6 +200,7 @@ if (empty($eventos)) {
             <?php endforeach; ?>
           </tbody>
         </table>
+        </div>
       </div>
     </section>
     <section id="section_insertar_presupuesto" class="section section-sm">
@@ -217,7 +219,7 @@ if (empty($eventos)) {
 
 
             <div class="inputBox mb3">
-              <input type="text" id="id_evento_presupuesto" name="id_evento_presupuesto" readonly>
+              <input type="text" id="id_evento_presupuesto" value="<?php echo htmlspecialchars($evento['id_evento']); ?>" readonly>
 
               <span class="id_evento_presupuesto" style="margin-left: 50px;">Id evento</span>
             </div>
