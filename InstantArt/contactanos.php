@@ -349,59 +349,47 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
                             </div>
                         </div>
 
-                        <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                            metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt
-                            ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
-                            nibh in gravida.</p>
+                        <p>Estamos aquí para proporcionarte el mejor servicio fotográfico. Contáctanos hoy mismo para reservar tu sesión o para discutir tus necesidades específicas. ¡Esperamos trabajar contigo para capturar momentos inolvidables!</p>
+
 
 
                     </div>
                     <div class="col-xl-5 col-12">
                         <ul class="list-xl">
                             <li>
-                                <h2>Informacion de contacto</h2>
-                                <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                    metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt
-                                    ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
-                                    nibh in gravida.</p>
-                            </li>
-
-                            <li>
-                                <h4>Escribimos algo aqui</h4>
-                                <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                    metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt
-                                    ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
-                                    nibh in gravida.</p>
+                                <h2>Información de Contacto</h2>
+                                <p>Estamos aquí para capturar tus momentos especiales con nuestra experiencia en
+                                    sesiones fotográficas. Contáctanos para reservar tu sesión o para cualquier consulta
+                                    que tengas.</p>
                             </li>
                             <li>
-                                <h5>Otra cosa por aca </h5>
-                                <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                    metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt
-                                    ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
-                                    nibh in gravida.</p>
+                                <h4>Servicios Personalizados</h4>
+                                <p>Nuestro equipo ofrece servicios adaptados a tus necesidades específicas. Desde
+                                    retratos individuales hasta eventos corporativos, estamos listos para capturar cada
+                                    detalle de manera profesional.</p>
                             </li>
                             <li>
-                                <h6>Y Otra por aca</h6>
-                                <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                    metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt
-                                    ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum
-                                    nibh in gravida.</p>
+                                <h5>Colaboraciones Creativas</h5>
+                                <p>Explora nuevas ideas con nosotros para proyectos creativos. Nos especializamos en
+                                    colaboraciones que traen innovación y frescura a cada imagen que capturamos.</p>
                             </li>
+                        
                         </ul>
                     </div>
+
                 </div>
                 <div class="col-xl-12 col-12 mt-5">
                     <ul class="list-xl">
                         <li>
-                            <h2>Puede ubicarnos en el mapa</h2>
-                            <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit
-                                metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id
-                                viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in
-                                gravida.</p>
+                            <h2>Encuéntranos en el Mapa</h2>
+                            <p>Visítanos en nuestra ubicación para discutir tus necesidades fotográficas o para obtener
+                                más información sobre nuestros servicios. Estamos aquí para ayudarte a capturar momentos
+                                memorables.</p>
                         </li>
                     </ul>
                     <div id="map"></div>
                 </div>
+
             </div>
         </section>
         <!-- Blockquote-->
@@ -435,29 +423,31 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
                 </div>
             </div>
         </section>
-     
-      
 
-       
+
+
+
         <section class="section section-sm">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-xl-8">
-                <h2>Contacto</h2>
-                <p>No dudes en contactarnos para cualquier consulta o asistencia. ¡Estamos aquí para ayudarte!</p>
-                <ul>
-                    <li>Consultas Generales</li>
-                    <li>Soporte al Cliente</li>
-                    <li>Comentarios</li>
-                    <li>Administración</li>
-                    <li>Alianzas Comerciales</li>
-                </ul>
-                <p>Nuestro equipo está dedicado a brindarte el mejor servicio posible. ¡Contáctanos hoy mismo!</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-xl-8">
+                        <h2>Contacto</h2>
+                        <p>No dudes en contactarnos para cualquier consulta o asistencia. ¡Estamos aquí para ayudarte!
+                        </p>
+                        <ul>
+                            <li>Consultas Generales</li>
+                            <li>Soporte al Cliente</li>
+                            <li>Comentarios</li>
+                            <li>Administración</li>
+                            <li>Alianzas Comerciales</li>
+                        </ul>
+                        <p>Nuestro equipo está dedicado a brindarte el mejor servicio posible. ¡Contáctanos hoy mismo!
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-       
+        </section>
+
 
         <!-- Page Footer-->
         <footer class="section footer-standard bg-gray-700">
