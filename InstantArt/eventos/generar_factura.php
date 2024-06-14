@@ -31,7 +31,7 @@ if (empty($presupuestos)) {
 
 }
 
-// Tomamos el primer presupuesto (asumiendo que solo hay uno)
+// Tomamos el primer presupuesto 
 $presupuesto = $presupuestos[0];
 
 // Obtener datos del cliente

@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/fonts.css">
   <link rel="stylesheet" href="../css/style.css">
+  <script src="../php/comprobar_login.php"></script>
+
   <style>
     .ie-panel {
       display: none;
@@ -41,56 +43,62 @@
 </head>
 
 <body>
-  
 
-<div class="ie-panel"></div>
-<div class="page">
-  <!-- Page Header-->
-  <header class="section page-header">
-    <!-- RD Navbar-->
-    <div class="rd-navbar-wrap">
-      <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
-        data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
-        data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
-        data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
-        data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
-        data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-        <div class="rd-navbar-main-outer">
-          <div class="rd-navbar-main">
-            <!-- RD Navbar Panel-->
-            <div class="rd-navbar-panel">
-              <!-- RD Navbar Toggle-->
-              <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-              <!-- RD Navbar Brand-->
-              <a class="rd-navbar-brand" href="index.html"><img src="../images/logo.png" alt="" width="400" height="200"
-                  srcset="../images/logo.png" /></a>
-            </div>
-            <div class="rd-navbar-main-element">
-              <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
-                <!-- RD Navbar Nav-->
-                <ul class="rd-navbar-nav">
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">Sobre Nosotros</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="../servicios.html">Servicios</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="../contactanos.php">Contactanos</a></li>
-                  <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="../usuarios.php">Usuarios</a></li>
-                  <!--Area personal, para descargar proyectos-->
-                  <li class="rd-nav-item active" id="area_personal" style="display: none;"><a class="rd-nav-link" href="../areaPersonal/areaPersonal.php">Area Personal</a></li>
-                  <!--Area de gestion de clientes-->
-                  <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="../gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
-                  <!--Tabla para ver los trabajos pendientes de un empleado-->
-                  <li class="rd-nav-item"id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"  href="../gestion/proyecto_empleado.php">Evento empleado</a></li>
-                  <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5"  href="../login.php">Iniciar Sesion</a></li>
-                  <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"  href="../logout.php" >Cerrar Sesion</a></li>
-                </ul>
+
+  <div class="ie-panel"></div>
+  <div class="page">
+    <!-- Page Header-->
+    <header class="section page-header">
+      <!-- RD Navbar-->
+      <div class="rd-navbar-wrap">
+        <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+          data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+          data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
+          data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+          data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
+          data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+          <div class="rd-navbar-main-outer">
+            <div class="rd-navbar-main">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <a class="rd-navbar-brand" href="index.html"><img src="../images/logo.png" alt="" width="400"
+                    height="200" srcset="../images/logo.png" /></a>
+              </div>
+              <div class="rd-navbar-main-element">
+                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                  <!-- RD Navbar Nav-->
+                  <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">Sobre Nosotros</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../servicios.html">Servicios</a></li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="../contactanos.php">Contactanos</a></li>
+                    <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"
+                        href="../usuarios.php">Usuarios</a></li>
+                    <!--Area personal, para descargar proyectos-->
+                    <li class="rd-nav-item active" id="area_personal" style="display: none;"><a class="rd-nav-link"
+                        href="../areaPersonal/areaPersonal.php">Area Personal</a></li>
+                    <!--Area de gestion de clientes-->
+                    <li class="rd-nav-item" id="gestion_proyectos" style="display: none;"><a class="rd-nav-link"
+                        href="../gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
+                    <!--Tabla para ver los trabajos pendientes de un empleado-->
+                    <li class="rd-nav-item" id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"
+                        href="../gestion/proyecto_empleado.php">Evento empleado</a></li>
+                    <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5" href="../login.php">Iniciar
+                        Sesion</a></li>
+                    <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"
+                        href="../logout.php">Cerrar Sesion</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
-    </div>
-  </header>
+      </div>
+    </header>
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom bg-image context-dark"
       style="background-image: url(images/breadcrumbs-image-1.jpg);">
@@ -126,7 +134,7 @@
 
             </tr>
           </thead>
-          <tbody id="presupuesto-table-body">
+          <tbody id="factura-table-body">
           </tbody>
         </table>
       </div>
@@ -200,59 +208,38 @@
   <script>
     $(document).ready(function () {
       $.ajax({
-        url: '../php/obtener_presupuestos.php',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data) {
-          let tableBody = $('#presupuesto-table-body');
-          tableBody.empty();
-          data.forEach(function (presupuesto, index) {
-            let row = `<tr>
-                          <td>${presupuesto.id_presupuesto}</td>
-                          <td>${presupuesto.id_evento}</td>
-                          <td>${presupuesto.descripcion_detallada}</td>
-                          <td>${presupuesto.fecha_creacion}</td>
-                          <td>${presupuesto.fecha_vencimiento}</td>
-                          <td>${presupuesto.precio}</td>
-                       
-                          <td>
-                            <a href="generar_presupuesto.php?id=${presupuesto.id_presupuesto}">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-square-fill" viewBox="0 0 16 16">
-                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11" />
-                              </svg>
-                            </a>
-                          </td>`;
-
-            if (presupuesto.nombre === 'pendiente') {
-              row += `<td>
-                        <form action="../php/procesar_estado.php" method="POST">
-                          <input type="hidden" name="id_presupuesto" value="${presupuesto.id_presupuesto}">
-                          <input type="radio" id="aprobado_${presupuesto.id_presupuesto}" name="estado" value="1">
-                          <label for="aprobado_${presupuesto.id_presupuesto}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-</svg></label>
-<br>
-                          <input type="radio" id="rechazado_${presupuesto.id_presupuesto}" name="estado" value="3">
-                          <label for="rechazado_${presupuesto.id_presupuesto}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
-</svg></label>
-                          <button type="submit">Enviar</button>
-                        </form>
-                      </td>`;
-            } else {
-              row += `<td>${presupuesto.nombre}</td>`;
-
-            }
-
-            row += `</tr>`;
-            tableBody.append(row);
-          });
-        },
-        error: function (error) {
-          console.error('Error al obtener los presupuestos:', error);
-        }
+          url: '../php/obtener_facturas.php',
+          method: 'GET',
+          dataType: 'json',
+          success: function (data) {
+              let tableBody = $('#factura-table-body');
+              tableBody.empty();
+              data.forEach(function (factura) {
+                  let row = `<tr>
+                                <td>${factura.id_factura}</td>
+                                <td>${factura.descripcion}</td>
+                                <td>${factura.id_empleado}</td>
+                                <td>${factura.estado}</td>
+                                <td>${factura.iva}</td>
+                                <td>${factura.importe}</td>
+                                <td>${factura.fecha_emision}</td>
+                                <td>
+                                    <a href="generar_factura.php?id=${factura.id_factura}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-square-fill" viewBox="0 0 16 16">
+                                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11" />
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>`;
+                  tableBody.append(row);
+              });
+          },
+          error: function (error) {
+              console.error('Error al obtener las facturas:', error);
+          }
       });
-    });
+  });
+  
   </script>
 
 </body>
