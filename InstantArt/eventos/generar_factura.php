@@ -10,7 +10,7 @@ if (!$cliente_id || !$id_evento) {
 
 // Conexión a la base de datos usando PDO
 
-    $bd=conexion();
+$bd = conexion();
 
 
 // Obtener presupuesto específico del cliente que esté aprobado por eso el id_estado = 1
@@ -72,7 +72,6 @@ if (!$estado_factura) {
         
         </div>
     </div>';
-
     } else {
         $mensaje = ' <div class="mb-2 ml-auto">
         <span class="text-muted">Detalles del Pago</span>
@@ -117,11 +116,9 @@ if (!$estado_factura) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="pdf.css" />
-    
-    <script src="pdf.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <style>
         h4 {
@@ -131,151 +128,148 @@ if (!$estado_factura) {
 </head>
 
 <body>
-    <div class="container d-flex justify-content-center mt-50 mb-50">
+    <div class="container d-flex justify-content-center mt-5 mb-5">
         <div class="row">
-            <div class="col-md-12 text-right mb-3">
-                <button class="btn btn-primary" id="download">Descargar pdf</button>
-            </div>
-            <div class="col-md-12">
-                <div class="card" id="invoice">
-                    <div class="card-header bg-transparent header-elements-inline">
-                        <h6 class="card-title text-primary">Factura de venta</h6>
-                    </div>
-                    <div class="card-body" style="padding-bottom: 0px;">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="mb-4 pull-left">
-                                    <ul class="list list-unstyled mb-0 text-left">
-                                        <li>
-                                            <h2>InstantArt</h2>
+
+            <div class="card" id="invoice">
+                <div class="card-header bg-transparent header-elements-inline">
+                    <h6 class="card-title text-primary">Factura de venta</h6>
+                </div>
+                <div class="card-body" style="padding-bottom: 0px;">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-4 pull-left">
+                                <ul class="list list-unstyled mb-0 text-left">
+                                    <li>
+                                        <h2>InstantArt</h2>
+                                    </li>
+                                    <li>Yecla</li>
+                                    <li>675456345</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-4">
+                                <div class="text-sm-right">
+                                    <h4 class="mb-2 mt-md-2">Invoice
+                                        #<?php echo htmlspecialchars($factura['id_factura']); ?></h4>
+                                    <ul class="list list-unstyled mb-0">
+                                        <li>Fecha emisión: <span class="font-weight-semibold"><?php echo htmlspecialchars($factura['fecha_emision']); ?></span>
                                         </li>
-                                        <li>Yecla</li>
-                                        <li>675456345</li>
+                                        <li>Estado: <span class="font-weight-semisbold"><?php echo htmlspecialchars($estado_factura['estado']); ?></span>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="mb-4">
-                                    <div class="text-sm-right">
-                                        <h4 class="mb-2 mt-md-2">Invoice
-                                            #<?php echo htmlspecialchars($factura['id_factura']); ?></h4>
-                                        <ul class="list list-unstyled mb-0">
-                                            <li>Fecha emisión: <span
-                                                    class="font-weight-semibold"><?php echo htmlspecialchars($factura['fecha_emision']); ?></span>
-                                            </li>
-                                            <li>Estado: <span
-                                                    class="font-weight-semisbold"><?php echo htmlspecialchars($estado_factura['estado']); ?></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-md-flex flex-md-wrap">
-                            <div class="mb-4 mb-md-2 text-left">
-                                <span class="text-muted">Factura para:</span>
-                                <ul class="list list-unstyled mb-0">
-                                    <li>
-                                        <h5 class="my-2"><?php echo htmlspecialchars($cliente['nombre']); ?></h5>
-                                    </li>
-                                    <li><span
-                                            class="font-weight-semibold"><?php echo htmlspecialchars($cliente['apellidos']); ?></span>
-                                    </li>
-
-                                    <li><?php echo htmlspecialchars($cliente['telefono']); ?></li>
-                                    <li><a
-                                            href="mailto:<?php echo htmlspecialchars($cliente['email']); ?>"><?php echo htmlspecialchars($cliente['email']); ?></a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <?php echo $mensaje; ?>
                         </div>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table table-lg">
-                            <thead>
-                                <tr>
-                                    <th>Descripción</th>
-                                    <th>Fecha de evento</th>
-                                    <th>Hora de evento</th>
+                    <div class="d-md-flex flex-md-wrap">
+                        <div class="mb-4 mb-md-2 text-left">
+                            <span class="text-muted">Factura para:</span>
+                            <ul class="list list-unstyled mb-0">
+                                <li>
+                                    <h5 class="my-2"><?php echo htmlspecialchars($cliente['nombre']); ?></h5>
+                                </li>
+                                <li><span class="font-weight-semibold"><?php echo htmlspecialchars($cliente['apellidos']); ?></span>
+                                </li>
 
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <h6 class="mb-0"><?php echo htmlspecialchars($evento['descripcion']); ?></h6>
-                                        <span
-                                            class="text-muted"><?php echo htmlspecialchars($presupuesto['descripcion_detallada']); ?></span>
-                                    </td>
-                                    <td><?php echo htmlspecialchars($evento['fecha']); ?></td>
-                                    <td><?php echo htmlspecialchars($evento['hora']); ?></td>
-                                    <td><span
-                                            class="font-weight-semibold">€<?php echo htmlspecialchars($factura['importe']); ?></span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="d-md-flex flex-md-wrap">
-                            <div class="pt-2 mb-3 wmin-md-400 ml-auto">
-                                <h6 class="mb-3 text-left">Total a pagar</h6>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th class="text-left">Subtotal:</th>
-                                                <td class="text-right">
-                                                    €<?php echo htmlspecialchars($factura['importe']); ?></td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-left">Impuesto: <span
-                                                        class="font-weight-normal">(<?php echo htmlspecialchars($factura['iva']); ?>%)</span>
-                                                </th>
-                                                <td class="text-right">
-                                                    €<?php echo htmlspecialchars(($factura['importe'] * $factura['iva']) / 100); ?>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-left">Total:</th>
-                                                <td class="text-right text-primary">
-                                                    <h5 class="font-weight-semibold">
-                                                        €<?php echo htmlspecialchars($factura['importe']) + (($factura['importe'] * $factura['iva']) / 100); ?>
-                                                    </h5>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                <li><?php echo htmlspecialchars($cliente['telefono']); ?></li>
+                                <li><a href="mailto:<?php echo htmlspecialchars($cliente['email']); ?>"><?php echo htmlspecialchars($cliente['email']); ?></a>
+                                </li>
+                            </ul>
                         </div>
-                        <img src="../InstantArt/images/logo-default-176x28.png" alt="">
-                    </div>
 
-                    <div class="card-footer mt-0">
-                        <span class="text-muted">
-                            Los servicios prestados son exclusivamente para el propósito acordado y detallado en la
-                            factura.
-                            El pago total debe recibirse en la cuenta designada dentro de los 30 días posteriores a la
-                            emisión de esta factura.
-                            La factura y los servicios asociados son estrictamente confidenciales y no pueden ser
-                            compartidos con terceros sin consentimiento previo.
-                        </span>
+                        <?php echo $mensaje; ?>
                     </div>
-
                 </div>
+                <div class="table-responsive">
+                    <table class="table table-lg">
+                        <thead>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Fecha de evento</th>
+                                <th>Hora de evento</th>
+
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h6 class="mb-0"><?php echo htmlspecialchars($evento['descripcion']); ?></h6>
+                                    <span class="text-muted"><?php echo htmlspecialchars($presupuesto['descripcion_detallada']); ?></span>
+                                </td>
+                                <td><?php echo htmlspecialchars($evento['fecha']); ?></td>
+                                <td><?php echo htmlspecialchars($evento['hora']); ?></td>
+                                <td><span class="font-weight-semibold">€<?php echo htmlspecialchars($factura['importe']); ?></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card-body">
+                    <div class="d-md-flex flex-md-wrap">
+                        <div class="pt-2 mb-3 wmin-md-400 ml-auto">
+                            <h6 class="mb-3 text-left">Total a pagar</h6>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th class="text-left">Subtotal:</th>
+                                            <td class="text-right">
+                                                €<?php echo htmlspecialchars($factura['importe']); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-left">Impuesto: <span class="font-weight-normal">(<?php echo htmlspecialchars($factura['iva']); ?>%)</span>
+                                            </th>
+                                            <td class="text-right">
+                                                €<?php echo htmlspecialchars(($factura['importe'] * $factura['iva']) / 100); ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-left">Total:</th>
+                                            <td class="text-right text-primary">
+                                                <h5 class="font-weight-semibold">
+                                                    €<?php echo htmlspecialchars($factura['importe']) + (($factura['importe'] * $factura['iva']) / 100); ?>
+                                                </h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../InstantArt/images/logo-default-176x28.png" alt="">
+                </div>
+
+                <div class="card-footer mt-0">
+                    <span class="text-muted">
+                        Los servicios prestados son exclusivamente para el propósito acordado y detallado en la
+                        factura.
+                        El pago total debe recibirse en la cuenta designada dentro de los 30 días posteriores a la
+                        emisión de esta factura.
+                        La factura y los servicios asociados son estrictamente confidenciales y no pueden ser
+                        compartidos con terceros sin consentimiento previo.
+                    </span>
+                </div>
+
             </div>
+            <div class="col-md-12 mb-3 mt-3" style="display: flex; justify-content: center; align-items: center;">
+    <button class="btn btn-primary" id="download">Descargar PDF</button>
+</div>
+
         </div>
+
+
     </div>
+
+
+
 </body>
 
 <script>
-
-    window.onload = function () {
+    window.onload = function() {
         document.getElementById("download")
             .addEventListener("click", () => {
                 const invoice = this.document.getElementById("invoice");
@@ -284,9 +278,18 @@ if (!$estado_factura) {
                 var opt = {
                     margin: 0.2,
                     filename: 'factura.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                    image: {
+                        type: 'jpeg',
+                        quality: 0.98
+                    },
+                    html2canvas: {
+                        scale: 2
+                    },
+                    jsPDF: {
+                        unit: 'in',
+                        format: 'letter',
+                        orientation: 'portrait'
+                    }
                 };
                 html2pdf().from(invoice).set(opt).save();
             })

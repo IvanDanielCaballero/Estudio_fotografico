@@ -70,297 +70,18 @@ try {
     <title>Presupuesto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <link rel="stylesheet" href="presupuesto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-Q5oIJ5xvLOQeL6isSWAWZsO8F0nVJd9o3+xL//VqoXLlf4uJ+ec0cObrxAvCIdkUwKXuRtlZ3kF9VVrE7j/eVQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-
-        .card {
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-header {
-            background-color: #ffffff;
-            border-bottom: none;
-        }
-
-        .card-title {
-            color: #007bff;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .list-unstyled {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .list-unstyled li {
-            margin-bottom: 5px;
-        }
-
-        .table th,
-        .table td {
-            border-top: none;
-        }
-
-        .font-weight-semibold {
-            font-weight: 600;
-        }
-
-        .text-primary {
-            color: #007bff;
-        }
-
-        .text-muted {
-            color: #6c757d;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        .footer {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-top: 1px solid #dee2e6;
-        }
-
-        /* === removing default button style ===*/
-        .button {
-            margin: 0;
-            height: auto;
-            background: transparent;
-            padding: 0;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* button styling */
-        .button {
-            --border-right: 6px;
-            --text-stroke-color: rgba(7, 7, 7, 0.6);
-            --animation-color: #ebb85e;
-            ;
-            --fs-size: 2em;
-            letter-spacing: 3px;
-            text-decoration: none;
-            font-size: var(--fs-size);
-            font-family: "Arial";
-            position: relative;
-            text-transform: uppercase;
-            color: transparent;
-            -webkit-text-stroke: 1px var(--text-stroke-color);
-        }
-
-        /* this is the text, when you hover on button */
-        .hover-text {
-            position: absolute;
-            box-sizing: border-box;
-            content: attr(data-text);
-            color: var(--animation-color);
-            width: 0%;
-            inset: 0;
-            border-right: var(--border-right) solid var(--animation-color);
-            overflow: hidden;
-            transition: 0.5s;
-            -webkit-text-stroke: 1px var(--animation-color);
-        }
-
-        /* hover */
-        .button:hover .hover-text {
-            width: 100%;
-            filter: drop-shadow(0 0 23px var(--animation-color))
-        }
-
-        h4 {
-            color: #ebb85e;
-        }
-
-
-
-
-        .cartel {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            background: lightgrey;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            transition: all 1s ease-in-out;
-        }
-
-        .background {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 100% 107%, #545454 0%, #000000 30%, #ebb85e 60%);
-        }
-
-        .logo {
-            position: absolute;
-            right: 50%;
-            bottom: 50%;
-            transform: translate(50%, 50%);
-            transition: all 0.6s ease-in-out;
-        }
-
-        .logo .logo-svg {
-            fill: white;
-            width: 30px;
-            height: 30px;
-        }
-
-        .icon {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-        }
-
-        .icon .svg {
-            fill: rgba(255, 255, 255, 0.797);
-            width: 100%;
-            transition: all 0.5s ease-in-out;
-        }
-
-        .box {
-            position: absolute;
-            padding: 10px;
-            text-align: right;
-            background: rgba(255, 255, 255, 0.389);
-            border-top: 2px solid rgb(255, 255, 255);
-            border-right: 1px solid white;
-            border-radius: 10% 13% 42% 0%/10% 12% 75% 0%;
-            box-shadow: rgba(100, 100, 111, 0.364) -7px 7px 29px 0px;
-            transform-origin: bottom left;
-            transition: all 1s ease-in-out;
-        }
-
-        .box::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            opacity: 0;
-            transition: all 0.5s ease-in-out;
-        }
-
-        .box:hover .svg {
-            fill: white;
-        }
-
-        .box1 {
-            width: 70%;
-            height: 70%;
-            bottom: -70%;
-            left: -70%;
-        }
-
-        .box1::before {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #ff53d4 60%, #62c2fe 90%);
-        }
-
-        .box1:hover::before {
-            opacity: 1;
-        }
-
-        .box1:hover .icon .svg {
-            filter: drop-shadow(0 0 5px white);
-        }
-
-        .box2 {
-            width: 50%;
-            height: 50%;
-            bottom: -50%;
-            left: -50%;
-            transition-delay: 0.2s;
-        }
-
-        .box2::before {
-            background: radial-gradient(circle at 30% 107%, #91e9ff 0%, #00ACEE 90%);
-        }
-
-        .box2:hover::before {
-            opacity: 1;
-        }
-
-        .box2:hover .icon .svg {
-            filter: drop-shadow(0 0 5px white);
-        }
-
-        .box3 {
-            width: 30%;
-            height: 30%;
-            bottom: -30%;
-            left: -30%;
-            transition-delay: 0.4s;
-        }
-
-        .box3::before {
-            background: radial-gradient(circle at 30% 107%, #25d366 0%, #128c7e 90%);
-        }
-
-        .box3:hover::before {
-            opacity: 1;
-        }
-
-        .box3:hover .icon .svg {
-            filter: drop-shadow(0 0 5px white);
-        }
-
-        .box4 {
-            width: 10%;
-            height: 10%;
-            bottom: -10%;
-            left: -10%;
-            transition-delay: 0.6s;
-        }
-
-        .cartel:hover {
-            transform: scale(1.1);
-        }
-
-        .cartel:hover .box {
-            bottom: -1px;
-            left: -1px;
-        }
-
-        .cartel:hover .logo {
-            transform: translate(0, 0);
-            bottom: 20px;
-            right: 20px;
-        }
-
-        #cartel_logo {
-            display: flex;
-            justify-content: center;
-        }
-
-        .card-footer {
-            margin: 3%;
-        }
-    </style>
+    
 </head>
 
 <body>
     <div class="container mt-5">
         <div id="invoice" class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title text-primary">Presupuesto</h5>
@@ -505,7 +226,7 @@ try {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    
     <script>
         document.getElementById('btn_continuar').onclick = function () {
             window.location.href = '../index.php';
@@ -519,7 +240,18 @@ try {
 
             document.getElementsByClassName('card-footer')[0].style.display = 'none';
 
-            html2pdf().from(element).save();
+            var opt = {
+                    margin: 0.2,
+                    filename: 'factura.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                };
+            html2pdf().from(element).set(opt).save();
+
+
+
+
             setTimeout(
                 function () {
                     img.style.display = 'none';
