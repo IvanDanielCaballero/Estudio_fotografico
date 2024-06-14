@@ -373,11 +373,7 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
                                 <p>Explora nuevas ideas con nosotros para proyectos creativos. Nos especializamos en
                                     colaboraciones que traen innovación y frescura a cada imagen que capturamos.</p>
                             </li>
-                            <li>
-                                <h6>Contacto Directo</h6>
-                                <p>Para discutir tus ideas o reservar una sesión, contáctanos directamente. Estamos aquí
-                                    para asegurarnos de que cada momento se convierta en una memoria memorable.</p>
-                            </li>
+                        
                         </ul>
                     </div>
 
