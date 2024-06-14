@@ -1,4 +1,5 @@
 <?php
+require '../php/funciones.php';
 // Obtener datos del cliente
 $cliente_id = isset($_GET['id_cliente']) ? $_GET['id_cliente'] : null;
 $id_evento = isset($_GET['id_evento']) ? $_GET['id_evento'] : null;
@@ -8,17 +9,9 @@ if (!$cliente_id || !$id_evento) {
 }
 
 // Conexión a la base de datos usando PDO
-try {
-    $servername = "217.160.114.39";
-    $username = "jose";
-    $password = "56lf2G9BnTez";
-    $dbname = "fotografia";
 
-    $bd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("No se pudo conectar a la base de datos: " . $e->getMessage());
-}
+    $bd=conexion();
+
 
 // Obtener presupuesto específico del cliente que esté aprobado por eso el id_estado = 1
 $stmt = $bd->prepare('SELECT * FROM presupuesto WHERE id_cliente = :id_cliente AND id_evento = :id_evento AND id_estado = 1');

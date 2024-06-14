@@ -1,34 +1,31 @@
 <?php
+// Incluir el archivo funciones.php que contiene la función de conexión
 require '../php/funciones.php';
+
+// Establecer la conexión a la base de datos
 $bd = conexion();
 
 // Preparar la consulta SQL para obtener los eventos del cliente
-$sql = "SELECT evento.id_evento, tipo_evento.nombre , evento.id_equipo, evento.descripcion, evento.fecha, evento.localidad, evento.hora, evento.estado FROM tipo_evento  join evento on evento.id_tipo_evento=tipo_evento.id_tipo_evento 
-
- WHERE evento.id_cliente = :id_cliente";
+$sql = "SELECT evento.id_evento, tipo_evento.nombre , evento.id_equipo, evento.descripcion, evento.fecha, evento.localidad, evento.hora, evento.estado 
+        FROM tipo_evento  
+        JOIN evento ON evento.id_tipo_evento = tipo_evento.id_tipo_evento 
+        WHERE evento.id_cliente = :id_cliente";
 $stmt = $bd->prepare($sql);
+
+// Obtener el parámetro id_cliente del método GET
 $id_cliente = $_GET['id'];
+
+// Ejecutar la consulta preparada con el id_cliente como parámetro
 $stmt->execute(['id_cliente' => $id_cliente]);
 
-// Obtener todos los resultados
+// Obtener todos los resultados como un array asociativo
 $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
-
-
-
-
-
-
-
-
+// Redirigir a la página NO_eventos.html si no hay eventos para ese cliente
 if (empty($eventos)) {
-  header('Location: NO_eventos.html');
-  exit(); // Es buena práctica agregar exit() después de una redirección
+    header('Location: NO_eventos.html');
+    exit(); // Es buena práctica agregar exit() después de una redirección
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -58,12 +55,12 @@ if (empty($eventos)) {
   <script src="../php/comprobar_login.php"></script>
 
   <style>
+    /* Estilos específicos para la página */
     #section_insertar_presupuesto {
       display: none;
     }
 
-
-
+    /* Estilos generales */
     td,
     th {
       text-align: center;
@@ -74,6 +71,7 @@ if (empty($eventos)) {
     }
   </style>
 </head>
+
 
 <body>
   
@@ -330,9 +328,7 @@ if (empty($eventos)) {
       </div>
     </div>
   </div>
-  <!-- Global Mailform Output-->
-  <div class="snackbars" id="form-output-global"></div>
-  <!-- Javascript-->
+  
 
 </body>
 
@@ -343,44 +339,57 @@ if (empty($eventos)) {
 <script src="../js/script.js"></script>
 
 <script>
+// Función para mostrar el formulario de inserción de presupuesto y ocultar la tabla de eventos
+function insertar_presupuesto(e) {
+  // Ocultar la tabla de eventos
+  document.getElementById('tabla_eventos').style.display = 'none';
+  // Mostrar el formulario de inserción de presupuesto
+  document.getElementById('section_insertar_presupuesto').style.display = 'block';
+  
+  // Obtener el ID del evento desde el botón clickeado
+  let id_boton = e.target.getAttribute("id");
+  let id_evento = id_boton.split("_")[1]; // Extraer el ID del evento desde el ID del botón
+  console.log(id_evento); // Mostrar el ID del evento en la consola
+  
+  // Asignar el ID del evento al campo correspondiente del formulario de presupuesto
+  document.getElementById('id_evento_presupuesto').value = id_evento;
+}
 
-  function insertar_presupuesto(e) {
-    document.getElementById('tabla_eventos').style.display = 'none'
-    document.getElementById('section_insertar_presupuesto').style.display = 'block'
-    let id_boton = e.target.getAttribute("id");
-    let id_evento = id_boton.split("_")[1]
-    console.log(id_evento)
-    document.getElementById('id_evento_presupuesto').value = id_evento;
-  }
+// Función para redirigir a la página de generación de factura
+function insertar_factura(e) {
+  // Obtener el ID del cliente desde PHP (renderizado en el script PHP)
+  let idCliente = <?php echo json_encode($id_cliente); ?>;
+  
+  // Obtener el ID del evento desde el botón clickeado
+  let id_boton = e.target.getAttribute("id");
+  let id_evento = id_boton.split("_")[1]; // Extraer el ID del evento desde el ID del botón
+  
+  // Redirigir a la página de generación de factura con los IDs de cliente y evento
+  window.location.href = 'factura.php?id_evento=' + id_evento + '&id_cliente=' + idCliente;
+}
 
-  function insertar_factura(e) {
-    let idCliente = <?php echo json_encode($id_cliente); ?>;
-    let id_boton = e.target.getAttribute("id");
-    let id_evento = id_boton.split("_")[1]
+// Función para recargar la página actual
+function volver_pagina(e) {
+  window.location.reload(); // Recargar la página actual
+}
 
-    window.location.href = 'factura.php?id_evento=' + id_evento + '&id_cliente=' + idCliente;
+// Obtener todos los botones de inserción de presupuesto y asignarles un evento click
+let botones_presupuesto = document.getElementsByClassName('btn btn-warning');
+for (let btn of botones_presupuesto) {
+  btn.addEventListener('click', insertar_presupuesto);
+}
 
-  }
-  function volver_pagina(e) {
-    window.location.reload();
+// Obtener todos los botones de generación de factura y asignarles un evento click
+let botones_factura = document.getElementsByClassName('btn btn-dark');
+for (let btn of botones_factura) {
+  btn.addEventListener('click', insertar_factura);
+}
 
-  }
-
-  let botones_presupuesto = document.getElementsByClassName('btn btn-warning');
-  let botones_factura = document.getElementsByClassName('btn btn-dark');
-  let botones_volver = document.getElementsByClassName('btn_volver');
-
-
-  for (let btn of botones_presupuesto) {
-    btn.addEventListener('click', insertar_presupuesto)
-  }
-  for (let btn of botones_volver) {
-    btn.addEventListener('click', volver_pagina)
-  }
-
-  for (let btn of botones_factura) {
-    btn.addEventListener('click', insertar_factura)
-  }
+// Obtener todos los botones de volver y asignarles un evento click
+let botones_volver = document.getElementsByClassName('btn_volver');
+for (let btn of botones_volver) {
+  btn.addEventListener('click', volver_pagina);
+}
 
 
 

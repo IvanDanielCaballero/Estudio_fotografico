@@ -1,48 +1,39 @@
 <?php
 
-session_start();
-require '../php/funciones.php';
-$bd = conexion();
+session_start(); // Iniciar sesión PHP
+require '../php/funciones.php'; // Incluir el archivo funciones.php que contiene la función conexion()
+
+$bd = conexion(); // Establecer conexión a la base de datos
 
 try {
   // Obtener parámetros de la solicitud GET
-  $cliente_id = isset($_GET['id_cliente']) ? $_GET['id_cliente'] : null;
-  $evento_id = isset($_GET['id_evento']) ? $_GET['id_evento'] : null;
+  $cliente_id = isset($_GET['id_cliente']) ? $_GET['id_cliente'] : null; // Obtener el ID del cliente desde la URL
+  $evento_id = isset($_GET['id_evento']) ? $_GET['id_evento'] : null; // Obtener el ID del evento desde la URL
 
+  // Verificar si los parámetros id_cliente e id_evento están definidos
   if ($cliente_id === null || $evento_id === null) {
-    throw new Exception("Los parámetros id_cliente e id_evento son requeridos.");
+    throw new Exception("Los parámetros id_cliente e id_evento son requeridos."); // Lanzar una excepción si faltan parámetros
   }
 
-  // Consulta para verificar si existe una factura
+  // Consulta SQL para verificar si ya existe una factura para el cliente y el evento especificados
   $sql = 'SELECT * FROM factura WHERE id_cliente = :cliente_id AND id_evento = :evento_id';
-  $stmt = $bd->prepare($sql);
-  $stmt->bindParam(':cliente_id', $cliente_id, PDO::PARAM_INT);
-  $stmt->bindParam(':evento_id', $evento_id, PDO::PARAM_INT);
-  $stmt->execute();
+  $stmt = $bd->prepare($sql); // Preparar la consulta
+  $stmt->bindParam(':cliente_id', $cliente_id, PDO::PARAM_INT); // Asignar el valor de cliente_id al parámetro :cliente_id
+  $stmt->bindParam(':evento_id', $evento_id, PDO::PARAM_INT); // Asignar el valor de evento_id al parámetro :evento_id
+  $stmt->execute(); // Ejecutar la consulta SQL
 
-  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $result = $stmt->fetchAll(PDO::FETCH_ASSOC); // Obtener todos los resultados de la consulta como un array asociativo
 
+  // Si se encontraron resultados (es decir, ya existe una factura para este cliente y evento)
   if ($stmt->rowCount() > 0) {
+    // Construir la URL para redirigir a la página de generación de factura
     $url = 'generar_factura.php?id_cliente=' . $cliente_id . '&id_evento=' . $evento_id;
-    header('Location: ' . $url);
-    exit(); // Es buena práctica agregar exit() después de una redirección
+    header('Location: ' . $url); // Redirigir a la página de generación de factura
+    exit(); // Terminar la ejecución del script actual después de la redirección
   }
 } catch (Exception $e) {
-  echo "Error: " . $e->getMessage();
+  echo "Error: " . $e->getMessage(); // Capturar cualquier excepción y mostrar un mensaje de error
 }
-
-
-// aqui tengo que hacer una consulta con los datos que me pase de cliente y de evento para saber si hay una factura
-// si hay una factura redireccionar a generar factura sino ingresar a esta pagina haciendo la consulta 
-// $_GET['id_cliente']  y $_GET['id_evento']
-
-
-
-
-
-
-
-
 
 
 
@@ -315,15 +306,16 @@ try {
 </body>
 
 <script>
-  function volver_pagina(e) {
-    window.location.href = '../gestion/gestion_proyectos.php';
+function volver_pagina(e) {
+  window.location.href = '../gestion/gestion_proyectos.php';
+}
 
-  }
-  let botones_volver = document.getElementsByClassName('btn_volver');
+let botones_volver = document.getElementsByClassName('btn_volver');
 
-  for (let btn of botones_volver) {
-    btn.addEventListener('click', volver_pagina)
-  }
+// Iterar sobre todos los elementos con la clase 'btn_volver' y añadir un evento de clic
+for (let btn of botones_volver) {
+  btn.addEventListener('click', volver_pagina); // Escuchar el evento 'click' y llamar a la función volver_pagina
+}
 
 
 </script>
