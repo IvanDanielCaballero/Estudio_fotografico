@@ -21,6 +21,11 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
+.rd-navbar-static .rd-nav-item {
+	display: inline-block;
+	padding-bottom: 10px;
+}
+
 h3 {
     text-align: center !important;
     color: #007bff !important;

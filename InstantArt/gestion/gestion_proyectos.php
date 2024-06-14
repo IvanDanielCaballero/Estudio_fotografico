@@ -15,6 +15,7 @@
     <!-- <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="usuarios_form.css" />
     <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="../css/fonts.css">
     <script src="../php/comprobar_login.php"></script>
     <style>
         .texto_centrado {

@@ -10753,8 +10753,8 @@ html.rd-navbar-fixed-linked .page {
 	position: relative;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	max-width: 1170px;
+	/* justify-content: space-between; */
+	max-width: 1200px;
 	padding: 20px 0;
 	margin-left: auto;
 	margin-right: auto;
