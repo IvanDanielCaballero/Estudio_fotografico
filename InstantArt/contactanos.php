@@ -435,183 +435,29 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
                 </div>
             </div>
         </section>
-        <!-- HTML Text Elements -->
+     
+      
+
+       
         <section class="section section-sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-8">
-                        <h2>H1 Heading</h2>
-                        <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus,
-                            quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra
-                            accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.</p>
-
-                        <h3>H2 Heading</h3>
-                        <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus,
-                            quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra
-                            accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.</p>
-
-                        <h4>H3 Heading</h4>
-                        <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus,
-                            quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra
-                            accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.</p>
-
-                        <h5>H4 Heading</h5>
-                        <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus,
-                            quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra
-                            accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.</p>
-
-                        <h6>H5 Heading</h6>
-                        <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus,
-                            quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra
-                            accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.</p>
-
-                        <h6>H6 Heading</h6>
-                        <p>In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus,
-                            quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra
-                            accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.</p>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8">
+                <h2>Contacto</h2>
+                <p>No dudes en contactarnos para cualquier consulta o asistencia. ¡Estamos aquí para ayudarte!</p>
+                <ul>
+                    <li>Consultas Generales</li>
+                    <li>Soporte al Cliente</li>
+                    <li>Comentarios</li>
+                    <li>Administración</li>
+                    <li>Alianzas Comerciales</li>
+                </ul>
+                <p>Nuestro equipo está dedicado a brindarte el mejor servicio posible. ¡Contáctanos hoy mismo!</p>
             </div>
-        </section>
-
-        <section class="section section-sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-8">
-                        <h2>Blockquote</h2>
-                        <blockquote>
-                            <p>Nullam a sapien tincidunt, malesuada ipsum ut, convallis augue. Suspendisse fermentum
-                                sapien rhoncus, posuere nulla sit amet, tempor lorem. Sed sapien enim, imperdiet ut
-                                ultricies nec, facilisis sit amet nulla. Nulla tempus scelerisque lorem vel ultricies.
-                                Sed lobortis libero ut fringilla consectetur.</p>
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-8">
-                        <h2>HTML Text Elements</h2>
-                        <p><a href="#">Text Link</a><a class="link-hover" href="#">Hover link</a><strong>Bold
-                                text</strong>
-                            <mark>This is a highlighted text</mark><span class="tooltip-custom" data-toggle="tooltip"
-                                data-placement="top" title="Tooltips text">Tooltips</span><span>Welcome to our wonderful
-                                world. We sincerely hope that each and every user entering our website will find exactly
-                                what he/she is looking for</span><span>With advanced features of activating account and
-                                new login widgets, you will definitely have a great experience of using our web
-                                page.</span><span class="text-strike">This is a strickethrough text</span><span
-                                class="text-underline">This is an underlined text.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-8">
-                        <h2>Unordered List</h2>
-                        <p>Aenean euismod leo sed urna viverra vestibulum. Quisque finibus gravida felis, vel luctus
-                            eros eleifend et. Nunc ut eleifend dolor, at bibendum enim. Duis non laoreet tortor, ut
-                            volutpat lorem.</p>
-                        <ul>
-                            <li>Consulting</li>
-                            <li>Customer Service</li>
-                            <li>Innovation</li>
-                            <li>Management</li>
-                            <li>Ethics</li>
-                        </ul>
-                        <p>Mauris auctor, magna egestas blandit maximus, mauris ligula posuere libero, non dapibus
-                            turpis risus vel urna. Quisque semper, velit eget bibendum.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-8">
-                        <h2>Ordered List</h2>
-                        <p>Aenean euismod leo sed urna viverra vestibulum. Quisque finibus gravida felis, vel luctus
-                            eros eleifend et. Nunc ut eleifend dolor, at bibendum enim. Duis non laoreet tortor, ut
-                            volutpat lorem.</p>
-                        <ol>
-                            <li>Consulting</li>
-                            <li>Customer Service</li>
-                            <li>Innovation</li>
-                            <li>Management</li>
-                            <li>Ethics</li>
-                        </ol>
-                        <p>Mauris auctor, magna egestas blandit maximus, mauris ligula posuere libero, non dapibus
-                            turpis risus vel urna. Quisque semper, velit eget bibendum.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-8">
-                        <h2>Centered image</h2>
-                        <figure>
-                            <img src="images/typography-1-770x456.jpg" alt="My Team" width="770" height="456" />
-                            <figcaption>My Team</figcaption>
-                        </figure>
-                        <p>Curabitur non metus aliquam, tincidunt nisl non, laoreet turpis. Donec dignissim, mauris ac
-                            congue cursus, arcu nisl ultrices dolor, ac viverra mi est a mi. In nec iaculis urna, id
-                            porta augue. Vestibulum sit amet ex a mauris ornare rhoncus in in libero.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-8">
-                        <h2>Left aligned image</h2>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="images/typography-1-770x456.jpg" alt="" width="770" height="456" />
-                            </div>
-                            <div class="col-md-6">
-                                <p>Curabitur non metus aliquam, tincidunt nisl non, laoreet turpis. Donec dignissim,
-                                    mauris ac congue cursus, arcu nisl ultrices dolor, ac viverra mi est a mi. In nec
-                                    iaculis urna, id porta augue. Vestibulum sit amet ex a mauris ornare rhoncus in in
-                                    libero. Pellentesque habitant morbi tristique senectus et netus turpis egestas.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-8">
-                        <h2>Right aligned image</h2>
-                        <div class="row">
-                            <div class="col-md-6 order-md-2">
-                                <img src="images/typography-1-770x456.jpg" alt="" width="770" height="456" />
-                            </div>
-                            <div class="col-md-6 order-md-1">
-                                <p>Curabitur non metus aliquam, tincidunt nisl non, laoreet turpis. Donec dignissim,
-                                    mauris ac congue cursus, arcu nisl ultrices dolor, ac viverra mi est a mi. In nec
-                                    iaculis urna, id porta augue. Vestibulum sit amet ex a mauris ornare rhoncus in in
-                                    libero. Pellentesque habitant morbi tristique senectus et netus turpis egestas. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
+</section>
+       
 
         <!-- Page Footer-->
         <footer class="section footer-standard bg-gray-700">
