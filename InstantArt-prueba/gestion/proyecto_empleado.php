@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
-    <title>Home</title>
+    <title>Inicio</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
         content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
@@ -213,6 +213,7 @@
                     <div class="col-sm-6 col-md-7 col-lg-4">
                         <h4>Contacto</h4>
                         <p>Pon tu email para consultar lo que quieras</p>
+                        <a href="../contactanos.php">
                         <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
                             data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                             <div class="form-wrap">
@@ -226,6 +227,7 @@
                                         class="icon mdi mdi-email-outline"></span>Enviar</button>
                             </div>
                         </form>
+                        </a>
                     </div>
                 </div>
             </div>

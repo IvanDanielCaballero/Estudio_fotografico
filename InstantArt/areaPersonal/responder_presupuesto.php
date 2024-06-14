@@ -186,56 +186,55 @@
 
     <!-- Page Footer-->
     <footer class="section footer-standard bg-gray-700">
-      <div class="footer-standard-main">
-        <div class="container">
-          <div class="row row-50">
-            <div class="col-lg-4">
-              <div class="inset-right-1">
-                <h4>About Me</h4>
-                <p>My name is Jonathan Davis and I’m professional photographer and retoucher. I’m offering my services
-                  to individual and corporate clients throughout the USA. Make your favorite life moment or event last
-                  and remain in your memory!</p>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-5 col-lg-4">
-              <div class="box-1">
-                <h4>Contact Information</h4>
-                <ul class="list-sm">
-                  <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
-                      class="link-default" href="#">2130 Fulton Street <br> San Diego, CA 94117-1080 USA</a></li>
-                  <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
-                      class="link-default" href="tel:#">1-800-1234-678</a></li>
-                  <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
-                      class="link-default" href="mailto:#">info@demolink.org</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-7 col-lg-4">
-              <h4>Newsletter</h4>
-              <p>Sign up to my newsletter and be the first to know about the latest news, special offers, events, and
-                discounts.</p>
-              <!-- RD Mailform-->
-              <a href="contactanos.php">
-                <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
-                  data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                  <div class="form-wrap">
-                    <input class="form-input" id="subscribe-form-2-email" type="email" name="email">
-                    <label class="form-label" for="subscribe-form-2-email">E-mail</label>
-                  </div>
-
-                  <div class="form-button">
-
-                    <div class="button button-primary button-icon button-icon-only button-winona" aria-label="submit">
-                      <span class="icon mdi mdi-email-outline"></span>
+        <div class="footer-standard-main">
+            <div class="container">
+                <div class="row row-50">
+                    <div class="col-lg-4">
+                        <div class="inset-right-1">
+                            <h4>Mas información</h4>
+                            <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo
+                                momentos ordinarios en extraordinarias obras maestras visuales. </p>
+                        </div>
                     </div>
-
-                  </div>
-                </form>
-              </a>
+                    <div class="col-sm-6 col-md-5 col-lg-4">
+                        <div class="box-1">
+                            <h4>Información de contacto</h4>
+                            <ul class="list-sm">
+                                <li class="object-inline"><span
+                                        class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
+                                        class="link-default" href="#">Calle San José <br> Puerta 3, Piso 2, Número
+                                        123.</a></li>
+                                <li class="object-inline"><span
+                                        class="icon icon-md mdi mdi-phone text-gray-700"></span><a class="link-default"
+                                        href="tel:#">675456345</a></li>
+                                <li class="object-inline"><span
+                                        class="icon icon-md mdi mdi-email text-gray-700"></span><a class="link-default"
+                                        href="mailto:#">InstantArt@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7 col-lg-4">
+                        <h4>Contacto</h4>
+                        <p>Pon tu email para consultar lo que quieras</p>
+                        <a href="../contactanos.php">
+                        <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
+                            data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                            <div class="form-wrap">
+                                <input class="form-input" id="subscribe-form-2-email" placeholder="email" type="email"
+                                    name="email" data-constraints="@Email @Required">
+                                <label class="form-label" for="subscribe-form-2-email"></label>
+                            </div>
+                            <div class="form-button">
+                                <button class="button button-primary button-icon button-icon-only button-winona"
+                                    type="submit" aria-label="submit"><span
+                                        class="icon mdi mdi-email-outline"></span>Enviar</button>
+                            </div>
+                        </form>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
     </footer>
   </div>

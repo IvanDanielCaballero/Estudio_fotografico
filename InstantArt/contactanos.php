@@ -258,7 +258,7 @@ justify-content: center;
                         <h1 class="breadcrumbs-custom-title">Contactanos</h1>
                     </div>
                     <ul class="breadcrumbs-custom-path">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Inicio</a></li>
                         <li class="active">Contactanos</li>
                     </ul>
                 </div>
