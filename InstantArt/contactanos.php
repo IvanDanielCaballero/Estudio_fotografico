@@ -45,20 +45,22 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
             color: #d3d3d3;
             height: 100%;
             padding: 8px;
-         
+
 
         }
 
 
         @media screen and (max-width: 492px) {
-            #contenedor_recapt{
-    transform: scale(0.75);
-}
-}
-#contenedor_recapt{
-display: flex;
-justify-content: center;
-}
+            #contenedor_recapt {
+                transform: scale(0.75);
+            }
+        }
+
+        #contenedor_recapt {
+            display: flex;
+            justify-content: center;
+        }
+
         .card {
             background-image: linear-gradient(163deg, red 50%, #ebb85e 75%);
             height: 80%;
@@ -195,57 +197,71 @@ justify-content: center;
         <header class="section page-header">
             <!-- RD Navbar-->
             <div class="rd-navbar-wrap">
-            <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
-          data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
-          data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
-          data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
-          data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
-          data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-          <div class="rd-navbar-main-outer">
-            <div class="rd-navbar-main">
-              <!-- RD Navbar Panel-->
-              <div class="rd-navbar-panel">
-                <!-- RD Navbar Toggle-->
-                <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-                <!-- RD Navbar Brand-->
-                <a class="rd-navbar-brand" href="index.html"><img src="images/logo.png" alt="" width="400" height="200"
-                    srcset="images/logo.png" /></a>
-              </div>
-              <div class="rd-navbar-main-element">
-                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
-                  <!-- RD Navbar Nav-->
-                  <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Inicio</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a>
-                    </li>
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="contactanos.html">Contactanos</a>
-                    </li>
+                <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+                    data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed"
+                    data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed"
+                    data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static"
+                    data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static"
+                    data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px"
+                    data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                    <div class="rd-navbar-main-outer">
+                        <div class="rd-navbar-main">
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <!-- RD Navbar Toggle-->
+                                <button class="rd-navbar-toggle"
+                                    data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                                <!-- RD Navbar Brand-->
+                                <a class="rd-navbar-brand" href="index.html"><img src="images/logo.png" alt=""
+                                        width="400" height="200" srcset="images/logo.png" /></a>
+                            </div>
+                            <div class="rd-navbar-main-element">
+                                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                                    <!-- RD Navbar Nav-->
+                                    <ul class="rd-navbar-nav">
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Inicio</a>
+                                        </li>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre
+                                                Nosotros</a>
+                                        </li>
+                                        <li class="rd-nav-item"><a class="rd-nav-link"
+                                                href="servicios.html">Servicios</a>
+                                        </li>
+                                        <li class="rd-nav-item active"><a class="rd-nav-link"
+                                                href="contactanos.html">Contactanos</a>
+                                        </li>
 
-                    <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="usuarios.php">Usuarios</a>
-                    </li>
-                    <!--Area personal, para descargar proyectos-->
-                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href="areaPersonal/areaPersonal.php">Area Personal</a>
-                    </li>
-                    <!--Area de gestion de clientes-->
-                    <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestion de proyectos</a>
-                    </li>
-                    <!--Tabla para ver los trabajos pendientes de un empleado-->
-                    <li class="rd-nav-item"id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"  href="gestion/proyecto_empleado.php">Evento empleado</a>
-                    </li>
-                    <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5"  href="login.php">Iniciar Sesion</a>
-                    </li>
-                    <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"  href="logout.php" >Cerrar Sesion</a>
-                    </li>
+                                        <li class="rd-nav-item" id="usuarios" style="display: none;"><a
+                                                class="rd-nav-link" href="usuarios.php">Usuarios</a>
+                                        </li>
+                                        <!--Area personal, para descargar proyectos-->
+                                        <li class="rd-nav-item" id="area_personal" style="display: none;"><a
+                                                class="rd-nav-link" href="areaPersonal/areaPersonal.php">Area
+                                                Personal</a>
+                                        </li>
+                                        <!--Area de gestion de clientes-->
+                                        <li class="rd-nav-item" id="gestion_proyectos" style="display: none;"><a
+                                                class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestion de
+                                                proyectos</a>
+                                        </li>
+                                        <!--Tabla para ver los trabajos pendientes de un empleado-->
+                                        <li class="rd-nav-item" id="proyectos_empleado" style="display: none;"><a
+                                                class="rd-nav-link" href="gestion/proyecto_empleado.php">Evento
+                                                empleado</a>
+                                        </li>
+                                        <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5"
+                                                href="login.php">Iniciar Sesion</a>
+                                        </li>
+                                        <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a
+                                                class="rd-nav-link" href="logout.php">Cerrar Sesion</a>
+                                        </li>
 
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </header>
         <!-- Breadcrumbs-->
@@ -274,9 +290,9 @@ justify-content: center;
 
                         <h1>Rellene este formulario</h1>
                         <?php if ($message): ?>
-                        <p class="<?php echo htmlspecialchars($messageClass); ?>">
-                            <?php echo htmlspecialchars($message); ?>
-                        </p>
+                            <p class="<?php echo htmlspecialchars($messageClass); ?>">
+                                <?php echo htmlspecialchars($message); ?>
+                            </p>
                         <?php endif; ?>
                         <div class="card">
 
@@ -314,9 +330,10 @@ justify-content: center;
                                             email.</div>
                                     </div>
                                     <div id="contenedor_recapt">
-                                    <div class="g-recaptcha" data-sitekey="6Lc-ht4pAAAAAFD-hRTNCi5373mfYayLpmz_B-FE"  data-theme="dark">
-                                    </div>
-                                </div><br>
+                                        <div class="g-recaptcha" data-sitekey="6Lc-ht4pAAAAAFD-hRTNCi5373mfYayLpmz_B-FE"
+                                            data-theme="dark">
+                                        </div>
+                                    </div><br>
 
 
                                     <hr>

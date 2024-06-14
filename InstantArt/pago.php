@@ -1,15 +1,62 @@
+<?php
+session_start(); // Inicia la sesión PHP
+require 'php/funciones.php';
+
+
+// Verifica si la sesión de usuario está establecida
+if (isset($_SESSION['usuario'])) {
+  // Si el usuario está autenticado, se crea una variable JavaScript con su nombre
+  echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
+}
+
+// Redirige a la página de inicio de sesión si el usuario no está autenticado
+if (!isset($_SESSION['usuario'])) {
+  header("Location: ../login.php");
+}
+
+// Redirige a la página principal si no está establecido el ID del cliente en la sesión
+if (!isset($_SESSION['id_cliente'])) {
+  header("Location: ../index.php");
+}
+
+
+try {
+
+  // Establecer el modo de error de PDO a excepción
+  $conn = conexion();
+
+  // Consulta SQL para obtener el nombre completo del cliente actual
+  $sql2 = "SELECT concat(nombre, ' ', apellidos) AS nombre_completo FROM cliente WHERE id_cliente = :id_cliente";
+  $stmt = $conn->prepare($sql2);
+  $stmt->bindParam(':id_cliente', $_SESSION['id_cliente']);
+  $stmt->execute();
+  $result2 = $stmt->fetchColumn();
+
+} catch (PDOException $e) {
+  // Captura cualquier excepción PDO y muestra un mensaje de error
+  die("Error en la conexión: " . $e->getMessage());
+}
+
+
+?>
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 
 <head>
+  <!-- Título de la página -->
   <title>Formulario de Pago</title>
+
+  <!-- Meta etiquetas -->
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport"
-    content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
+
+  <!-- Icono de la página -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <!-- Stylesheets-->
+
+  <!-- Hojas de estilos -->
   <link rel="stylesheet" type="text/css"
     href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CIBM+Plex+Sans:200,300,400,400i,600,700">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -17,8 +64,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/forma_De_pago.css">
 
+  <!-- Script externo -->
   <script src="php/comprobar_login.php"></script>
-
 </head>
 
 <body>
@@ -41,8 +88,9 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <a class="rd-navbar-brand" href="index.html"><img src="images/logo.png" alt="" width="400" height="200"
-                    srcset="images/logo.png" /></a>
+                <a class="rd-navbar-brand" href="index.html">
+                  <img src="images/logo.png" alt="" width="400" height="200" srcset="images/logo.png" />
+                </a>
               </div>
               <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
@@ -52,33 +100,40 @@
                     <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.php">Contactanos</a></li>
-                    <li class="rd-nav-item" id="usuarios" style="display: none;"><a class="rd-nav-link"
-                        href="usuarios.php">Usuarios</a></li>
-                    <!--Area personal, para descargar proyectos-->
-                    <li class="rd-nav-item active" id="area_personal" style="display: none;"><a class="rd-nav-link"
-                        href="areaPersonal/areaPersonal.php">Area Personal</a></li>
-                    <!--Area de gestion de clientes-->
-                    <li class="rd-nav-item" id="gestion_proyectos" style="display: none;"><a class="rd-nav-link"
-                        href="gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
-                    <!--Tabla para ver los trabajos pendientes de un empleado-->
-                    <li class="rd-nav-item" id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"
-                        href="gestion/proyecto_empleado.php">Evento empleado</a></li>
-                    <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5" href="login.php">Iniciar
-                        Sesion</a></li>
-                    <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"
-                        href="logout.php">Cerrar Sesion</a></li>
+                    <li class="rd-nav-item" id="usuarios" style="display: none;">
+                      <a class="rd-nav-link" href="usuarios.php">Usuarios</a>
+                    </li>
+                    <!-- Área personal, para descargar proyectos -->
+                    <li class="rd-nav-item active" id="area_personal" style="display: none;">
+                      <a class="rd-nav-link" href="areaPersonal/areaPersonal.php">Área Personal</a>
+                    </li>
+                    <!-- Área de gestión de clientes -->
+                    <li class="rd-nav-item" id="gestion_proyectos" style="display: none;">
+                      <a class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestión de Proyectos</a>
+                    </li>
+                    <!-- Tabla para ver los trabajos pendientes de un empleado -->
+                    <li class="rd-nav-item" id="proyectos_empleado" style="display: none;">
+                      <a class="rd-nav-link" href="gestion/proyecto_empleado.php">Evento Empleado</a>
+                    </li>
+                    <li class="rd-nav-item" id="inicio_sesion">
+                      <a class="rd-nav-link ml-5" href="login.php">Iniciar Sesión</a>
+                    </li>
+                    <li class="rd-nav-item" id="cerrar_sesion" style="display: none;">
+                      <a class="rd-nav-link" href="logout.php">Cerrar Sesión</a>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </nav>
-
       </div>
     </header>
-    <!-- Breadcrumbs-->
-    <section class="breadcrumbs-custom context-dark" style="background-image: url(https://img.freepik.com/foto-gratis/fondo-textura-papel-espacio-diseno_53876-160488.jpg
-);">
+
+    <!-- Sección de Breadcrumbs -->
+    <section class="breadcrumbs-custom context-dark"
+      style="background-image: url(https://img.freepik.com/foto-gratis/fondo-textura-papel-espacio-diseno_53876-160488.jpg);">
+      <!-- Video de fondo para el encabezado -->
       <video id="video_pago" autoplay loop muted class="bg-video">
         <source src="images/demostracion.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -86,9 +141,10 @@
       <div class="breadcrumbs-custom-inner">
         <div class="container breadcrumbs-custom-container">
           <div class="breadcrumbs-custom-main">
-
+            <!-- Título principal de la sección -->
             <h1 class="breadcrumbs-custom-title">Formulario de Pago</h1>
           </div>
+          <!-- Ruta de navegación -->
           <ul class="breadcrumbs-custom-path">
             <li><a href="index.html">Inicio</a></li>
             <li class="active">Formulario de Pago</li>
@@ -97,22 +153,20 @@
       </div>
     </section>
 
-
-
-
-
+    <!-- Sección de Beneficios del Servicio de Pago -->
     <section class="section section-sm">
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-8">
+            <!-- Título de los beneficios -->
             <h3>Beneficios de nuestro servicio de pago</h3>
+            <!-- Citas con detalles de los beneficios -->
             <blockquote>
               <p>Procese pagos de manera segura y eficiente con nuestro sistema de pago en línea. Garantizamos la
                 protección de sus datos personales y financieros en todo momento.</p>
               <p>Nuestro servicio permite realizar transacciones rápidas y fáciles, adaptándose a sus necesidades
                 comerciales. Con tarifas competitivas y una plataforma intuitiva, ofrecemos una solución integral para
                 gestionar sus pagos en línea.</p>
-
             </blockquote>
           </div>
         </div>
@@ -120,16 +174,16 @@
     </section>
 
 
+
     <section class="section section-sm">
       <div class="container">
         <div class="modal_pagar">
-
-
-
-
+          <!-- Inicio del formulario de pago -->
           <form class="form" action="php/insertar_pago.php" method="POST">
             <div class="payment--options">
+              <!-- Botón de PayPal -->
               <button name="paypal" type="button" class="paypal-button">
+
                 <svg xml:space="preserve" viewBox="0 0 124 33" height="33px" width="124px" y="0px" x="0px" id="Layer_1"
                   version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -162,8 +216,10 @@
                   <path
                     d="M9.614,7.699c0.061-0.393,0.313-0.714,0.652-0.876c0.155-0.074,0.326-0.115,0.507-0.115h7.352  c0.871,0,1.684,0.057,2.426,0.177c0.212,0.034,0.418,0.073,0.619,0.117c0.2,0.045,0.395,0.095,0.584,0.15  c0.094,0.028,0.187,0.057,0.278,0.086c0.365,0.121,0.704,0.264,1.017,0.429c0.368-2.347-0.003-3.945-1.272-5.392  C20.378,0.682,17.853,0,14.622,0h-9.38c-0.66,0-1.223,0.48-1.325,1.133L0.01,25.898c-0.077,0.49,0.301,0.932,0.795,0.932h5.791  l1.454-9.225L9.614,7.699z"
                     fill="#253B80"></path>
+
                 </svg>
               </button>
+              <!-- Botón de Apple Pay -->
               <button name="apple-pay" type="button" class="apple-pay-button">
                 <svg xml:space="preserve" viewBox="0 0 512 210.2" y="0px" x="0px" id="Layer_1" version="1.1"
                   xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
@@ -184,6 +240,7 @@
                   </g>
                 </svg>
               </button>
+              <!-- Botón de Google Pay -->
               <button name="google-pay" type="button" class="google-pay-button">
                 <svg fill="none" viewBox="0 0 80 39" height="39" width="80" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_134_34)">
@@ -216,7 +273,6 @@
                   </defs>
                 </svg>
               </button>
-
             </div>
             <div class="separator">
               <hr class="line">
@@ -245,31 +301,36 @@
             </div>
             <button type="submit" class="purchase--btn">pagar</button>
           </form>
+          <!-- Fin del formulario de pago -->
         </div>
       </div>
     </section>
 
+    <!-- Sección principal con detalles de pago -->
     <section class="section section-sm">
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-8">
             <h2>Detalles importantes para completar tu pago</h2>
             <p>
-              <a href="#">Ir al resumen de la compra</a>
-              <a class="link-hover" href="#">Ver opciones de pago</a>
-              <strong>Confirma tu pedido</strong>
-              <mark>¡Asegúrate de revisar los detalles antes de proceder!</mark>
+              <a href="#">Ir al resumen de la compra</a> <!-- Enlace para resumen de compra -->
+              <a class="link-hover" href="#">Ver opciones de pago</a> <!-- Enlace para ver opciones de pago -->
+              <strong>Confirma tu pedido</strong> <!-- Texto destacado de confirmación de pedido -->
+              <mark>¡Asegúrate de revisar los detalles antes de proceder!</mark> <!-- Marcado de advertencia -->
               <span class="tooltip-custom" data-toggle="tooltip" data-placement="top"
                 title="Recuerda: Tu seguridad es nuestra prioridad.">Seguridad de pagos</span>
+              <!-- Texto con tooltip sobre seguridad de pagos -->
               <span>Estamos aquí para ayudarte con cualquier duda que tengas sobre tu compra.</span>
+              <!-- Texto de servicio al cliente -->
               <span>Con nuestro servicio de atención al cliente, tu experiencia será siempre satisfactoria.</span>
+              <!-- Más texto de servicio al cliente -->
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Page Footer-->
+    <!-- Pie de página de la página web -->
     <footer class="section footer-standard bg-gray-700">
       <div class="footer-standard-main">
         <div class="container">
@@ -279,6 +340,7 @@
                 <h4>Mas información</h4>
                 <p>Nos llamamos InstantArt, donde cada clic captura la esencia de la vida, convirtiendo momentos
                   ordinarios en extraordinarias obras maestras visuales. </p>
+                <!-- Información sobre la empresa InstantArt -->
               </div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4">
@@ -287,17 +349,20 @@
                 <ul class="list-sm">
                   <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a
                       class="link-default" href="#">Calle San José <br> Puerta 3, Piso 2, Número 123.</a></li>
+                  <!-- Dirección física -->
                   <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a
-                      class="link-default" href="tel:#">675456345</a></li>
+                      class="link-default" href="tel:#">675456345</a></li> <!-- Número de teléfono -->
                   <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a
                       class="link-default" href="mailto:#">InstantArt@gmail.com</a></li>
+                  <!-- Dirección de correo electrónico -->
                 </ul>
               </div>
             </div>
             <div class="col-sm-6 col-md-7 col-lg-4">
               <h4>Contacto</h4>
               <p>Pon tu email para consultar lo que quieras</p>
-              <!-- RD Mailform-->
+              <!-- Instrucción para suscripción por correo electrónico -->
+              <!-- Formulario de suscripción por correo electrónico -->
               <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global"
                 data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                 <div class="form-wrap">
@@ -314,24 +379,35 @@
           </div>
         </div>
       </div>
-
     </footer>
+
   </div>
+  </div>
+  <!-- Cierre de la sección o contenedor anterior -->
+
+  <!-- Elemento de preloader -->
   <div class="preloader">
-    <div class="preloader-logo"><img src="images/logo-default-176x28.png" alt="" width="176" height="28"
+    <!-- Logo del preloader -->
+    <div class="preloader-logo">
+      <img src="images/logo-default-176x28.png" alt="" width="176" height="28"
         srcset="images/logo-default-352x56.png 2x" />
     </div>
+    <!-- Cuerpo del preloader -->
     <div class="preloader-body">
+      <!-- Indicador de carga -->
       <div id="loadingProgressG">
         <div class="loadingProgressG" id="loadingProgressG_1"></div>
       </div>
     </div>
   </div>
-  <!-- Global Mailform Output-->
+
+  <!-- Salida global del formulario de correo -->
   <div class="snackbars" id="form-output-global"></div>
-  <!-- Javascript-->
-  <script src="js/core.min.js"></script>
-  <script src="js/script.js"></script>
+
+  <!-- Javascript -->
+  <script src="js/core.min.js"></script> <!-- Archivo principal de JavaScript -->
+  <script src="js/script.js"></script> <!-- Archivo de script personalizado -->
+
 </body>
 
 </html>
