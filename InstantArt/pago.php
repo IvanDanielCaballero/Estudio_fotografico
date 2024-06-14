@@ -179,7 +179,7 @@ try {
       <div class="container">
         <div class="modal_pagar">
           <!-- Inicio del formulario de pago -->
-          <form class="form" action="php/insertar_pago.php" method="POST">
+          <form class="form" method="POST">
             <div class="payment--options">
               <!-- Botón de PayPal -->
               <button name="paypal" type="button" class="paypal-button">
