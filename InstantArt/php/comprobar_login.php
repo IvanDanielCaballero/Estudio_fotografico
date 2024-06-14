@@ -1,4 +1,6 @@
 <?php
+//esto es un fichero al que se puede llamar desde un html poniendo la etiqueta script 
+//que comprueba si estan logeado,si eres admin etc para saber que vas a mostrar o no.
 session_start();
 $inicio = isset($_SESSION['usuario']);
 $admin = $inicio && isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin';

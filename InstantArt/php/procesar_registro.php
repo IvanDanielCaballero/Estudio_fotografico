@@ -3,6 +3,7 @@ require_once "funciones.php";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //se alamacenan los datos del post en variables
     $nombre = $_POST['nombre'];
     $apellidos = $_POST['apellidos'];
     $fecha = $_POST['fecha'];
@@ -13,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $bd = conexion();
-        // Preparar la consulta SQL para insertar un nuevo registro
+        // Preparar la consulta SQL para insertar un nuevo cliente
         $sql = "INSERT INTO cliente (contraseña, nombre, apellidos, email, fecha_nacimiento, telefono)
         VALUES ('$contraseña', '$nombre', '$apellidos', '$correo', '$fecha','$telefono');";
         $query = $bd->query($sql);
@@ -23,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['tiempo'] = time();
             $_SESSION['id_cliente'] = $bd->lastInsertId();
 
-            //Añadir carpeta que almacenara los distintos proyectos (Miguel);
+            //Añadir carpeta que almacenara los distintos proyectos;
             $sql2 = "SELECT id_cliente FROM cliente  WHERE nombre = '$nombre' AND contraseña = '$contraseña'";
             $query2 = $bd->query($sql2);
             $dir = $query2->fetch(PDO::FETCH_ASSOC);

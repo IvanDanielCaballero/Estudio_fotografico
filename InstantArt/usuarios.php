@@ -10,7 +10,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <!--  <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css"> -->
+    <!--  <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="css/usuarios_form.css" />
 
 
@@ -27,7 +27,7 @@
     <link href="css/demo.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style_old.css">
     <script src="php/comprobar_login.php"></script>
-    
+
 
 </head>
 
@@ -37,14 +37,12 @@
     <?php
     session_start();
     require "php/funciones.php";
-    if (isset($_SESSION['usuario'])) {
-        echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-    }
 
-    if (isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin') {
-        echo '<script>var admin=true;</script>';
-    } else {
+    if ($_SESSION['rol'] != 'admin') {
         header("Location: index.php");
+        echo "adios";
+    }else{
+        echo $_SESSION['rol'];
     }
     ?>
 
@@ -53,50 +51,44 @@
     <div class="page"></a>
         <!-- Page Header-->
         <header class="section page-header">
-      <!-- RD Navbar-->
-      <div class="rd-navbar-wrap">
-        <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
-          data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
-          data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
-          data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
-          data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
-          data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-          <div class="rd-navbar-main-outer">
-            <div class="rd-navbar-main">
-              <!-- RD Navbar Panel-->
-              <div class="rd-navbar-panel">
-                <!-- RD Navbar Toggle-->
-                <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
-                <!-- RD Navbar Brand-->
-                <a class="rd-navbar-brand" href="index.php"><img src="images/logo.png" alt="" width="400" height="200"
-                    srcset="images/logo.png" /></a>
-              </div>
-              <div class="rd-navbar-main-element">
-                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
-                  <!-- RD Navbar Nav-->
-                  <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item "><a class="rd-nav-link" href="index.php">Inicio</a></li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a></li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a></li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.php">Contactanos</a></li>
-                    <li class="rd-nav-item  active" id="usuarios" style="display: none;"><a class="rd-nav-link"  href="usuarios.php">Usuarios</a></li>
-                    <!--Area personal, para descargar proyectos-->
-                    <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href="areaPersonal/areaPersonal.php">Area Personal</a></li>
-                    <!--Area de gestion de clientes-->
-                    <li class="rd-nav-item"  id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
-                    <!--Tabla para ver los trabajos pendientes de un empleado-->
-                    <li class="rd-nav-item"id="proyectos_empleado" style="display: none;"><a class="rd-nav-link"  href="gestion/proyecto_empleado.php">Evento empleado</a></li>
-                    <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5"  href="login.php">Iniciar Sesion</a></li>
-                    <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link"  href="logout.php" >Cerrar Sesion</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
+            <!-- RD Navbar-->
+            <div class="rd-navbar-wrap">
+                <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                    <div class="rd-navbar-main-outer">
+                        <div class="rd-navbar-main">
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <!-- RD Navbar Toggle-->
+                                <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                                <!-- RD Navbar Brand-->
+                                <a class="rd-navbar-brand" href="index.php"><img src="images/logo.png" alt="" width="400" height="200" srcset="images/logo.png" /></a>
+                            </div>
+                            <div class="rd-navbar-main-element">
+                                <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                                    <!-- RD Navbar Nav-->
+                                    <ul class="rd-navbar-nav">
+                                        <li class="rd-nav-item "><a class="rd-nav-link" href="index.php">Inicio</a></li>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a></li>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.php">Contactanos</a></li>
+                                        <li class="rd-nav-item  active" id="usuarios" style="display: none;"><a class="rd-nav-link" href="usuarios.php">Usuarios</a></li>
+                                        <!--Area personal, para descargar proyectos-->
+                                        <li class="rd-nav-item" id="area_personal" style="display: none;"><a class="rd-nav-link" href="areaPersonal/areaPersonal.php">Area Personal</a></li>
+                                        <!--Area de gestion de clientes-->
+                                        <li class="rd-nav-item" id="gestion_proyectos" style="display: none;"><a class="rd-nav-link" href="gestion/gestion_proyectos.php">Gestion de proyectos</a></li>
+                                        <!--Tabla para ver los trabajos pendientes de un empleado-->
+                                        <li class="rd-nav-item" id="proyectos_empleado" style="display: none;"><a class="rd-nav-link" href="gestion/proyecto_empleado.php">Evento empleado</a></li>
+                                        <li class="rd-nav-item" id="inicio_sesion"><a class="rd-nav-link ml-5" href="login.php">Iniciar Sesion</a></li>
+                                        <li class="rd-nav-item " id="cerrar_sesion" style="display: none;"><a class="rd-nav-link" href="logout.php">Cerrar Sesion</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
 
-      </div>
-    </header>
+            </div>
+        </header>
 
 
         <div class="col-12 text-center">
@@ -282,7 +274,7 @@
             </form>
         </div>
 
-
+        <!-- Formulario para añadir cliente -->
         <div class='container fo wow slideInDown' id='for4' style='display:none;'>
             <form action='php/añadir_cliente.php' method='POST' class='text-center'>
                 <div class='mb-3 mt-3'>
@@ -318,13 +310,13 @@
                         <button class='btn btn-primary enviar3' type="submit">Añadir</button>
                     </div>
                     <div class="col-md-6 col-xs-6 text-start">
-                        <button  class='btn btn-primary cancelar' type="button">Cancelar</button>
+                        <button class='btn btn-primary cancelar' type="button">Cancelar</button>
                     </div>
                 </div>
             </form>
         </div>
 
-
+        <!-- Formulario para modificar empleado -->
         <div class='container fo wow slideInDown' id='for5' style='display:none;'>
             <form action='php/editar_empleado.php' method='POST' class='text-center'>
                 <div class='mb-3 mt-3'>
@@ -368,7 +360,7 @@
             </form>
         </div>
 
-
+        <!-- Formulario para añadir empleado -->
         <div class='container fo wow slideInDown' id='for6' style='display:none;'>
             <form action='php/añadir_empleado.php' method='POST' class='text-center'>
                 <div class='mb-3 mt-3'>
@@ -413,7 +405,7 @@
         </div>
 
 
-        <!-- Page Footer-->
+        <!-- Footer-->
         <footer class="section footer-standard bg-gray-700">
             <div class="footer-standard-main">
                 <div class="container">

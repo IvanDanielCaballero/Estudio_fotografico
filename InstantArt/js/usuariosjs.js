@@ -1,4 +1,6 @@
-document.getElementById("clientes").addEventListener("click", function(e) {
+
+//al pulsar en un formulario se muestra ese y se ocultan los demas
+document.getElementById("clientes").addEventListener("click", function (e) {
     document.getElementById("tabla1").style.display = "block"
     document.getElementById("tabla2").style.display = "none"
     document.getElementById("for4").style.display = "none"
@@ -6,8 +8,8 @@ document.getElementById("clientes").addEventListener("click", function(e) {
     document.getElementById("for5").style.display = "none"
     document.getElementById("for6").style.display = "none"
 })
-
-document.getElementById("empleados").addEventListener("click", function(e) {
+//al pulsar en un formulario se muestra ese y se ocultan los demas
+document.getElementById("empleados").addEventListener("click", function (e) {
     document.getElementById("tabla2").style.display = "block"
     document.getElementById("tabla1").style.display = "none"
     document.getElementById("for4").style.display = "none"
@@ -17,8 +19,8 @@ document.getElementById("empleados").addEventListener("click", function(e) {
 })
 
 // Agrega un event listener a cada botón de cancelar
-document.querySelectorAll(".cancelar").forEach(function(button) {
-    button.addEventListener("click", function(e) {
+document.querySelectorAll(".cancelar").forEach(function (button) {
+    button.addEventListener("click", function (e) {
         // Oculta los elementos con los IDs específicos
         document.getElementById("for4").style.display = "none";
         document.getElementById("for3").style.display = "none";
@@ -28,7 +30,7 @@ document.querySelectorAll(".cancelar").forEach(function(button) {
 });
 
 
-
+//al pulsar en un formulario se muestra ese y se ocultan los demas
 function Añadir() {
     document.getElementById("for4").style.display = "block"
     document.getElementById("for3").style.display = "none"
@@ -36,6 +38,7 @@ function Añadir() {
     document.getElementById("for6").style.display = "none"
 }
 
+//Al darle a añadir se pilla el id de la fila seleccionada y todos los campos del formulario
 
 function agregarFila1(boton) {
     document.getElementById("for3").style.display = "block"
@@ -62,9 +65,9 @@ function agregarFila1(boton) {
     document.getElementById("email").value = email;
     document.getElementById("password").value = contraseña;
 
-
+    //y se llama a traves de ayax para almacenar en una variable de session el id a actualizar
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             console.log(xhr.responseText);
         }
@@ -78,14 +81,14 @@ function agregarFila1(boton) {
 }
 
 
-
+// Se pilla el id de la fila de la tabla y se llama a una a un fichero con ayax para borrarlo
 function eliminarFila1(boton) {
     var fila = boton.parentNode.parentNode;
     var celdas = fila.getElementsByTagName("td");
     var id = celdas[0].innerText;
 
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             console.log(xhr.responseText);
             fila.remove();
@@ -98,7 +101,7 @@ function eliminarFila1(boton) {
 
 }
 
-
+//Al darle a añadir se pilla el id de la fila seleccionada y todos los campos del formulario
 function agregarFila2(boton) {
     document.getElementById("for3").style.display = "none"
     document.getElementById("for4").style.display = "none"
@@ -125,9 +128,9 @@ function agregarFila2(boton) {
     document.getElementById("salario").value = salario;
     document.getElementById("tipo").value = tipo;
     document.getElementById("password2").value = contraseña;
-
+    //y se llama a traves de ayax para almacenar en una variable de session el id a actualizar
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             console.log(xhr.responseText);
         }
@@ -139,6 +142,7 @@ function agregarFila2(boton) {
 
 }
 
+//se muestra un formulario y se ocultan los demas
 function Añadir2() {
     document.getElementById("for4").style.display = "none"
     document.getElementById("for3").style.display = "none"
@@ -146,13 +150,14 @@ function Añadir2() {
     document.getElementById("for6").style.display = "block"
 }
 
+// Se pilla el id de la fila de la tabla y se llama a una a un fichero con ayax para borrarlo
 function eliminarFila2(boton) {
     var fila = boton.parentNode.parentNode;
     var celdas = fila.getElementsByTagName("td");
     var id = celdas[0].innerText;
 
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             fila.remove();
 
@@ -167,7 +172,8 @@ function eliminarFila2(boton) {
 var $table = $('#fresh-table')
 
 
-$(function() {
+//esto es un framework que se encarga de hacer tabla dinamicas añadiendo funcionalidades como menus,buscador etc
+$(function () {
     $table.bootstrapTable({
         classes: 'table table-hover table-striped',
         toolbar: '.toolbar',
@@ -182,10 +188,10 @@ $(function() {
         pageSize: 5,
         pageList: [8, 10],
 
-        formatShowingRows: function(pageFrom, pageTo, totalRows) {
+        formatShowingRows: function (pageFrom, pageTo, totalRows) {
             return 'Mostrando ' + pageFrom + ' a ' + pageTo + ' de ' + totalRows + ' filas';
         },
-        formatRecordsPerPage: function(pageNumber) {
+        formatRecordsPerPage: function (pageNumber) {
             return ''
         }
     })
@@ -195,8 +201,8 @@ $(function() {
 
 var $table2 = $('#fresh-table2')
 
-
-$(function() {
+//esto es un framework que se encarga de hacer tabla dinamicas añadiendo funcionalidades como menus,buscador etc
+$(function () {
     $table2.bootstrapTable({
         classes: 'table table-hover table-striped',
         toolbar: '.toolbar2',
@@ -212,10 +218,10 @@ $(function() {
         pageList: [8, 10],
 
 
-        formatShowingRows: function(pageFrom, pageTo, totalRows) {
+        formatShowingRows: function (pageFrom, pageTo, totalRows) {
             return 'Mostrando ' + pageFrom + ' a ' + pageTo + ' de ' + totalRows + ' filas';
         },
-        formatRecordsPerPage: function(pageNumber) {
+        formatRecordsPerPage: function (pageNumber) {
             return ''
         }
     })

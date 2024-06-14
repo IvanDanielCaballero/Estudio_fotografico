@@ -1,5 +1,6 @@
 <?php
 
+//funcion para conexion a la base de datos
 function conexion(){
     $servername = "217.160.114.39";
     $username = "jose";

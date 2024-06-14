@@ -1,10 +1,10 @@
 <?php
- session_start();
- require "funciones.php";
- 
+session_start();
+require "funciones.php";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    //se almacenan los datos del post en varibles
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $telefono = $_POST['telefono'];
@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     try {
+        //se hace un insert con esos datos
         $bd = conexion();
         $sql = "INSERT INTO cliente (nombre, apellidos, email, fecha_nacimiento, contraseña, telefono) VALUES ('$nombre', '$apellido', '$email', '$fecha', '$contraseña', '$telefono')";
         $query = $bd->query($sql);
@@ -23,18 +24,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query2 = $bd->query($sql2);
         $dir = $query2->fetch(PDO::FETCH_ASSOC);
         $dir = $dir['id_cliente'];
-        $conn_id= conexion_ftp();
+        $conn_id = conexion_ftp();
 
-        if($conn_id){
+        //Se crea un directorio en el ftp
+        if ($conn_id) {
             crearDirectorioFTP($conn_id, $dir);
             ftp_close($conn_id);
             echo "Directorio creado";
-        }else{
+        } else {
             echo "Nose ha podido crear el directorio";
         }
 
         header('Location: ../usuarios.php');
-
     } catch (PDOException $e) {
         echo "Error de conexión: " . $e->getMessage();
     }

@@ -3,21 +3,24 @@ session_start();
 require_once "funciones.php";
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
-/* echo $usuario;
-echo $contraseña;
- */
+
 try {
    $bd=conexion();
+    //se hacen diferentes consultas para el login.
 
+
+    //esta copmprueba que el usuario y contraseña esten bien.
     $sql = "SELECT nombre, contraseña FROM cliente WHERE nombre='$usuario' AND contraseña='$contraseña';";
 
-
+    //esta comprueba que se administrador
     $sql2 = "SELECT nombre,contraseña,tipo FROM empleado
     JOIN tipo_empleado ON empleado.id_tipo_empleado=tipo_empleado.id_tipo_empleado WHERE nombre='$usuario' AND contraseña='$contraseña' AND tipo='Administrador'";
 
+    //esta comorueba si es empleado
     $sql3 = "SELECT nombre,contraseña,tipo FROM empleado
     JOIN tipo_empleado ON empleado.id_tipo_empleado=tipo_empleado.id_tipo_empleado WHERE nombre='$usuario' AND contraseña='$contraseña' AND tipo='Empleado'";
 
+    //estas dos selecionan el id tanto del cliente como del empleado para meterlos en variable de session.
     $sql4 = "SELECT id_empleado FROM empleado WHERE nombre='$usuario' AND contraseña='$contraseña';";
     $sql5 = "SELECT id_cliente FROM cliente WHERE nombre='$usuario' AND contraseña='$contraseña';";
     
@@ -29,7 +32,6 @@ try {
 
     if ($query->rowCount() > 0) {
         $_SESSION['usuario'] = $_POST['usuario'];
-        $_SESSION['tiempo'] = time();
         $_SESSION['rol'] = 'cliente';
         $_SESSION['id_cliente']= $query5;
 
@@ -37,14 +39,12 @@ try {
         header("location: ../index.php");
     }elseif($query2->rowCount()>0){
         $_SESSION['usuario'] = $_POST['usuario'];
-        $_SESSION['tiempo'] = time();
         $_SESSION['rol'] = 'admin';
         $_SESSION['id_empleado']= $query4;
         header("location: ../index.php");
 
     }elseif($query3->rowCount()>0){
         $_SESSION['usuario'] = $_POST['usuario'];
-        $_SESSION['tiempo'] = time();
         $_SESSION['rol'] = 'empleado';
         $_SESSION['id_empleado']= $query4;
 

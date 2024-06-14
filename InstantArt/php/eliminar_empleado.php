@@ -1,4 +1,5 @@
 <?php
+//elimina un empledo de la base de datos
 session_start();
 require_once "funciones.php";
 $id = $_POST['id'];

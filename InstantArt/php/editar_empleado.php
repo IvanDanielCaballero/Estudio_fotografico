@@ -3,7 +3,7 @@ session_start();
 require_once "funciones.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    //se almacenan los datos del post en variables
     $id = $_SESSION['id_update'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dni = $_POST['dni'];
     $salario = $_POST['salario'];
 
+    //comprueba si es administrador
     if ($tipo == 'Administrador' | $tipo == 'administrador') {
         $tipo2 = 1;
     } else {
@@ -23,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $bd = conexion();
+        //se hace un update del empledo seleccionado
         $sql = "UPDATE empleado SET nombre='$nombre', apellidos='$apellido', salario_mes='$salario' ,id_tipo_empleado='$tipo2', contraseña='$contraseña',telefono='$telefono' WHERE id_empleado=$id";
         $query = $bd->query($sql);
 
