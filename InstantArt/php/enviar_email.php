@@ -26,8 +26,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $destinatario = 'instantartoficial@gmail.com';
         $asunto = 'Envio de duda y/o requerimiento de informacion';
-        $contenido = 'El contenido es que ' . $nombre . ' ' . $apellidos . ' ' . $telefono . ' ' . $duda . ' ' . $email;
-
+        $contenido = $contenido = '
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Duda y/o requerimiento de información</title>
+        </head>
+        <body>
+          <h2 style="color: #333;">Duda y/o requerimiento de información</h2>
+          <p><strong>Nombre:</strong> ' . htmlspecialchars($nombre) . '</p>
+          <p><strong>Apellidos:</strong> ' . htmlspecialchars($apellidos) . '</p>
+          <p><strong>Teléfono:</strong> ' . htmlspecialchars($telefono) . '</p>
+          <p><strong>Duda o requerimiento:</strong></p>
+          <p>' . nl2br(htmlspecialchars($duda)) . '</p>
+          <p><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>
+        </body>
+        </html>';
+        
         $mail = new PHPMailer(true);
         try {
             //Configuración del servidor

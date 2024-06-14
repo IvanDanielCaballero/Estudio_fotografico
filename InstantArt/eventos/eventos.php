@@ -217,7 +217,7 @@ if (empty($eventos)) {
 
 
             <div class="inputBox mb3">
-              <input type="text" id="id_evento_presupuesto" value="<?php echo htmlspecialchars($evento['id_evento']); ?>" readonly>
+              <input type="text" id="id_evento_presupuesto"  name="id_evento_presupuesto" value="<?php echo htmlspecialchars($evento['id_evento']); ?>" readonly>
 
               <span class="id_evento_presupuesto" style="margin-left: 50px;">Id evento</span>
             </div>
