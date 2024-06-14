@@ -40,9 +40,7 @@
 
     if ($_SESSION['rol'] != 'admin') {
         header("Location: index.php");
-        echo "adios";
-    }else{
-        echo $_SESSION['rol'];
+        
     }
     ?>
 

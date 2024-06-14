@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/style_old.css">
   <link rel="stylesheet" href="../css/css_ulia.css">
   <link rel="stylesheet" href="../css/fonts.css">
-  <script src="../php/comprobar_login.php"></script>
+  
 </head>
 
 <body>
@@ -89,6 +89,7 @@
       </div>
     </header>
 
+    <!-- introduccion -->
     <section class="slider_section position-relative mb-5">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -153,6 +154,7 @@
       </div>
     </section>
 
+    <!-- section para almacenar las imagenes del ftp -->
     <section class="portfolio_section layout_padding">
       <div class="container">
         <div class="heading_container">
@@ -234,7 +236,7 @@
 
         </div>
         <div class="see_btn" style="display: none;">
-
+      <!-- boton que llama a un fichero para descargar el zip -->
           <a href="descargarzip.php" download>Descargar Imágenes</a>
 
         </div>
@@ -297,7 +299,7 @@
   <!-- Global Mailform Output-->
   <div class="snackbars" id="form-output-global"></div>
   <!-- Javascript-->
- 
+  <script src="../php/comprobar_login.php"></script>
   <script src="../js/core.min.js"></script>
   <script src="../js/script.js"></script>
   <script src="funciones.js"></script>
