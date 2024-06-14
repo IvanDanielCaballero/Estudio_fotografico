@@ -10744,6 +10744,11 @@ html.rd-navbar-fixed-linked .page {
 	padding-right: 15px;
 }
 
+ul{
+	margin-left: 22px;
+}
+
+
 .rd-navbar-minimal.rd-navbar-static .rd-navbar-main {
 	position: relative;
 	display: flex;

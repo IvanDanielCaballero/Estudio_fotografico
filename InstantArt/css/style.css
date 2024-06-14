@@ -10744,6 +10744,10 @@ html.rd-navbar-fixed-linked .page {
 	border-bottom: 1px solid transparent;
 }
 
+ul{
+	margin-left: 22px;
+}
+
 .rd-navbar-minimal.rd-navbar-static .rd-navbar-main-outer {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -10754,6 +10758,7 @@ html.rd-navbar-fixed-linked .page {
 	display: flex;
 	align-items: center;
 	/* justify-content: space-between; */
+	margin-left: 20px;
 	max-width: 1200px;
 	padding: 20px 0;
 	margin-left: auto;
