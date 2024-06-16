@@ -334,8 +334,6 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
                                             data-theme="dark">
                                         </div>
                                     </div><br>
-
-
                                     <hr>
                                     <label for="username">Ingresa tu dudas:</label>
 

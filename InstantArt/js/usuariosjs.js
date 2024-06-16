@@ -76,8 +76,6 @@ function agregarFila1(boton) {
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("id=" + id);
 
-
-
 }
 
 
@@ -170,7 +168,6 @@ function eliminarFila2(boton) {
 }
 
 var $table = $('#fresh-table')
-
 
 //esto es un framework que se encarga de hacer tabla dinamicas añadiendo funcionalidades como menus,buscador etc
 $(function () {

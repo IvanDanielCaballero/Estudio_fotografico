@@ -134,7 +134,6 @@ function eventos_cliente($id_cliente)
 {
     $bd = conexion_bd2();
 
-
     // Preparar la consulta SQL para obtener los eventos del cliente
     $sql = "
     SELECT evento.id_evento, empleado.id_empleado,

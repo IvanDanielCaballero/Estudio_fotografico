@@ -20,8 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tipo2 = 2;
     }
 
-
-
     try {
         $bd = conexion();
         //se hace un update del empledo seleccionado
