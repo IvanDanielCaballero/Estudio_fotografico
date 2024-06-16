@@ -36,7 +36,6 @@
   echo '<script>var nombre = "' . $result2 . '"</script>';
   echo '<script>var id_cliente = "' . $_SESSION['id_cliente'] . '"</script>';
 
-
   ?>
 
 

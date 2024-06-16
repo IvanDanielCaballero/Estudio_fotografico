@@ -347,7 +347,7 @@ function insertar_presupuesto(e) {
   document.getElementById('section_insertar_presupuesto').style.display = 'block';
   
   // Obtener el ID del evento desde el botón clickeado
-  let id_boton = e.target.getAttribute("id");
+  let id_boton = e.target.id;
   let id_evento = id_boton.split("_")[1]; // Extraer el ID del evento desde el ID del botón
   console.log(id_evento); // Mostrar el ID del evento en la consola
   
@@ -361,7 +361,7 @@ function insertar_factura(e) {
   let idCliente = <?php echo json_encode($id_cliente); ?>;
   
   // Obtener el ID del evento desde el botón clickeado
-  let id_boton = e.target.getAttribute("id");
+  let id_boton = e.target.id;
   let id_evento = id_boton.split("_")[1]; // Extraer el ID del evento desde el ID del botón
   
   // Redirigir a la página de generación de factura con los IDs de cliente y evento

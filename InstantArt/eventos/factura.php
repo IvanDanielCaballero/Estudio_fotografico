@@ -210,30 +210,6 @@ try {
       </div>
     </section>
 
-
-
-    <section class="section section-sm">
-      <div class="container">
-
-        <div class="col-lg-10 col-xl-8">
-          <h2>HTML Text Elements</h2>
-          <p><a href="#">Text Link</a><a class="link-hover" href="#">Hover link</a><strong>Bold text</strong>
-            <mark>This is a highlighted text</mark><span class="tooltip-custom" data-toggle="tooltip"
-              data-placement="top" title="Tooltips text">Tooltips</span><span>Welcome to our wonderful world. We
-              sincerely hope that each and every user entering our website will find exactly what he/she is
-              looking
-              for</span><span>With advanced features of activating account and new login widgets, you will
-              definitely
-              have a great experience of using our web page.</span><span class="text-strike">This is a
-              strickethrough
-              text</span><span class="text-underline">This is an underlined text.</span>
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
     <!-- Page Footer-->
     <footer class="section footer-standard bg-gray-700">
         <div class="footer-standard-main">
