@@ -4,6 +4,7 @@
 session_start();
 $inicio = isset($_SESSION['usuario']);
 $admin = $inicio && isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin';
+$empleado=$inicio && isset($_SESSION['rol']) && $_SESSION['rol'] == 'empleado';
 
 header('Content-Type: application/javascript');
 ?>
@@ -22,5 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("proyectos_empleado").style.display = "inline-block";
         document.getElementById("area_personal").style.display = "none";
     }
+
+    if (<?php echo $empleado ? 'true' : 'false'; ?>) {
+        console.log("Admin");
+        document.getElementById("gestion_proyectos").style.display = "inline-block";
+        document.getElementById("proyectos_empleado").style.display = "inline-block";
+        document.getElementById("area_personal").style.display = "none";
+    }
+
 });
     

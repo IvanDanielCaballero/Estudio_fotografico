@@ -39,15 +39,11 @@
 
     <?php
     session_start();
-    if (isset($_SESSION['usuario'])) {
-        echo '<script>var id_empleado = "' . $_SESSION['id_empleado'] . '"; var inicio=true;</script>';
+    if ($_SESSION['rol'] != 'admin' && $_SESSION['rol'] != 'empleado') {
+        header("Location: ../index.php");
+        exit(); 
     }
-
-    if (isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin') {
-        echo '<script>var admin=true;</script>';
-    } else {
-        header("Location: index.php");
-    }
+    
     ?>
 
 

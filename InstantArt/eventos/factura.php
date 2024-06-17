@@ -2,7 +2,10 @@
 
 session_start(); // Iniciar sesión PHP
 require '../php/funciones.php'; // Incluir el archivo funciones.php que contiene la función conexion()
-
+if ($_SESSION['rol'] != 'admin' && $_SESSION['rol'] != 'empleado') {
+  header("Location: ../index.php");
+  exit();
+}
 $bd = conexion(); // Establecer conexión a la base de datos
 
 try {

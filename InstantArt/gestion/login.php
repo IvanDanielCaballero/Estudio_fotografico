@@ -1,11 +1,6 @@
 <?php
 
-if (isset($_SESSION['usuario'])) {
-    echo '<script>var nombre = "' . $_SESSION['usuario'] . '"; var inicio=true;</script>';
-}
-
-if (isset($_SESSION['usuario']) && isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin') {
-    echo '<script>var admin=true;</script>';
-} else {
+if ($_SESSION['rol'] != 'admin' && $_SESSION['rol'] != 'empleado') {
     header("Location: ../index.php");
+    exit(); 
 }

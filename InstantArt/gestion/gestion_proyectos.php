@@ -44,6 +44,7 @@
     <?php
     session_start();
     require 'login.php';
+
     ?>
 
 
@@ -102,6 +103,7 @@
 
 
         <?php
+        
         // Configuración de la conexión a la base de datos
         require 'utilidades_gestion.php';
 
