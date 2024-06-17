@@ -322,7 +322,7 @@ if (empty($eventos)) {
     document.getElementById('section_insertar_presupuesto').style.display = 'block';
 
     // Obtener el ID del evento desde el botón clickeado
-    let id_boton = e.target.id;
+    let id_boton = e.target.getAttribute("id");
     let id_evento = id_boton.split("_")[1]; // Extraer el ID del evento desde el ID del botón
     console.log(id_evento); // Mostrar el ID del evento en la consola
 
