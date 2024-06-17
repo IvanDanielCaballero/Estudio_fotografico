@@ -266,7 +266,7 @@ $messageClass = isset($_GET['type']) ? $_GET['type'] : '';
         </header>
         <!-- Breadcrumbs-->
         <section class="breadcrumbs-custom bg-image context-dark"
-            style="background-image: url(images/pexels-markusspiske-4201333);">
+            style="background-image: url(images/pexels-markusspiske-4201333.jpg);">
             <div class="breadcrumbs-custom-inner">
                 <div class="container breadcrumbs-custom-container">
                     <div class="breadcrumbs-custom-main">
