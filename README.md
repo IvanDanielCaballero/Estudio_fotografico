@@ -1,11 +1,54 @@
-# SDFSADFSDAF ASDFDS
+<!DOCTYPE html>
+<html lang="en">
 
-## DAFASDF ASDF D
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproducir</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            flex: auto;
+        }
 
-DFFGDASFFR
+        .contenedor {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
 
-* SDAFRASDF
-* GFDSDFGFD
-* CVCDSVFDSV
+<body class="m-3">
+    <h3> Horario </h3>
+    <div class="contenedor">
+        <table border="1">
+            
+        
+            <tbody>
+                <tr>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miercoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
 
-  1 GDFG
+                </tr>
+            </tbody>
+
+
+
+
+        </table>
+
+
+
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</html>
