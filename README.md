@@ -1,14 +1,6 @@
 
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>IES Infanta Elena</title>
-  <!DOCTYPE html>
-
-  <!-- Aquí va el favicon -->
-  <link rel="icon" href="n7hSOEiD_400x400.ico" type="image/x-icon">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -99,7 +91,10 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contenido</a>
         </li>
-   
+   <li>
+     [Ver la página HTML](Estudio_fotografico/uliya/uliya-html/index.html)
+
+   </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Profesores</a>
         </li>
