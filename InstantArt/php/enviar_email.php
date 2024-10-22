@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (intval($responseKeys["success"]) !== 1) {
         $message = "Error: Por favor, completa el CAPTCHA";
-        header("Location:  http://localhost/Estudio_fotografico/InstantArt/contactanos.php?message=" . urlencode($message) . "&type=error");
+        header("Location:  http://localhost/Estudio_fotografico/InstantArt/contactanos.html?message=" . urlencode($message) . "&type=error");
         exit;
     } else {
         $nombre = $_POST['nombre'];
@@ -67,11 +67,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $mail->send();
             $message = "El mensaje ha sido enviado correctamente.";
-            header("Location: ../contactanos.php?message=" . $message . "&type=success");
+            header("Location: ../contactanos.html?message=" . $message . "&type=success");
 
         } catch (Exception $e) {
             $message = "El mensaje no pudo ser enviado. Mailer Error: {$mail->ErrorInfo}";
-            header("Location: ../contactanos.php?message=" . $message . "&type=error");
+            header("Location: ../contactanos.html?message=" . $message . "&type=error");
  
         }
     }
