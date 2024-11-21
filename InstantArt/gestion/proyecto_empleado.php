@@ -40,7 +40,7 @@
     <?php
     session_start();
     if ($_SESSION['rol'] != 'admin' && $_SESSION['rol'] != 'empleado') {
-        header("Location: ../index.php");
+        header("Location: ../index.html");
         exit(); 
     }
     
@@ -72,7 +72,7 @@
                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="../index.php">Inicio</a></li>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="../index.html">Inicio</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../sobre_nosotros.html">Sobre Nosotros</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../servicios.html">Servicios</a></li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="../contactanos.html">Contactanos</a></li>

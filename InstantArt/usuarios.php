@@ -30,7 +30,7 @@
     require "php/funciones.php";
 
     if ($_SESSION['rol'] != 'admin') {
-        header("Location: index.php");
+        header("Location: index.html");
         
     }
     ?>
@@ -50,13 +50,13 @@
                                 <!-- RD Navbar Toggle-->
                                 <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
                                 <!-- RD Navbar Brand-->
-                                <a class="rd-navbar-brand" href="index.php"><img src="images/logo.png" alt="" width="400" height="200" srcset="images/logo.png" /></a>
+                                <a class="rd-navbar-brand" href="index.html"><img src="images/logo.png" alt="" width="400" height="200" srcset="images/logo.png" /></a>
                             </div>
                             <div class="rd-navbar-main-element">
                                 <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                     <!-- RD Navbar Nav-->
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item "><a class="rd-nav-link" href="index.php">Inicio</a></li>
+                                        <li class="rd-nav-item "><a class="rd-nav-link" href="index.html">Inicio</a></li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="sobre_nosotros.html">Sobre Nosotros</a></li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="servicios.html">Servicios</a></li>
                                         <li class="rd-nav-item"><a class="rd-nav-link" href="contactanos.html">Contactanos</a></li>

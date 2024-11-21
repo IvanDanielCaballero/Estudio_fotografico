@@ -9,5 +9,5 @@ if (isset($_SESSION['usuario'])) {
   }
 
   if (!isset($_SESSION['id_cliente'])) {
-    header("Location: ../index.php");
+    header("Location: ../index.html");
   }

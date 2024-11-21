@@ -36,19 +36,19 @@ try {
         $_SESSION['id_cliente']= $query5;
 
 
-        header("location: ../index.php");
+        header("location: ../index.html");
     }elseif($query2->rowCount()>0){
         $_SESSION['usuario'] = $_POST['usuario'];
         $_SESSION['rol'] = 'admin';
         $_SESSION['id_empleado']= $query4;
-        header("location: ../index.php");
+        header("location: ../index.html");
 
     }elseif($query3->rowCount()>0){
         $_SESSION['usuario'] = $_POST['usuario'];
         $_SESSION['rol'] = 'empleado';
         $_SESSION['id_empleado']= $query4;
 
-        header("location: ../index.php");
+        header("location: ../index.html");
 
     }else{
         header("location: ../login.php");
@@ -102,9 +102,9 @@ try {
             $_SESSION['rol'] = "usuario";
         }
 
-        // Establecer sesión de usuario y redirigir al index.php
+        // Establecer sesión de usuario y redirigir al index.html
         $_SESSION['usuario'] = $usuario;
-        header("location: ../index.php");
+        header("location: ../index.html");
     } else {
         // Redirigir al login.php si no se encontraron resultados
         header("location: ../login.php");
